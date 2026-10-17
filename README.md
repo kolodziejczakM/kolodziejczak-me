@@ -2,7 +2,18 @@
 
 Pierwszy etap: **prototypy wizualne do porównania**, przed wyborem stacku i implementacją strony.
 
-**Aktualna runda: cztery różne kompozycje strony.** Miękki druk i Kontur i kropka pozostają najmocniejszymi odniesieniami, ale żaden dotychczasowy wariant nie został zatwierdzony. Teraz porównujemy także skalę typografii, prezentację artykułów i znak osobisty. Wspólne: **Leśna pracownia**, **Bricolage + Hanken**, pełne ramki pól.
+**Aktualna runda: wyłącznie kontrolki, przede wszystkim inputy.** Bazą jest **Blisko**. Kompozycja, karty, fonty **Bricolage + Hanken** i paleta **Leśna pracownia** pozostają stałe. Rozszerzenie poprzedniej rundy na redesign było nietrafione względem prośby użytkownika.
+
+| Kontrolki | Konstrukcja pola | Próbnik w Tailscale |
+| --- | --- | --- |
+| Podwójna oprawa | Dwa ciągłe obrysy z odstępem pomiędzy | [Otwórz inputy](http://vps.tailfb5686.ts.net:4321/pl/?controls=frame#palette-lab) |
+| Miękkie wgłębienie | Wewnętrzny cień i osobne miejsce na ikonę | [Otwórz inputy](http://vps.tailfb5686.ts.net:4321/pl/?controls=inset#palette-lab) |
+| Etykieta w ramce | Stała etykieta wewnątrz pełnej ramki | [Otwórz inputy](http://vps.tailfb5686.ts.net:4321/pl/?controls=label#palette-lab) |
+| Kapsuła z akcją | Obły obrys, ikona i okrągły przycisk czyszczenia | [Otwórz inputy](http://vps.tailfb5686.ts.net:4321/pl/?controls=capsule#palette-lab) |
+
+Te same próbki w każdym wariancie: input pusty, e-mail z błędem i stanem poprawnym, textarea, pole wyłączone, select, checkbox, switch, segmenty i przyciski. Wpisz adres i kliknij „Sprawdź adres”; nic nie jest wysyłane. ← → zmieniają wyłącznie kontrolki. Wartości próbek pozostają w pamięci. Styl działa też w modalach artykułu. [Opis rundy](docs/control-study.md) · [zestawienie inputów](docs/previews/controls.png).
+
+**Poprzednia runda: kompozycje.** Blisko podoba się najbardziej, Sygnatura wypada najgorzej. Użytkownik wskazał, że ta eksploracja wyszła poza właściwy temat: dopracowanie kontrolek. Poniżej zachowano historyczne porównanie.
 
 | Wariant | Kierunek | Tailscale |
 | --- | --- | --- |

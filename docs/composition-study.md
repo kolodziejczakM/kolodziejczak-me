@@ -1,5 +1,7 @@
 # Kompozycja i tożsamość — cztery nowe prototypy
 
+**Korekta po ocenie:** użytkownik oczekiwał dalszej eksploracji kontrolek, a nie redesignów. Ta runda była nietrafionym rozszerzeniem zakresu. Blisko podoba się najbardziej, Sygnatura najgorzej. Fonty i kolory są dobre; wracamy wyłącznie do dopracowania inputów i pozostałych kontrolek. [Aktualna runda](control-study.md). Poniższy opis zachowuje historyczną hipotezę i porównanie.
+
 **Pytanie:** czy wyraźniejsza kompozycja i osobisty znak dadzą stronie charakter, którego zabrakło w dotychczasowych wariantach kontrolek?
 
 Miękki druk i Kontur i kropka są najmocniejszymi punktami odniesienia. Zakładka była oryginalna, lecz chaotyczna, a Bilet narzucał skojarzenia niepasujące do zainteresowań autora. Nadal nie ma zatwierdzonej całości. Poszerzenie eksploracji o układ jest hipotezą projektową, nie nowym wymaganiem użytkownika.

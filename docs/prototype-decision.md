@@ -32,6 +32,10 @@
 
 **Runda 6 — kompozycja i tożsamość:** cztery nowe propozycje z `shape=gesture|rhythm|close|signature`, oddzielny cykl. Badamy większą zmianę: skalę hasła, relację bio do nagłówka, hierarchię artykułów oraz autorski monogram. Oryginalność ma wynikać z powtarzalnego języka form i kompozycji, bez narzucającej temat metafory. Zatwierdzone paleta i fonty pozostają. Źródło pierwotne: `codex/prototype-ui`, `prototypes/shapes/compositions.js` i `compositions.css`. [Opis rundy](composition-study.md). Wybór pozostaje otwarty.
 
+**Korekta po rundzie 6:** użytkownik wskazał, że rozszerzenie na redesign nie odpowiadało prośbie. Sygnatura jest najgorsza; Blisko podoba się najbardziej. Fonty i paleta są dobre, ale inputy nadal przeciętne. Prace wracają wyłącznie do kontrolek. Blisko jest bazą bieżącego porównania, nie zatwierdzeniem wszystkich szczegółów produkcyjnego UI.
+
+**Runda 7 — same kontrolki:** `controls=frame|inset|label|capsule` na istniejących trasach, zawsze z bazą `shape=close` i paletą `meadow`. Zmienia się konstrukcja pól i wygląd komponentów interaktywnych. Układ strony, teksty i karty pozostają stałe. Źródło: `prototypes/controls/`, gałąź `codex/prototype-ui`. [Zakres i próbnik](control-study.md). Wybór kontrolek pozostaje otwarty.
+
 Przy decyzji zapisać: wybrany kierunek, elementy zapożyczone z pozostałych, argumenty i rzeczy do zmiany. Potem przepisać zwycięski projekt do kodu produkcyjnego, zachowując te prototypy na gałęzi źródłowej. Nie przenosić przełącznika ani symulacji usług do produkcji.
 
 Nie utworzono issue wdrożeniowego; ten dokument jest lokalnym odnośnikiem do prototypów. Po utworzeniu issue należy wkleić do niego ten odnośnik i werdykt.

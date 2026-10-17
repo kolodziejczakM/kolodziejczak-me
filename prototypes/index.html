@@ -19,8 +19,9 @@
   <link rel="stylesheet" href="/shapes/shapes.css">
   <link rel="stylesheet" href="/shapes/refinements.css">
   <link rel="stylesheet" href="/shapes/compositions.css">
+  <link rel="stylesheet" href="/controls/controls.css">
   <script>
-    if(new URLSearchParams(location.search).has('palette')||new URLSearchParams(location.search).has('shape')){
+    if(['palette','shape','controls'].some(key=>new URLSearchParams(location.search).has(key))){
       for(const path of ['bricolagegrotesque/BricolageGrotesque%5Bopsz%2Cwdth%2Cwght%5D.ttf','hankengrotesk/HankenGrotesk%5Bwght%5D.ttf','hankengrotesk/HankenGrotesk-Italic%5Bwght%5D.ttf']){
         const link=document.createElement('link');link.rel='preload';link.as='font';link.type='font/ttf';link.crossOrigin='anonymous';link.href='/typography/fonts/'+path;document.head.append(link);
       }
@@ -31,6 +32,7 @@
   <script src="/shapes/shapes.js" defer></script>
   <script src="/shapes/refinements.js" defer></script>
   <script src="/shapes/compositions.js" defer></script>
+  <script src="/controls/controls.js" defer></script>
   <script src="/app.js" defer></script>
 </head>
 <body>

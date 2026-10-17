@@ -66,3 +66,9 @@ Aktualne pytanie dotyczy **kształtów przycisków, obramowań, kontrolek, ozdob
 - **Zakładka** jest najbardziej oryginalna, ale tworzy wrażenie wizualnego chaosu. Oryginalność wymaga spokojnego porządku.
 - **Bilet do rozmowy** jest oryginalny, ale zbyt mocno narzuca tematykę. Użytkownik nie prowadzi bloga kolejowego; skojarzenia z biletem nie są związane z jego zainteresowaniami. Nie rozwijać tej metafory.
 - Kolejna runda poszerza eksperyment o kompozycję, rytm artykułów, skalę typografii i osobisty monogram. To hipoteza projektowa: dalsze drobne zmiany promieni narożników mogą nie wystarczyć do oczekiwanego efektu. Paleta, fonty, pozytywne hasła i pełne ramki pól pozostają wspólne. [Cztery kompozycje](composition-study.md).
+
+## Korekta zakresu po kompozycjach — kontrolki
+
+Użytkownik wyjaśnił, że **nie oczekiwał redesignów**. Zatrzymaliśmy się na kontrolkach i to one wymagają dopracowania. **Inputy nadal są przeciętne.** Fonty i kolorystyka są już dobre; nie otwierać ich ponownie. Sygnatura wypada najgorzej, Blisko podoba się najbardziej, a dwa pierwsze układy nie wniosły oczekiwanej nowości.
+
+**Dalszy zakres: wyłącznie design kontrolek.** Bazą porównania jest Blisko; zachowujemy jego kompozycję, nagłówek, karty i dekoracje. Eksperymentujemy z konstrukcją inputów, etykietami, obrysami, ikonami wewnątrz pola, stanami oraz spójnymi selectami, checkboxami, switchami i przyciskami. Pełne, ciągłe obramowania pozostają wymaganiem. Nie rozszerzać zadania na layout, typografię, branding czy nowe metafory tematyczne. [Próbnik kontrolek](control-study.md).
