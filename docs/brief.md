@@ -37,3 +37,11 @@ Zdjęcie, autorskie bio w PL/EN, prawdziwe adresy kontaktowe, pierwsze artykuły
 ## Prototyp a produkcja
 
 Prototypy pokazują wygląd i zachowanie interfejsu. Żadna integracja nie jest skonfigurowana. Docelowe SEO, statyczne generowanie HTML, analityka, Markdown, service worker i realny odtwarzacz są następnymi etapami po wyborze kierunku.
+
+## Wybór typografii i runda kolorystyczna
+
+Marcin wskazał **Bricolage Grotesque + Hanken Grotesk** jako ulubiony zestaw. Przyjmujemy Bricolage do nagłówków, Hanken do tekstu i UI; nie otwieramy ponownie selekcji rodzin z powodu wskaźnika popularności. Kolory tekstów i linków z próbnika również oceniono pozytywnie.
+
+Obecne pytanie: jaka paleta najlepiej pasuje do tej typografii? Porównujemy tła, panele, karty, tekst podstawowy i drugorzędny, linki, przyciski, stany interakcji, fokus i komunikaty. W tej rundzie **układ, treść i typografia są wspólne**, żeby różnice kompozycji nie zakłócały oceny kolorów. To świadome zawężenie do koloru, wynikające z prośby użytkownika.
+
+Cztery palety na bazie C: Leśny spokój (referencja + szałwia), Leśna pracownia (zieleń + miód), Sosna i glina (zieleń + koral), Noc nad wodą (chłodna zieleń + mięta). Adresy zachowują `variant=C` i dodają `palette=forest|meadow|clay|tide`. Wybór palety pozostaje otwarty. Kolorystyka obejmuje również listę i artykuł PL/EN oraz demonstracje kontrolek.

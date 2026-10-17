@@ -1,6 +1,6 @@
 /* THROWAWAY: appearance and interaction study; no accounts, tracking or remote widgets. */
 const variants = { A: ['Margines', 'Redakcyjny spokój / editorial'], B: ['Sygnał', 'Cyfrowy warsztat / digital workshop'], C: ['Po godzinach', 'Ciekawość i zabawa / curiosity & play'] };
-const state = { variant: 'A', lang: 'pl', page: 'home', liked: false, filter: 'all', dismissed: false, audioLang: 'pl' };
+const state = { variant: 'A', palette: null, lang: 'pl', page: 'home', liked: false, filter: 'all', dismissed: false, audioLang: 'pl' };
 const $ = (s) => document.querySelector(s);
 const t = (pl, en) => state.lang === 'pl' ? pl : en;
 const icons = {
@@ -52,7 +52,7 @@ const posts = [
   }
 ];
 const textOf = (arr) => arr[state.lang === 'pl' ? 0 : 1];
-const href = (page = 'home', post = posts[0], lang = state.lang) => `/${lang}/${page === 'home' ? '' : page === 'blog' ? 'blog/' : `blog/${post.slug[lang === 'pl' ? 0 : 1]}/`}?variant=${state.variant}`;
+const href = (page = 'home', post = posts[0], lang = state.lang) => `/${lang}/${page === 'home' ? '' : page === 'blog' ? 'blog/' : `blog/${post.slug[lang === 'pl' ? 0 : 1]}/`}?variant=${state.variant}${state.palette?'&palette='+state.palette:''}`;
 const currentPost = () => posts.find(p => p.slug.some(slug => location.pathname.includes(slug))) || posts[0];
 const link = (page, label, cls = '', post = posts[0]) => `<a class="${cls}" data-route href="${href(page, post)}">${label}</a>`;
 const button = (action, label, cls = '') => `<button class="${cls}" data-action="${action}">${label}</button>`;
@@ -85,7 +85,7 @@ function orbit() {
 }
 
 function cursorArt() {
-  return `<div class="cursor-art" aria-hidden="true"><svg viewBox="0 0 300 260" fill="none"><path d="M91 30 230 141l-72 6-33 68Z" fill="#e9dfc9" stroke="#2b2032" stroke-width="5" stroke-linejoin="round"/><path d="m91 30 67 117" stroke="#2b2032" stroke-width="3"/><ellipse cx="143" cy="112" rx="5" ry="8" fill="#2b2032"/><ellipse cx="165" cy="130" rx="5" ry="8" fill="#2b2032"/><path d="M138 142q1 15 15 12M73 202q-23 1-28-19M219 59l9-19m7 27 20-5M54 84 38 73" stroke="#d8b2f2" stroke-width="4" stroke-linecap="round"/><path d="m51 119 5 12 13 2-10 9 1 14-11-8-12 6 4-13-8-11 13-1Z" fill="#d9ed7f"/><path d="m236 185 5 12 13 2-10 9 1 14-11-8-12 6 4-13-8-11 13-1Z" fill="#d9ed7f"/></svg><span class="hand-note">${t('klik, i jesteś u siebie.', 'click. make yourself at home.')}</span></div>`;
+  return `<div class="cursor-art" aria-hidden="true"><svg viewBox="0 0 300 260" fill="none"><path d="M91 30 230 141l-72 6-33 68Z" fill="var(--art-paper,#e9dfc9)" stroke="var(--art-ink,#2b2032)" stroke-width="5" stroke-linejoin="round"/><path d="m91 30 67 117" stroke="var(--art-ink,#2b2032)" stroke-width="3"/><ellipse cx="143" cy="112" rx="5" ry="8" fill="var(--art-ink,#2b2032)"/><ellipse cx="165" cy="130" rx="5" ry="8" fill="var(--art-ink,#2b2032)"/><path d="M138 142q1 15 15 12M73 202q-23 1-28-19M219 59l9-19m7 27 20-5M54 84 38 73" stroke="var(--art-detail,#d8b2f2)" stroke-width="4" stroke-linecap="round"/><path d="m51 119 5 12 13 2-10 9 1 14-11-8-12 6 4-13-8-11 13-1Z" fill="var(--art-star,#d9ed7f)"/><path d="m236 185 5 12 13 2-10 9 1 14-11-8-12 6 4-13-8-11 13-1Z" fill="var(--art-star,#d9ed7f)"/></svg><span class="hand-note">${t('klik, i jesteś u siebie.', 'click. make yourself at home.')}</span></div>`;
 }
 
 function postRows() {
@@ -143,17 +143,27 @@ function readLocation() {
   state.page = /\/blog\/[^/]+/.test(path) ? 'article' : path.includes('/blog') ? 'blog' : 'home';
   const variant = new URLSearchParams(location.search).get('variant');
   state.variant = variants[variant] ? variant : 'A';
+  const palette = new URLSearchParams(location.search).get('palette');
+  state.palette = Object.hasOwn(colorPalettes,palette) ? palette : null;
+  if(state.palette) state.variant='C';
 }
 
 function render() {
   readLocation();
   document.body.dataset.variant = state.variant;
   document.body.dataset.page = state.page;
+  applyColorPalette();
   document.documentElement.lang = state.lang;
   document.title = `${state.page === 'article' ? textOf(currentPost().title) : state.page === 'blog' ? t('Notatki','Notes') : 'Marcin Kołodziejczak'} · ${variants[state.variant][0]} · UI prototype`;
   $('#app').innerHTML = header() + (state.page === 'home' ? ({A:homeA,B:homeB,C:homeC}[state.variant])() : state.page === 'blog' ? blog() : article()) + footer();
+  if(state.palette){
+    $('#app').innerHTML=colorPage($('#app').innerHTML);
+    restoreColorUI();
+    document.title=`${t(colorPalettes[state.palette].name,colorPalettes[state.palette].en)} · ${state.page==='article'?textOf(currentPost().title):t('Kolorystyka','Colours')} · kolodziejczak.me`;
+  }
   $('#prototype-tools').innerHTML = `<div class="prototype-switcher" aria-label="${t('Porównaj projekty','Compare designs')}"><button data-cycle="-1" aria-label="${t('Poprzedni projekt','Previous design')}">←</button><div class="prototype-label" aria-live="polite"><small>${t('PROTOTYP','PROTOTYPE')} · ${state.lang.toUpperCase()} · ${state.page === 'home' ? t('Start','Home') : state.page === 'blog' ? t('Notatki','Notes') : t('Artykuł','Article')}</small><strong>${state.variant} — ${variants[state.variant][0]} <span>${Object.keys(variants).indexOf(state.variant)+1}/3</span></strong></div><button data-cycle="1" aria-label="${t('Następny projekt','Next design')}">→</button><button class="prototype-info" data-action="info" aria-label="${t('O prototypie','About this prototype')}">?</button></div>`;
   $('#overlay').innerHTML = '';
+  if(state.palette) $('#prototype-tools').innerHTML=colorPrototypeTools();
   document.body.classList.remove('modal-open');
   languageSuggestion();
   progress();
@@ -170,6 +180,11 @@ function navigate(url) {
 }
 
 function cycle(direction) {
+  if(state.palette){
+    const keys=Object.keys(colorPalettes),next=keys[(keys.indexOf(state.palette)+direction+keys.length)%keys.length];
+    const url=new URL(location.href);url.searchParams.set('variant','C');url.searchParams.set('palette',next);
+    history.replaceState({},'',url);render();return;
+  }
   const keys = Object.keys(variants);
   const next = keys[(keys.indexOf(state.variant)+direction+keys.length)%keys.length];
   const url = new URL(location.href); url.searchParams.set('variant',next);

@@ -2,11 +2,22 @@
 
 Pierwszy etap: **prototypy wizualne do porównania**, przed wyborem stacku i implementacją strony.
 
-Aktualny etap po feedbacku: **research i próbnik typografii**, przed kolejnymi układami. [Otwórz próbnik przez Tailscale](http://vps.tailfb5686.ts.net:4321/typography/) lub [lokalnie](http://localhost:4321/typography/). [Pełny raport w przeglądarce](http://vps.tailfb5686.ts.net:4321/typography/research.html) jest kopią [źródła researchu](docs/font-research.md).
+**Aktualna runda: kolorystyka z wybranymi Bricolage Grotesque + Hanken Grotesk.** Wspólny układ bazuje na C; teraz porównujemy kolory całej strony i stany interakcji.
+
+| Paleta | Kierunek | Podgląd w Tailscale |
+| --- | --- | --- |
+| Leśny spokój | Referencyjna zieleń, szałwiowe akcenty, ciemne karty | [Otwórz](http://vps.tailfb5686.ts.net:4321/pl/?variant=C&palette=forest) |
+| Leśna pracownia | Głęboka zieleń, miód, mieszanka jasnych i ciemnych kart | [Otwórz](http://vps.tailfb5686.ts.net:4321/pl/?variant=C&palette=meadow) |
+| Sosna i glina | Zieleń, ciepły koral, piaskowe linki i pastelowe karty | [Otwórz](http://vps.tailfb5686.ts.net:4321/pl/?variant=C&palette=clay) |
+| Noc nad wodą | Chłodna zieleń, mięta i jasne błękitne linki | [Otwórz](http://vps.tailfb5686.ts.net:4321/pl/?variant=C&palette=tide) |
+
+Palety przełącza dolny pasek i klawisze ← →. Wybór zachowuje się w linkach do listy, artykułu i odpowiedniej wersji językowej. Na stronie głównej link „Wypróbuj kontrolki” prowadzi do próbek przycisków, pola, przełącznika, zakładek, tekstów i komunikatów. `?` pokazuje role kolorów i pozwala wybrać dowolną paletę. Dane i stan próbki kontrolek pozostają wyłącznie w pamięci podglądu. [Opis rundy i pomiary](docs/color-study.md).
+
+Poprzedni etap: **research i próbnik typografii**, przed kolejnymi układami. [Otwórz próbnik przez Tailscale](http://vps.tailfb5686.ts.net:4321/typography/) lub [lokalnie](http://localhost:4321/typography/). [Pełny raport w przeglądarce](http://vps.tailfb5686.ts.net:4321/typography/research.html) jest kopią [źródła researchu](docs/font-research.md).
 
 Próbnik porównuje sześć zestawów na tym samym tekście i zieleni `#162823` z referencji. Można zmienić zestaw, PL/EN, rozmiar tekstu, interlinię, szerokość kolumny i odcień tła; ustawienia są w URL. Przykład: `/typography/?pair=3&view=sample&lang=pl&size=20&leading=1.75&measure=64&bg=reference`. Są też widoki `compare` i `glyphs`. Kopiowanie adresu przez HTTP ma ręczne pole zastępcze. Stan nie trafia do localStorage ani cookies. Raport opisuje również ograniczony wskaźnik popularności z oficjalnych danych Google Fonts.
 
-Obecna shortlista: Commissioner w dwóch odmianach, Gabarito + Literata, Ysabeau; do porównania również Bricolage + Hanken, Schibsted + Newsreader i Alegreya + Hanken. To nie jest zatwierdzony wybór fontów. Oryginalne A/B/C poniżej zachowują pierwszą rundę, a ich treść i kolory nie reprezentują aktualnego briefu.
+Historyczna shortlista badania obejmowała Commissioner, Gabarito + Literata, Ysabeau, Bricolage + Hanken, Schibsted + Newsreader i Alegreya + Hanken. Po obejrzeniu Marcin wybrał **Bricolage + Hanken**, użyte we wszystkich nowych paletach. Oryginalne A/B/C poniżej zachowują pierwszą rundę, a ich treść i kolory nie reprezentują aktualnego briefu.
 
 ## Uruchomienie
 

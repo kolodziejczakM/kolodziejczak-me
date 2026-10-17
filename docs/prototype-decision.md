@@ -16,6 +16,10 @@
 
 **Etap typograficzny:** [research 14 rodzin](font-research.md) i próbnik `/typography/` na tej samej gałęzi. Sześć zestawów na identycznej treści i tle z referencji. Weryfikacja plików obejmuje polskie znaki, wersje i licencje; dodatkowy snapshot oficjalnych metadanych Google Fonts odróżnia charakter od wskaźnika popularności. Wstępnie najmocniejsze kierunki: Commissioner, Gabarito + Literata, Ysabeau. Bricolage zachowano jako popularniejszy punkt odniesienia. Żaden nowy layout nie powstał; wybór typografii pozostaje otwarty.
 
+**Decyzja po próbniku:** Marcin wybrał Bricolage Grotesque + Hanken Grotesk. Ta preferencja zastępuje roboczą kolejność rekomendacji badania. Nagłówki: Bricolage; proza i kontrolki: Hanken.
+
+**Runda 3 — kolor:** cztery palety na wspólnym układzie C i wybranych fontach, na istniejącej trasie `?variant=C&palette=forest|meadow|clay|tide`. Stały układ jest celowy: pytanie użytkownika dotyczy teraz koloru. Prototypy obejmują Home, Artykuły, pojedynczy artykuł, player i modale oraz próbki stanów UI. Źródło: `prototypes/palettes/`, pomiary par kolorów: `contrast.json`, pełne role: `palettes.json`. Żadna paleta nie jest jeszcze wybrana.
+
 Przy decyzji zapisać: wybrany kierunek, elementy zapożyczone z pozostałych, argumenty i rzeczy do zmiany. Potem przepisać zwycięski projekt do kodu produkcyjnego, zachowując te prototypy na gałęzi źródłowej. Nie przenosić przełącznika ani symulacji usług do produkcji.
 
 Nie utworzono issue wdrożeniowego; ten dokument jest lokalnym odnośnikiem do prototypów. Po utworzeniu issue należy wkleić do niego ten odnośnik i werdykt.
