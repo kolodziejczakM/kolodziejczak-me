@@ -12,6 +12,12 @@ Wymagane jedynie Node/npm (do skrótu) i Python 3. Bez instalowania paczek. Alte
 
 Podgląd: [localhost:4321/pl/?variant=A](http://localhost:4321/pl/?variant=A).
 
+Podgląd na serwerze w sieci Tailscale: [vps.tailfb5686.ts.net:4321](http://vps.tailfb5686.ts.net:4321/pl/?variant=A). Wymaga połączenia urządzenia z tą samą siecią Tailscale. Serwer nasłuchuje na prywatnym adresie Tailscale, bez wiązania do wszystkich interfejsów. Ponowne uruchomienie na tym serwerze:
+
+```sh
+npm run prototype -- --host 100.113.202.72 --port 4321
+```
+
 | Wariant | Kierunek | Podgląd |
 | --- | --- | --- |
 | A — Margines | Ciepła, ciemna publikacja; szeryfowe nagłówki, szkic, redakcyjne wiersze | [Otwórz A](http://localhost:4321/pl/?variant=A) |
