@@ -2,7 +2,18 @@
 
 Pierwszy etap: **prototypy wizualne do porównania**, przed wyborem stacku i implementacją strony.
 
-**Aktualna runda: cztery kolejne propozycje miękkich form z charakterem.** Wspólne: paleta **Leśna pracownia** oraz fonty **Bricolage Grotesque + Hanken Grotesk**. Pola mają pełne, ciągłe obramowania; detale należą do konkretnych elementów.
+**Aktualna runda: cztery różne kompozycje strony.** Miękki druk i Kontur i kropka pozostają najmocniejszymi odniesieniami, ale żaden dotychczasowy wariant nie został zatwierdzony. Teraz porównujemy także skalę typografii, prezentację artykułów i znak osobisty. Wspólne: **Leśna pracownia**, **Bricolage + Hanken**, pełne ramki pól.
+
+| Wariant | Kierunek | Tailscale |
+| --- | --- | --- |
+| Duży gest | Duże hasło, abstrakcyjny znak, pierwszy artykuł na pierwszym planie | [Otwórz](http://vps.tailfb5686.ts.net:4321/pl/?shape=gesture) |
+| Własny rytm | Osobny panel autora i szerokie, numerowane wiersze artykułów | [Otwórz](http://vps.tailfb5686.ts.net:4321/pl/?shape=rhythm) |
+| Blisko | Centralna wizytówka w jednej ramie i miękkie karty | [Otwórz](http://vps.tailfb5686.ts.net:4321/pl/?shape=close) |
+| Sygnatura | Autorski monogram, spokojna kompozycja i dwa jasne artykuły nad szerokim ciemnym | [Otwórz](http://vps.tailfb5686.ts.net:4321/pl/?shape=signature) |
+
+Dolny pasek i ← → przechodzą przez cztery nowe propozycje. „Wypróbuj detale” prowadzi do próbnika kontrolek. Wybór pozostaje w adresach Home/listy/artykułu i PL/EN. [Opis rundy](docs/composition-study.md) · [zestawienie](docs/previews/compositions.png).
+
+**Poprzednia runda: cztery propozycje miękkich form z charakterem.** Zakładka została oceniona jako oryginalna, ale chaotyczna; Bilet do rozmowy ma zbyt silne, niepasujące do autora skojarzenie tematyczne. Poniższe adresy zachowują wcześniejsze porównanie.
 
 | Forma | Kierunek | Podgląd w Tailscale |
 | --- | --- | --- |

@@ -1,5 +1,7 @@
 # Forma — druga runda, cztery nowe prototypy
 
+**Status po ocenie:** Miękki druk i Kontur i kropka wypadły najlepiej, ale żaden projekt nie został zatwierdzony. Zakładka była chaotyczna, a Bilet narzucał obce autorowi skojarzenia. Następny etap: [cztery różne kompozycje](composition-study.md). Poniżej zachowano zapis drugiej rundy form.
+
 **Pytanie:** jak nadać miękkim formom więcej rozpoznawalnego charakteru, zachowując czytelne kontrolki i uporządkowane ozdobniki?
 
 Marcin uznał Miękkie formy za najlepiej dopasowane do charakteru strony, lecz zbyt typowe. Z Papieru i pieczęci podobają mu się główne przyciski. Nacięte narożniki miały najwięcej oryginalności, ale linie na kartach wyglądały przypadkowo. Przerywane ramki pól i pola z samym podkreśleniem są odrzucone.

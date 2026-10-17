@@ -101,6 +101,7 @@ function homeB() {
 }
 
 function homeC() {
+  if(shapeVariants[state.shape]?.round===3)return compositionHome();
   return `<main id="main" class="wrap home-c"><section class="play-hero"><div class="play-intro"><span class="eyebrow">${t('INTERNET JEST FAJNIEJSZY Z LUDŹMI', 'THE INTERNET IS BETTER WITH PEOPLE')}</span><h1>${t('Ciekawość to<br>dobry <em>początek.</em>', 'Curiosity is<br>a good <em>beginning.</em>')}</h1><div class="play-bio">${portrait('tiny')}<p>${t('Cześć, Marcin tutaj. Łączę kropki między kodem, AI i codziennym życiem. Czasem wychodzi z tego notatka.', 'Hi, Marcin here. Connecting the dots between code, AI, and everyday life. Sometimes it turns into a note.')}</p></div>${link('blog', t('Zobacz, co mi chodzi po głowie', 'See what’s on my mind') + icons.arrow, 'solid-link')}</div>${cursorArt()}<span class="round-sticker">${t('ROBIĘ RZECZY<br>PO SWOJEMU', 'MAKING THINGS<br>MY OWN WAY')}<span>${icons.spark}</span></span></section><section class="play-notes"><div class="section-heading"><h2>${t('Z mojej głowy do Twojej.', 'From my head to yours.')}</h2><span class="hand-note">${t('weź coś dla siebie ↓', 'take what you need ↓')}</span></div><div class="note-cards">${posts.map((p, i) => `<a data-route href="${href('article', p)}" class="note-card card-${i}"><div class="note-card-top"><span>${textOf(p.label)}</span><span>${[icons.spark,icons.arrow,icons.star][i]}</span></div><h3>${textOf(p.title)}</h3><p>${textOf(p.desc)}</p><div class="note-card-bottom"><span>${p.date}</span><span>↗</span></div></a>`).join('')}</div></section>${contacts()}</main>`;
 }
 
@@ -218,7 +219,7 @@ let previousFocus;
 function modal(title, body) {
   previousFocus=document.activeElement;
   $('#overlay').innerHTML=`<div class="modal-backdrop"><section role="dialog" aria-modal="true" aria-labelledby="modal-title" class="modal"><button class="modal-close" data-action="close" aria-label="${t('Zamknij','Close')}">×</button><span class="eyebrow">${t('NA MARGINESIE TEKSTU','IN THE MARGINS')}</span><h2 id="modal-title">${title}</h2>${body}</section></div>`;
-  if(shapeVariants[state.shape]?.round===2)decorateRefinedModal();
+  if(shapeVariants[state.shape]?.round>=2)decorateRefinedModal();
   document.body.classList.add('modal-open'); $('.modal-close').focus();
 }
 function closeModal(){ $('#overlay').innerHTML='';document.body.classList.remove('modal-open');previousFocus?.focus(); }

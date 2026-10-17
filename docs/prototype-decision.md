@@ -28,6 +28,10 @@
 
 **Runda 5 — miękko, ale z charakterem:** `shape=press|bookmark|orbit|ticket`, oddzielny cykl czterech nowych form. Baza pozostaje ta sama, zgodnie z prośbą o rozwinięcie detali. Pytanie: jak dodać rozpoznawalność do miękkiej geometrii, zachowując pełne obramowania pól i porządek dekoracji? Źródło: `prototypes/shapes/refinements.js` i `refinements.css`, gałąź `codex/prototype-ui`. [Kierunki i warunki porównania](form-refinements.md). Poprzednie adresy zachowują osobny cykl trzech form. Wybór nowej formy pozostaje otwarty.
 
+**Feedback po rundzie 5:** Miękki druk i Kontur i kropka są najlepsze. Zakładka jest oryginalna, ale chaotyczna. Motyw biletu narzuca skojarzenie z koleją, obce zainteresowaniom autora. Żaden wariant nie zachwycił użytkownika; wyboru nie zamykamy.
+
+**Runda 6 — kompozycja i tożsamość:** cztery nowe propozycje z `shape=gesture|rhythm|close|signature`, oddzielny cykl. Badamy większą zmianę: skalę hasła, relację bio do nagłówka, hierarchię artykułów oraz autorski monogram. Oryginalność ma wynikać z powtarzalnego języka form i kompozycji, bez narzucającej temat metafory. Zatwierdzone paleta i fonty pozostają. Źródło pierwotne: `codex/prototype-ui`, `prototypes/shapes/compositions.js` i `compositions.css`. [Opis rundy](composition-study.md). Wybór pozostaje otwarty.
+
 Przy decyzji zapisać: wybrany kierunek, elementy zapożyczone z pozostałych, argumenty i rzeczy do zmiany. Potem przepisać zwycięski projekt do kodu produkcyjnego, zachowując te prototypy na gałęzi źródłowej. Nie przenosić przełącznika ani symulacji usług do produkcji.
 
 Nie utworzono issue wdrożeniowego; ten dokument jest lokalnym odnośnikiem do prototypów. Po utworzeniu issue należy wkleić do niego ten odnośnik i werdykt.

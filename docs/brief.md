@@ -59,3 +59,10 @@ Aktualne pytanie dotyczy **kształtów przycisków, obramowań, kontrolek, ozdob
 - Odrzucone: przerywane obramowania pól oraz pola z samym podkreśleniem przed kliknięciem. Nowe pola mają pełną, ciągłą ramkę od początku, także w modalach.
 - **Nacięte narożniki** miały najwięcej oryginalności, ale dekoracyjne linie na kartach wyglądały na przypadkowe i psuły wygląd. Ozdobniki powinny mieć czytelny związek z kształtem lub funkcją elementu.
 - Użytkownik zamówił kolejne **cztery** prototypy. Kolory i fonty nadal pozostają zatwierdzone. Kierunki: Miękki druk, Zakładka, Kontur i kropka, Bilet do rozmowy. [Opis nowej rundy](form-refinements.md).
+
+## Feedback po drugiej rundzie form
+
+- **Miękki druk** i **Kontur i kropka** wypadają najlepiej, ale nadal nie ma wariantu, który zachwycił użytkownika. Nie traktować tego jako zatwierdzenia projektu.
+- **Zakładka** jest najbardziej oryginalna, ale tworzy wrażenie wizualnego chaosu. Oryginalność wymaga spokojnego porządku.
+- **Bilet do rozmowy** jest oryginalny, ale zbyt mocno narzuca tematykę. Użytkownik nie prowadzi bloga kolejowego; skojarzenia z biletem nie są związane z jego zainteresowaniami. Nie rozwijać tej metafory.
+- Kolejna runda poszerza eksperyment o kompozycję, rytm artykułów, skalę typografii i osobisty monogram. To hipoteza projektowa: dalsze drobne zmiany promieni narożników mogą nie wystarczyć do oczekiwanego efektu. Paleta, fonty, pozytywne hasła i pełne ramki pól pozostają wspólne. [Cztery kompozycje](composition-study.md).

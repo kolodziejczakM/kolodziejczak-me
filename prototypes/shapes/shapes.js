@@ -7,9 +7,10 @@ const shapeVariants={
 };
 const shapeUI={details:true,topic:'engineering'};
 let shapeOriginalIcons;
-function shapeKeys(){return shapeVariants[state.shape]?.round===2?['press','bookmark','orbit','ticket']:['soft','stamp','cut'];}
+function shapeKeys(){return ({2:['press','bookmark','orbit','ticket'],3:['gesture','rhythm','close','signature']})[shapeVariants[state.shape]?.round]||['soft','stamp','cut'];}
 
 function shapeIcon(name,kind=state.shape){
+  if(shapeVariants[kind]?.round===3)return refinedShapeIcon(name,shapeVariants[kind].iconStyle);
   if(shapeVariants[kind]?.round===2)return refinedShapeIcon(name,kind);
   const families={
     soft:{
@@ -81,13 +82,13 @@ function shapeIconGallery(){
 
 function decorateShapePage(){
   const p=shapeVariants[state.shape];
-  const context=document.querySelector('.palette-context>span');if(context)context.textContent=`${p.round===2?t('FORMA · RUNDA 2','FORM · ROUND 2'):t('FORMA','FORM')} · 0${shapeKeys().indexOf(state.shape)+1} · ${t(p.name,p.en)}`;
+  const context=document.querySelector('.palette-context>span');if(context)context.textContent=`${p.round>=2?t('FORMA · RUNDA ','FORM · ROUND ')+p.round:t('FORMA','FORM')} · 0${shapeKeys().indexOf(state.shape)+1} · ${t(p.name,p.en)}`;
   const jump=document.querySelector('.palette-context>a');if(jump)jump.innerHTML=t('Wypróbuj detale','Try the details')+icons.arrow;
   const hero=document.querySelector('.cursor-art');if(hero)hero.outerHTML=shapeHero();
   document.querySelectorAll('.note-card').forEach((card,i)=>{
     card.querySelector('.note-card-top>span:last-child').innerHTML=shapeIcon(['spark','read','chat'][i]);
     card.querySelector('.note-card-bottom>span:last-child').innerHTML=shapeIcon('arrow');
-    if(p.round!==2)card.insertAdjacentHTML('beforeend',`<span class="shape-card-mark shape-extra" aria-hidden="true">${state.shape==='cut'?`0${i+1}`:shapeIcon('spark')}</span>`);
+    if(!p.round)card.insertAdjacentHTML('beforeend',`<span class="shape-card-mark shape-extra" aria-hidden="true">${state.shape==='cut'?`0${i+1}`:shapeIcon('spark')}</span>`);
   });
   document.querySelectorAll('.outline-button[data-action=share]').forEach(e=>e.insertAdjacentHTML('afterbegin',shapeIcon('copy')));
   document.querySelectorAll('[data-action=tldr]').forEach(e=>e.insertAdjacentHTML('afterbegin',shapeIcon('read')));
@@ -102,6 +103,7 @@ function decorateShapePage(){
   const hint=document.querySelector('.text-sheet>.field-hint');if(hint)hint.textContent=t('Te same komunikaty, różne kształty ich ikon i obramowań.','The same messages with different icon shapes and borders.');
   const lab=document.querySelector('#palette-lab');if(lab)lab.insertAdjacentHTML('beforeend',shapeIconGallery());
   if(p.round===2)decorateRefinedShapes();
+  if(p.round===3)decorateCompositions();
   restoreShapeControls();
 }
 
@@ -115,7 +117,7 @@ function restoreShapeControls(){
 
 function shapePrototypeTools(){
   const p=shapeVariants[state.shape],n=shapeKeys().indexOf(state.shape)+1;
-  return `<div class="prototype-switcher color-switcher form-switcher" aria-label="${t('Porównaj formy','Compare forms')}"><button data-cycle="-1" aria-label="${t('Poprzedni wariant','Previous variation')}">${shapeOriginalIcons.arrow}</button><div class="prototype-label" aria-live="polite"><small>${p.round===2?t('FORMA 2 · LEŚNA PRACOWNIA','FORM 2 · FOREST WORKSHOP'):t('FORMA · LEŚNA PRACOWNIA','FORM · FOREST WORKSHOP')} · ${state.lang.toUpperCase()}</small><strong>${t(p.name,p.en)} <span>${n}/${shapeKeys().length}</span></strong></div><button data-cycle="1" aria-label="${t('Następny wariant','Next variation')}">${shapeOriginalIcons.arrow}</button><button class="prototype-info" data-action="shape-info" aria-label="${t('Porównanie detali','Compare details')}">?</button></div>`;
+  return `<div class="prototype-switcher color-switcher form-switcher" aria-label="${t('Porównaj formy','Compare forms')}"><button data-cycle="-1" aria-label="${t('Poprzedni wariant','Previous variation')}">${shapeOriginalIcons.arrow}</button><div class="prototype-label" aria-live="polite"><small>${p.round>=2?t('FORMA '+p.round+' · LEŚNA PRACOWNIA','FORM '+p.round+' · FOREST WORKSHOP'):t('FORMA · LEŚNA PRACOWNIA','FORM · FOREST WORKSHOP')} · ${state.lang.toUpperCase()}</small><strong>${t(p.name,p.en)} <span>${n}/${shapeKeys().length}</span></strong></div><button data-cycle="1" aria-label="${t('Następny wariant','Next variation')}">${shapeOriginalIcons.arrow}</button><button class="prototype-info" data-action="shape-info" aria-label="${t('Porównanie detali','Compare details')}">?</button></div>`;
 }
 
 function shapeInformation(){
