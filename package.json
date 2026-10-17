@@ -1,0 +1,7 @@
+{
+  "name": "kolodziejczak-me-prototype",
+  "private": true,
+  "scripts": {
+    "prototype": "python3 prototypes/serve.py"
+  }
+}
