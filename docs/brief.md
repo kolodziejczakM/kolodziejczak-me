@@ -22,6 +22,18 @@ Szybko porównać kilka **strukturalnie różnych** kierunków UI w HTML/CSS. Od
 
 Zdjęcie, autorskie bio w PL/EN, prawdziwe adresy kontaktowe, pierwsze artykuły i tłumaczenia, wygenerowane audio, konta/identyfikatory integracji. Danych osobowych i uprawnień nie zgadujemy. Nie trzeba tego do porównania obecnych wariantów.
 
+## Feedback po pierwszej rundzie — 17 października 2026
+
+- Zachowujemy hasła z C: **„Ciekawość to dobry początek.”** oraz **„Internet jest fajniejszy z ludźmi”**. Pozytywny, osobisty ton jest właściwy; hasła z A/B były zbyt sztampowe.
+- Nawigację kierujemy w **„Artykuły”**, po angielsku **„Articles”**. Publikacje mają być dłuższe i poważniejsze niż luźne notatki.
+- C jest najbardziej obiecującym punktem wyjścia, ale jego kompozycja ani typografia nie są zatwierdzone. Fioletowe tło jest odrzucone.
+- Preferowane tło: ciemna zieleń. Załączony screenshot wskazuje wyłącznie kolor tła, nie jego fonty, układ ani zawartość. Tło B również ocenione pozytywnie.
+- A za bardzo przypomina Claude i jest odrzucone jako kierunek wizualny. Nie traktować początkowej inspiracji Claude jako zgody na podobną markę.
+- Mono z B nie odpowiada preferencjom. Pikselowe i monospaced fonty nie są kierunkiem głównej typografii.
+- Zanim powstaną nowe układy, potrzebny szerszy research fontów: unikalny charakter, czytelność długiej prozy, PL/EN i polskie znaki. Wykluczone: **Inter, Lato, Roboto, Montserrat, Open Sans**.
+- Rzadziej spotykany wygląd oceniamy osobno od faktycznej popularności; nie nazywamy fontu „mało popularnym” bez danych. Nie ma jeszcze zatwierdzonej rodziny.
+- Następny artefakt to próbnik typografii na wspólnym tekście i zielonym tle, a nie kolejna runda całych stron. Historyczne A/B/C zachowujemy jako zapis pierwszej rundy.
+
 ## Prototyp a produkcja
 
 Prototypy pokazują wygląd i zachowanie interfejsu. Żadna integracja nie jest skonfigurowana. Docelowe SEO, statyczne generowanie HTML, analityka, Markdown, service worker i realny odtwarzacz są następnymi etapami po wyborze kierunku.

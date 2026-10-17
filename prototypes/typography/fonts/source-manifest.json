@@ -1,0 +1,330 @@
+{
+  "downloaded": "2026-10-17",
+  "distribution": "google/fonts main",
+  "files": [
+    {
+      "family": "bricolagegrotesque",
+      "file": "BricolageGrotesque[opsz,wdth,wght].ttf",
+      "bytes": 408496,
+      "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/bricolagegrotesque/BricolageGrotesque%5Bopsz%2Cwdth%2Cwght%5D.ttf",
+      "sha256": "413e7357809ddd12fd80a96a8a396de0e401638d4acd3cb3e37532f0472ac682",
+      "postscriptName": "BricolageGrotesque-96ptExtraBold",
+      "version": "Version 1.001;gftools[0.9.33.dev8+g029e19f]",
+      "axes": {
+        "opsz": {
+          "name": "Optical size",
+          "min": 12,
+          "default": 96,
+          "max": 96
+        },
+        "wght": {
+          "name": "Weight",
+          "min": 200,
+          "default": 800,
+          "max": 800
+        },
+        "wdth": {
+          "name": "Width",
+          "min": 75,
+          "default": 100,
+          "max": 100
+        }
+      },
+      "missingPolish": []
+    },
+    {
+      "family": "hankengrotesk",
+      "file": "HankenGrotesk[wght].ttf",
+      "bytes": 132892,
+      "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/hankengrotesk/HankenGrotesk%5Bwght%5D.ttf",
+      "sha256": "813b3f8fa0965405669a89b38e51bbefd95eef6b8e20d1cb2d8c10cce062662f",
+      "postscriptName": "HankenGrotesk-Regular",
+      "version": "Version 3.013",
+      "axes": {
+        "wght": {
+          "name": "Weight",
+          "min": 100,
+          "default": 400,
+          "max": 900
+        }
+      },
+      "missingPolish": []
+    },
+    {
+      "family": "hankengrotesk",
+      "file": "HankenGrotesk-Italic[wght].ttf",
+      "bytes": 139388,
+      "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/hankengrotesk/HankenGrotesk-Italic%5Bwght%5D.ttf",
+      "sha256": "ae5731726ff75301a3cb63f2e98d1babc77d55ab09fb8e229ca75f5bd46fbe32",
+      "postscriptName": "HankenGrotesk-Italic",
+      "version": "Version 3.013",
+      "axes": {
+        "wght": {
+          "name": "Weight",
+          "min": 100,
+          "default": 400,
+          "max": 900
+        }
+      },
+      "missingPolish": []
+    },
+    {
+      "family": "gabarito",
+      "file": "Gabarito[wght].ttf",
+      "bytes": 158144,
+      "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/gabarito/Gabarito%5Bwght%5D.ttf",
+      "sha256": "8650e2bd7747f7d74619fd7aecbcb0309e6f37b7964024f3fb15ae4833b67ca5",
+      "postscriptName": "Gabarito-Regular",
+      "version": "Version 1.000",
+      "axes": {
+        "wght": {
+          "name": "Weight",
+          "min": 400,
+          "default": 400,
+          "max": 900
+        }
+      },
+      "missingPolish": []
+    },
+    {
+      "family": "literata",
+      "file": "Literata[opsz,wght].ttf",
+      "bytes": 955132,
+      "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/literata/Literata%5Bopsz%2Cwght%5D.ttf",
+      "sha256": "b41138c9373112f32abb589cc22e8674b06ed4048b0c513be922bdd26f274440",
+      "postscriptName": "Literata-Regular",
+      "version": "Version 3.103;gftools[0.9.29]",
+      "axes": {
+        "opsz": {
+          "name": "Optical size",
+          "min": 7,
+          "default": 12,
+          "max": 72
+        },
+        "wght": {
+          "name": "Weight",
+          "min": 200,
+          "default": 400,
+          "max": 900
+        }
+      },
+      "missingPolish": []
+    },
+    {
+      "family": "literata",
+      "file": "Literata-Italic[opsz,wght].ttf",
+      "bytes": 902728,
+      "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/literata/Literata-Italic%5Bopsz%2Cwght%5D.ttf",
+      "sha256": "d483dfaeba9cbf4ce71d32a52ee65df82f7e35b15fff8d1011cdb242d1fcd465",
+      "postscriptName": "Literata-Italic",
+      "version": "Version 3.103;gftools[0.9.29]",
+      "axes": {
+        "opsz": {
+          "name": "Optical size",
+          "min": 7,
+          "default": 12,
+          "max": 72
+        },
+        "wght": {
+          "name": "Weight",
+          "min": 200,
+          "default": 400,
+          "max": 900
+        }
+      },
+      "missingPolish": []
+    },
+    {
+      "family": "commissioner",
+      "file": "Commissioner[FLAR,VOLM,slnt,wght].ttf",
+      "bytes": 742232,
+      "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/commissioner/Commissioner%5BFLAR%2CVOLM%2Cslnt%2Cwght%5D.ttf",
+      "sha256": "db01279a6eb8676ee62675a4d7e5edbfe5f08fbc109358e2f49760b70c0447d3",
+      "postscriptName": "Commissioner-Thin",
+      "version": "Version 1.001;gftools[0.9.23]",
+      "axes": {
+        "wght": {
+          "name": "Weight",
+          "min": 100,
+          "default": 100,
+          "max": 900
+        },
+        "slnt": {
+          "name": "Slant",
+          "min": -12,
+          "default": 0,
+          "max": 0
+        },
+        "FLAR": {
+          "name": "Flare",
+          "min": 0,
+          "default": 0,
+          "max": 100
+        },
+        "VOLM": {
+          "name": "Volume",
+          "min": 0,
+          "default": 0,
+          "max": 100
+        }
+      },
+      "missingPolish": []
+    },
+    {
+      "family": "schibstedgrotesk",
+      "file": "SchibstedGrotesk[wght].ttf",
+      "bytes": 176068,
+      "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/schibstedgrotesk/SchibstedGrotesk%5Bwght%5D.ttf",
+      "sha256": "6ceeadf6be8e1fd7687011c7fa38ed0edd1abe967a0b73d97caec183552e823d",
+      "postscriptName": "SchibstedGrotesk-Regular",
+      "version": "Version 1.100;gftools[0.9.25]",
+      "axes": {
+        "wght": {
+          "name": "Weight",
+          "min": 400,
+          "default": 400,
+          "max": 900
+        }
+      },
+      "missingPolish": []
+    },
+    {
+      "family": "schibstedgrotesk",
+      "file": "SchibstedGrotesk-Italic[wght].ttf",
+      "bytes": 181440,
+      "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/schibstedgrotesk/SchibstedGrotesk-Italic%5Bwght%5D.ttf",
+      "sha256": "b49fedb6f3a2ff9b43e13351888641505dc8e5f300941e597eecbc3f52ba357b",
+      "postscriptName": "SchibstedGrotesk-Italic",
+      "version": "Version 1.100;gftools[0.9.25]",
+      "axes": {
+        "wght": {
+          "name": "Weight",
+          "min": 400,
+          "default": 400,
+          "max": 900
+        }
+      },
+      "missingPolish": []
+    },
+    {
+      "family": "newsreader",
+      "file": "Newsreader[opsz,wght].ttf",
+      "bytes": 451664,
+      "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/newsreader/Newsreader%5Bopsz%2Cwght%5D.ttf",
+      "sha256": "8a08d13f8a6c0d51be379a60af84f945f65369a67e509ee3c3bdcc421254d7c1",
+      "postscriptName": "Newsreader16pt-Regular",
+      "version": "Version 1.003",
+      "axes": {
+        "wght": {
+          "name": "Weight",
+          "min": 200,
+          "default": 400,
+          "max": 800
+        },
+        "opsz": {
+          "name": "Optical Size",
+          "min": 6,
+          "default": 18,
+          "max": 72
+        }
+      },
+      "missingPolish": []
+    },
+    {
+      "family": "newsreader",
+      "file": "Newsreader-Italic[opsz,wght].ttf",
+      "bytes": 495684,
+      "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/newsreader/Newsreader-Italic%5Bopsz%2Cwght%5D.ttf",
+      "sha256": "796668611f80b64d5adf182fde3b6f29ed83b4e7cbec7b96937e84ac01364792",
+      "postscriptName": "Newsreader16pt-Italic",
+      "version": "Version 1.003",
+      "axes": {
+        "wght": {
+          "name": "Weight",
+          "min": 200,
+          "default": 400,
+          "max": 800
+        },
+        "opsz": {
+          "name": "Optical Size",
+          "min": 6,
+          "default": 18,
+          "max": 72
+        }
+      },
+      "missingPolish": []
+    },
+    {
+      "family": "alegreya",
+      "file": "Alegreya[wght].ttf",
+      "bytes": 425288,
+      "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/alegreya/Alegreya%5Bwght%5D.ttf",
+      "sha256": "ba5564634b93a8f8ba57b48cd4f1ae7417d2b4656fbac779028679b00de3cf12",
+      "postscriptName": "Alegreya-Regular",
+      "version": "Version 2.009",
+      "axes": {
+        "wght": {
+          "name": "Weight",
+          "min": 400,
+          "default": 400,
+          "max": 900
+        }
+      },
+      "missingPolish": []
+    },
+    {
+      "family": "alegreya",
+      "file": "Alegreya-Italic[wght].ttf",
+      "bytes": 425852,
+      "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/alegreya/Alegreya-Italic%5Bwght%5D.ttf",
+      "sha256": "fa915eec76227935dc5fb678953c94b71287c360928013cfdb441dfe52f5a391",
+      "postscriptName": "Alegreya-Italic",
+      "version": "Version 2.009",
+      "axes": {
+        "wght": {
+          "name": "Weight",
+          "min": 400,
+          "default": 400,
+          "max": 900
+        }
+      },
+      "missingPolish": []
+    },
+    {
+      "family": "ysabeau",
+      "file": "Ysabeau[wght].ttf",
+      "bytes": 431992,
+      "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/ysabeau/Ysabeau%5Bwght%5D.ttf",
+      "sha256": "aa6df9f1f6cb1180f7c00fffb5ae2734ba66aa5f58defd173a9247ca11dffcf4",
+      "postscriptName": "Ysabeau-Bold",
+      "version": "Version 2.002",
+      "axes": {
+        "wght": {
+          "name": "Weight",
+          "min": 1,
+          "default": 700,
+          "max": 1000
+        }
+      },
+      "missingPolish": []
+    },
+    {
+      "family": "ysabeau",
+      "file": "Ysabeau-Italic[wght].ttf",
+      "bytes": 332916,
+      "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/ysabeau/Ysabeau-Italic%5Bwght%5D.ttf",
+      "sha256": "6d9099e463926e46659e01e415f891af967ec65a1fa5c496ec2b6612e4d3e27c",
+      "postscriptName": "Ysabeau-BoldItalic",
+      "version": "Version 2.002",
+      "axes": {
+        "wght": {
+          "name": "Weight",
+          "min": 1,
+          "default": 700,
+          "max": 1000
+        }
+      },
+      "missingPolish": []
+    }
+  ]
+}

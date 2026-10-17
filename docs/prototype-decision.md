@@ -10,7 +10,11 @@
 | B — Sygnał | Czy profil obok dziennika i cyfrowe, pikselowe akcenty lepiej pokazują techniczny charakter? |
 | C — Po godzinach | Czy ilustracyjny humor, wyraziste liternictwo i pastelowe kartki pasują do autorskiego charakteru? |
 
-**Werdykt:** czeka na obejrzenie przez Marcina. Żaden kierunek nie jest zatwierdzony. Można wybrać całość lub połączyć konkretne elementy.
+**Werdykt po pierwszej rundzie:** C jest najbardziej obiecującym punktem wyjścia. Zatwierdzony kierunek tonu: „Ciekawość to dobry początek.” i „Internet jest fajniejszy z ludźmi”. Nie zatwierdzono całego layoutu ani fontów. Fioletowe tło C odrzucone na rzecz ciemnej zieleni ze screenshotu (również tło B jest bliskie preferencjom). A odrzucone za podobieństwo do Claude, B za sztampowe hasła i dominację mono. Nawigacja docelowo „Artykuły / Articles”.
+
+**Następny krok:** szerszy research i porównanie typografii, przed nowymi prototypami układów. Dokładne preferencje i wykluczone fonty: [aktualny brief](brief.md#feedback-po-pierwszej-rundzie--17-października-2026). Stare A/B/C pozostają bez zmian jako zapis porównania, a nie aktualna rekomendacja.
+
+**Etap typograficzny:** [research 14 rodzin](font-research.md) i próbnik `/typography/` na tej samej gałęzi. Sześć zestawów na identycznej treści i tle z referencji. Weryfikacja plików obejmuje polskie znaki, wersje i licencje; dodatkowy snapshot oficjalnych metadanych Google Fonts odróżnia charakter od wskaźnika popularności. Wstępnie najmocniejsze kierunki: Commissioner, Gabarito + Literata, Ysabeau. Bricolage zachowano jako popularniejszy punkt odniesienia. Żaden nowy layout nie powstał; wybór typografii pozostaje otwarty.
 
 Przy decyzji zapisać: wybrany kierunek, elementy zapożyczone z pozostałych, argumenty i rzeczy do zmiany. Potem przepisać zwycięski projekt do kodu produkcyjnego, zachowując te prototypy na gałęzi źródłowej. Nie przenosić przełącznika ani symulacji usług do produkcji.
 
