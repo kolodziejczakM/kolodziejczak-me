@@ -72,3 +72,11 @@ Aktualne pytanie dotyczy **kształtów przycisków, obramowań, kontrolek, ozdob
 Użytkownik wyjaśnił, że **nie oczekiwał redesignów**. Zatrzymaliśmy się na kontrolkach i to one wymagają dopracowania. **Inputy nadal są przeciętne.** Fonty i kolorystyka są już dobre; nie otwierać ich ponownie. Sygnatura wypada najgorzej, Blisko podoba się najbardziej, a dwa pierwsze układy nie wniosły oczekiwanej nowości.
 
 **Dalszy zakres: wyłącznie design kontrolek.** Bazą porównania jest Blisko; zachowujemy jego kompozycję, nagłówek, karty i dekoracje. Eksperymentujemy z konstrukcją inputów, etykietami, obrysami, ikonami wewnątrz pola, stanami oraz spójnymi selectami, checkboxami, switchami i przyciskami. Pełne, ciągłe obramowania pozostają wymaganiem. Nie rozszerzać zadania na layout, typografię, branding czy nowe metafory tematyczne. [Próbnik kontrolek](control-study.md).
+
+## Feedback po pierwszym porównaniu samych kontrolek
+
+- **Podwójna oprawa** jest myląca: w spoczynku może wyglądać jak fokus. Odrzucona. W kolejnych propozycjach zewnętrzny obrys fokusu pojawia się dopiero po rzeczywistym wejściu w pole.
+- **Miękkie wgłębienie** jest w porządku, lecz niewystarczająco oryginalne. Nie uznawać go za wybraną kontrolkę.
+- **Etykieta w ramce** jest ciekawa, ale etykieta bywa zbędna i zwiększa zużycie miejsca. Nie wymuszać widocznego nagłówka wewnątrz każdego pola. Zachować dostępną nazwę również przy wizualnym pominięciu etykiety.
+- **Kapsuła z akcją** wygląda generycznie. Nie rozwijać kolejnych wariacji kapsułki jako głównego wyróżnika.
+- Celem jest **oryginalność bez przesady**, nadal wyłącznie w kontrolkach, na niezmienionej bazie Blisko. Trzy kolejne propozycje: Niski rant, Łuk i kant, Boczny moduł. [Druga runda kontrolek](control-refinements.md).

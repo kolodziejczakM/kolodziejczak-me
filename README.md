@@ -4,6 +4,18 @@ Pierwszy etap: **prototypy wizualne do porównania**, przed wyborem stacku i imp
 
 **Aktualna runda: wyłącznie kontrolki, przede wszystkim inputy.** Bazą jest **Blisko**. Kompozycja, karty, fonty **Bricolage + Hanken** i paleta **Leśna pracownia** pozostają stałe. Rozszerzenie poprzedniej rundy na redesign było nietrafione względem prośby użytkownika.
 
+**Najnowsze porównanie: trzy spokojniejsze konstrukcje.** Pojedyncza ramka w spoczynku, dodatkowy obrys wyłącznie przy fokusie. Wyszukiwanie nie zajmuje osobnego wiersza etykietą; ikony pomocnicze można opcjonalnie włączyć. Pola jednowierszowe mają 48 px wysokości.
+
+| Kontrolki | Detal | Próbnik w Tailscale |
+| --- | --- | --- |
+| Niski rant | Jeden obrys i niski dolny rant | [Otwórz](http://vps.tailfb5686.ts.net:4321/pl/?controls=rim#palette-lab) |
+| Łuk i kant | Symetrycznie zaokrąglona góra i niemal prosta podstawa | [Otwórz](http://vps.tailfb5686.ts.net:4321/pl/?controls=arch#palette-lab) |
+| Boczny moduł | Akcja lub status w prawym brzegu pola | [Otwórz](http://vps.tailfb5686.ts.net:4321/pl/?controls=module#palette-lab) |
+
+Dolny pasek i ← → przechodzą przez te trzy propozycje. Wpisane wartości pozostają podczas porównania. [Opis i feedback](docs/control-refinements.md) · [spoczynek i fokus](docs/previews/control-refinements.png).
+
+**Poprzednia runda:** żaden z poniższych wariantów nie został wybrany. Podwójna oprawa myli się z fokusem, wgłębienie jest za mało oryginalne, wewnętrzna etykieta nie zawsze potrzebnie zabiera miejsce, a kapsuła wygląda generycznie. Adresy pozostają osobnym archiwalnym cyklem.
+
 | Kontrolki | Konstrukcja pola | Próbnik w Tailscale |
 | --- | --- | --- |
 | Podwójna oprawa | Dwa ciągłe obrysy z odstępem pomiędzy | [Otwórz inputy](http://vps.tailfb5686.ts.net:4321/pl/?controls=frame#palette-lab) |

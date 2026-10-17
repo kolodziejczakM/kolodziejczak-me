@@ -36,6 +36,10 @@
 
 **Runda 7 — same kontrolki:** `controls=frame|inset|label|capsule` na istniejących trasach, zawsze z bazą `shape=close` i paletą `meadow`. Zmienia się konstrukcja pól i wygląd komponentów interaktywnych. Układ strony, teksty i karty pozostają stałe. Źródło: `prototypes/controls/`, gałąź `codex/prototype-ui`. [Zakres i próbnik](control-study.md). Wybór kontrolek pozostaje otwarty.
 
+**Feedback po rundzie 7:** podwójna oprawa w spoczynku sugeruje fokus; wgłębienie nie ma wystarczającej oryginalności; wewnętrzna etykieta jest ciekawa, lecz bywa zbędna i marnuje miejsce; kapsuła jest generyczna. Żadna kontrolka nie została zatwierdzona. Szukamy umiarkowanej oryginalności i czytelnych stanów.
+
+**Runda 8 — pojedynczy obrys, kompaktowe pole:** `controls=rim|arch|module`, osobny cykl trzech propozycji. Na tej samej bazie Blisko porównujemy dolny rant, profil z zaokrągloną górą i krótszymi dolnymi narożnikami oraz funkcjonalny moduł po prawej stronie. Wyszukiwanie ma dostępną nazwę bez widocznego wiersza etykiety; ikony pomocnicze są opcjonalne. Stan spoczynku nie ma zewnętrznego obrysu. Źródło pierwotne: `codex/prototype-ui`, `prototypes/controls/refinements.js` i `refinements.css`. [Opis](control-refinements.md). Wybór pozostaje otwarty.
+
 Przy decyzji zapisać: wybrany kierunek, elementy zapożyczone z pozostałych, argumenty i rzeczy do zmiany. Potem przepisać zwycięski projekt do kodu produkcyjnego, zachowując te prototypy na gałęzi źródłowej. Nie przenosić przełącznika ani symulacji usług do produkcji.
 
 Nie utworzono issue wdrożeniowego; ten dokument jest lokalnym odnośnikiem do prototypów. Po utworzeniu issue należy wkleić do niego ten odnośnik i werdykt.

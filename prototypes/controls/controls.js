@@ -7,6 +7,7 @@ const controlVariants={
   capsule:{name:'Kapsuła z akcją',en:'Action capsule',description:'Obły input z ikoną i okrągłym przyciskiem czyszczenia. Ten sam detal powtarza się w pozostałych kontrolkach.',descriptionEn:'A rounded input with an icon and circular clear button. The same detail repeats across the controls.'}
 };
 const controlUI={search:'',email:'marcin@',emailStatus:'invalid',message:'',topic:'engineering',mode:'read',remember:true,underline:true};
+function controlKeys(){return controlVariants[state.controls]?.round===2?['rim','arch','module']:['frame','inset','label','capsule'];}
 
 function controlIcon(name){
   const paths={search:'<circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/>',mail:'<rect x="3" y="5" width="18" height="14" rx="3"/><path d="m4 7 8 6 8-6"/>',message:'<path d="M4 4h16v13H9l-5 4Z"/><path d="M8 8h8M8 12h5"/>',link:'<path d="m10 7 3-3a5 5 0 0 1 7 7l-3 3M14 17l-3 3a5 5 0 0 1-7-7l3-3m1 6 8-8"/>',lock:'<rect x="5" y="10" width="14" height="11" rx="3"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/>',close:'<path d="m7 7 10 10M17 7 7 17"/>',down:'<path d="m6 9 6 6 6-6"/>',check:'<path d="m4 12 5 5L20 6"/>'};
@@ -14,10 +15,12 @@ function controlIcon(name){
 }
 function applyControlTheme(){
   document.body.classList.toggle('control-mode',Boolean(state.controls));
-  if(state.controls)document.body.dataset.controls=state.controls;else delete document.body.dataset.controls;
+  if(state.controls){document.body.dataset.controls=state.controls;document.body.dataset.controlRound=controlVariants[state.controls].round||1;document.body.dataset.fieldIcons=controlUI.fieldIcons?'on':'off';}
+  else{delete document.body.dataset.controls;delete document.body.dataset.controlRound;delete document.body.dataset.fieldIcons;}
 }
 function controlField(key,label,icon,element,hint,extra=''){
-  const tag=`<label class="ctrl-label" for="ctrl-${key}">${label}</label>`;
+  const compact=controlVariants[state.controls]?.round===2&&key==='search';
+  const tag=`<label class="ctrl-label${compact?' ctrl-label-sr':''}" for="ctrl-${key}">${label}</label>`;
   return `<div class="ctrl-field ${extra}" data-ctrl-field="${key}">${state.controls==='label'?'':tag}<div class="ctrl-shell">${state.controls==='label'?tag:''}<div class="ctrl-entry"><span class="ctrl-leading">${controlIcon(icon)}</span>${element}</div></div><p id="ctrl-${key}-hint" class="ctrl-hint">${hint}</p></div>`;
 }
 function controlStudy(){
@@ -42,6 +45,7 @@ function decorateControlStudy(){
   const context=document.querySelector('.palette-context>span');if(context)context.textContent=t('KONTROLKI · BAZA: BLISKO','CONTROLS · BASE: CLOSER');
   const caption=document.querySelector('.composition-caption');if(caption)caption.textContent=t(controlVariants[state.controls].description,controlVariants[state.controls].descriptionEn);
   const jump=document.querySelector('.palette-context>a');if(jump)jump.innerHTML=t('Porównaj kontrolki','Compare controls')+icons.arrow;
+  if(controlVariants[state.controls].round===2)decorateRefinedControls();
   document.title=t(controlVariants[state.controls].name,controlVariants[state.controls].en)+' · '+t('Kontrolki','Controls')+' · kolodziejczak.me';
   restoreControlStudy();
 }
@@ -54,6 +58,7 @@ function restoreControlStudy(){
   document.querySelector('.ctrl-link-sample a')?.classList.toggle('no-underline',!controlUI.underline);
   updateControlEmail();
   const clear=document.querySelector('.ctrl-clear');if(clear)clear.disabled=!controlUI.search;
+  document.body.dataset.fieldIcons=controlUI.fieldIcons?'on':'off';
 }
 function updateControlEmail(){
   const field=document.querySelector('[data-ctrl-field=email]');if(!field)return;
@@ -65,13 +70,13 @@ function updateControlEmail(){
   field.querySelector('.ctrl-hint').textContent=status==='invalid'?t('Wpisz pełny adres, np. marcin@example.com.','Enter a complete address, e.g. marcin@example.com.'):status==='valid'?t('Adres wygląda poprawnie. Niczego nie wysyłamy.','The address looks valid. Nothing is sent.'):t('Kliknij „Sprawdź adres”, aby zobaczyć stan pola.','Click “Check address” to see the field state.');
 }
 function cycleControls(direction){
-  const keys=Object.keys(controlVariants),u=new URL(location.href);
+  const keys=controlKeys(),u=new URL(location.href);
   u.searchParams.set('controls',keys[(keys.indexOf(state.controls)+direction+keys.length)%keys.length]);u.searchParams.set('shape','close');
   history.replaceState({},'',u);render();
 }
 function controlPrototypeTools(){
-  const v=controlVariants[state.controls],keys=Object.keys(controlVariants);
-  return `<div class="prototype-switcher color-switcher form-switcher" aria-label="${t('Porównaj kontrolki','Compare controls')}"><button data-cycle="-1" aria-label="${t('Poprzedni wariant kontrolek','Previous controls')}">${shapeOriginalIcons.arrow}</button><div class="prototype-label" aria-live="polite"><small>${t('KONTROLKI · BLISKO','CONTROLS · CLOSER')} · ${state.lang.toUpperCase()}</small><strong>${t(v.name,v.en)} <span>${keys.indexOf(state.controls)+1}/4</span></strong></div><button data-cycle="1" aria-label="${t('Następny wariant kontrolek','Next controls')}">${shapeOriginalIcons.arrow}</button><button class="prototype-info" data-control-action="info" aria-label="${t('O kontrolkach','About controls')}">?</button></div>`;
+  const v=controlVariants[state.controls],keys=controlKeys();
+  return `<div class="prototype-switcher color-switcher form-switcher" aria-label="${t('Porównaj kontrolki','Compare controls')}"><button data-cycle="-1" aria-label="${t('Poprzedni wariant kontrolek','Previous controls')}">${shapeOriginalIcons.arrow}</button><div class="prototype-label" aria-live="polite"><small>${v.round===2?t('KONTROLKI 2 · BLISKO','CONTROLS 2 · CLOSER'):t('KONTROLKI · BLISKO','CONTROLS · CLOSER')} · ${state.lang.toUpperCase()}</small><strong>${t(v.name,v.en)} <span>${keys.indexOf(state.controls)+1}/${keys.length}</span></strong></div><button data-cycle="1" aria-label="${t('Następny wariant kontrolek','Next controls')}">${shapeOriginalIcons.arrow}</button><button class="prototype-info" data-control-action="info" aria-label="${t('O kontrolkach','About controls')}">?</button></div>`;
 }
 function decorateControlModal(){
   document.querySelectorAll('.modal input:not([type=checkbox]),.modal textarea').forEach(el=>{
@@ -96,6 +101,7 @@ document.addEventListener('change',e=>{
   const key=e.target.dataset.controlValue;if(!key)return;
   controlUI[key]=e.target.type==='checkbox'?e.target.checked:e.target.value;
   if(key==='underline')document.querySelector('.ctrl-link-sample a').classList.toggle('no-underline',!e.target.checked);
+  if(key==='fieldIcons')document.body.dataset.fieldIcons=e.target.checked?'on':'off';
 });
 document.addEventListener('click',e=>{
   const mode=e.target.closest('[data-control-mode]');if(mode){controlUI.mode=mode.dataset.controlMode;document.querySelectorAll('[data-control-mode]').forEach(b=>b.setAttribute('aria-pressed',String(b===mode)));}
@@ -103,7 +109,7 @@ document.addEventListener('click',e=>{
   if(action==='clear'){controlUI.search='';const el=document.querySelector('#ctrl-search');el.value='';document.querySelector('.ctrl-clear').disabled=true;el.focus();}
   if(action==='validate'){controlUI.emailStatus=document.querySelector('#ctrl-email').checkValidity()?'valid':'invalid';updateControlEmail();}
   if(action==='info'){
-    const v=controlVariants[state.controls];modal(t(v.name,v.en),`<p>${t(v.description,v.descriptionEn)}</p><p>${t('Stałe: Blisko, Leśna pracownia, Bricolage + Hanken. Porównujemy wyłącznie kontrolki. Strzałki ← → zmieniają ich wariant.','Fixed: Closer, Forest workshop, Bricolage + Hanken. Only the controls vary. Use ← → to change the control variant.')}</p><div class="ctrl-variant-choices">${Object.entries(controlVariants).map(([key,v])=>`<button data-control-pick="${key}" aria-pressed="${key===state.controls}">${t(v.name,v.en)}</button>`).join('')}</div><pre id="ctrl-state"></pre>`);document.querySelector('#ctrl-state').textContent=JSON.stringify({controls:state.controls,shape:state.shape,palette:state.palette,language:state.lang,page:state.page,...controlUI},null,2);
+    const v=controlVariants[state.controls];modal(t(v.name,v.en),`<p>${t(v.description,v.descriptionEn)}</p><p>${t('Stałe: Blisko, Leśna pracownia, Bricolage + Hanken. Porównujemy wyłącznie kontrolki. Strzałki ← → zmieniają ich wariant.','Fixed: Closer, Forest workshop, Bricolage + Hanken. Only the controls vary. Use ← → to change the control variant.')}</p><div class="ctrl-variant-choices">${controlKeys().map(key=>{const v=controlVariants[key];return `<button data-control-pick="${key}" aria-pressed="${key===state.controls}">${t(v.name,v.en)}</button>`}).join('')}</div><pre id="ctrl-state"></pre>`);document.querySelector('#ctrl-state').textContent=JSON.stringify({controls:state.controls,shape:state.shape,palette:state.palette,language:state.lang,page:state.page,...controlUI},null,2);
   }
   const pick=e.target.closest('[data-control-pick]');if(pick){const u=new URL(location.href);u.searchParams.set('controls',pick.dataset.controlPick);history.replaceState({},'',u);render();}
 });

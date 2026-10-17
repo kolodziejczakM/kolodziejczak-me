@@ -1,0 +1,64 @@
+/* Only controls: three compact, quiet systems. No layout, font or palette changes. */
+.control-mode[data-control-round="2"]{--ctrl-radius:10px}
+.ctrl-label-sr{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip-path:inset(50%);white-space:nowrap!important;border:0!important}
+.control-mode[data-control-round="2"] .ctrl-shell{border:1px solid var(--ctrl-edge);border-radius:var(--ctrl-radius);background:var(--bg);padding:0;box-shadow:none;outline:none}
+.control-mode[data-control-round="2"] .ctrl-entry{min-height:46px;padding:5px 10px;gap:9px;border:0;background:transparent;border-radius:inherit}
+.control-mode[data-control-round="2"] .ctrl-shell:hover{border-color:var(--secondary)}
+.control-mode[data-control-round="2"] .ctrl-shell:focus-within{border-color:var(--focus);outline:3px solid var(--focus);outline-offset:4px}
+.control-mode[data-control-round="2"][data-field-icons=off] .ctrl-leading{display:none}
+.control-mode[data-control-round="2"] .ctrl-leading{width:20px;height:28px;background:none;border:0;border-radius:0;color:var(--muted)}
+.control-mode[data-control-round="2"] .ctrl-leading svg{width:17px;height:17px}
+.control-mode[data-control-round="2"] .ctrl-clear{border:0;background:var(--control);border-radius:6px;width:30px;height:30px;min-width:30px}
+.control-mode[data-control-round="2"] .ctrl-clear:disabled{background:transparent}
+.control-mode[data-control-round="2"] .ctrl-clear:enabled:hover{background:var(--primary);color:var(--primary-ink)}
+.control-mode[data-control-round="2"] .ctrl-status{width:23px;height:23px;font-size:12px;border-radius:6px}
+.control-mode[data-control-round="2"] .ctrl-multiline .ctrl-entry{padding:9px 11px}
+.control-mode[data-control-round="2"] .ctrl-label{margin-bottom:7px}
+.control-mode[data-control-round="2"] .ctrl-hint{font-size:11px;margin-top:7px}
+.control-mode[data-control-round="2"] .ctrl-field{margin-bottom:23px}
+.control-mode[data-control-round="2"] .ctrl-disabled .ctrl-shell:hover{border-color:var(--ctrl-edge)}
+.control-mode[data-control-round="2"] .ctrl-segments{padding:4px;border-radius:11px}
+.control-mode[data-control-round="2"] .ctrl-segments>button{min-height:40px;padding:8px 16px;border-radius:7px}
+.control-mode[data-control-round="2"] .ctrl-check-box{border-radius:5px;box-shadow:none}
+.control-mode[data-control-round="2"] .ctrl-track{border-radius:8px;box-shadow:none}
+.control-mode[data-control-round="2"] .ctrl-track>span{border-radius:4px}
+.control-mode[data-control-round="2"] .solid-link,.control-mode[data-control-round="2"] .outline-button,.control-mode[data-control-round="2"] .disabled-button{border-radius:var(--ctrl-radius);min-height:46px;box-shadow:none;border-width:1px}
+.control-mode[data-control-round="2"] .solid-link>.shape-icon{width:20px;height:20px;padding:0;background:none;border:0;border-radius:0;color:inherit}
+.control-mode[data-control-round="2"] .composition-cta{height:59px}
+.control-mode[data-control-round="2"] .modal .ctrl-entry{min-height:46px}
+/* 1. Low rim. The single lower ledge is a surface, never a surrounding halo. */
+.control-mode[data-controls=rim]{--ctrl-radius:9px}
+.control-mode[data-controls=rim] .ctrl-shell{box-shadow:0 3px 0 var(--line)!important}
+.control-mode[data-controls=rim] .ctrl-shell:focus-within{box-shadow:0 3px 0 var(--line)!important}
+.control-mode[data-controls=rim] .ctrl-disabled .ctrl-shell{box-shadow:0 2px 0 var(--line)!important}
+.control-mode[data-controls=rim] .solid-link{border:1px solid var(--primary-ink);box-shadow:0 3px 0 var(--primary-ink)}
+.control-mode[data-controls=rim] .solid-link:active{transform:translateY(2px);box-shadow:0 1px 0 var(--primary-ink)}
+.control-mode[data-controls=rim] .ctrl-segments>button[aria-pressed=true]{box-shadow:0 2px 0 var(--primary-active)}
+.control-mode[data-controls=rim] .ctrl-check>input:checked+.ctrl-check-box{box-shadow:0 2px 0 var(--primary-active)}
+/* 2. Curve & edge. Symmetrical top curves and short bottom curves, no extra line. */
+.control-mode[data-controls=arch]{--ctrl-radius:18px 18px 5px 5px}
+.control-mode[data-controls=arch] .ctrl-clear,.control-mode[data-controls=arch] .ctrl-status{border-radius:9px 9px 3px 3px}
+.control-mode[data-controls=arch] .ctrl-segments{border-radius:17px 17px 5px 5px}
+.control-mode[data-controls=arch] .ctrl-segments>button{border-radius:12px 12px 3px 3px}
+.control-mode[data-controls=arch] .ctrl-check-box{border-radius:9px 9px 3px 3px}
+.control-mode[data-controls=arch] .ctrl-track{border-radius:12px 12px 4px 4px}
+.control-mode[data-controls=arch] .ctrl-track>span{border-radius:7px 7px 2px 2px}
+.control-mode[data-controls=arch] .solid-link{border:1px solid var(--primary-ink)}
+/* 3. Side module. The right-hand partition holds an actual action or status. */
+.control-mode[data-controls=module]{--ctrl-radius:10px}
+.control-mode[data-controls=module] .ctrl-entry{padding:0 0 0 13px!important;gap:8px!important}
+.control-mode[data-controls=module] .ctrl-clear,.control-mode[data-controls=module] .ctrl-select-arrow,.control-mode[data-controls=module] .ctrl-status{display:grid;place-items:center;align-self:stretch;width:43px;min-width:43px;height:auto;min-height:46px;border:0;border-left:1px solid var(--line);border-radius:0 9px 9px 0;background:var(--control);margin:0}
+.control-mode[data-controls=module] .ctrl-clear:disabled{background:var(--control);opacity:.4}
+.control-mode[data-controls=module] .ctrl-multiline .ctrl-entry{padding:9px 13px!important}
+.control-mode[data-controls=module] .ctrl-disabled .ctrl-entry{padding-right:13px!important}
+.control-mode[data-controls=module] .ctrl-field[data-status=invalid] .ctrl-status{border-left-color:var(--error)}
+.control-mode[data-controls=module] .ctrl-field[data-status=valid] .ctrl-status{border-left-color:var(--success)}
+.control-mode[data-controls=module] .solid-link{padding:0 0 0 17px;gap:17px;border:1px solid var(--primary-ink)}
+.control-mode[data-controls=module] .solid-link>.shape-icon{display:block;align-self:stretch;box-sizing:content-box;width:19px;height:auto;padding:12px;background:var(--primary-ink);color:var(--primary);border-radius:0 8px 8px 0}
+.control-mode[data-controls=module] .ctrl-check-box{border-radius:4px}
+.control-mode[data-controls=module] .ctrl-track{border-radius:5px}
+.control-mode[data-controls=module] .ctrl-track>span{border-radius:2px}
+@media(max-width:760px){
+  .control-mode[data-control-round="2"] .ctrl-entry{padding-inline:10px;gap:8px}
+  .control-mode[data-control-round="2"] .ctrl-segments>button{font-size:12px;padding-inline:14px}
+}

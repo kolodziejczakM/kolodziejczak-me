@@ -1,5 +1,7 @@
 # Kontrolki — stała baza Blisko
 
+**Status po ocenie:** żaden z czterech wariantów nie został wybrany. Podwójna oprawa sugeruje fokus, wgłębienie jest za mało oryginalne, wewnętrzna etykieta bywa zbędna, a kapsuła jest generyczna. Aktualne porównanie: [druga runda samych kontrolek](control-refinements.md). Poniżej zachowano wcześniejsze źródło.
+
 **Pytanie:** która konstrukcja inputów i spójnych z nimi kontrolek ma właściwy charakter?
 
 Użytkownik skorygował poprzednią iterację: oczekiwał dopracowania kontrolek, a dostał redesigny. Inputy pozostają przeciętne. Blisko podoba się najbardziej; Sygnatura wypada najgorzej. Fonty i kolory są już dobre.
