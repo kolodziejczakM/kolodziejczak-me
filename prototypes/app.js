@@ -190,7 +190,7 @@ function navigate(url) {
 
 function cycle(direction) {
   if(state.shape){
-    const keys=Object.keys(shapeVariants),next=keys[(keys.indexOf(state.shape)+direction+keys.length)%keys.length];
+    const keys=shapeKeys(),next=keys[(keys.indexOf(state.shape)+direction+keys.length)%keys.length];
     const url=new URL(location.href);url.searchParams.set('variant','C');url.searchParams.set('palette','meadow');url.searchParams.set('shape',next);
     history.replaceState({},'',url);render();return;
   }
@@ -218,6 +218,7 @@ let previousFocus;
 function modal(title, body) {
   previousFocus=document.activeElement;
   $('#overlay').innerHTML=`<div class="modal-backdrop"><section role="dialog" aria-modal="true" aria-labelledby="modal-title" class="modal"><button class="modal-close" data-action="close" aria-label="${t('Zamknij','Close')}">×</button><span class="eyebrow">${t('NA MARGINESIE TEKSTU','IN THE MARGINS')}</span><h2 id="modal-title">${title}</h2>${body}</section></div>`;
+  if(shapeVariants[state.shape]?.round===2)decorateRefinedModal();
   document.body.classList.add('modal-open'); $('.modal-close').focus();
 }
 function closeModal(){ $('#overlay').innerHTML='';document.body.classList.remove('modal-open');previousFocus?.focus(); }

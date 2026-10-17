@@ -24,6 +24,10 @@
 
 **Runda 4 — forma:** trzy języki kształtów na tej samej trasie z `shape=soft|stamp|cut`. Każdy wymusza paletę `meadow` i wariant C. Pytanie: jaki charakter mają mieć przyciski, obramowania, kontrolki, ikony i ozdobniki? Kolory, typografia i kompozycja pozostają wspólne, bo użytkownik prosi o eksperymenty z detalami. Źródło: `prototypes/shapes/` na `codex/prototype-ui`. [Opis i kontrola podglądu](form-study.md). Formy nie zostały jeszcze wybrane.
 
+**Feedback po rundzie 4:** Miękkie formy pasują najlepiej, lecz są zbyt typowe. Główne przyciski Papieru i pieczęci podobają się. Odrzucono przerywane i wyłącznie dolne obramowania pól oraz dekoracyjne kreski na kartach z wariantu cut. Doceniono jego oryginalność. Potrzebne są cztery dalsze propozycje, bez zamykania wyboru.
+
+**Runda 5 — miękko, ale z charakterem:** `shape=press|bookmark|orbit|ticket`, oddzielny cykl czterech nowych form. Baza pozostaje ta sama, zgodnie z prośbą o rozwinięcie detali. Pytanie: jak dodać rozpoznawalność do miękkiej geometrii, zachowując pełne obramowania pól i porządek dekoracji? Źródło: `prototypes/shapes/refinements.js` i `refinements.css`, gałąź `codex/prototype-ui`. [Kierunki i warunki porównania](form-refinements.md). Poprzednie adresy zachowują osobny cykl trzech form. Wybór nowej formy pozostaje otwarty.
+
 Przy decyzji zapisać: wybrany kierunek, elementy zapożyczone z pozostałych, argumenty i rzeczy do zmiany. Potem przepisać zwycięski projekt do kodu produkcyjnego, zachowując te prototypy na gałęzi źródłowej. Nie przenosić przełącznika ani symulacji usług do produkcji.
 
 Nie utworzono issue wdrożeniowego; ten dokument jest lokalnym odnośnikiem do prototypów. Po utworzeniu issue należy wkleić do niego ten odnośnik i werdykt.

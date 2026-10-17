@@ -2,7 +2,18 @@
 
 Pierwszy etap: **prototypy wizualne do porównania**, przed wyborem stacku i implementacją strony.
 
-**Aktualna runda: kształty, obramowania, kontrolki i ikony.** Marcin wybrał paletę **Leśna pracownia** oraz fonty **Bricolage Grotesque + Hanken Grotesk**. Pozostają wspólne we wszystkich trzech propozycjach.
+**Aktualna runda: cztery kolejne propozycje miękkich form z charakterem.** Wspólne: paleta **Leśna pracownia** oraz fonty **Bricolage Grotesque + Hanken Grotesk**. Pola mają pełne, ciągłe obramowania; detale należą do konkretnych elementów.
+
+| Forma | Kierunek | Podgląd w Tailscale |
+| --- | --- | --- |
+| Miękki druk | Zaokrąglone karty, wyraziste przyciski i twardy cień | [Otwórz](http://vps.tailfb5686.ts.net:4321/pl/?shape=press) |
+| Zakładka | Asymetryczne zaokrąglenia powtarzane na przyciskach, kartach i kontrolkach | [Otwórz](http://vps.tailfb5686.ts.net:4321/pl/?shape=bookmark) |
+| Kontur i kropka | Obłe ramki, etykiety i kontrastowe kółka z ikoną | [Otwórz](http://vps.tailfb5686.ts.net:4321/pl/?shape=orbit) |
+| Bilet do rozmowy | Łagodne wcięcia przycisków i karty z osobną stopką | [Otwórz](http://vps.tailfb5686.ts.net:4321/pl/?shape=ticket) |
+
+Przełączaj dolnym paskiem lub klawiszami ← →. „Wypróbuj detale” prowadzi do interaktywnych kontrolek i ośmiu ikon. Sprawdź też player i modale w artykule. `?` pokazuje opis i wybór czterech nowych form. [Opis rundy i feedback](docs/form-refinements.md) · [zestawienie](docs/previews/form-refinements.png).
+
+**Poprzednia runda form:** Miękkie formy pasują najlepiej do charakteru strony, lecz są zbyt typowe. Podobają się główne przyciski wariantu Papier i pieczęć. Przerywane ramki pól, pola z samym podkreśleniem i przypadkowe linie na kartach są odrzucone. Poniższe trzy adresy pozostają osobną grupą porównawczą.
 
 | Forma | Kierunek | Podgląd w Tailscale |
 | --- | --- | --- |

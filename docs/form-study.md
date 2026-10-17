@@ -1,5 +1,7 @@
 # Forma — Leśna pracownia
 
+**Status tej rundy:** miękki kierunek oceniono najlepiej, lecz potrzebuje więcej charakteru. Odrzucono przerywane i wyłącznie dolne ramki pól oraz przypadkowe linie na kartach. Kolejne cztery propozycje: [druga runda form](form-refinements.md). Poniżej zachowano źródło pierwszego porównania.
+
 **Pytanie:** jakie kształty przycisków, obramowań, kontrolek, ikon i ozdobników najlepiej pasują do wybranej Leśnej pracowni?
 
 **Zatwierdzone:** paleta `meadow`, Bricolage Grotesque w nagłówkach, Hanken Grotesk w tekście i UI. W tej rundzie nie zmieniamy tych decyzji. Kompozycja i treść pozostają wspólne, aby ocenić formę.

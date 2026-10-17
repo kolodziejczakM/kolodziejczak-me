@@ -7,8 +7,10 @@ const shapeVariants={
 };
 const shapeUI={details:true,topic:'engineering'};
 let shapeOriginalIcons;
+function shapeKeys(){return shapeVariants[state.shape]?.round===2?['press','bookmark','orbit','ticket']:['soft','stamp','cut'];}
 
 function shapeIcon(name,kind=state.shape){
+  if(shapeVariants[kind]?.round===2)return refinedShapeIcon(name,kind);
   const families={
     soft:{
       arrow:'<path d="M4 12h15m-6-6 6 6-6 6"/>',
@@ -52,14 +54,16 @@ function applyShapeTheme(){
   if(!shapeOriginalIcons)shapeOriginalIcons={...icons};
   Object.assign(icons,shapeOriginalIcons);
   document.body.classList.toggle('shape-mode',Boolean(state.shape));
-  if(!state.shape){delete document.body.dataset.shape;delete document.body.dataset.shapeDetails;return;}
+  if(!state.shape){delete document.body.dataset.shape;delete document.body.dataset.shapeDetails;delete document.body.dataset.shapeRound;return;}
   document.body.dataset.shape=state.shape;
+  document.body.dataset.shapeRound=shapeVariants[state.shape].round||1;
   for(const key of ['arrow','play','heart','spark','star'])icons[key]=shapeIcon(key==='star'?'spark':key);
   document.body.dataset.shapeDetails=shapeUI.details?'on':'off';
 }
 
 function shapeHero(){
   const kind=state.shape;
+  if(shapeVariants[kind]?.round===2)return refinedShapeHero(kind);
   const soft=`<g stroke="var(--secondary)" stroke-width="3" fill="none" stroke-linecap="round"><path d="M38 81q-15-8-23 6m226-34 17-15m-3 124q17 4 21-7M44 209q-13 8-21-2"/><circle cx="258" cy="207" r="12"/><path d="M37 138q10-1 14-14 5 14 16 15-14 3-16 15-3-13-14-16Z"/></g><path d="M100 32q-9-6-7 6l24 170q2 12 9 2l34-57 68-4q13-1 3-10Z" fill="var(--art-paper)" stroke="var(--art-ink)" stroke-width="4" stroke-linejoin="round"/><path d="m100 38 60 115" stroke="var(--art-ink)" stroke-width="3"/><ellipse cx="141" cy="108" rx="5" ry="8" fill="var(--art-ink)"/><ellipse cx="162" cy="128" rx="5" ry="8" fill="var(--art-ink)"/><path d="M134 137q1 13 15 13" fill="none" stroke="var(--art-ink)" stroke-width="3" stroke-linecap="round"/>`;
   const stamp=`<path d="m48 40 224 8-7 174-226-8Z" fill="var(--art-paper)" stroke="var(--art-ink)" stroke-width="2"/><path d="m57 50 205 7-5 154-207-8Z" fill="none" stroke="var(--art-ink)" stroke-width="1.3" stroke-dasharray="4 4"/><path d="m107 72 104 91-56 1-31 43Z" fill="var(--primary)" stroke="var(--art-ink)" stroke-width="3" stroke-linejoin="round"/><path d="m107 72 48 92" fill="none" stroke="var(--art-ink)" stroke-width="2"/><circle cx="143" cy="131" r="3.5" fill="var(--art-ink)"/><circle cx="160" cy="146" r="3.5" fill="var(--art-ink)"/><path d="m136 150 7 5 7-1M72 76l14 2m-15 6 17 1M211 189l24 1m-24 5 17 1" stroke="var(--art-ink)" fill="none" stroke-width="1.8" stroke-linecap="round"/><g fill="none" stroke="var(--secondary)" stroke-width="2"><path d="m22 27 17 4m-7-15 1 17M276 69l16 8m-7-18 1 19"/><circle cx="253" cy="216" r="23" stroke-dasharray="2 3"/><circle cx="253" cy="216" r="18"/></g>`;
   const cut=`<g fill="none" stroke="var(--secondary)" stroke-width="1.6"><path d="M31 79V34h45m155 0h45v45m0 107v45h-45m-155 0H31v-45M9 132h37m-18-18v36m240-39 16 16-16 16-16-16Z"/><path d="m60 18 7 7m8-7 7 7m8-7 7 7M223 247l7 7m8-7 7 7m8-7 7 7"/></g><path d="M99 43h12l119 95v12l-69 1-33 60h-12Z" fill="var(--art-paper)" stroke="var(--art-ink)" stroke-width="3"/><path d="m108 52 53 99" fill="none" stroke="var(--art-ink)" stroke-width="2"/><path d="m134 106 8 4v9l-8-4Zm24 17 8 4v9l-8-4Z" fill="var(--art-ink)"/><path d="m132 137 1 10 12 6 7-2" fill="none" stroke="var(--art-ink)" stroke-width="2"/>`;
@@ -72,18 +76,18 @@ function shapeControls(){
 
 function shapeIconGallery(){
   const items=[['arrow',t('Dalej','Next')],['read',t('Artykuł','Article')],['play',t('Lektor','Audio')],['copy',t('Kopiuj','Copy')],['chat',t('Rozmowa','Chat')],['check',t('Gotowe','Done')],['heart',t('Polubienie','Like')],['spark',t('Ozdobnik','Ornament')]];
-  return `<section class="shape-icon-section"><div class="shape-section-label"><span class="eyebrow">${t('JEDEN JĘZYK IKON','ONE ICON LANGUAGE')}</span><span>${t('Ten sam zestaw funkcji w trzech stylach','The same actions in three styles')}</span></div><div class="shape-icon-grid">${items.map(([key,label])=>`<div class="shape-icon-item"><span>${shapeIcon(key)}</span><small>${label}</small></div>`).join('')}</div><p>${t('Ikony w przyciskach i odtwarzaczu korzystają z tego samego stylu. Przejdź do artykułu, żeby sprawdzić je w użyciu.','Buttons and the player use this same style. Open an article to see the icons in use.')}</p></section>`;
+  return `<section class="shape-icon-section"><div class="shape-section-label"><span class="eyebrow">${t('JEDEN JĘZYK IKON','ONE ICON LANGUAGE')}</span><span>${t('Te same funkcje, różny charakter','The same actions, a different character')}</span></div><div class="shape-icon-grid">${items.map(([key,label])=>`<div class="shape-icon-item"><span>${shapeIcon(key)}</span><small>${label}</small></div>`).join('')}</div><p>${t('Ikony w przyciskach i odtwarzaczu korzystają z tego samego stylu. Przejdź do artykułu, żeby sprawdzić je w użyciu.','Buttons and the player use this same style. Open an article to see the icons in use.')}</p></section>`;
 }
 
 function decorateShapePage(){
   const p=shapeVariants[state.shape];
-  const context=document.querySelector('.palette-context>span');if(context)context.textContent=`${t('FORMA','FORM')} 0${Object.keys(shapeVariants).indexOf(state.shape)+1} · ${t(p.name,p.en)}`;
+  const context=document.querySelector('.palette-context>span');if(context)context.textContent=`${p.round===2?t('FORMA · RUNDA 2','FORM · ROUND 2'):t('FORMA','FORM')} · 0${shapeKeys().indexOf(state.shape)+1} · ${t(p.name,p.en)}`;
   const jump=document.querySelector('.palette-context>a');if(jump)jump.innerHTML=t('Wypróbuj detale','Try the details')+icons.arrow;
   const hero=document.querySelector('.cursor-art');if(hero)hero.outerHTML=shapeHero();
   document.querySelectorAll('.note-card').forEach((card,i)=>{
     card.querySelector('.note-card-top>span:last-child').innerHTML=shapeIcon(['spark','read','chat'][i]);
     card.querySelector('.note-card-bottom>span:last-child').innerHTML=shapeIcon('arrow');
-    card.insertAdjacentHTML('beforeend',`<span class="shape-card-mark shape-extra" aria-hidden="true">${state.shape==='cut'?`0${i+1}`:shapeIcon('spark')}</span>`);
+    if(p.round!==2)card.insertAdjacentHTML('beforeend',`<span class="shape-card-mark shape-extra" aria-hidden="true">${state.shape==='cut'?`0${i+1}`:shapeIcon('spark')}</span>`);
   });
   document.querySelectorAll('.outline-button[data-action=share]').forEach(e=>e.insertAdjacentHTML('afterbegin',shapeIcon('copy')));
   document.querySelectorAll('[data-action=tldr]').forEach(e=>e.insertAdjacentHTML('afterbegin',shapeIcon('read')));
@@ -97,6 +101,7 @@ function decorateShapePage(){
   const sample=document.querySelector('.text-sheet>p');if(sample)sample.innerHTML=t('To jest podstawowy tekst: powinien dać się czytać spokojnie, również w dłuższym artykule. <a data-route href="'+href('article')+'">Zajrzyj do przykładowej lektury</a> i sprawdź detale playera, przyciski i okna dialogowe.','This is the main text: it should feel comfortable, even in a longer article. <a data-route href="'+href('article')+'">Open the sample article</a> to explore player controls, buttons, and dialogs.');
   const hint=document.querySelector('.text-sheet>.field-hint');if(hint)hint.textContent=t('Te same komunikaty, różne kształty ich ikon i obramowań.','The same messages with different icon shapes and borders.');
   const lab=document.querySelector('#palette-lab');if(lab)lab.insertAdjacentHTML('beforeend',shapeIconGallery());
+  if(p.round===2)decorateRefinedShapes();
   restoreShapeControls();
 }
 
@@ -109,13 +114,13 @@ function restoreShapeControls(){
 }
 
 function shapePrototypeTools(){
-  const p=shapeVariants[state.shape],n=Object.keys(shapeVariants).indexOf(state.shape)+1;
-  return `<div class="prototype-switcher color-switcher form-switcher" aria-label="${t('Porównaj formy','Compare forms')}"><button data-cycle="-1" aria-label="${t('Poprzedni wariant','Previous variation')}">${shapeOriginalIcons.arrow}</button><div class="prototype-label" aria-live="polite"><small>${t('FORMA · LEŚNA PRACOWNIA','FORM · FOREST WORKSHOP')} · ${state.lang.toUpperCase()}</small><strong>${t(p.name,p.en)} <span>${n}/3</span></strong></div><button data-cycle="1" aria-label="${t('Następny wariant','Next variation')}">${shapeOriginalIcons.arrow}</button><button class="prototype-info" data-action="shape-info" aria-label="${t('Porównanie detali','Compare details')}">?</button></div>`;
+  const p=shapeVariants[state.shape],n=shapeKeys().indexOf(state.shape)+1;
+  return `<div class="prototype-switcher color-switcher form-switcher" aria-label="${t('Porównaj formy','Compare forms')}"><button data-cycle="-1" aria-label="${t('Poprzedni wariant','Previous variation')}">${shapeOriginalIcons.arrow}</button><div class="prototype-label" aria-live="polite"><small>${p.round===2?t('FORMA 2 · LEŚNA PRACOWNIA','FORM 2 · FOREST WORKSHOP'):t('FORMA · LEŚNA PRACOWNIA','FORM · FOREST WORKSHOP')} · ${state.lang.toUpperCase()}</small><strong>${t(p.name,p.en)} <span>${n}/${shapeKeys().length}</span></strong></div><button data-cycle="1" aria-label="${t('Następny wariant','Next variation')}">${shapeOriginalIcons.arrow}</button><button class="prototype-info" data-action="shape-info" aria-label="${t('Porównanie detali','Compare details')}">?</button></div>`;
 }
 
 function shapeInformation(){
   const p=shapeVariants[state.shape];
-  modal(t(p.name,p.en),`<p>${t(p.description,'The selected Forest workshop palette and Bricolage + Hanken stay fixed. Compare the shapes, borders, shadows, icons, and ornaments.')}</p><div class="shape-choices">${Object.entries(shapeVariants).map(([key,item])=>`<button data-set-shape="${key}" aria-pressed="${key===state.shape}">${shapeIcon('spark',key)}<span>${t(item.name,item.en)}</span></button>`).join('')}</div><p>${t(p.detail,'The form language is used across buttons, cards, fields, checkboxes, the switch, player, and dialogs.')}</p><p>${t('Wypróbuj kontrolki, najedź na przyciski i przejdź po nich klawiszem Tab. Na dole próbki jest zestaw ośmiu ikon. Strzałki ← → zmieniają wariant bez zmiany kolorów. Paleta: Leśna pracownia. Fonty: Bricolage + Hanken.','Try the controls, hover over buttons, and use Tab to focus them. Eight icons appear below the control samples. Arrow keys change the form language while keeping the colours fixed.')}</p><small>${t('Stan','State')}: ${JSON.stringify({shape:state.shape,palette:state.palette,language:state.lang,page:state.page,ornaments:shapeUI.details,topic:shapeUI.topic,controls:colorUI})}</small>`);
+  modal(t(p.name,p.en),`<p>${t(p.description,p.descriptionEn||'The selected Forest workshop palette and Bricolage + Hanken stay fixed. Compare the shapes, borders, shadows, icons, and ornaments.')}</p><div class="shape-choices">${shapeKeys().map(key=>{const item=shapeVariants[key];return `<button data-set-shape="${key}" aria-pressed="${key===state.shape}">${shapeIcon('spark',key)}<span>${t(item.name,item.en)}</span></button>`}).join('')}</div><p>${t(p.detail,p.detailEn||'The form language is used across buttons, cards, fields, checkboxes, the switch, player, and dialogs.')}</p><p>${t('Wypróbuj kontrolki, najedź na przyciski i przejdź po nich klawiszem Tab. Na dole próbki jest zestaw ośmiu ikon. Strzałki ← → zmieniają wariant bez zmiany kolorów. Paleta: Leśna pracownia. Fonty: Bricolage + Hanken.','Try the controls, hover over buttons, and use Tab to focus them. Eight icons appear below the control samples. Arrow keys change the form language while keeping the colours fixed.')}</p><small>${t('Stan','State')}: ${JSON.stringify({shape:state.shape,palette:state.palette,language:state.lang,page:state.page,ornaments:shapeUI.details,topic:shapeUI.topic,controls:colorUI})}</small>`);
 }
 
 document.addEventListener('click',e=>{

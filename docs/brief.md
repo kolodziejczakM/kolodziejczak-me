@@ -51,3 +51,11 @@ Cztery palety na bazie C: Leśny spokój (referencja + szałwia), Leśna pracown
 Marcin wybrał **Leśną pracownię** (`meadow`): tło `#0e241d`, kremowy tekst, miodowy akcent i szałwiowe detale. Ta decyzja zamyka poprzednie pytanie o kolorystykę.
 
 Aktualne pytanie dotyczy **kształtów przycisków, obramowań, kontrolek, ozdobników i ikon**. Trzy propozycje: Miękkie formy, Papier i pieczęć, Nacięte narożniki. Układ, tekst, fonty i role kolorów są celowo wspólne, zgodnie z zawężeniem użytkownika. Formy obejmują całą stronę, także karty, player i modale, zamiast samych próbek przycisków. Szczegóły i adresy: [runda form](form-study.md). Wybór form pozostaje otwarty; można łączyć elementy z kilku wariantów.
+
+## Feedback po pierwszej rundzie form
+
+- **Miękkie formy** pasują najlepiej do charakteru strony, ale wyglądają zbyt typowo. To punkt wyjścia do dalszej eksploracji, nie ostatecznie zatwierdzony system.
+- Z wariantu **Papier i pieczęć** podobają się główne przyciski.
+- Odrzucone: przerywane obramowania pól oraz pola z samym podkreśleniem przed kliknięciem. Nowe pola mają pełną, ciągłą ramkę od początku, także w modalach.
+- **Nacięte narożniki** miały najwięcej oryginalności, ale dekoracyjne linie na kartach wyglądały na przypadkowe i psuły wygląd. Ozdobniki powinny mieć czytelny związek z kształtem lub funkcją elementu.
+- Użytkownik zamówił kolejne **cztery** prototypy. Kolory i fonty nadal pozostają zatwierdzone. Kierunki: Miękki druk, Zakładka, Kontur i kropka, Bilet do rozmowy. [Opis nowej rundy](form-refinements.md).
