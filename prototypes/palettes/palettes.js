@@ -16,6 +16,7 @@ function restoreColorUI(){
   document.querySelector('.sample-inline-copy').classList.toggle('no-underlines',!colorUI.underline);
   document.querySelectorAll('[data-color-tab]').forEach(b=>b.setAttribute('aria-pressed',b.dataset.colorTab===colorUI.tab));
   document.querySelector('.control-tab-copy').textContent=colorUI.tab==='read'?t('Tutaj liczą się spokojne tło, czytelne litery i link, który łatwo zauważyć.','A quiet background, readable type, and links that are easy to spot.'):t('Tu sprawdzisz kolor aktywnej zakładki. Odtwarzacz z nagraniem pozostaje podglądem na stronie artykułu.','This shows the active tab colour. The narration player remains a preview on the article page.');
+  if(state.shape)document.querySelector('.control-tab-copy').textContent=colorUI.tab==='read'?t('Sprawdź kształt przycisków, ramki i detale ikon. Kolory pozostają z Leśnej pracowni.','Explore button shapes, borders, and icon details. The Forest workshop colours stay fixed.'):t('Tak wygląda aktywna zakładka. Odtwarzacz i jego kontrolki znajdziesz w przykładowym artykule.','This is the active tab. Find the player and its controls in the sample article.');
 }
 
 function colorPrototypeTools(){

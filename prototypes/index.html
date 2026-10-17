@@ -16,8 +16,9 @@
   <link rel="preload" href="/assets/ibm-plex-mono.ttf" as="font" type="font/ttf" crossorigin>
   <link rel="stylesheet" href="/styles.css">
   <link rel="stylesheet" href="/palettes/palettes.css">
+  <link rel="stylesheet" href="/shapes/shapes.css">
   <script>
-    if(new URLSearchParams(location.search).has('palette')){
+    if(new URLSearchParams(location.search).has('palette')||new URLSearchParams(location.search).has('shape')){
       for(const path of ['bricolagegrotesque/BricolageGrotesque%5Bopsz%2Cwdth%2Cwght%5D.ttf','hankengrotesk/HankenGrotesk%5Bwght%5D.ttf','hankengrotesk/HankenGrotesk-Italic%5Bwght%5D.ttf']){
         const link=document.createElement('link');link.rel='preload';link.as='font';link.type='font/ttf';link.crossOrigin='anonymous';link.href='/typography/fonts/'+path;document.head.append(link);
       }
@@ -25,6 +26,7 @@
   </script>
   <script src="/palettes/data.js" defer></script>
   <script src="/palettes/palettes.js" defer></script>
+  <script src="/shapes/shapes.js" defer></script>
   <script src="/app.js" defer></script>
 </head>
 <body>

@@ -2,7 +2,17 @@
 
 Pierwszy etap: **prototypy wizualne do porównania**, przed wyborem stacku i implementacją strony.
 
-**Aktualna runda: kolorystyka z wybranymi Bricolage Grotesque + Hanken Grotesk.** Wspólny układ bazuje na C; teraz porównujemy kolory całej strony i stany interakcji.
+**Aktualna runda: kształty, obramowania, kontrolki i ikony.** Marcin wybrał paletę **Leśna pracownia** oraz fonty **Bricolage Grotesque + Hanken Grotesk**. Pozostają wspólne we wszystkich trzech propozycjach.
+
+| Forma | Kierunek | Podgląd w Tailscale |
+| --- | --- | --- |
+| Miękkie formy | Kapsułki, zaokrąglone karty, obłe ikony i organiczne ozdobniki | [Otwórz](http://vps.tailfb5686.ts.net:4321/pl/?variant=C&palette=meadow&shape=soft) |
+| Papier i pieczęć | Proste narożniki, podwójne ramki, twardy cień i rysowane ikony | [Otwórz](http://vps.tailfb5686.ts.net:4321/pl/?variant=C&palette=meadow&shape=stamp) |
+| Nacięte narożniki | Ścięte przyciski, cienkie linie, ukośne detale i geometryczne ikony | [Otwórz](http://vps.tailfb5686.ts.net:4321/pl/?variant=C&palette=meadow&shape=cut) |
+
+Przełączaj dolnym paskiem lub klawiszami ← →. „Wypróbuj detale” przewija do próbki przycisków, zakładek, pola, przełącznika, checkboxa, selecta i ośmiu ikon. Przejdź też do artykułu, playera i okien TLDR / promptu. `?` pozwala wybrać formę i pokazuje stan. Wybrana forma pozostaje w adresach PL/EN; stan próbek jest tylko w pamięci. [Opis rundy](docs/form-study.md) · [porównanie detali](docs/previews/form-variants.png).
+
+**Poprzednia runda: kolorystyka. Zwyciężyła Leśna pracownia.** Poniższe adresy zachowują wcześniejsze porównanie kolorów bez nowych form.
 
 | Paleta | Kierunek | Podgląd w Tailscale |
 | --- | --- | --- |

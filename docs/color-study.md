@@ -37,3 +37,6 @@ Sprawdzone zestawienia obramowań i fokusu mają minimum odpowiednio **3.21:1**,
 Kontrola w Chromium: 72 kombinacje czterech palet, PL/EN, strony głównej/listy/artykułu i szerokości 320, 390, 1440 px. Bez poziomego przepełnienia, błędów skryptów, błędów ładowania fontów i żądań do usług zewnętrznych. Sprawdzono osobno: zachowanie palety po zmianie języka i nawigacji, odświeżenie URL, zmianę palety z modala, narzędzia artykułu, edycję pola bez przechwytywania strzałek oraz zachowanie stanu próbek przy przełączeniu palety. Przejrzano podglądy czterech palet, wersji mobilnej i artykułu. Historyczne A/B/C nie uruchamiają trybu palet.
 
 Przegląd: [cztery palety](previews/color-palettes.png). Podgląd Tailscale działa przez istniejącą jednostkę użytkownika `kolodziejczak-prototype.service`.
+## Decyzja po porównaniu
+
+Marcin wybrał **Leśną pracownię** (`meadow`). Następna runda zachowuje jej role kolorów i wybrane Bricolage + Hanken, porównując [kształty i detale](form-study.md). Pozostałe palety pozostają archiwum tej rundy.

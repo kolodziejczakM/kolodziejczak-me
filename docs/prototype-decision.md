@@ -20,6 +20,10 @@
 
 **Runda 3 — kolor:** cztery palety na wspólnym układzie C i wybranych fontach, na istniejącej trasie `?variant=C&palette=forest|meadow|clay|tide`. Stały układ jest celowy: pytanie użytkownika dotyczy teraz koloru. Prototypy obejmują Home, Artykuły, pojedynczy artykuł, player i modale oraz próbki stanów UI. Źródło: `prototypes/palettes/`, pomiary par kolorów: `contrast.json`, pełne role: `palettes.json`. Żadna paleta nie jest jeszcze wybrana.
 
+**Decyzja po rundzie 3:** Marcin wskazał „Leśna pracownia wygrywa”. Wybrana paleta to `meadow`. Ta decyzja zastępuje wcześniejszy status otwarty, bez ponownego wyboru typografii.
+
+**Runda 4 — forma:** trzy języki kształtów na tej samej trasie z `shape=soft|stamp|cut`. Każdy wymusza paletę `meadow` i wariant C. Pytanie: jaki charakter mają mieć przyciski, obramowania, kontrolki, ikony i ozdobniki? Kolory, typografia i kompozycja pozostają wspólne, bo użytkownik prosi o eksperymenty z detalami. Źródło: `prototypes/shapes/` na `codex/prototype-ui`. [Opis i kontrola podglądu](form-study.md). Formy nie zostały jeszcze wybrane.
+
 Przy decyzji zapisać: wybrany kierunek, elementy zapożyczone z pozostałych, argumenty i rzeczy do zmiany. Potem przepisać zwycięski projekt do kodu produkcyjnego, zachowując te prototypy na gałęzi źródłowej. Nie przenosić przełącznika ani symulacji usług do produkcji.
 
 Nie utworzono issue wdrożeniowego; ten dokument jest lokalnym odnośnikiem do prototypów. Po utworzeniu issue należy wkleić do niego ten odnośnik i werdykt.

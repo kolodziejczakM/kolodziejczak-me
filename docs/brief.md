@@ -45,3 +45,9 @@ Marcin wskazał **Bricolage Grotesque + Hanken Grotesk** jako ulubiony zestaw. P
 Obecne pytanie: jaka paleta najlepiej pasuje do tej typografii? Porównujemy tła, panele, karty, tekst podstawowy i drugorzędny, linki, przyciski, stany interakcji, fokus i komunikaty. W tej rundzie **układ, treść i typografia są wspólne**, żeby różnice kompozycji nie zakłócały oceny kolorów. To świadome zawężenie do koloru, wynikające z prośby użytkownika.
 
 Cztery palety na bazie C: Leśny spokój (referencja + szałwia), Leśna pracownia (zieleń + miód), Sosna i glina (zieleń + koral), Noc nad wodą (chłodna zieleń + mięta). Adresy zachowują `variant=C` i dodają `palette=forest|meadow|clay|tide`. Wybór palety pozostaje otwarty. Kolorystyka obejmuje również listę i artykuł PL/EN oraz demonstracje kontrolek.
+
+## Wybór palety i runda form
+
+Marcin wybrał **Leśną pracownię** (`meadow`): tło `#0e241d`, kremowy tekst, miodowy akcent i szałwiowe detale. Ta decyzja zamyka poprzednie pytanie o kolorystykę.
+
+Aktualne pytanie dotyczy **kształtów przycisków, obramowań, kontrolek, ozdobników i ikon**. Trzy propozycje: Miękkie formy, Papier i pieczęć, Nacięte narożniki. Układ, tekst, fonty i role kolorów są celowo wspólne, zgodnie z zawężeniem użytkownika. Formy obejmują całą stronę, także karty, player i modale, zamiast samych próbek przycisków. Szczegóły i adresy: [runda form](form-study.md). Wybór form pozostaje otwarty; można łączyć elementy z kilku wariantów.
