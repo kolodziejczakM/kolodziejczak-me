@@ -140,3 +140,7 @@ Użytkownik wskazał zbędny podpis autora między opisem a zdjęciem oraz potrz
 ## Odciążenie przestrzeni przed artykułem
 
 Użytkownik zauważył nadmiar obramowanych elementów nad treścią i zaproponował tekstową akcję promptu albo przeniesienie przycisku pod artykuł, po prawej. Wdrożono drugą propozycję, zachowując zaakceptowany wygląd przycisku. [Podgląd i weryfikacja](reading-refinements.md#prompt-po-lekturze).
+
+## Kopiowanie do schowka
+
+Użytkownik zgłosił, że oba przyciski kopiowania tylko zaznaczają tekst. Zastąpiono ręczne zaznaczenie mechanizmem rzeczywistego kopiowania przy braku lub odmowie Clipboard API; potwierdzono odczytem zawartości schowka. [Diagnoza, ograniczenia i test regresji](clipboard.md).

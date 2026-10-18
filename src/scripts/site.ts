@@ -1,3 +1,4 @@
+import { copyField } from "./clipboard";
 import { enhanceCodeBlocks } from "./code-blocks";
 
 document.documentElement.classList.add("js");
@@ -111,12 +112,10 @@ document
       const field = document.getElementById(button.dataset.copy!) as
         HTMLInputElement | HTMLTextAreaElement;
       try {
-        await navigator.clipboard.writeText(field.value);
+        await copyField(field);
         announce(button.dataset.copied!);
       } catch {
-        field.focus();
-        field.select();
-        announce(button.dataset.fallback!);
+        announce(button.dataset.copyError!);
       }
     });
   });

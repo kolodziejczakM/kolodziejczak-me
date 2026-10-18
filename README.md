@@ -44,6 +44,7 @@ Przed publiczną premierą potrzebne są prawdziwe materiały autora, konfigurac
 - [Poprawki narzędzi czytania i proponowane kategorie](docs/reading-refinements.md)
 - [View Transitions, zdjęcia hero i pomiary wariantów mobilnych](docs/view-transitions-and-images.md)
 - [Nagłówek, rozwijanie kodu i mock odtwarzacza](docs/code-and-audio-preview.md)
+- [Kopiowanie do schowka i test przeglądarkowy](docs/clipboard.md)
 - [Kolejność dalszych prac](docs/implementation-next.md)
 - [Decyzje projektowe](docs/prototype-decision.md)
 - [Archiwum prototypów i wcześniejszych porównań](docs/prototype-archive.md)

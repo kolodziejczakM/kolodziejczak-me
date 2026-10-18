@@ -37,9 +37,9 @@ const t = (pl: string, en: string) => text(locale, pl, en);
           type="button"
           data-copy="article-prompt"
           data-copied={t("Prompt skopiowany.", "Prompt copied.")}
-          data-fallback={t(
-            "Zaznaczono tekst — skopiuj go ręcznie.",
-            "Text selected — copy it manually.",
+          data-copy-error={t(
+            "Nie udało się skopiować tekstu. Spróbuj ponownie.",
+            "Could not copy the text. Please try again.",
           )}
         >
           {t("Kopiuj prompt", "Copy prompt")}

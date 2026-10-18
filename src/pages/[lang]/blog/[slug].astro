@@ -120,9 +120,9 @@ const canonical = new URL(articlePath(article), site.origin).href;
                   type="button"
                   data-copy="article-url"
                   data-copied={t("Link skopiowany.", "Link copied.")}
-                  data-fallback={t(
-                    "Zaznaczono link — skopiuj go ręcznie.",
-                    "Link selected — copy it manually.",
+                  data-copy-error={t(
+                    "Nie udało się skopiować linku. Spróbuj ponownie.",
+                    "Could not copy the link. Please try again.",
                   )}
                 >
                   {t("Kopiuj link", "Copy link")}
