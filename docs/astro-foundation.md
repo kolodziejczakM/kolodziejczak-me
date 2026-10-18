@@ -102,7 +102,9 @@ Archiwalne eksperymenty nadal są w `prototypes/`, na gałęzi `codex/prototype-
 
 Portret przekazany przez autora 18 października znajduje się w `src/assets/profile/marcin-kolodziejczak.jpg`. Zgodnie z doprecyzowaniem użytkownika zastępuje kokardkę w nagłówku i stopce. Nie powtarza się pod hasłem głównym; dekorację kokardki nad sekcją również usunięto. Astro generuje lokalne wersje AVIF/WebP/JPEG 48–168 px; wyświetlany rozmiar to 48 px na telefonie i 56 px na większym ekranie. Wybór języka na `/` również pokazuje portret. Wybrano i wdrożono logotyp domenowy z miodowym `.me`, karty z pionowymi miniaturami oraz delikatny gradient z siatką. [Decyzja i weryfikacja](identity-card-background-study.md#wdrożony-zestaw-d--c--d).
 
-Przed publiczną premierą: potwierdzone bio, prawdziwe linki kontaktowe i pierwszy autorski artykuł z tłumaczeniem; docelowy hosting, sitemap/RSS, podglądy udostępniania oraz Umami od pierwszego publicznego uruchomienia. Dopiero po przeglądzie gotowej strony należy zmienić flagę publikacji i usunąć próbki. Bieżący etap nie publikuje domeny.
+Bio jest zatwierdzone przez autora i wdrożone w PL/EN, bez etykiety roboczego bio.
+
+Przed publiczną premierą: prawdziwe linki kontaktowe i pierwszy autorski artykuł z tłumaczeniem; docelowy hosting, sitemap/RSS, podglądy udostępniania oraz Umami od pierwszego publicznego uruchomienia. Dopiero po przeglądzie gotowej strony należy zmienić flagę publikacji i usunąć próbki. Bieżący etap nie publikuje domeny.
 
 Audio wymaga plików. W artykule znajduje się oznaczony placeholder rozmowy ElevenLabs; otwiera informację o planowanej funkcji i nie łączy się z usługą. Agent, komentarze, polubienia i offline wymagają kolejnych działających integracji. Nie przeniesiono symulowanych rozmów, odtwarzania ani polubień z prototypu. Strona nie wykonuje obecnie żądań do zewnętrznych usług i nie ma service workera. Ustawienie pauzy animacji tła jest przechowywane w `sessionStorage` wyłącznie na czas sesji karty.
 

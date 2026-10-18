@@ -170,3 +170,8 @@ Użytkownik poprosił o wizualne połączenie dwóch przełączników wspólnego
 
 
 Użytkownik wybrał „Wspólną kapsułę” dla grupy TL;DR / spisu treści oraz „Piktogram i nazwa” dla sociali (A/A). Wybrany zestaw wdrożono we właściwej stronie bez próbnika. Panele pozostają początkowo zwinięte; kolejność kontaktów pozostaje Facebook / Telegram / LinkedIn / WhatsApp.
+
+
+## Zatwierdzone bio i styl języka
+
+Autor zatwierdził bio: „Cześć, z tej strony Marcin. Zawodowo realizuję swoją pasję do programowania, a po godzinach tworzę filmy i eksperymentuję z AI. Czasem łączę te światy i wychodzi z tego coś ciekawego - o tym piszę tutaj.” Wdrożono polski tekst dosłownie oraz angielskie tłumaczenie, usuwając oznaczenie przykładowego bio. Użytkownik woli zwykły myślnik i odrzucił sformułowanie „Marcin tutaj” jako nienaturalne po polsku. Wzmianka o filmie dotyczy tworzenia filmów. Nagłówek „Z mojej głowy do Twojej” pozostaje do wyboru po propozycjach alternatyw.

@@ -62,9 +62,6 @@ const t = (pl: string, en: string) => text(locale, pl, en);
       <div class="hero-bio">
         <div>
           <p>{site.bio[locale]}</p>
-          {!site.readyToPublish && (
-            <small class="sample-label">{t("Bio robocze", "Sample bio")}</small>
-          )}
         </div>
       </div>
       <a class="button button-primary" href={blogPath(locale)}>
