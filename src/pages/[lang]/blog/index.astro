@@ -1,15 +1,13 @@
 ---
 import SiteLayout from "../../../layouts/SiteLayout.astro";
-import ArticleImage from "../../../components/ArticleImage.astro";
-import Icon from "../../../components/Icon.astro";
-import { articlesFor, articlePath } from "../../../lib/articles";
+import ArticleCard from "../../../components/ArticleCard.astro";
+import { articlesFor } from "../../../lib/articles";
 import {
   locales,
   otherLocale,
   blogPath,
   categories,
   categoryLabel,
-  formatDate,
   text,
   type Locale,
 } from "../../../lib/i18n";
@@ -102,37 +100,9 @@ const t = (pl: string, en: string) => text(locale, pl, en);
         "No articles here yet. Explore the other topics.",
       )}
     </p>
-    <div class="blog-list">
+    <div class="article-cards blog-list">
       {articles.map((article) => (
-        <article
-          class="blog-entry"
-          data-article-category={article.data.category}
-        >
-          <a
-            class:list={["entry-art", `art-${article.data.category}`]}
-            href={articlePath(article)}
-            aria-hidden="true"
-            tabindex="-1"
-          >
-            <ArticleImage article={article} variant="thumbnail" />
-          </a>
-          <div class="entry-copy">
-            <span class="eyebrow">
-              {categoryLabel(article.data.category, locale)} ·{" "}
-              <time datetime={article.data.publishedAt.toISOString()}>
-                {formatDate(article.data.publishedAt, locale)}
-              </time>
-            </span>
-            <h2>
-              <a href={articlePath(article)}>{article.data.title}</a>
-            </h2>
-            <p>{article.data.description}</p>
-            <a class="text-link" href={articlePath(article)}>
-              {t("Czytaj artykuł", "Read article")}
-              <Icon />
-            </a>
-          </div>
-        </article>
+        <ArticleCard article={article} locale={locale} headingLevel="h2" />
       ))}
     </div>
   </main>

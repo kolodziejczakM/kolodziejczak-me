@@ -1,5 +1,6 @@
 ---
 import Brand from "./Brand.astro";
+import BackgroundMotion from "./BackgroundMotion.astro";
 import { site } from "../config/site";
 import { text, homePath, blogPath, type Locale } from "../lib/i18n";
 interface Props {
@@ -24,6 +25,7 @@ const t = (pl: string, en: string) => text(locale, pl, en);
     <span>
       © {new Date().getUTCFullYear()} {site.name}
     </span>
+    <BackgroundMotion locale={locale} />
     {!site.readyToPublish && (
       <small>
         {t(

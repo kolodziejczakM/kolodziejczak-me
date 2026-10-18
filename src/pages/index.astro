@@ -1,5 +1,6 @@
 ---
 import Avatar from "../components/Avatar.astro";
+import BackgroundMotion from "../components/BackgroundMotion.astro";
 import "../styles/site.css";
 ---
 
@@ -16,7 +17,10 @@ import "../styles/site.css";
   <body>
     <main class="language-home">
       <Avatar locale="pl" />
-      <h1>Marcin Kołodziejczak</h1>
+      <h1>
+        kolodziejczak<span class="brand-domain">.me</span>
+      </h1>
+      <p>Marcin Kołodziejczak</p>
       <p>Wybierz język / Choose a language</p>
       <div>
         <a class="button button-primary" href="/pl/" lang="pl">
@@ -26,6 +30,7 @@ import "../styles/site.css";
           English
         </a>
       </div>
+      <BackgroundMotion locale="pl" />
     </main>
   </body>
 </html>

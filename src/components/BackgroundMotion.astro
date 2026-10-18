@@ -1,0 +1,28 @@
+---
+import { text, type Locale } from "../lib/i18n";
+interface Props {
+  locale: Locale;
+}
+const { locale } = Astro.props;
+---
+
+<button
+  class="background-motion"
+  type="button"
+  data-background-motion-toggle
+  data-pause={text(
+    locale,
+    "Wstrzymaj animację tła",
+    "Pause background animation",
+  )}
+  data-resume={text(
+    locale,
+    "Wznów animację tła",
+    "Resume background animation",
+  )}
+  hidden
+></button>
+
+<script>
+  import "../scripts/background-motion";
+</script>

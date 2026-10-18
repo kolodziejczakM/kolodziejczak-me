@@ -1,6 +1,6 @@
 # kolodziejczak.me
 
-Statyczna strona osobista w **Astro + TypeScript + MDX**, z pełnym HTML i adresami `/pl/` oraz `/en/`. Zachowuje wybrany projekt: Blisko, Leśna pracownia, Bricolage/Hanken i Spokojny kontur.
+Statyczna strona osobista w **Astro + TypeScript + MDX**, z pełnym HTML i adresami `/pl/` oraz `/en/`. Wybrany projekt: Leśna pracownia, Bricolage/Hanken, logotyp `kolodziejczak.me`, karty z pionowymi miniaturami i subtelny gradient z siatką.
 
 **Prywatny podgląd w Tailscale:** [PL](http://vps.tailfb5686.ts.net:4322/pl/) · [EN](http://vps.tailfb5686.ts.net:4322/en/) · [Artykuły](http://vps.tailfb5686.ts.net:4322/pl/blog/) · [Artykuł](http://vps.tailfb5686.ts.net:4322/pl/blog/mniej-ale-lepiej/).
 
@@ -52,4 +52,4 @@ Przed publiczną premierą potrzebne są prawdziwe materiały autora, konfigurac
 
 Archiwalny podgląd nadal działa na porcie **4321** (`npm run prototype`); właściwa implementacja ma osobny podgląd na **4322**. Szczegóły prywatnego serwera i jego restartu są w [opisie implementacji](docs/astro-foundation.md#podgląd-w-tailscale).
 
-Prototypy nowego logotypu, mniejszych kart i subtelnego tła (osobna gałąź i podgląd na porcie 4323): [warianty i obsługa](docs/identity-card-background-study.md).
+Wybrany zestaw logo D / karty C / tło D działa na porcie 4322. [Decyzja, wdrożenie i archiwum prototypów](docs/identity-card-background-study.md).

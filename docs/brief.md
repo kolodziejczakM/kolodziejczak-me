@@ -157,3 +157,8 @@ Użytkownik poprosił o potwierdzenie kopiowania w tooltipie, zamiast widocznej 
 ## Zdjęcie, logotyp, karty i tło — dalsza eksploracja
 
 Użytkownik doprecyzował, że zdjęcie ma zastąpić kokardkę w rogu nagłówka. Kokardka jako logo została odrzucona. Poprosił o kilka propozycji logotypu, mniejsze karty o lepszych proporcjach do treści i spokojniejszych kolorach oraz bardzo delikatnie animowany gradient i prawie niewidoczną siatkę przy zachowaniu obecnej bazowej zieleni. Przykład Binary Lens jest odniesieniem faktury; nie zmienia zatwierdzonych fontów ani palety. Eksperymenty mają niezależne przełączniki, żeby wybór logo nie narzucał kart lub tła.
+
+
+## Wybrany zestaw po prototypach
+
+Użytkownik wybrał domenowy logotyp `kolodziejczak.me` (D), karty z pionowymi miniaturami zdjęć (C) oraz animowany gradient z nieruchomą siatką (D). Zestaw zastępuje poprzednie elementy we właściwej implementacji, bez przełącznika wariantów. [Decyzja i wdrożenie](identity-card-background-study.md#wdrożony-zestaw-d--c--d).
