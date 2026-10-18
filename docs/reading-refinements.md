@@ -39,3 +39,13 @@ Podglądy: [artykuł mobile](previews/astro-article-mobile.png), [prompt](previe
 Po uwadze użytkownika o nadmiarze ramek nad tekstem przeniesiono prompt pod treść artykułu, po prawej stronie, przed podziękowaniem i udostępnianiem. Zachowano dotychczasowy przycisk oraz dialog z główną akcją po prawej. Osobny komponent `ArticlePrompt.astro` nie należy już do narzędzi nad tekstem. Bez JS treść promptu nadal otwiera się w natywnym `details`.
 
 Weryfikacja: `npm run validate` (13 testów); osiem widoków PL/EN przy 320/390/768/1440 px, położenie po treści i przy prawej krawędzi, otwarcie/zamknięcie dialogu, przywracanie fokusu oraz rozwinięcie bez JS. [Podgląd na telefonie](previews/astro-prompt-after-article-mobile.png).
+
+## Kompaktowe przełączniki TL;DR i spisu treści
+
+Użytkownik zaproponował zamiast dwóch pełnych wierszy małe przyciski o szerokości dopasowanej do etykiet, w jednej linii, ze wspólnym miejscem rozwijania treści. Wdrożono „TL;DR · 5 zdań” i „Spis treści” z jednym panelem pod przyciskami. Początkowo panel jest zamknięty; kliknięcie innej akcji zastępuje jego zawartość, a ponowne kliknięcie aktywnej zamyka go. Aktywny przycisk ma szałwiowe wypełnienie.
+
+Kontrolki są przyciskami rozwijania (`aria-expanded`, wspólne `aria-controls`, panel z `aria-labelledby`), a nie widgetem ARIA tabs wymagającym stale wybranej zakładki. Klawiatura działa natywnie: Tab, Enter, Spacja. Skrypt wykorzystuje istniejącą treść HTML i nie pobiera dodatkowych danych. Bez JS pozostają natywne `details` ze wspólnym `name`, dzięki czemu w obsługujących tę funkcję przeglądarkach również mogą być otwarte wyłącznie pojedynczo.
+
+Weryfikacja: TypeScript, build i 13 testów; osiem widoków PL/EN przy 320/390/768/1440 px. Sprawdzono pojedynczy wiersz, szerokości według tekstu, wspólne położenie panelu, wyłączność treści, ponowne zwinięcie, klawiaturę i brak poziomego przepełnienia. Dodatkowo sprawdzono natywne rozwijanie i wyłączność bez JS.
+
+Podglądy: [zwinięte przyciski](previews/astro-reading-controls-mobile.png), [TL;DR](previews/astro-reading-summary-mobile.png), [spis treści](previews/astro-reading-contents-mobile.png).

@@ -1,7 +1,9 @@
+import { setupReadingSwitcher } from "./reading-switcher";
 import { copyField } from "./clipboard";
 import { enhanceCodeBlocks } from "./code-blocks";
 
 document.documentElement.classList.add("js");
+setupReadingSwitcher();
 
 // The complete document is already HTML. These are optional enhancements only.
 const filters = document.querySelector<HTMLElement>("[data-filters]");

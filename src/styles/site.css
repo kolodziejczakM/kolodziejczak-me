@@ -1876,3 +1876,66 @@ html:not(.js) .js-only {
   border-radius: 50%;
   background: var(--secondary);
 }
+
+.reading-switcher-controls {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 8px;
+}
+.reading-switcher-trigger {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  gap: 8px;
+  width: max-content;
+  min-height: 44px;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--control);
+  color: var(--link);
+  font-size: 12px;
+  line-height: 1.5;
+  white-space: nowrap;
+}
+.reading-switcher-trigger:hover {
+  border-color: var(--secondary);
+}
+.reading-switcher-trigger .icon {
+  width: 14px;
+  height: 14px;
+}
+.reading-switcher-trigger[aria-expanded="true"] {
+  color: var(--ink);
+  background: var(--secondary);
+  border-color: var(--secondary);
+}
+.reading-switcher-trigger[aria-expanded="true"] .icon {
+  transform: rotate(180deg);
+}
+.reading-switcher-panel {
+  margin-top: 12px;
+  padding: 16px 18px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: var(--panel);
+}
+.reading-switcher-panel > .accordion-body {
+  padding: 0;
+}
+.reading-switcher-panel nav a {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  min-height: 44px;
+  padding: 8px 0;
+}
+.reading-switcher-panel nav small {
+  color: var(--muted);
+  font-size: 10px;
+}
+.reading-switcher-panel nav span {
+  font-size: 13px;
+}

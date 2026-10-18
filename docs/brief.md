@@ -144,3 +144,7 @@ Użytkownik zauważył nadmiar obramowanych elementów nad treścią i zapropono
 ## Kopiowanie do schowka
 
 Użytkownik zgłosił, że oba przyciski kopiowania tylko zaznaczają tekst. Zastąpiono ręczne zaznaczenie mechanizmem rzeczywistego kopiowania przy braku lub odmowie Clipboard API; potwierdzono odczytem zawartości schowka. [Diagnoza, ograniczenia i test regresji](clipboard.md).
+
+## TL;DR i spis w jednej linii
+
+Użytkownik poprosił o małe kontrolki dopasowane szerokością do tekstu, obok siebie, rozwijające treść we wspólnym miejscu. Tylko jedna treść może być otwarta naraz. Wdrożono dwa przełączniki ze wspólnym panelem i możliwością ponownego zwinięcia. [Zachowanie i podglądy](reading-refinements.md#kompaktowe-przełączniki-tldr-i-spisu-treści).

@@ -32,7 +32,7 @@ npm run preview   # lokalny podgląd po buildzie
 - `src/config/site.ts`: dane autora, kontakty i status publikacji.
 - `public/`: lokalne fonty z licencjami i favicon.
 
-Pełne artykuły, linki językowe, spis treści, TL;DR i prompt działają bez JavaScriptu. Początek artykułu zawiera zdjęcie hero, czas z nagrania, zwinięty TL;DR i zwinięty spis treści. Mały skrypt dodaje filtrowanie, dialog promptu, kopiowanie, sugestię języka przeglądarki i postęp czytania. Brakujące nagranie ma widoczny mock odtwarzacza PL/EN. Kod zawija się, a dłuższe bloki mają przycisk rozwijania. W rogu znajduje się oznaczony placeholder rozmowy, a po połowie tekstu także strzałka powrotu. Natywne View Transitions animują przejście zdjęcia z listy do artykułu. Bez klientowego routera i zależności od kodu prototypów.
+Pełne artykuły, linki językowe, spis treści, TL;DR i prompt działają bez JavaScriptu. Początek artykułu zawiera zdjęcie hero, czas z nagrania, dwa kompaktowe przełączniki TL;DR/spisu treści w jednym wierszu, ze wspólnym rozwijanym panelem. Mały skrypt dodaje filtrowanie, dialog promptu, kopiowanie, sugestię języka przeglądarki i postęp czytania. Brakujące nagranie ma widoczny mock odtwarzacza PL/EN. Kod zawija się, a dłuższe bloki mają przycisk rozwijania. W rogu znajduje się oznaczony placeholder rozmowy, a po połowie tekstu także strzałka powrotu. Natywne View Transitions animują przejście zdjęcia z listy do artykułu. Bez klientowego routera i zależności od kodu prototypów.
 
 ## Status
 

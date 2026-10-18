@@ -47,36 +47,46 @@ const localAudio = narration?.[locale];
       </>
     )}
   </p>
-  <details class="reading-accordion" data-accordion="tldr">
-    <summary>
-      <span>{t("TL;DR · w 5 zdaniach", "TL;DR · in 5 sentences")}</span>
-      <Icon name="down" />
-    </summary>
-    <div class="accordion-body">
-      <ol class="article-summary">
-        {article.data.summary.map((sentence) => (
-          <li>{sentence}</li>
-        ))}
-      </ol>
-    </div>
-  </details>
-  <details class="reading-accordion" data-accordion="contents">
-    <summary>
-      <span>{t("Spis treści", "Contents")}</span>
-      <Icon name="down" />
-    </summary>
-    <nav
-      class="accordion-body"
-      aria-label={t("Spis treści artykułu", "Article contents")}
+  <div class="reading-switcher" data-reading-switcher>
+    <details
+      name="reading-tools"
+      class="reading-accordion"
+      data-accordion="tldr"
     >
-      {headings.map((heading, i) => (
-        <a href={`#${heading.slug}`}>
-          <small>{String(i + 1).padStart(2, "0")}</small>
-          <span>{heading.text}</span>
-        </a>
-      ))}
-    </nav>
-  </details>
+      <summary>
+        <span>{t("TL;DR · 5 zdań", "TL;DR · 5 sentences")}</span>
+        <Icon name="down" />
+      </summary>
+      <div class="accordion-body">
+        <ol class="article-summary">
+          {article.data.summary.map((sentence) => (
+            <li>{sentence}</li>
+          ))}
+        </ol>
+      </div>
+    </details>
+    <details
+      name="reading-tools"
+      class="reading-accordion"
+      data-accordion="contents"
+    >
+      <summary>
+        <span>{t("Spis treści", "Contents")}</span>
+        <Icon name="down" />
+      </summary>
+      <nav
+        class="accordion-body"
+        aria-label={t("Spis treści artykułu", "Article contents")}
+      >
+        {headings.map((heading, i) => (
+          <a href={`#${heading.slug}`}>
+            <small>{String(i + 1).padStart(2, "0")}</small>
+            <span>{heading.text}</span>
+          </a>
+        ))}
+      </nav>
+    </details>
+  </div>
   {narration && (narration.pl || narration.en) ? (
     <div class="narration">
       <h2>{t("Posłuchaj zamiast czytać", "Listen instead of reading")}</h2>
