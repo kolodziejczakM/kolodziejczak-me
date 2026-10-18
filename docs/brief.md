@@ -180,3 +180,6 @@ Autor zatwierdził bio: „Cześć, z tej strony Marcin. Zawodowo realizuję swo
 ## Cytaty i linki do fragmentów
 
 Użytkownik chce mocniej wyróżnić ważne cytaty, rozważa cudzysłów zamiast bocznej linii i zamówił kilka form wizualnych. Nagłówki i cytaty mają reagować na kliknięcie, aktualizować adres fragmentu oraz umożliwiać wejście bezpośrednio w dane miejsce. Dodatkowo mały przycisk kopiuje tekst cytatu. Funkcje są wdrożone; forma pozostaje do wyboru w [trzech prototypach](quote-design-study.md).
+
+
+Autor wybrał cytat B „Myśl na pierwszym planie”: wyśrodkowany, bez pudełka i bocznej linii, z dużym miodowym cudzysłowem i małymi akcjami linku/kopiowania pod tekstem. Wdrożono go we właściwej stronie bez próbnika.

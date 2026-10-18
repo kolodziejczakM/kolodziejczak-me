@@ -909,15 +909,23 @@ textarea {
 }
 .prose blockquote {
   font-family: var(--heading);
-  font-size: 29px;
-  line-height: 1.45;
-  font-weight: 600;
-  color: var(--secondary);
-  background: var(--panel);
-  border-left: 3px solid var(--secondary);
-  border-radius: 0 24px 24px 0;
-  padding: 22px;
-  margin: 28px 0;
+  color: var(--text);
+  background: transparent;
+  border: 0;
+  padding: 20px 10px;
+  margin: 38px 0;
+  text-align: center;
+}
+.quote-mark {
+  display: block;
+  font-family: var(--heading);
+  font-size: 94px;
+  font-weight: 650;
+  line-height: 0.6;
+  color: var(--accent);
+  margin-bottom: 13px;
+  pointer-events: none;
+  user-select: none;
 }
 .prose blockquote p {
   margin: 0;
@@ -1459,10 +1467,6 @@ html:not(.js) .js-only {
     font-size: 28px;
     margin-top: 35px;
   }
-  .prose blockquote {
-    font-size: 25px;
-    padding: 20px;
-  }
   .callout {
     padding: 20px;
   }
@@ -1962,22 +1966,23 @@ html:not(.js) .js-only {
 .prose .heading-permalink:hover {
   color: var(--accent);
 }
-.prose .article-quote:target {
-  outline: 1px solid var(--accent);
-  outline-offset: 5px;
-}
 .prose [data-article-heading]:target {
   color: var(--accent);
 }
 .quote-text {
+  max-width: 690px;
+  margin-inline: auto;
+  font-size: clamp(29px, 3.3vw, 38px);
+  line-height: 1.28;
+  font-weight: 650;
   cursor: pointer;
 }
 .quote-actions {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   flex-wrap: wrap;
   gap: 8px;
-  margin-top: 12px;
+  margin-top: 18px;
   font: 400 11px/1.5 var(--font);
 }
 .prose .quote-action {

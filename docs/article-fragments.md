@@ -10,4 +10,4 @@ Cytaty Markdown dostają ID `quote-` plus skrót SHA-256 tekstu. Dopisanie akapi
 
 Weryfikacja: TypeScript, build 12 stron, 15 testów Node. Dwa nowe testy dotyczą stabilności adresów po zmianach niezwiązanych z cytatem, duplikatów oraz zachowania slugów i czystych nazw w spisie treści. Chromium: rzeczywisty odczyt schowka po kopiowaniu tekstu i linku w prywatnym HTTP, ponowne wejście z fragmentem, kliknięcie nagłówka, 8 widoków PL/EN przy 320/390/768/1440 px oraz nawigacja do cytatu i nagłówka bez JS.
 
-Wygląd cytatów pozostaje przedmiotem osobnych prototypów. Właściwa strona zachowuje dotychczasową formę z dodanymi akcjami.
+Po porównaniu prototypów użytkownik wybrał formę B: wyśrodkowany cytat bez ramki, z dużym miodowym cudzysłowem nad tekstem. [Decyzja i weryfikacja wdrożenia](quote-design-study.md#wdrożony-wariant-b).

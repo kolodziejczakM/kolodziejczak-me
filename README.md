@@ -56,4 +56,4 @@ Wybrany zestaw logo D / karty C / tło D działa na porcie 4322. [Decyzja, wdro�
 
 Grupa TL;DR / spisu treści używa wybranej wspólnej kapsuły, a sociale piktogramów z nazwami. [Wdrożenie A/A i archiwum porównania](docs/reading-social-controls-study.md).
 
-Nagłówki i cytaty mają własne linki do fragmentów, a cytaty także kopiowanie tekstu i adresu z tooltipem. [Implementacja](docs/article-fragments.md) i [trzy prototypy formy cytatu](docs/quote-design-study.md).
+Nagłówki i cytaty mają własne linki do fragmentów, a cytaty także kopiowanie tekstu i adresu z tooltipem. [Implementacja](docs/article-fragments.md) i [wybraną formę cytatu i archiwum prototypów](docs/quote-design-study.md).

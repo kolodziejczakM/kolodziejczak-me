@@ -11,6 +11,9 @@ const t = (pl: string, en: string) => text(locale, pl, en);
 ---
 
 <blockquote id={id} cite={cite} class="article-quote" data-article-quote>
+  <span class="quote-mark" aria-hidden="true">
+    "
+  </span>
   <div class="quote-text">
     <slot />
   </div>
