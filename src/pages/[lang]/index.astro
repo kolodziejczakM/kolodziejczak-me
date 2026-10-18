@@ -1,7 +1,5 @@
 ---
 import SiteLayout from "../../layouts/SiteLayout.astro";
-import Mark from "../../components/Mark.astro";
-import Avatar from "../../components/Avatar.astro";
 import Icon from "../../components/Icon.astro";
 import ArticleCard from "../../components/ArticleCard.astro";
 import Contacts from "../../components/Contacts.astro";
@@ -41,9 +39,6 @@ const t = (pl: string, en: string) => text(locale, pl, en);
 >
   <main id="main" class="wrap">
     <section class="hero" aria-labelledby="home-title">
-      <div class="hero-mark">
-        <Mark />
-      </div>
       <span class="eyebrow">
         {t(
           "INTERNET JEST FAJNIEJSZY Z LUDŹMI",
@@ -65,7 +60,6 @@ const t = (pl: string, en: string) => text(locale, pl, en);
         )}
       </h1>
       <div class="hero-bio">
-        <Avatar locale={locale} />
         <div>
           <p>{site.bio[locale]}</p>
           {!site.readyToPublish && (

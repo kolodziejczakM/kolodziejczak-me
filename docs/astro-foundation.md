@@ -100,7 +100,7 @@ Archiwalne eksperymenty nadal są w `prototypes/`, na gałęzi `codex/prototype-
 
 ## Co pozostaje
 
-Portret przekazany przez autora 18 października znajduje się w `src/assets/profile/marcin-kolodziejczak.jpg` i zastępuje monogram na obu stronach głównych. Astro generuje lokalne wersje AVIF/WebP/JPEG o szerokości 96–384 px; wyświetlany rozmiar to 96 px na telefonie i 128 px na większym ekranie. Zachowano naturalne kolory zdjęcia i okrągłą oprawę. Usunięto komunikat o brakującym zdjęciu. Build i 13 istniejących testów przechodzą; Chromium potwierdził poprawne wczytanie portretu, wybór AVIF i brak poziomego przepełnienia w ośmiu widokach PL/EN (320/390/768/1440 px). Przy przechwytywaniu zrzutów środowisko headless sporadycznie odrzucało ładowanie istniejących fontów; ponowne wczytanie pozwoliło zweryfikować pełny układ. Nie zmieniano fontów.
+Portret przekazany przez autora 18 października znajduje się w `src/assets/profile/marcin-kolodziejczak.jpg`. Zgodnie z doprecyzowaniem użytkownika zastępuje kokardkę w nagłówku i stopce. Nie powtarza się pod hasłem głównym; dekorację kokardki nad sekcją również usunięto. Astro generuje lokalne wersje AVIF/WebP/JPEG 48–168 px; wyświetlany rozmiar to 48 px na telefonie i 56 px na większym ekranie. Wybór języka na `/` również pokazuje portret. Nowy logotyp, karty i tło są przedmiotem osobnych prototypów, bez wyboru zwycięzcy na tym etapie.
 
 Przed publiczną premierą: potwierdzone bio, prawdziwe linki kontaktowe i pierwszy autorski artykuł z tłumaczeniem; docelowy hosting, sitemap/RSS, podglądy udostępniania oraz Umami od pierwszego publicznego uruchomienia. Dopiero po przeglądzie gotowej strony należy zmienić flagę publikacji i usunąć próbki. Bieżący etap nie publikuje domeny.
 

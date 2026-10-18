@@ -152,3 +152,8 @@ Użytkownik poprosił o małe kontrolki dopasowane szerokością do tekstu, obok
 ## Tooltip i systemowe udostępnianie
 
 Użytkownik poprosił o potwierdzenie kopiowania w tooltipie, zamiast widocznej notki w dialogu, oraz zasugerował systemowy panel przez Web Share API. Wdrożono tooltip bez zmiany układu oraz bezpośrednie wywołanie API. Na HTTP i przy braku obsługi przycisk kopiuje link bez własnego dialogu. Systemowy panel wymaga HTTPS; konfiguracja w Tailscale wymaga brakujących uprawnień administratora. [Szczegóły i weryfikacja](sharing-and-feedback.md).
+
+
+## Zdjęcie, logotyp, karty i tło — dalsza eksploracja
+
+Użytkownik doprecyzował, że zdjęcie ma zastąpić kokardkę w rogu nagłówka. Kokardka jako logo została odrzucona. Poprosił o kilka propozycji logotypu, mniejsze karty o lepszych proporcjach do treści i spokojniejszych kolorach oraz bardzo delikatnie animowany gradient i prawie niewidoczną siatkę przy zachowaniu obecnej bazowej zieleni. Przykład Binary Lens jest odniesieniem faktury; nie zmienia zatwierdzonych fontów ani palety. Eksperymenty mają niezależne przełączniki, żeby wybór logo nie narzucał kart lub tła.

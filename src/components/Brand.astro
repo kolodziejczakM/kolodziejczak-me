@@ -1,5 +1,5 @@
 ---
-import Mark from "./Mark.astro";
+import Avatar from "./Avatar.astro";
 import { site } from "../config/site";
 import { homePath, type Locale } from "../lib/i18n";
 interface Props {
@@ -8,7 +8,7 @@ interface Props {
 ---
 
 <a class="brand" href={homePath(Astro.props.locale)}>
-  <Mark />
+  <Avatar locale={Astro.props.locale} />
   <span>
     {site.name}
     <small>{site.domain}</small>

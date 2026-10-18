@@ -226,11 +226,6 @@ svg {
   gap: 13px;
   min-width: 0;
 }
-.brand .meeting-mark {
-  width: 46px;
-  height: 28px;
-  flex: none;
-}
 .brand > span {
   font-family: var(--heading);
   font-size: 19px;
@@ -294,20 +289,6 @@ svg {
   padding: 58px 30px 43px;
   background: var(--panel);
 }
-.hero-mark {
-  position: absolute;
-  left: 50%;
-  top: -35px;
-  transform: translateX(-50%);
-  width: 116px;
-  padding: 0 9px;
-  background: var(--bg);
-  border-radius: 99px;
-}
-.hero-mark svg {
-  width: 100%;
-  height: auto;
-}
 .hero > .eyebrow {
   color: var(--muted);
   font-size: 10px;
@@ -342,13 +323,13 @@ svg {
 .avatar {
   display: block;
   flex: none;
-  width: 128px;
-  height: 128px;
+  width: 56px;
+  height: 56px;
   object-fit: cover;
   border: 1px solid var(--line);
   border-radius: 50%;
 }
-.hero-bio > picture {
+.brand > picture {
   flex: none;
 }
 .hero > .button {
@@ -1239,8 +1220,9 @@ dialog .disclosure-body {
   margin: 15vh auto;
   text-align: center;
 }
-.language-home > .meeting-mark {
-  width: 100px;
+.language-home .avatar {
+  width: 96px;
+  height: 96px;
   margin: 0 auto 28px;
 }
 .language-home h1 {
@@ -1305,9 +1287,9 @@ html:not(.js) .js-only {
   .brand > span {
     font-size: 18px;
   }
-  .brand .meeting-mark {
-    width: 40px;
-    height: 25px;
+  .brand .avatar {
+    width: 48px;
+    height: 48px;
   }
   .site-header nav {
     width: 100%;
@@ -1339,11 +1321,6 @@ html:not(.js) .js-only {
     display: block;
     text-align: center;
     margin-bottom: 25px;
-  }
-  .hero-bio .avatar {
-    margin: 0 auto 15px;
-    width: 96px;
-    height: 96px;
   }
   .hero-bio p {
     font-size: 12px;
