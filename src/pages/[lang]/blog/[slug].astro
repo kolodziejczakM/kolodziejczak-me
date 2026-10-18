@@ -1,0 +1,203 @@
+---
+import { render } from "astro:content";
+import SiteLayout from "../../../layouts/SiteLayout.astro";
+import Avatar from "../../../components/Avatar.astro";
+import Icon from "../../../components/Icon.astro";
+import ArticleTools from "../../../components/ArticleTools.astro";
+import { site } from "../../../config/site";
+import {
+  publishedArticles,
+  translationOf,
+  articlePath,
+  type Article,
+} from "../../../lib/articles";
+import {
+  otherLocale,
+  blogPath,
+  text,
+  categoryLabel,
+  formatDate,
+} from "../../../lib/i18n";
+export async function getStaticPaths() {
+  return (await publishedArticles()).map((article) => ({
+    params: { lang: article.data.locale, slug: article.data.urlSlug },
+    props: { article },
+  }));
+}
+interface Props {
+  article: Article;
+}
+const { article } = Astro.props;
+const locale = article.data.locale;
+const t = (pl: string, en: string) => text(locale, pl, en);
+const articles = await publishedArticles();
+const translated = translationOf(articles, article, otherLocale(locale));
+const siblings = articles.filter((item) => item.data.locale === locale);
+const currentIndex = siblings.findIndex((item) => item.id === article.id);
+const next =
+  siblings.length > 1
+    ? siblings[(currentIndex + 1) % siblings.length]
+    : undefined;
+const { Content, headings } = await render(article);
+const contents = headings.filter((heading) => heading.depth === 2);
+const canonical = new URL(articlePath(article), site.origin).href;
+---
+
+<SiteLayout
+  locale={locale}
+  page="article"
+  title={article.data.title}
+  description={article.data.description}
+  otherPath={articlePath(translated)}
+>
+  <div class="reading-progress" aria-hidden="true">
+    <span data-reading-progress></span>
+  </div>
+  <main id="main" class="wrap article-page">
+    <div class="article-topline">
+      <a href={blogPath(locale)}>← {t("Wszystkie artykuły", "All articles")}</a>
+      <span class="eyebrow">
+        {categoryLabel(article.data.category, locale)} ·{" "}
+        <time datetime={article.data.publishedAt.toISOString()}>
+          {formatDate(article.data.publishedAt, locale)}
+        </time>
+      </span>
+    </div>
+    <header class="article-header" id="article-top">
+      <span class="eyebrow">{t("ARTYKUŁ", "ARTICLE")}</span>
+      <h1>{article.data.title}</h1>
+      <p class="article-lead">{article.data.description}</p>
+      <div class="article-author">
+        <Avatar locale={locale} />
+        <div>
+          {site.name}
+          {article.data.sample && (
+            <small>
+              {t(
+                "Przykładowy artykuł · treść do zastąpienia",
+                "Sample article · content to be replaced",
+              )}
+            </small>
+          )}
+        </div>
+      </div>
+    </header>
+    <div class="article-layout">
+      <aside class="table-of-contents">
+        <span class="eyebrow">{t("NA TEJ STRONIE", "ON THIS PAGE")}</span>
+        <nav aria-label={t("Spis treści artykułu", "Article contents")}>
+          {contents.map((heading, i) => (
+            <a href={`#${heading.slug}`}>
+              <small>{String(i + 1).padStart(2, "0")}</small>
+              <span>{heading.text}</span>
+            </a>
+          ))}
+        </nav>
+        <div class="toc-contact">
+          <Icon name="chat" />
+          <p>
+            {t(
+              "Masz inne spojrzenie? Złapmy kontakt.",
+              "Have a different perspective? Let’s connect.",
+            )}
+          </p>
+          <a href={site.aboutUrl} target="_blank" rel="noreferrer">
+            about.me ↗
+          </a>
+        </div>
+      </aside>
+      <div class="article-column">
+        <details class="mobile-contents">
+          <summary>
+            {t("Spis treści", "Contents")}
+            <Icon name="down" />
+          </summary>
+          <nav aria-label={t("Spis treści artykułu", "Article contents")}>
+            {contents.map((heading, i) => (
+              <a href={`#${heading.slug}`}>
+                <small>{String(i + 1).padStart(2, "0")}</small>
+                <span>{heading.text}</span>
+              </a>
+            ))}
+          </nav>
+        </details>
+        <ArticleTools article={article} locale={locale} />
+        <article class="prose" data-reading-content>
+          <Content />
+        </article>
+        <section
+          class="article-end"
+          aria-label={t("Udostępnij artykuł", "Share article")}
+        >
+          <Icon name="spark" />
+          <p>
+            {t("Dzięki, że dotarłeś aż tutaj.", "Thanks for reading this far.")}
+          </p>
+          <details
+            class="article-disclosure share-disclosure"
+            data-dialog="share"
+          >
+            <summary class="button button-secondary">
+              {t("Udostępnij artykuł", "Share article")}
+              <Icon />
+            </summary>
+            <div class="disclosure-body">
+              <label for="article-url">
+                {t("Link do artykułu", "Article link")}
+              </label>
+              <input
+                id="article-url"
+                type="url"
+                readonly
+                value={canonical}
+                data-share-url
+              />
+              <button
+                class="button button-primary js-only"
+                type="button"
+                data-copy="article-url"
+                data-copied={t("Link skopiowany.", "Link copied.")}
+                data-fallback={t(
+                  "Zaznaczono link — skopiuj go ręcznie.",
+                  "Link selected — copy it manually.",
+                )}
+              >
+                {t("Kopiuj link", "Copy link")}
+                <Icon name="copy" />
+              </button>
+              <button
+                class="button button-secondary"
+                type="button"
+                data-native-share
+                hidden
+                data-title={article.data.title}
+              >
+                {t("Więcej opcji udostępniania", "More sharing options")}
+              </button>
+            </div>
+          </details>
+        </section>
+        {next && (
+          <aside class="read-next">
+            <span class="eyebrow">
+              {t("JESZCZE JEDNA MYŚL", "ONE MORE THOUGHT")}
+            </span>
+            <a href={articlePath(next)}>
+              <span>{next.data.title}</span>
+              <Icon />
+            </a>
+          </aside>
+        )}
+      </div>
+    </div>
+  </main>
+  <a
+    class="back-top js-only"
+    href="#article-top"
+    data-back-top
+    hidden
+    aria-label={t("Wróć na początek artykułu", "Back to the article top")}
+  >
+    ↑
+  </a>
+</SiteLayout>

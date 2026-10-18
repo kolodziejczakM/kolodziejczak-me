@@ -1,0 +1,26 @@
+---
+interface Props {
+  class?: string;
+}
+---
+
+<svg
+  class:list={["meeting-mark", Astro.props.class]}
+  viewBox="0 0 160 80"
+  fill="none"
+  aria-hidden="true"
+>
+  <path
+    d="M13 40C13 7 48 4 72 27l8 8-8 13C48 80 13 72 13 40Z"
+    fill="var(--secondary)"
+    stroke="var(--bg)"
+    stroke-width="3"
+  />
+  <path
+    d="M147 40c0-33-35-36-59-13l-8 8 8 13c24 32 59 24 59-8Z"
+    fill="var(--accent)"
+    stroke="var(--bg)"
+    stroke-width="3"
+  />
+  <circle cx="80" cy="38" r="7" fill="var(--text)" />
+</svg>

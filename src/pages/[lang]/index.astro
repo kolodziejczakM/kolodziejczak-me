@@ -1,0 +1,109 @@
+---
+import SiteLayout from "../../layouts/SiteLayout.astro";
+import Mark from "../../components/Mark.astro";
+import Avatar from "../../components/Avatar.astro";
+import Icon from "../../components/Icon.astro";
+import ArticleCard from "../../components/ArticleCard.astro";
+import Contacts from "../../components/Contacts.astro";
+import { site } from "../../config/site";
+import { articlesFor } from "../../lib/articles";
+import {
+  locales,
+  otherLocale,
+  homePath,
+  blogPath,
+  text,
+  type Locale,
+} from "../../lib/i18n";
+export function getStaticPaths() {
+  return locales.map((locale) => ({
+    params: { lang: locale },
+    props: { locale },
+  }));
+}
+interface Props {
+  locale: Locale;
+}
+const { locale } = Astro.props;
+const articles = await articlesFor(locale);
+const t = (pl: string, en: string) => text(locale, pl, en);
+---
+
+<SiteLayout
+  locale={locale}
+  page="home"
+  title={site.name}
+  description={t(
+    "Osobisty kawałek internetu Marcina Kołodziejczaka. O kodzie, AI i ciekawości.",
+    "Marcin Kołodziejczak’s personal corner of the internet. Code, AI and curiosity.",
+  )}
+  otherPath={homePath(otherLocale(locale))}
+>
+  <main id="main" class="wrap">
+    <section class="hero" aria-labelledby="home-title">
+      <div class="hero-mark">
+        <Mark />
+      </div>
+      <span class="eyebrow">
+        {t(
+          "INTERNET JEST FAJNIEJSZY Z LUDŹMI",
+          "THE INTERNET IS BETTER WITH PEOPLE",
+        )}
+      </span>
+      <h1 id="home-title">
+        {locale === "pl" ? (
+          <>
+            Ciekawość to
+            <br />
+            dobry <em>początek.</em>
+          </>
+        ) : (
+          <>
+            Curiosity is
+            <br />a good <em>beginning.</em>
+          </>
+        )}
+      </h1>
+      <div class="hero-bio">
+        <Avatar locale={locale} />
+        <div>
+          <p>{site.bio[locale]}</p>
+          {!site.readyToPublish && (
+            <small class="sample-label">
+              {t(
+                "Bio robocze · zdjęcie do uzupełnienia",
+                "Sample bio · photo to be added",
+              )}
+            </small>
+          )}
+        </div>
+      </div>
+      <a class="button button-primary" href={blogPath(locale)}>
+        {t("Zobacz, co mi chodzi po głowie", "See what’s on my mind")}
+        <Icon />
+      </a>
+    </section>
+    <section class="latest" aria-labelledby="latest-title">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">
+            {t("PRZYKŁADOWE ARTYKUŁY", "SAMPLE ARTICLES")}
+          </span>
+          <h2 id="latest-title">
+            {t("Z mojej głowy do Twojej.", "From my head to yours.")}
+          </h2>
+        </div>
+        <a class="all-articles" href={blogPath(locale)}>
+          {t("Wszystkie artykuły", "All articles")}
+          <Icon />
+        </a>
+      </div>
+      <div class="article-cards">
+        {articles.slice(0, 3).map((article) => (
+          <ArticleCard article={article} locale={locale} />
+        ))}
+      </div>
+    </section>
+    <Contacts locale={locale} />
+  </main>
+</SiteLayout>

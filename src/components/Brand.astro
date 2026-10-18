@@ -1,0 +1,16 @@
+---
+import Mark from "./Mark.astro";
+import { site } from "../config/site";
+import { homePath, type Locale } from "../lib/i18n";
+interface Props {
+  locale: Locale;
+}
+---
+
+<a class="brand" href={homePath(Astro.props.locale)}>
+  <Mark />
+  <span>
+    {site.name}
+    <small>{site.domain}</small>
+  </span>
+</a>

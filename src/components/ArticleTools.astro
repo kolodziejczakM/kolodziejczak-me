@@ -1,0 +1,103 @@
+---
+import type { Article } from "../lib/articles";
+import { text, formatDuration, type Locale } from "../lib/i18n";
+import Icon from "./Icon.astro";
+interface Props {
+  article: Article;
+  locale: Locale;
+}
+const { article, locale } = Astro.props;
+const t = (pl: string, en: string) => text(locale, pl, en);
+const narration = article.data.audio;
+---
+
+<section
+  class="article-toolbox"
+  aria-label={t("Narzędzia czytania", "Reading tools")}
+>
+  {narration && (narration.pl || narration.en) ? (
+    <div class="narration">
+      <h2>{t("Posłuchaj zamiast czytać", "Listen instead of reading")}</h2>
+      {(["pl", "en"] as const).map((language) => {
+        const audio = narration[language];
+        return (
+          audio && (
+            <details open={language === locale}>
+              <summary>
+                {language === "pl" ? "Polski" : "English"} ·{" "}
+                {formatDuration(audio.durationSeconds)}
+              </summary>
+              <audio
+                controls
+                preload="none"
+                src={audio.src}
+                aria-label={`${t("Lektor", "Narration")}: ${language === "pl" ? "Polski" : "English"}`}
+              >
+                <a href={audio.src}>
+                  {t("Pobierz nagranie", "Download narration")}
+                </a>
+              </audio>
+            </details>
+          )
+        );
+      })}
+    </div>
+  ) : (
+    <p class="audio-unavailable">
+      {t(
+        "Nagranie do tego przykładowego artykułu nie zostało jeszcze dodane.",
+        "Narration for this sample article has not been added yet.",
+      )}
+    </p>
+  )}
+  <div class="article-actions">
+    <details class="article-disclosure" data-dialog="tldr">
+      <summary class="button button-secondary">
+        <Icon name="read" />
+        {t("TL;DR · w 5 zdaniach", "TL;DR · in 5 sentences")}
+      </summary>
+      <div class="disclosure-body">
+        <ol class="article-summary">
+          {article.data.summary.map((sentence) => (
+            <li>{sentence}</li>
+          ))}
+        </ol>
+      </div>
+    </details>
+    <details class="article-disclosure" data-dialog="prompt">
+      <summary class="button button-secondary">
+        <Icon name="spark" />
+        {t("Prompt: pogłęb temat", "Prompt: explore further")}
+      </summary>
+      <div class="disclosure-body">
+        <p>
+          {t(
+            "Skopiuj ten prompt do wybranego asystenta AI.",
+            "Copy this prompt into your preferred AI assistant.",
+          )}
+        </p>
+        <label class="sr-only" for="article-prompt">
+          Prompt
+        </label>
+        <textarea
+          id="article-prompt"
+          rows="7"
+          readonly
+        >{article.data.prompt}</textarea>
+        <button
+          class="button button-primary js-only"
+          type="button"
+          data-copy="article-prompt"
+          data-copied={t("Prompt skopiowany.", "Prompt copied.")}
+          data-fallback={t(
+            "Zaznaczono tekst — skopiuj go ręcznie.",
+            "Text selected — copy it manually.",
+          )}
+        >
+          {t("Kopiuj prompt", "Copy prompt")}
+          <Icon name="copy" />
+        </button>
+      </div>
+    </details>
+  </div>
+</section>

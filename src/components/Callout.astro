@@ -1,0 +1,10 @@
+---
+interface Props {
+  title?: string;
+}
+---
+
+<aside class="callout">
+  {Astro.props.title && <span class="eyebrow">{Astro.props.title}</span>}
+  <slot />
+</aside>

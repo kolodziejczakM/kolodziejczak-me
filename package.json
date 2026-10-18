@@ -1,7 +1,24 @@
 {
-  "name": "kolodziejczak-me-prototype",
+  "name": "kolodziejczak-me",
   "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22.22.0"
+  },
   "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "check": "tsc --noEmit",
+    "test": "node --experimental-strip-types --test tests/*.test.ts",
+    "validate": "npm run check && npm run build && npm test",
     "prototype": "python3 prototypes/serve.py"
+  },
+  "dependencies": {
+    "@astrojs/mdx": "8.1.0",
+    "astro": "7.4.0"
+  },
+  "devDependencies": {
+    "typescript": "7.0.2"
   }
 }

@@ -1,0 +1,59 @@
+---
+title: "Mniej kodu. Więcej myślenia."
+description: "O tym, dlaczego najciekawszą częścią pracy z AI jest to, co dzieje się przed napisaniem pierwszej linijki."
+locale: "pl"
+translationKey: "less"
+urlSlug: "mniej-ale-lepiej"
+publishedAt: "2026-10-12"
+category: "engineering"
+sample: true
+draft: false
+prompt: "Chcę lepiej zrozumieć temat „Mniej kodu. Więcej myślenia.”. Zacznij od pytania o moje doświadczenie. Następnie wyjaśnij główne pojęcia na konkretnym przykładzie, pokaż ograniczenia tego podejścia i zaproponuj mały eksperyment. Nie przypisuj autorowi poglądów, których nie wyraził."
+summary:
+  - "Szybkie generowanie kodu nie zastępuje zrozumienia problemu."
+  - "Zanim zaczniesz budować, nazwij pytanie, na które szukasz odpowiedzi."
+  - "Mały prototyp pozwala szybko sprawdzić pomysł."
+  - "Odkładaj decyzje, które nie są jeszcze potrzebne."
+  - "Wybór rozwiązania wymaga ludzkiego kontekstu i rozmowy."
+---
+
+import Callout from '../../../components/Callout.astro';
+
+Ten tekst jest przykładową publikacją przygotowaną do wdrożenia układu strony. Pokazuje sposób prezentowania dłuższego artykułu; nie jest autorskim wpisem Marcina.
+
+## Najpierw dobre pytanie
+
+Otwierasz edytor. Masz pomysł, kawę i narzędzie, które potrafi napisać prawie wszystko. Pokusa jest prosta: od razu poprosić o kod. Ale co właściwie chcesz zbudować? I dla kogo?
+
+## Szybciej nie zawsze znaczy bliżej
+
+Łatwo pomylić tempo pracy z postępem. Można w godzinę napisać mnóstwo kodu i ani o krok nie przybliżyć się do rozwiązania prawdziwego problemu. Warto zatrzymać się i nazwać to, czego jeszcze nie wiemy.
+
+> Najlepsza linijka kodu? Czasem ta, której nie trzeba było napisać.
+
+## Prototyp jako pytanie
+
+Dobry prototyp nie musi przypominać gotowego produktu. Ma odpowiedzieć na jedno pytanie. Czy ten układ jest zrozumiały? Czy ta interakcja daje poczucie kontroli? Czy w ogóle potrzebujemy tej funkcji?
+
+<Callout title="MAŁY EKSPERYMENT">
+
+Weź pomysł, nad którym teraz pracujesz. Opisz go bez używania nazw technologii. Co pozostaje?
+
+</Callout>
+
+```ts
+const question = "Czy ten interfejs jest zrozumiały?";
+const experiment = { question, scope: "small" };
+```
+
+## Mniej decyzji na zapas
+
+Nie każda możliwość musi stać się wymaganiem. Gdy zaczynam nowy projekt, próbuję oddzielić to, co potrzebne dzisiaj, od tego, co być może przyda się kiedyś. To zostawia więcej miejsca na zmianę zdania.
+
+## Człowiek zostaje w pętli
+
+Narzędzie może podsunąć dziesięć rozwiązań. Wybór nadal należy do nas. Wymaga znajomości kontekstu, rozmowy z ludźmi i zgody na to, że pierwsza odpowiedź nie musi być najlepsza.
+
+## Co możesz sprawdzić jutro?
+
+Zanim zlecisz kolejną funkcję, zapisz jednym zdaniem pytanie, na które ma odpowiedzieć. Zbuduj najmniejszą rzecz, która pomoże to sprawdzić. Pokaż ją komuś. Dopiero potem zdecyduj, co dalej.

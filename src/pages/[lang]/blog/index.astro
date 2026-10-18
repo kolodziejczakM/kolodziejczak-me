@@ -1,0 +1,169 @@
+---
+import SiteLayout from "../../../layouts/SiteLayout.astro";
+import Icon from "../../../components/Icon.astro";
+import { articlesFor, articlePath } from "../../../lib/articles";
+import {
+  locales,
+  otherLocale,
+  blogPath,
+  categories,
+  categoryLabel,
+  formatDate,
+  text,
+  type Locale,
+} from "../../../lib/i18n";
+export function getStaticPaths() {
+  return locales.map((locale) => ({
+    params: { lang: locale },
+    props: { locale },
+  }));
+}
+interface Props {
+  locale: Locale;
+}
+const { locale } = Astro.props;
+const articles = await articlesFor(locale);
+const t = (pl: string, en: string) => text(locale, pl, en);
+---
+
+<SiteLayout
+  locale={locale}
+  page="blog"
+  title={t("Artykuły", "Articles")}
+  description={t(
+    "Artykuły o budowaniu rzeczy, nowych narzędziach i tym, co pomiędzy.",
+    "Articles about building things, new tools and everything in between.",
+  )}
+  otherPath={blogPath(otherLocale(locale))}
+>
+  <main id="main" class="wrap blog-page">
+    <header class="blog-intro">
+      <span class="eyebrow">
+        {t(
+          "KOD, NARZĘDZIA I TO, CO POMIĘDZY",
+          "CODE, TOOLS AND EVERYTHING BETWEEN",
+        )}
+      </span>
+      <h1>
+        {t("Artykuły.", "Articles.")}
+        <br />
+        <em>{t("Z ciekawości.", "Out of curiosity.")}</em>
+      </h1>
+      <p>
+        {t(
+          "O budowaniu rzeczy, nowych narzędziach i tym, co pomiędzy. Miejsce na dłuższą myśl i nowe spojrzenie.",
+          "On building things, new tools, and everything in between. Room for a longer thought and a fresh perspective.",
+        )}
+      </p>
+      <small>
+        {t(
+          "Przykładowe publikacje pokazujące docelowy układ strony.",
+          "Sample articles showing the selected page design.",
+        )}
+      </small>
+    </header>
+    <div
+      class="blog-filters"
+      data-filters
+      hidden
+      role="group"
+      aria-label={t("Tematy artykułów", "Article topics")}
+    >
+      <button
+        class="button button-secondary"
+        type="button"
+        data-filter="all"
+        aria-pressed="true"
+      >
+        {t("Wszystko", "All")}{" "}
+        <small>{String(articles.length).padStart(2, "0")}</small>
+      </button>
+      {categories.map((category) => (
+        <button
+          class="button button-secondary"
+          type="button"
+          data-filter={category}
+          aria-pressed="false"
+        >
+          {categoryLabel(category, locale)}
+        </button>
+      ))}
+    </div>
+    <p
+      class="sr-only"
+      data-filter-status
+      aria-live="polite"
+      data-format={t("Liczba artykułów:", "Articles shown:")}
+    ></p>
+    <div class="blog-list">
+      {articles.map((article) => (
+        <article
+          class="blog-entry"
+          data-article-category={article.data.category}
+        >
+          <a
+            class:list={["entry-art", `art-${article.data.category}`]}
+            href={articlePath(article)}
+            aria-hidden="true"
+            tabindex="-1"
+          >
+            {article.data.category === "engineering" ? (
+              <svg viewBox="0 0 260 220" fill="none" aria-hidden="true">
+                <g stroke="currentColor" stroke-width="1.2">
+                  <ellipse
+                    cx="130"
+                    cy="110"
+                    rx="102"
+                    ry="39"
+                    transform="rotate(-30 130 110)"
+                  />
+                  <ellipse
+                    cx="130"
+                    cy="110"
+                    rx="102"
+                    ry="39"
+                    transform="rotate(30 130 110)"
+                  />
+                  <ellipse
+                    cx="130"
+                    cy="110"
+                    rx="102"
+                    ry="39"
+                    transform="rotate(90 130 110)"
+                  />
+                  <circle cx="130" cy="110" r="36" />
+                  <path d="m114 103-9 7 9 7m32-14 9 7-9 7m-13-20-6 26" />
+                </g>
+              </svg>
+            ) : article.data.category === "web" ? (
+              <span class="web-art">
+                <Icon name="spark" />
+                <span>www</span>
+              </span>
+            ) : (
+              <span class="film-art">
+                <Icon name="play" />
+              </span>
+            )}
+          </a>
+          <div class="entry-copy">
+            <span class="eyebrow">
+              {categoryLabel(article.data.category, locale)} ·{" "}
+              <time datetime={article.data.publishedAt.toISOString()}>
+                {formatDate(article.data.publishedAt, locale)}
+              </time>
+            </span>
+            <h2>
+              <a href={articlePath(article)}>{article.data.title}</a>
+            </h2>
+            <p>{article.data.description}</p>
+            <a class="text-link" href={articlePath(article)}>
+              {t("Czytaj artykuł", "Read article")}
+              <Icon />
+            </a>
+          </div>
+        </article>
+      ))}
+    </div>
+  </main>
+</SiteLayout>

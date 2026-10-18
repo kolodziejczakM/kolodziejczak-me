@@ -1,0 +1,31 @@
+---
+import Mark from "../components/Mark.astro";
+import "../styles/site.css";
+---
+
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Marcin Kołodziejczak · PL / EN</title>
+    <meta name="robots" content="noindex,follow" />
+    <meta name="theme-color" content="#0e241d" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  </head>
+  <body>
+    <main class="language-home">
+      <Mark />
+      <h1>Marcin Kołodziejczak</h1>
+      <p>Wybierz język / Choose a language</p>
+      <div>
+        <a class="button button-primary" href="/pl/" lang="pl">
+          Polski
+        </a>
+        <a class="button button-secondary" href="/en/" lang="en">
+          English
+        </a>
+      </div>
+    </main>
+  </body>
+</html>

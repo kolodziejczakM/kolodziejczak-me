@@ -1,0 +1,108 @@
+---
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import Icon from "../components/Icon.astro";
+import { site } from "../config/site";
+import { text, otherLocale, type Locale } from "../lib/i18n";
+import "../styles/site.css";
+interface Props {
+  locale: Locale;
+  page: "home" | "blog" | "article";
+  title: string;
+  description: string;
+  otherPath: string;
+}
+const { locale, page, title, description, otherPath } = Astro.props;
+const canonical = new URL(Astro.url.pathname, site.origin);
+const t = (pl: string, en: string) => text(locale, pl, en);
+---
+
+<!doctype html>
+<html lang={locale}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title} · {site.domain}</title>
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#0e241d" />
+    {!site.readyToPublish && <meta name="robots" content="noindex,follow" />}
+    <link rel="canonical" href={canonical} />
+    <link rel="alternate" hreflang={locale} href={canonical} />
+    <link
+      rel="alternate"
+      hreflang={otherLocale(locale)}
+      href={new URL(otherPath, site.origin)}
+    />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link
+      rel="preload"
+      href="/fonts/bricolage-grotesque.ttf"
+      as="font"
+      type="font/ttf"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/fonts/hanken-grotesk.ttf"
+      as="font"
+      type="font/ttf"
+      crossorigin
+    />
+  </head>
+  <body data-page={page}>
+    <a class="skip-link" href="#main">
+      {t("Przejdź do treści", "Skip to content")}
+    </a>
+    <Header locale={locale} page={page} otherPath={otherPath} />
+    <slot />
+    <Footer locale={locale} />
+    <aside
+      class="language-nudge"
+      data-language-nudge
+      data-other-locale={otherLocale(locale)}
+      hidden
+      aria-label={t("Sugestia języka", "Language suggestion")}
+    >
+      <span>{t("Prefer English?", "Wolisz po polsku?")}</span>
+      <a href={otherPath} lang={otherLocale(locale)}>
+        {t("Read in English ↗", "Czytaj po polsku ↗")}
+      </a>
+      <button
+        type="button"
+        data-dismiss-language
+        aria-label={t("Zamknij", "Dismiss")}
+      >
+        <Icon name="close" />
+      </button>
+    </aside>
+    <dialog id="article-dialog" aria-labelledby="dialog-title">
+      <button
+        class="dialog-close icon-button"
+        type="button"
+        aria-label={t("Zamknij", "Close")}
+      >
+        <Icon name="close" />
+      </button>
+      <span class="eyebrow">{t("WOKÓŁ ARTYKUŁU", "AROUND THE ARTICLE")}</span>
+      <h2 id="dialog-title"></h2>
+      <div data-dialog-body></div>
+      <div
+        class="copy-status"
+        data-dialog-status
+        role="status"
+        aria-live="polite"
+        hidden
+      ></div>
+    </dialog>
+    <div
+      id="status"
+      class="status-toast"
+      role="status"
+      aria-live="polite"
+      hidden
+    ></div>
+    <script>
+      import "../scripts/site.ts";
+    </script>
+  </body>
+</html>

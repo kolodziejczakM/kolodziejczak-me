@@ -1,6 +1,8 @@
 # Brief — kolodziejczak.me
 
-## Cel obecnego etapu
+**Bieżący etap:** użytkownik polecił kontynuować po rekomendacji Astro i wymaga najnowszych stabilnych zależności. Powstała [pierwsza implementacja Astro](astro-foundation.md), zachowująca ustalone fonty, paletę, kompozycję i kontrolki. Poniżej zapis kolejnych decyzji, w tym historycznych otwartych pytań.
+
+## Pierwotny cel etapu wizualnego
 
 Szybko porównać kilka **strukturalnie różnych** kierunków UI w HTML/CSS. Odpowiedzieć: „jaki charakter wizualny ma mieć osobista strona Marcina?”. Framework i wdrożenie wybieramy później. Nie publikujemy obecnych treści jako rzeczywistej biografii ani artykułów.
 
@@ -118,3 +120,7 @@ Dodano kontakt w nawigacji, zwijany spis treści na telefonie i przejście do ko
 ## Przejście od podglądu do implementacji
 
 Po pokazaniu spójnego podglądu użytkownik przyjął roboczo, że wygląd jest w porządku, i zapytał „Co dalej?”. Zamykamy dalsze poszukiwania wyglądu na potrzeby planowania. Kolejny krok to wybór stacku i przeniesienie ustalonego projektu do właściwej strony, zamiast publikowania demonstracyjnego renderera. Samo pytanie o następny etap nie zatwierdza konkretnego frameworka ani publicznego wdrożenia.
+
+## Zlecenie implementacji
+
+Po rekomendacji Astro + TypeScript + MDX użytkownik napisał „Ok kontynuuj”, następnie doprecyzował wymaganie najnowszych wersji zależności, w tym Astro. Wdrożono statyczną bazę PL/EN z treściami MDX i pełnym HTML bez JS; [opis](astro-foundation.md). Archiwalne prototypy pozostają osobno. Publiczna premiera i konfiguracja usług są kolejnym etapem.

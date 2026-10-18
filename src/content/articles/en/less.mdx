@@ -1,0 +1,59 @@
+---
+title: "Less code. More thinking."
+description: "Why the most interesting part of working with AI happens before the first line of code."
+locale: "en"
+translationKey: "less"
+urlSlug: "less-but-better"
+publishedAt: "2026-10-12"
+category: "engineering"
+sample: true
+draft: false
+prompt: "I want to better understand “Less code. More thinking.”. Start by asking about my experience. Explain the main concepts using a concrete example, describe the limitations of this approach, and suggest a small experiment. Do not attribute opinions to the author that they have not expressed."
+summary:
+  - "Generating code quickly does not replace understanding the problem."
+  - "Before you build, name the question you are trying to answer."
+  - "A small prototype lets you test an idea quickly."
+  - "Postpone decisions you do not need yet."
+  - "Choosing a solution requires human context and conversation."
+---
+
+import Callout from '../../../components/Callout.astro';
+
+This sample publication demonstrates the site’s article layout. It is not an authored article by Marcin.
+
+## Start with a good question
+
+You open your editor. You have an idea, a coffee, and a tool that can write almost anything. The temptation is simple: ask for code right away. But what are you actually trying to build? And who is it for?
+
+## Faster does not always mean closer
+
+It is easy to confuse speed with progress. You can write a lot of code in an hour without getting any closer to solving the real problem. It helps to pause and name the things you do not yet know.
+
+> The best line of code? Sometimes it is the one you never needed to write.
+
+## A prototype is a question
+
+A good prototype does not have to resemble a finished product. It needs to answer one question. Is this layout understandable? Does this interaction give a sense of control? Do we even need this feature?
+
+<Callout title="A SMALL EXPERIMENT">
+
+Take an idea you are currently working on. Describe it without naming any technologies. What remains?
+
+</Callout>
+
+```ts
+const question = "Is this interface understandable?";
+const experiment = { question, scope: "small" };
+```
+
+## Fewer decisions in advance
+
+Not every possibility needs to become a requirement. When starting a new project, I try to separate what is needed today from what might be useful someday. This leaves more room to change my mind.
+
+## Keep a person in the loop
+
+A tool can suggest ten solutions. The choice is still ours. It requires context, conversations with people, and accepting that the first answer may not be the best one.
+
+## What can you try tomorrow?
+
+Before asking for another feature, write down the question it should answer in a single sentence. Build the smallest thing that helps you test it. Show it to someone. Then decide what comes next.

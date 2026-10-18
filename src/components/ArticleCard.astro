@@ -1,0 +1,39 @@
+---
+import type { Article } from "../lib/articles";
+import { articlePath } from "../lib/article-index";
+import { categoryLabel, formatDate, type Locale } from "../lib/i18n";
+import Icon from "./Icon.astro";
+interface Props {
+  article: Article;
+  locale: Locale;
+}
+const { article, locale } = Astro.props;
+const categoryIcon = {
+  engineering: "spark",
+  web: "read",
+  curiosity: "chat",
+} as const;
+---
+
+<a
+  class:list={["article-card", `card-${article.data.category}`]}
+  href={articlePath(article)}
+  data-article-category={article.data.category}
+>
+  <div class="card-top">
+    <span>{categoryLabel(article.data.category, locale)}</span>
+    <span class="card-icon">
+      <Icon name={categoryIcon[article.data.category]} />
+    </span>
+  </div>
+  <h3>{article.data.title}</h3>
+  <p>{article.data.description}</p>
+  <div class="card-bottom">
+    <time datetime={article.data.publishedAt.toISOString()}>
+      {formatDate(article.data.publishedAt, locale)}
+    </time>
+    <span class="card-arrow">
+      <Icon />
+    </span>
+  </div>
+</a>

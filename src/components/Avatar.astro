@@ -1,0 +1,18 @@
+---
+import { text, type Locale } from "../lib/i18n";
+interface Props {
+  locale: Locale;
+}
+---
+
+<span
+  class="avatar"
+  role="img"
+  aria-label={text(
+    Astro.props.locale,
+    "Monogram MK — zdjęcie do uzupełnienia",
+    "MK monogram — photo to be added",
+  )}
+>
+  mk.
+</span>
