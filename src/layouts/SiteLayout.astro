@@ -48,6 +48,15 @@ const t = (pl: string, en: string) => text(locale, pl, en);
       type="font/ttf"
       crossorigin
     />
+    {page === "article" && (
+      <link
+        rel="preload"
+        href="/fonts/ibm-plex-mono.ttf"
+        as="font"
+        type="font/ttf"
+        crossorigin
+      />
+    )}
   </head>
   <body data-page={page}>
     <a class="skip-link" href="#main">

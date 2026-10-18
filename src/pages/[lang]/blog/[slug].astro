@@ -1,7 +1,6 @@
 ---
 import { render } from "astro:content";
 import SiteLayout from "../../../layouts/SiteLayout.astro";
-import Avatar from "../../../components/Avatar.astro";
 import Icon from "../../../components/Icon.astro";
 import ArticleImage from "../../../components/ArticleImage.astro";
 import ArticleWidgets from "../../../components/ArticleWidgets.astro";
@@ -69,20 +68,6 @@ const canonical = new URL(articlePath(article), site.origin).href;
       <span class="eyebrow">{t("ARTYKUŁ", "ARTICLE")}</span>
       <h1>{article.data.title}</h1>
       <p class="article-lead">{article.data.description}</p>
-      <div class="article-author">
-        <Avatar locale={locale} />
-        <div>
-          {site.name}
-          {article.data.sample && (
-            <small>
-              {t(
-                "Przykładowy artykuł · treść do zastąpienia",
-                "Sample article · content to be replaced",
-              )}
-            </small>
-          )}
-        </div>
-      </div>
     </header>
     <div class="article-layout">
       <div class="article-column">

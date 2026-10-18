@@ -7,6 +7,7 @@ import {
   type Locale,
 } from "../lib/i18n";
 import Icon from "./Icon.astro";
+import NarrationPlaceholder from "./NarrationPlaceholder.astro";
 interface Props {
   article: Article;
   locale: Locale;
@@ -76,7 +77,7 @@ const localAudio = narration?.[locale];
       ))}
     </nav>
   </details>
-  {narration && (narration.pl || narration.en) && (
+  {narration && (narration.pl || narration.en) ? (
     <div class="narration">
       <h2>{t("Posłuchaj zamiast czytać", "Listen instead of reading")}</h2>
       {(["pl", "en"] as const).map((language) => {
@@ -103,6 +104,8 @@ const localAudio = narration?.[locale];
         );
       })}
     </div>
+  ) : (
+    <NarrationPlaceholder locale={locale} />
   )}
   <div class="article-actions">
     <details class="article-disclosure" data-dialog="prompt">

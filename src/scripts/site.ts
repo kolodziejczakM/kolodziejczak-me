@@ -1,3 +1,5 @@
+import { enhanceCodeBlocks } from "./code-blocks";
+
 document.documentElement.classList.add("js");
 
 // The complete document is already HTML. These are optional enhancements only.
@@ -162,6 +164,10 @@ if (content && progress && topLink) {
   }
   addEventListener("scroll", schedule, { passive: true });
   addEventListener("resize", schedule);
+  new ResizeObserver(schedule).observe(content);
   document.fonts.ready.then(update);
   update();
 }
+
+// Wait for font loading before moving code nodes into their preview wrappers.
+document.fonts.ready.then(enhanceCodeBlocks);

@@ -47,8 +47,39 @@ Weź pomysł, nad którym teraz pracujesz. Opisz go bez używania nazw technolog
 </Callout>
 
 ```ts
-const question = "Czy ten interfejs jest zrozumiały?";
-const experiment = { question, scope: "small" };
+type Experiment = {
+  question: string;
+  scope: "small";
+  steps: string[];
+  doneWhen: string;
+};
+
+const question = "Czy osoba, która trafia tu pierwszy raz, potrafi znaleźć artykuł i wrócić do listy bez dodatkowego wyjaśnienia?";
+const experiment: Experiment = {
+  question,
+  scope: "small",
+  steps: [
+    "Pokaż osobie testującej listę artykułów.",
+    "Poproś o otwarcie tekstu, który ją zaciekawi.",
+    "Obserwuj, czy odnajduje podsumowanie i spis treści.",
+    "Zapytaj, co było jasne, a co wymagało zastanowienia.",
+  ],
+  doneWhen: "Osoba samodzielnie otwiera artykuł i wraca do listy.",
+};
+
+function prepareSession(plan: Experiment) {
+  return {
+    question: plan.question,
+    checklist: plan.steps.map((instruction, index) => ({
+      number: index + 1,
+      instruction,
+      observed: false,
+    })),
+    success: plan.doneWhen,
+  };
+}
+
+console.log(prepareSession(experiment));
 ```
 
 ## Mniej decyzji na zapas

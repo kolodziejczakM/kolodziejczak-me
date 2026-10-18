@@ -47,8 +47,39 @@ Take an idea you are currently working on. Describe it without naming any techno
 </Callout>
 
 ```ts
-const question = "Is this interface understandable?";
-const experiment = { question, scope: "small" };
+type Experiment = {
+  question: string;
+  scope: "small";
+  steps: string[];
+  doneWhen: string;
+};
+
+const question = "Can a first-time visitor find an article and return to the list without any additional explanation?";
+const experiment: Experiment = {
+  question,
+  scope: "small",
+  steps: [
+    "Show the article list to a participant.",
+    "Ask them to open an article they find interesting.",
+    "Observe whether they find the summary and table of contents.",
+    "Ask what felt clear and what required extra thought.",
+  ],
+  doneWhen: "The participant opens an article and returns to the list unaided.",
+};
+
+function prepareSession(plan: Experiment) {
+  return {
+    question: plan.question,
+    checklist: plan.steps.map((instruction, index) => ({
+      number: index + 1,
+      instruction,
+      observed: false,
+    })),
+    success: plan.doneWhen,
+  };
+}
+
+console.log(prepareSession(experiment));
 ```
 
 ## Fewer decisions in advance

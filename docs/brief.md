@@ -132,3 +132,7 @@ Użytkownik wykluczył wszelkie odnośniki do about.me: nowa strona ma je zastą
 ## View Transitions i hero artykułu
 
 Użytkownik zamówił animacje przejścia między listą i artykułem oraz zdjęcie hero bezpośrednio przed informacją o czasie czytania, z responsywną optymalizacją Astro i przykładami z Unsplasha. Wdrożono natywne przejścia MPA i wymagane obrazy w schemacie MDX. [Zakres, źródła i weryfikacja](view-transitions-and-images.md).
+
+## Nagłówek, kod i mock audio
+
+Użytkownik wskazał zbędny podpis autora między opisem a zdjęciem oraz potrzebę zawijania kodu bez poziomego przewijania, z ograniczeniem wysokości i małym przyciskiem rozwijania. Zamówił także widoczny placeholder odtwarzacza audio, analogicznie do mocka rozmowy ElevenLabs. [Wdrożenie i podglądy](code-and-audio-preview.md).

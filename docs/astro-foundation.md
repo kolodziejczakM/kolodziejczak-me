@@ -65,7 +65,7 @@ audio:
     durationSeconds: 287
 ```
 
-Podaj rzeczywiste czasy plików; odtwarzacz natywny i etykiety czasu korzystają z tych danych. W bieżących próbkach nie ma audio, więc strona informuje o braku nagrania. Generowanie lektora i pomiar długości plików należą do następnego etapu.
+Podaj rzeczywiste czasy plików; odtwarzacz natywny i etykiety czasu korzystają z tych danych. W bieżących próbkach nie ma audio, więc strona pokazuje oznaczony mock odtwarzacza PL/EN z nieaktywnym odtwarzaniem. Generowanie lektora i pomiar długości plików należą do następnego etapu.
 
 ## Weryfikacja
 
@@ -107,3 +107,7 @@ Audio wymaga plików. W artykule znajduje się oznaczony placeholder rozmowy Ele
 ## View Transitions i hero
 
 Każda publikacja wymaga metadanych `hero`. Zdjęcie znajduje się bezpośrednio przed czasem czytania. Miniatury listy i hero korzystają z lokalnych wariantów wygenerowanych przez Astro; nawigacja ma natywne przejścia między dokumentami. [Implementacja, pomiary i źródła](view-transitions-and-images.md).
+
+## Dopracowanie czytania
+
+Usunięto dodatkowy podpis autora z nagłówka. Kod zawija się i ma ograniczony podgląd z rozwijaniem; brakujące nagrania mają wizualny mock. [Zakres i weryfikacja](code-and-audio-preview.md).
