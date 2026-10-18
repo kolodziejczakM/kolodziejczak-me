@@ -36,7 +36,7 @@ Pełne artykuły, linki językowe, spis treści, TL;DR i prompt działają bez J
 
 ## Status
 
-To działająca baza przed publikacją. Bio, monogram zamiast zdjęcia i trzy pary artykułów są oznaczonymi materiałami przykładowymi. Brakujące adresy kontaktowe są nieaktywne. `readyToPublish: false` utrzymuje `noindex`; sam podgląd jest dostępny wyłącznie w Tailscale.
+To działająca baza przed publikacją. Strona główna zawiera przekazany przez autora portret, optymalizowany responsywnie przez Astro. Bio i trzy pary artykułów są oznaczonymi materiałami przykładowymi. Brakujące adresy kontaktowe są nieaktywne. `readyToPublish: false` utrzymuje `noindex`; sam podgląd jest dostępny wyłącznie w Tailscale.
 
 Przed publiczną premierą potrzebne są prawdziwe materiały autora, konfiguracja hostingu, SEO/RSS/sitemap i analityki od pierwszego publicznego uruchomienia. Audio, komentarze, polubienia, agent i offline pozostają kolejnymi etapami. Podgląd nie ładuje usług zewnętrznych.
 

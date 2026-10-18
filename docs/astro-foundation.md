@@ -100,7 +100,9 @@ Archiwalne eksperymenty nadal są w `prototypes/`, na gałęzi `codex/prototype-
 
 ## Co pozostaje
 
-Przed publiczną premierą: zdjęcie, potwierdzone bio, prawdziwe linki kontaktowe i pierwszy autorski artykuł z tłumaczeniem; docelowy hosting, sitemap/RSS, podglądy udostępniania oraz Umami od pierwszego publicznego uruchomienia. Dopiero po przeglądzie gotowej strony należy zmienić flagę publikacji i usunąć próbki. Bieżący etap nie publikuje domeny.
+Portret przekazany przez autora 18 października znajduje się w `src/assets/profile/marcin-kolodziejczak.jpg` i zastępuje monogram na obu stronach głównych. Astro generuje lokalne wersje AVIF/WebP/JPEG o szerokości 96–384 px; wyświetlany rozmiar to 96 px na telefonie i 128 px na większym ekranie. Zachowano naturalne kolory zdjęcia i okrągłą oprawę. Usunięto komunikat o brakującym zdjęciu. Build i 13 istniejących testów przechodzą; Chromium potwierdził poprawne wczytanie portretu, wybór AVIF i brak poziomego przepełnienia w ośmiu widokach PL/EN (320/390/768/1440 px). Przy przechwytywaniu zrzutów środowisko headless sporadycznie odrzucało ładowanie istniejących fontów; ponowne wczytanie pozwoliło zweryfikować pełny układ. Nie zmieniano fontów.
+
+Przed publiczną premierą: potwierdzone bio, prawdziwe linki kontaktowe i pierwszy autorski artykuł z tłumaczeniem; docelowy hosting, sitemap/RSS, podglądy udostępniania oraz Umami od pierwszego publicznego uruchomienia. Dopiero po przeglądzie gotowej strony należy zmienić flagę publikacji i usunąć próbki. Bieżący etap nie publikuje domeny.
 
 Audio wymaga plików. W artykule znajduje się oznaczony placeholder rozmowy ElevenLabs; otwiera informację o planowanej funkcji i nie łączy się z usługą. Agent, komentarze, polubienia i offline wymagają kolejnych działających integracji. Nie przeniesiono symulowanych rozmów, odtwarzania ani polubień z prototypu. Strona nie wykonuje obecnie żądań do zewnętrznych usług i nie ma service workera.
 

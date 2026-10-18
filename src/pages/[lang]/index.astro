@@ -69,12 +69,7 @@ const t = (pl: string, en: string) => text(locale, pl, en);
         <div>
           <p>{site.bio[locale]}</p>
           {!site.readyToPublish && (
-            <small class="sample-label">
-              {t(
-                "Bio robocze · zdjęcie do uzupełnienia",
-                "Sample bio · photo to be added",
-              )}
-            </small>
+            <small class="sample-label">{t("Bio robocze", "Sample bio")}</small>
           )}
         </div>
       </div>

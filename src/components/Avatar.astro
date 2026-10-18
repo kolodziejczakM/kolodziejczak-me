@@ -1,18 +1,28 @@
 ---
+import { Picture } from "astro:assets";
+import portrait from "../assets/profile/marcin-kolodziejczak.jpg";
 import { text, type Locale } from "../lib/i18n";
 interface Props {
   locale: Locale;
 }
 ---
 
-<span
+<Picture
+  src={portrait}
   class="avatar"
-  role="img"
-  aria-label={text(
+  alt={text(
     Astro.props.locale,
-    "Monogram MK — zdjęcie do uzupełnienia",
-    "MK monogram — photo to be added",
+    "Portret Marcina Kołodziejczaka",
+    "Portrait of Marcin Kołodziejczak",
   )}
->
-  mk.
-</span>
+  formats={["avif", "webp"]}
+  fallbackFormat="jpg"
+  width={128}
+  height={128}
+  widths={[96, 128, 192, 256, 384]}
+  sizes="(max-width: 760px) 96px, 128px"
+  quality={82}
+  fit="cover"
+  loading="eager"
+  decoding="async"
+/>

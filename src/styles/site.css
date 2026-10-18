@@ -340,19 +340,16 @@ svg {
   margin-top: 9px;
 }
 .avatar {
-  display: grid;
-  place-items: center;
+  display: block;
   flex: none;
-  width: 48px;
-  height: 48px;
+  width: 128px;
+  height: 128px;
+  object-fit: cover;
   border: 1px solid var(--line);
   border-radius: 50%;
-  font-family: var(--heading);
-  font-weight: 650;
-  font-size: 23px;
-  letter-spacing: -0.08em;
-  color: var(--accent);
-  transform: rotate(-8deg);
+}
+.hero-bio > picture {
+  flex: none;
 }
 .hero > .button {
   min-height: 54px;
@@ -1345,9 +1342,8 @@ html:not(.js) .js-only {
   }
   .hero-bio .avatar {
     margin: 0 auto 15px;
-    width: 39px;
-    height: 39px;
-    font-size: 20px;
+    width: 96px;
+    height: 96px;
   }
   .hero-bio p {
     font-size: 12px;
