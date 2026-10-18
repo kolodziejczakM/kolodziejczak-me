@@ -102,3 +102,9 @@ Nowe porównanie celowo trzyma jedną rodzinę form: pełne zaokrąglone powierz
 ## Spokojny kontur — poprawka podwójnych ramek
 
 Użytkownik wskazał, że **wariant 3, Spokojny kontur, byłby odpowiedni bez dziwnych podwójnych obramowań przycisków**. Screeny pokazują TL;DR, prompt, polubienie, udostępnianie i komentarze w mobilnym artykule. To warunkowa akceptacja kierunku, nie prośba o nową rundę. Usunięto odziedziczoną ramkę, tło i padding z zewnętrznej warstwy akcji, zachowując jedną powierzchnię oraz fokus klawiatury. Przycisk rozmowy także ma pojedynczy obrys. Poprawka wspólnej konstrukcji obejmuje trzy wykończenia; nie dodano nowego wariantu.
+
+## Akceptacja kontrolek i status całości
+
+Po poprawce użytkownik potwierdził „Jest ok”. **Spokojny kontur (`controls=calm`) jest zaakceptowanym zestawem kontrolek**: zaokrąglone powierzchnie, pojedyncza ramka, bez cienia. Ta decyzja zamyka porównanie kontrolek; nie wracać do poszukiwania oryginalności ani do pikselowego cienia bez nowej prośby.
+
+Ustalone są fonty, leśna paleta, pozytywny ton i hasła oraz kontrolki; Blisko pozostaje wybraną bazą kompozycji. Nie utożsamiać tej akceptacji z osobnym zatwierdzeniem znaku/logo, materiałów autora czy wszystkich szczegółów ekranów produkcyjnych. Domknięcie wyglądu wymaga jednego spójnego przeglądu głównej, listy, artykułu i modali, z docelowymi treściami i bez narzędzi porównawczych. Zdjęcie i bio są zastępcze. Wybór stacku, integracje, SEO i wdrożenie pozostają pracą implementacyjną po etapie wizualnym.

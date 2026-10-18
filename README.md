@@ -4,7 +4,7 @@ Pierwszy etap: **prototypy wizualne do porównania**, przed wyborem stacku i imp
 
 **Aktualny kierunek: dopasowanie do strony, fontów i modern retro.** Użytkownik doprecyzował, że oryginalność nie jest celem samym w sobie. Z poprzedniej rundy najbliższa była Faseta, lecz wycięcie zaburzało rytm. Nowe kontrolki są zaokrąglone i mają pełne powierzchnie. Bazą pozostają **Blisko**, **Bricolage + Hanken** i **Leśna pracownia**.
 
-**Najnowszy feedback:** Spokojny kontur (wariant 3) byłby odpowiedni po usunięciu podwójnych ramek przycisków widocznych w artykule. Poprawiono kaskadę CSS: ramkę i odstęp rysuje wyłącznie wewnętrzna powierzchnia akcji. Przycisk rozmowy ma jeden zewnętrzny obrys. [Poprawiony artykuł](http://vps.tailfb5686.ts.net:4321/pl/blog/mniej-ale-lepiej/?controls=calm) · [akcje](docs/previews/calm-article-actions.png) · [stopka artykułu](docs/previews/calm-article-footer.png). To preferowany kierunek do oceny po poprawce.
+**Kontrolki zaakceptowane:** po poprawce podwójnych ramek użytkownik potwierdził „Jest ok”. Wybrany zestaw to **Spokojny kontur** (`controls=calm`): zaokrąglone powierzchnie, pojedynczy obrys i brak cienia. Nie potrzeba kolejnej rundy wyboru kontrolek. [Artykuł](http://vps.tailfb5686.ts.net:4321/pl/blog/mniej-ale-lepiej/?controls=calm) · [akcje](docs/previews/calm-article-actions.png) · [stopka artykułu](docs/previews/calm-article-footer.png). Pozostaje domknięcie całości na prawdziwych treściach i przegląd stron; logo/znak i materiały autora nie były osobno zatwierdzone. Integracje i implementacja produkcyjna są kolejnym etapem.
 
 | Wykończenie | Co porównujemy | Podgląd w Tailscale |
 | --- | --- | --- |
@@ -12,7 +12,7 @@ Pierwszy etap: **prototypy wizualne do porównania**, przed wyborem stacku i imp
 | Ciepły druk | Te same kształty z niskim, twardym cieniem | [Otwórz](http://vps.tailfb5686.ts.net:4321/pl/?controls=print#palette-lab) |
 | Spokojny kontur | Ta sama rodzina bez cienia, jako punkt odniesienia | [Otwórz](http://vps.tailfb5686.ts.net:4321/pl/?controls=calm#palette-lab) |
 
-Dolne strzałki i ← → porównują trzy wykończenia. Cień jest detalem przycisków; pola mają spokojne pełne ramki, a fokus pojawia się po wejściu. Przytrzymaj przycisk, aby zobaczyć wciśnięcie; sprawdź też akcję przy haśle i modale artykułu. [Opis](docs/controls-retro.md) · [porównanie](docs/previews/controls-retro.png). Wybór pozostaje otwarty.
+Dolne strzałki i ← → zachowują porównanie trzech wykończeń. Wybrano Spokojny kontur; pozostałe są archiwalnymi alternatywami. [Opis](docs/controls-retro.md) · [porównanie](docs/previews/controls-retro.png).
 
 **Archiwum poprzedniej rundy:** cztery propozycje początkowo odrzucone. W późniejszym doprecyzowaniu użytkownik wskazał Fasetę jako najbliższą; nie zaakceptował wycięcia. Poniżej wcześniejsze warianty.
 

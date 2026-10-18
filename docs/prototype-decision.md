@@ -1,6 +1,6 @@
 # Eksploracja UI — decyzja otwarta
 
-**Bieżący kierunek:** Spokojny kontur (`controls=calm`, wariant 3) byłby odpowiedni po usunięciu podwójnych ramek wskazanych na screenach mobilnego artykułu. Poprawiono nakładanie styli zewnętrznego przycisku i wewnętrznej powierzchni; zachowano pojedynczą ramkę, proporcje i fokus klawiatury. To preferowany kierunek do oceny po poprawce. [Opis i podglądy](controls-retro.md). Dopasowanie do strony i fontów pozostaje ważniejsze od oryginalności; baza Blisko, fonty i paleta są stałe.
+**Bieżąca decyzja:** po poprawce podwójnych ramek użytkownik zaakceptował **Spokojny kontur** (`controls=calm`, wariant 3): zaokrąglone powierzchnie z pojedynczą ramką, bez cienia. Wybór kontrolek jest zamknięty. [Opis i podglądy](controls-retro.md). Dopasowanie do strony i fontów pozostaje ważniejsze od oryginalności; baza Blisko, fonty i paleta są stałe. Do domknięcia całości pozostają prawdziwe materiały autora, znak/logo oraz końcowy przegląd wizytówki, listy, artykułu i modali. Nie oznacza to gotowości produkcyjnej ani podłączenia integracji.
 
 **Pytanie:** jaki kierunek wizualny najlepiej oddaje osobistą stronę Marcina, z wygodnym blogiem po polsku i angielsku?
 

@@ -1,6 +1,6 @@
 # Zaokrąglone kontrolki w charakterze strony
 
-**Aktualny feedback:** wariant 3, Spokojny kontur, byłby odpowiedni bez podwójnych obramowań wskazanych na screenach z mobilnego artykułu. Naprawiono błąd kaskady opisany poniżej. To preferowany kierunek do oceny po poprawce; nie tworzono kolejnej rundy.
+**Werdykt: Spokojny kontur zaakceptowany.** Po usunięciu podwójnych obramowań użytkownik potwierdził „Jest ok”. Wybrano `controls=calm`: zaokrąglone kontrolki z pojedynczą ramką, bez cienia. Błąd kaskady i jego poprawka są opisane poniżej. Dalsze porównywanie wykończeń nie jest potrzebne. Akceptacja dotyczy kontrolek, nie osobnego zatwierdzenia logo, materiałów autora ani gotowości produkcyjnej.
 
 **Pytanie:** czy zaokrąglone przyciski z pikselowym cieniem pasują do Bricolage, Hanken i leśnej strony lepiej niż wersja z niskim cieniem albo bez niego?
 
