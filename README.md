@@ -53,3 +53,5 @@ Przed publiczną premierą potrzebne są prawdziwe materiały autora, konfigurac
 Archiwalny podgląd nadal działa na porcie **4321** (`npm run prototype`); właściwa implementacja ma osobny podgląd na **4322**. Szczegóły prywatnego serwera i jego restartu są w [opisie implementacji](docs/astro-foundation.md#podgląd-w-tailscale).
 
 Wybrany zestaw logo D / karty C / tło D działa na porcie 4322. [Decyzja, wdrożenie i archiwum prototypów](docs/identity-card-background-study.md).
+
+Nowsze porównanie grupy TL;DR / spisu treści i przycisków sociali: [warianty na porcie 4324](docs/reading-social-controls-study.md).
