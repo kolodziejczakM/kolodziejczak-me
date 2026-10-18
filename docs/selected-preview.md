@@ -2,6 +2,8 @@
 
 **Cel:** ocenić ustalony projekt jako całą stronę osobistą, bez próbnika kontrolek, opisów wariantów i dolnego przełącznika. Użytkownik zaakceptował tę rekomendację i zlecił wykonanie. To nadal prototyp wizualny przed wyborem stacku i integracjami.
 
+**Status po pokazaniu całości:** użytkownik przyjął roboczo „Załóżmy że jest ok” i zapytał o następny etap. Można zakończyć poszukiwania wyglądu i planować implementację tego projektu. Nie jest to jeszcze wybór Astro/TanStack ani polecenie wdrożenia pod domenę. Materiały autora i integracje pozostają do przygotowania.
+
 **Wybrane połączenie:** Blisko, Leśna pracownia, Bricolage Grotesque + Hanken Grotesk oraz Spokojny kontur. Zaokrąglone kontrolki mają pojedynczą ramkę, bez cienia. Hasła zachowane: „Ciekawość to dobry początek.” i „Internet jest fajniejszy z ludźmi”. Nie otwieramy kolejnego porównania wizualnych rodzin.
 
 | Widok | PL | EN |
