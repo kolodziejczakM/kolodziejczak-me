@@ -31,7 +31,7 @@ npm run preview   # lokalny podgląd po buildzie
 - `src/config/site.ts`: dane autora, kontakty i status publikacji.
 - `public/`: lokalne fonty z licencjami i favicon.
 
-Pełne artykuły, linki językowe, spis treści, TL;DR i prompt działają bez JavaScriptu. Mały skrypt dodaje filtrowanie, okna dialogowe, kopiowanie, sugestię języka przeglądarki i postęp czytania. Bez klientowego routera i zależności od kodu prototypów.
+Pełne artykuły, linki językowe, spis treści, TL;DR i prompt działają bez JavaScriptu. Początek artykułu zawiera czas z nagrania, zwinięty TL;DR i zwinięty spis treści. Mały skrypt dodaje filtrowanie, dialog promptu, kopiowanie, sugestię języka przeglądarki i postęp czytania. W rogu znajduje się oznaczony placeholder rozmowy, a po połowie tekstu także strzałka powrotu. Bez klientowego routera i zależności od kodu prototypów.
 
 ## Status
 
@@ -40,6 +40,7 @@ To działająca baza przed publikacją. Bio, monogram zamiast zdjęcia i trzy pa
 Przed publiczną premierą potrzebne są prawdziwe materiały autora, konfiguracja hostingu, SEO/RSS/sitemap i analityki od pierwszego publicznego uruchomienia. Audio, komentarze, polubienia, agent i offline pozostają kolejnymi etapami. Podgląd nie ładuje usług zewnętrznych.
 
 - [Zakres implementacji, dodawanie artykułów i weryfikacja](docs/astro-foundation.md)
+- [Poprawki narzędzi czytania i proponowane kategorie](docs/reading-refinements.md)
 - [Kolejność dalszych prac](docs/implementation-next.md)
 - [Decyzje projektowe](docs/prototype-decision.md)
 - [Archiwum prototypów i wcześniejszych porównań](docs/prototype-archive.md)

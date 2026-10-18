@@ -3,6 +3,7 @@ import { render } from "astro:content";
 import SiteLayout from "../../../layouts/SiteLayout.astro";
 import Avatar from "../../../components/Avatar.astro";
 import Icon from "../../../components/Icon.astro";
+import ArticleWidgets from "../../../components/ArticleWidgets.astro";
 import ArticleTools from "../../../components/ArticleTools.astro";
 import { site } from "../../../config/site";
 import {
@@ -83,45 +84,8 @@ const canonical = new URL(articlePath(article), site.origin).href;
       </div>
     </header>
     <div class="article-layout">
-      <aside class="table-of-contents">
-        <span class="eyebrow">{t("NA TEJ STRONIE", "ON THIS PAGE")}</span>
-        <nav aria-label={t("Spis treści artykułu", "Article contents")}>
-          {contents.map((heading, i) => (
-            <a href={`#${heading.slug}`}>
-              <small>{String(i + 1).padStart(2, "0")}</small>
-              <span>{heading.text}</span>
-            </a>
-          ))}
-        </nav>
-        <div class="toc-contact">
-          <Icon name="chat" />
-          <p>
-            {t(
-              "Masz inne spojrzenie? Złapmy kontakt.",
-              "Have a different perspective? Let’s connect.",
-            )}
-          </p>
-          <a href={site.aboutUrl} target="_blank" rel="noreferrer">
-            about.me ↗
-          </a>
-        </div>
-      </aside>
       <div class="article-column">
-        <details class="mobile-contents">
-          <summary>
-            {t("Spis treści", "Contents")}
-            <Icon name="down" />
-          </summary>
-          <nav aria-label={t("Spis treści artykułu", "Article contents")}>
-            {contents.map((heading, i) => (
-              <a href={`#${heading.slug}`}>
-                <small>{String(i + 1).padStart(2, "0")}</small>
-                <span>{heading.text}</span>
-              </a>
-            ))}
-          </nav>
-        </details>
-        <ArticleTools article={article} locale={locale} />
+        <ArticleTools article={article} locale={locale} headings={contents} />
         <article class="prose" data-reading-content>
           <Content />
         </article>
@@ -152,28 +116,30 @@ const canonical = new URL(articlePath(article), site.origin).href;
                 value={canonical}
                 data-share-url
               />
-              <button
-                class="button button-primary js-only"
-                type="button"
-                data-copy="article-url"
-                data-copied={t("Link skopiowany.", "Link copied.")}
-                data-fallback={t(
-                  "Zaznaczono link — skopiuj go ręcznie.",
-                  "Link selected — copy it manually.",
-                )}
-              >
-                {t("Kopiuj link", "Copy link")}
-                <Icon name="copy" />
-              </button>
-              <button
-                class="button button-secondary"
-                type="button"
-                data-native-share
-                hidden
-                data-title={article.data.title}
-              >
-                {t("Więcej opcji udostępniania", "More sharing options")}
-              </button>
+              <div class="dialog-actions">
+                <button
+                  class="button button-secondary"
+                  type="button"
+                  data-native-share
+                  hidden
+                  data-title={article.data.title}
+                >
+                  {t("Więcej opcji udostępniania", "More sharing options")}
+                </button>
+                <button
+                  class="button button-primary js-only"
+                  type="button"
+                  data-copy="article-url"
+                  data-copied={t("Link skopiowany.", "Link copied.")}
+                  data-fallback={t(
+                    "Zaznaczono link — skopiuj go ręcznie.",
+                    "Link selected — copy it manually.",
+                  )}
+                >
+                  {t("Kopiuj link", "Copy link")}
+                  <Icon name="copy" />
+                </button>
+              </div>
             </div>
           </details>
         </section>
@@ -191,13 +157,5 @@ const canonical = new URL(articlePath(article), site.origin).href;
       </div>
     </div>
   </main>
-  <a
-    class="back-top js-only"
-    href="#article-top"
-    data-back-top
-    hidden
-    aria-label={t("Wróć na początek artykułu", "Back to the article top")}
-  >
-    ↑
-  </a>
+  <ArticleWidgets locale={locale} />
 </SiteLayout>

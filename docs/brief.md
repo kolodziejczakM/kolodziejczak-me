@@ -124,3 +124,7 @@ Po pokazaniu spójnego podglądu użytkownik przyjął roboczo, że wygląd jest
 ## Zlecenie implementacji
 
 Po rekomendacji Astro + TypeScript + MDX użytkownik napisał „Ok kontynuuj”, następnie doprecyzował wymaganie najnowszych wersji zależności, w tym Astro. Wdrożono statyczną bazę PL/EN z treściami MDX i pełnym HTML bez JS; [opis](astro-foundation.md). Archiwalne prototypy pozostają osobno. Publiczna premiera i konfiguracja usług są kolejnym etapem.
+
+## Poprawki po pierwszym podglądzie Astro
+
+Użytkownik wykluczył wszelkie odnośniki do about.me: nowa strona ma je zastąpić. Przed artykułem ma być czas na podstawie nagrania, potem zwinięty akordeon TL;DR i zwinięty spis treści. Prompt pozostaje w dialogu z głównym przyciskiem po prawej. Użytkownik zamówił placeholder rozmowy ElevenLabs oraz potwierdzenie działania powrotu na górę. Poprosił też o propozycję kategorii obejmujących film, programowanie, AI, połączenia dziedzin i inne tematy, np. książki. [Wdrożone poprawki i propozycja kategorii](reading-refinements.md).

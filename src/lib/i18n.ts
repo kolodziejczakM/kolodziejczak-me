@@ -6,14 +6,32 @@ export const text = (locale: Locale, pl: string, en: string): string =>
   locale === "pl" ? pl : en;
 export const homePath = (locale: Locale): string => `/${locale}/`;
 export const blogPath = (locale: Locale): string => `/${locale}/blog/`;
-export const categories = ["engineering", "web", "curiosity"] as const;
+export const categories = [
+  "programming",
+  "ai",
+  "film",
+  "books",
+  "intersections",
+  "other",
+] as const;
 export type Category = (typeof categories)[number];
 export function categoryLabel(category: Category, locale: Locale): string {
   return {
-    engineering: text(locale, "Inżynieria", "Engineering"),
-    web: text(locale, "Własny kawałek sieci", "The personal web"),
-    curiosity: text(locale, "Poza kodem", "Beyond code"),
+    programming: text(locale, "Programowanie", "Programming"),
+    ai: "AI",
+    film: text(locale, "Film", "Film"),
+    books: text(locale, "Książki", "Books"),
+    intersections: text(locale, "Na styku", "At the intersection"),
+    other: text(locale, "Poza kadrem", "Beyond the frame"),
   }[category];
+}
+export function formatReadingTime(seconds: number, locale: Locale): string {
+  const minutes = Math.max(1, Math.ceil(seconds / 60));
+  const form = new Intl.PluralRules(locale).select(minutes);
+  let unit = minutes === 1 ? "minute" : "minutes";
+  if (locale === "pl")
+    unit = form === "one" ? "minuta" : form === "few" ? "minuty" : "minut";
+  return `${minutes} ${unit}`;
 }
 export function formatDate(date: Date, locale: Locale): string {
   return new Intl.DateTimeFormat(locale === "pl" ? "pl-PL" : "en-GB", {

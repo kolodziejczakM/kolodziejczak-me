@@ -5,7 +5,11 @@ import {
   translationOf,
   validateArticleIndex,
 } from "../src/lib/article-index.ts";
-import { formatDate, formatDuration } from "../src/lib/i18n.ts";
+import {
+  formatDate,
+  formatDuration,
+  formatReadingTime,
+} from "../src/lib/i18n.ts";
 
 const pl = {
   data: {
@@ -63,4 +67,11 @@ test("dates use UTC and narration duration uses supplied seconds", () => {
     "12.10.2026",
   );
   assert.equal(formatDuration(367), "6:07");
+});
+
+test("reading time rounds narration up to whole minutes in the page language", () => {
+  assert.equal(formatReadingTime(300, "pl"), "5 minut");
+  assert.equal(formatReadingTime(60, "pl"), "1 minuta");
+  assert.equal(formatReadingTime(61, "pl"), "2 minuty");
+  assert.equal(formatReadingTime(302, "en"), "6 minutes");
 });

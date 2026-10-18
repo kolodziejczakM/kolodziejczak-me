@@ -1,21 +1,82 @@
 ---
 import type { Article } from "../lib/articles";
-import { text, formatDuration, type Locale } from "../lib/i18n";
+import {
+  text,
+  formatDuration,
+  formatReadingTime,
+  type Locale,
+} from "../lib/i18n";
 import Icon from "./Icon.astro";
 interface Props {
   article: Article;
   locale: Locale;
+  headings: { slug: string; text: string }[];
 }
-const { article, locale } = Astro.props;
+const { article, locale, headings } = Astro.props;
 const t = (pl: string, en: string) => text(locale, pl, en);
 const narration = article.data.audio;
+const localAudio = narration?.[locale];
 ---
 
 <section
   class="article-toolbox"
   aria-label={t("Narzędzia czytania", "Reading tools")}
 >
-  {narration && (narration.pl || narration.en) ? (
+  <p class="reading-time" data-reading-time>
+    {localAudio ? (
+      <>
+        {t("Czas czytania", "Reading time")}:{" "}
+        <strong>{formatReadingTime(localAudio.durationSeconds, locale)}</strong>
+        <small>
+          {t(
+            "Na podstawie długości nagrania lektora.",
+            "Based on the narration duration.",
+          )}
+        </small>
+      </>
+    ) : (
+      <>
+        {t("Czas czytania: —", "Reading time: —")}
+        <small>
+          {t(
+            "Pojawi się po dodaniu nagrania lektora.",
+            "Available once narration is added.",
+          )}
+        </small>
+      </>
+    )}
+  </p>
+  <details class="reading-accordion" data-accordion="tldr">
+    <summary>
+      <span>{t("TL;DR · w 5 zdaniach", "TL;DR · in 5 sentences")}</span>
+      <Icon name="down" />
+    </summary>
+    <div class="accordion-body">
+      <ol class="article-summary">
+        {article.data.summary.map((sentence) => (
+          <li>{sentence}</li>
+        ))}
+      </ol>
+    </div>
+  </details>
+  <details class="reading-accordion" data-accordion="contents">
+    <summary>
+      <span>{t("Spis treści", "Contents")}</span>
+      <Icon name="down" />
+    </summary>
+    <nav
+      class="accordion-body"
+      aria-label={t("Spis treści artykułu", "Article contents")}
+    >
+      {headings.map((heading, i) => (
+        <a href={`#${heading.slug}`}>
+          <small>{String(i + 1).padStart(2, "0")}</small>
+          <span>{heading.text}</span>
+        </a>
+      ))}
+    </nav>
+  </details>
+  {narration && (narration.pl || narration.en) && (
     <div class="narration">
       <h2>{t("Posłuchaj zamiast czytać", "Listen instead of reading")}</h2>
       {(["pl", "en"] as const).map((language) => {
@@ -42,28 +103,8 @@ const narration = article.data.audio;
         );
       })}
     </div>
-  ) : (
-    <p class="audio-unavailable">
-      {t(
-        "Nagranie do tego przykładowego artykułu nie zostało jeszcze dodane.",
-        "Narration for this sample article has not been added yet.",
-      )}
-    </p>
   )}
   <div class="article-actions">
-    <details class="article-disclosure" data-dialog="tldr">
-      <summary class="button button-secondary">
-        <Icon name="read" />
-        {t("TL;DR · w 5 zdaniach", "TL;DR · in 5 sentences")}
-      </summary>
-      <div class="disclosure-body">
-        <ol class="article-summary">
-          {article.data.summary.map((sentence) => (
-            <li>{sentence}</li>
-          ))}
-        </ol>
-      </div>
-    </details>
     <details class="article-disclosure" data-dialog="prompt">
       <summary class="button button-secondary">
         <Icon name="spark" />
@@ -84,19 +125,21 @@ const narration = article.data.audio;
           rows="7"
           readonly
         >{article.data.prompt}</textarea>
-        <button
-          class="button button-primary js-only"
-          type="button"
-          data-copy="article-prompt"
-          data-copied={t("Prompt skopiowany.", "Prompt copied.")}
-          data-fallback={t(
-            "Zaznaczono tekst — skopiuj go ręcznie.",
-            "Text selected — copy it manually.",
-          )}
-        >
-          {t("Kopiuj prompt", "Copy prompt")}
-          <Icon name="copy" />
-        </button>
+        <div class="dialog-actions">
+          <button
+            class="button button-primary js-only"
+            type="button"
+            data-copy="article-prompt"
+            data-copied={t("Prompt skopiowany.", "Prompt copied.")}
+            data-fallback={t(
+              "Zaznaczono tekst — skopiuj go ręcznie.",
+              "Text selected — copy it manually.",
+            )}
+          >
+            {t("Kopiuj prompt", "Copy prompt")}
+            <Icon name="copy" />
+          </button>
+        </div>
       </div>
     </details>
   </div>

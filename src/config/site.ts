@@ -2,7 +2,6 @@ export const site = {
   name: "Marcin Kołodziejczak",
   domain: "kolodziejczak.me",
   origin: "https://kolodziejczak.me",
-  aboutUrl: "https://about.me/marcin_kolodziejczak",
   // Keep indexing off while the author materials and public launch are pending.
   readyToPublish: false,
   bio: {

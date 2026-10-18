@@ -31,7 +31,7 @@ test("static HTML has reciprocal language URLs and native reading fallbacks", as
     /hreflang="pl" href="https:\/\/kolodziejczak.me\/pl\/blog\/mniej-ale-lepiej\/"/,
   );
   assert.match(pl, /href="\/en\/blog\/less-but-better\/"/);
-  assert.match(pl, /<details[^>]+data-dialog="tldr"/);
+  assert.match(pl, /<details[^>]+data-accordion="tldr"/);
   assert.match(pl, /<textarea[^>]*id="article-prompt"[^>]*readonly/);
   assert.match(pl, /name="robots" content="noindex,follow"/);
   assert.doesNotMatch(pl, /\?variant=|\?controls=/);
@@ -65,4 +65,34 @@ test("read-next links never point back to the article being read", async () => {
     assert.notEqual(next[1], `/${path}/`);
     await output(`${next[1].slice(1)}index.html`);
   }
+});
+
+test("reading tools stay inline and ordered, with an honest narration fallback", async () => {
+  const html = await output("pl/blog/mniej-ale-lepiej/index.html");
+  assert.ok(
+    html.indexOf("data-reading-time") < html.indexOf('data-accordion="tldr"'),
+  );
+  assert.ok(
+    html.indexOf('data-accordion="tldr"') <
+      html.indexOf('data-accordion="contents"'),
+  );
+  assert.doesNotMatch(html, /data-dialog="tldr"|about\.me/);
+  assert.match(html, /Pojawi się po dodaniu nagrania lektora/);
+});
+
+test("rendered site has no about.me links and retains the conversation preview", async () => {
+  for (const route of [
+    "pl",
+    "en",
+    "pl/blog",
+    "en/blog",
+    "pl/blog/mniej-ale-lepiej",
+    "en/blog/less-but-better",
+  ]) {
+    assert.doesNotMatch(await output(`${route}/index.html`), /about\.me/);
+  }
+  const html = await output("en/blog/less-but-better/index.html");
+  assert.match(html, /agent-placeholder/);
+  assert.match(html, /Conversation is not connected yet/);
+  assert.match(html, /data-back-top/);
 });

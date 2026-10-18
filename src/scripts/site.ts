@@ -23,6 +23,8 @@ if (filters) {
       .forEach((item) =>
         item.setAttribute("aria-pressed", String(item === button)),
       );
+    const empty = document.querySelector<HTMLElement>("[data-filter-empty]");
+    if (empty) empty.hidden = count > 0;
     const status = document.querySelector<HTMLElement>("[data-filter-status]");
     if (status) status.textContent = `${status.dataset.format} ${count}`;
   });

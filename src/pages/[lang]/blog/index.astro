@@ -95,6 +95,12 @@ const t = (pl: string, en: string) => text(locale, pl, en);
       aria-live="polite"
       data-format={t("Liczba artykułów:", "Articles shown:")}
     ></p>
+    <p class="filter-empty" data-filter-empty role="status" hidden>
+      {t(
+        "Jeszcze nie ma tu artykułów. Zajrzyj do pozostałych tematów.",
+        "No articles here yet. Explore the other topics.",
+      )}
+    </p>
     <div class="blog-list">
       {articles.map((article) => (
         <article
@@ -107,7 +113,7 @@ const t = (pl: string, en: string) => text(locale, pl, en);
             aria-hidden="true"
             tabindex="-1"
           >
-            {article.data.category === "engineering" ? (
+            {article.data.category === "ai" ? (
               <svg viewBox="0 0 260 220" fill="none" aria-hidden="true">
                 <g stroke="currentColor" stroke-width="1.2">
                   <ellipse
@@ -135,14 +141,21 @@ const t = (pl: string, en: string) => text(locale, pl, en);
                   <path d="m114 103-9 7 9 7m32-14 9 7-9 7m-13-20-6 26" />
                 </g>
               </svg>
-            ) : article.data.category === "web" ? (
+            ) : article.data.category === "programming" ? (
               <span class="web-art">
                 <Icon name="spark" />
                 <span>www</span>
               </span>
-            ) : (
+            ) : article.data.category === "film" ||
+              article.data.category === "intersections" ? (
               <span class="film-art">
                 <Icon name="play" />
+              </span>
+            ) : (
+              <span class="topic-art">
+                <Icon
+                  name={article.data.category === "books" ? "read" : "spark"}
+                />
               </span>
             )}
           </a>

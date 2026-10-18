@@ -1,0 +1,35 @@
+# Narzędzia czytania i kategorie — korekta po podglądzie Astro
+
+18 października 2026. Uwagi użytkownika wraz z czterema screenshotami odnoszą się do właściwej implementacji Astro, na porcie 4322. Fonty, kolory i rodzina kontrolek pozostają ustalone.
+
+## Zmiany
+
+- Usunięto wszystkie odnośniki do about.me z wizytówki, stopki i artykułu oraz adres z konfiguracji. Strona zastępuje tę usługę.
+- Kolejność przed tekstem: czas czytania, zwinięty TL;DR, zwinięty spis treści. Oba akordeony działają na wszystkich szerokościach, również bez JS. Nie ma dialogu TL;DR ani dodatkowego spisu w bocznej kolumnie.
+- Czas pochodzi wyłącznie z `audio[locale].durationSeconds`, zaokrąglonego w górę do minut z polską/angielską odmianą. Brak nagrania oznacza kreskę i informację, kiedy czas się pojawi. Nie dodano fikcyjnych pięciu minut.
+- Dialog promptu ma główny przycisk po prawej. Tę samą zasadę stosuje dialog udostępniania.
+- W rogu artykułu znajduje się przycisk rozmowy. Otwiera oznaczony podgląd miejsca na ElevenLabs, bez wejścia tekstowego i pozorowania działającej odpowiedzi. Nie wysyła danych.
+- Przycisk powrotu na górę był obecny, ale ukryty przed przekroczeniem połowy artykułu. Zachowano ten próg i umieszczono strzałkę nad przyciskiem rozmowy, z uwzględnieniem dolnego bezpiecznego obszaru ekranu.
+
+## Proponowane kategorie
+
+To robocza propozycja wdrożona w podglądzie, do oceny autora.
+
+| PL | EN | Zakres |
+| --- | --- | --- |
+| Programowanie | Programming | Kod, architektura, narzędzia i budowanie oprogramowania |
+| AI | AI | Modele, agenci, eksperymenty i zastosowania sztucznej inteligencji |
+| Film | Film | Kino, montaż, opowiadanie obrazem |
+| Książki | Books | Recenzje i przemyślenia po lekturze |
+| Na styku | At the intersection | Połączenia dziedzin, np. film + interfejsy albo AI + programowanie |
+| Poza kadrem | Beyond the frame | Osobiste obserwacje i tematy poza pozostałymi kategoriami |
+
+Jedna główna kategoria na artykuł utrzymuje prostą nawigację. „Na styku” mieści teksty, w których samo połączenie dziedzin stanowi temat. Przykładowo tekst o montażu i interfejsach otrzymał tę kategorię. Puste tematy mają czytelny komunikat po wybraniu filtra, zamiast pustej listy. Typ treści, np. recenzja, nie jest osobną kategorią: recenzja książki trafia do Książek.
+
+## Weryfikacja
+
+`npm run validate`: kontrola TypeScript, 12 statycznych stron, 11 testów. Obejmują odmianę czasu z długości nagrania, kolejność elementów, brak dialogu TL;DR i brak about.me w wynikowych stronach.
+
+Chromium: 40 widoków PL/EN przy 320/390/768/1440 px, brak poziomego przepełnienia, błędów JS i żądań zewnętrznych. Dodatkowo: rozwijanie TL;DR i spisu bez JS, dialog i kopiowanie promptu z przyciskiem wyrównanym do prawej, pusty filtr, otwieranie placeholdera oraz pojawianie się i działanie strzałki powrotu.
+
+Podglądy: [artykuł mobile](previews/astro-article-mobile.png), [prompt](previews/astro-prompt-mobile.png), [placeholder rozmowy](previews/astro-agent-mobile.png).
