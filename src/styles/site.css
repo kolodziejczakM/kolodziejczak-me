@@ -1939,3 +1939,65 @@ html:not(.js) .js-only {
   font-size: clamp(26px, 5vw, 44px);
   letter-spacing: -0.055em;
 }
+
+/* Permalinks remain native anchors in the generated document. */
+.prose [data-article-heading],
+.prose .article-quote {
+  scroll-margin-top: 0;
+}
+.prose [data-article-heading] {
+  cursor: pointer;
+}
+.prose .heading-permalink {
+  display: inline-block;
+  padding: 4px 8px;
+  color: var(--muted);
+  text-decoration: none;
+  font: 500 0.6em/1.2 var(--font);
+  vertical-align: middle;
+}
+.heading-permalink::after {
+  content: "#";
+}
+.prose .heading-permalink:hover {
+  color: var(--accent);
+}
+.prose .article-quote:target {
+  outline: 1px solid var(--accent);
+  outline-offset: 5px;
+}
+.prose [data-article-heading]:target {
+  color: var(--accent);
+}
+.quote-text {
+  cursor: pointer;
+}
+.quote-actions {
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+  font: 400 11px/1.5 var(--font);
+}
+.prose .quote-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-height: 36px;
+  padding: 6px 8px;
+  border: 0;
+  border-radius: 10px;
+  background: transparent;
+  color: var(--link);
+  text-decoration: none;
+  font: inherit;
+}
+.prose .quote-action:hover {
+  background: var(--control);
+}
+.quote-action .icon {
+  width: 16px;
+  height: 16px;
+}

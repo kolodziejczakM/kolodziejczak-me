@@ -7,6 +7,7 @@ import ArticleWidgets from "../../../components/ArticleWidgets.astro";
 import ArticleShare from "../../../components/ArticleShare.astro";
 import ArticlePrompt from "../../../components/ArticlePrompt.astro";
 import ArticleTools from "../../../components/ArticleTools.astro";
+import ArticleQuote from "../../../components/ArticleQuote.astro";
 import { site } from "../../../config/site";
 import {
   publishedArticles,
@@ -76,7 +77,7 @@ const canonical = new URL(articlePath(article), site.origin).href;
         <ArticleImage article={article} variant="hero" />
         <ArticleTools article={article} locale={locale} headings={contents} />
         <article class="prose" data-reading-content>
-          <Content />
+          <Content components={{ blockquote: ArticleQuote }} />
         </article>
         <ArticlePrompt article={article} locale={locale} />
         <section

@@ -10,11 +10,13 @@ interface Props {
     | "down"
     | "play"
     | "up"
-    | "share";
+    | "share"
+    | "link";
   class?: string;
 }
 const { name = "arrow", class: className } = Astro.props;
 const paths = {
+  link: '<path d="m10 14 4-4m-6 6-1 1a4 4 0 0 1-6-6l4-4a4 4 0 0 1 6 0m2 1 1-1a4 4 0 0 1 6 6l-4 4a4 4 0 0 1-6 0"/>',
   arrow: '<path d="M4 12h16m-6-6 6 6-6 6"/>',
   read: '<path d="M3 5q5-3 9 0 4-3 9 0v15q-5-3-9 0-4-3-9 0Z"/><path d="M12 5v15"/>',
   spark:

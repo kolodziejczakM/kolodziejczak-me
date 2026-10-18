@@ -15,6 +15,7 @@
     "prototype": "python3 prototypes/serve.py"
   },
   "dependencies": {
+    "@astrojs/markdown-satteri": "0.4.4",
     "@astrojs/mdx": "8.1.0",
     "astro": "7.4.0"
   },

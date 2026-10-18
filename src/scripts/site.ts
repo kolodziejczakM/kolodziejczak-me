@@ -3,10 +3,12 @@ import { setupSharing } from "./sharing";
 import { setupReadingSwitcher } from "./reading-switcher";
 import { copyField } from "./clipboard";
 import { enhanceCodeBlocks } from "./code-blocks";
+import { setupArticleFragments } from "./article-fragments";
 
 document.documentElement.classList.add("js");
 setupReadingSwitcher();
 setupSharing();
+setupArticleFragments();
 
 // The complete document is already HTML. These are optional enhancements only.
 const filters = document.querySelector<HTMLElement>("[data-filters]");
