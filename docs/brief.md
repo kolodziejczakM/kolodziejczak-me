@@ -88,3 +88,7 @@ Użytkownik wyjaśnił, że **nie oczekiwał redesignów**. Zatrzymaliśmy się 
 ## Odrzucenie poprawki — nowa runda całego zestawu
 
 Użytkownik ocenił poprawione przyciski jako gorsze i poprosił o krok wstecz oraz **zupełnie nowe prototypy wszystkich kontrolek**. Nie rozwijać dalej Bocznego modułu jako domyślnego zwycięzcy. Nowa runda obejmuje pola, przyciski główne i pomocnicze, selecty, checkboxy, switche, radio, segmenty, suwak i małe akcje, wraz ze stanami. Fonty, leśna paleta i układ Blisko pozostają bazą. Cztery propozycje: [Faseta, Jasny środek, Pionowy brzeg, Osobna akcja](controls-fresh.md). Wybór pozostaje otwarty.
+
+## Ocena nowych kompletnych zestawów
+
+„Żaden mi się nie podoba” — odrzucone zostały Faseta, Jasny środek, Pionowy brzeg i Osobna akcja. Użytkownik nie podał dodatkowej przyczyny. Nie dopisywać mu preferencji ani traktować żadnego elementu tej rundy jako zaakceptowanego. Poproszono o 1–3 referencje kontrolek lub opis tego, co najbardziej przeszkadza. Fonty, paleta i zakres samych kontrolek nie zostały zakwestionowane.

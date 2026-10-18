@@ -1,5 +1,7 @@
 # Nowa runda wszystkich kontrolek
 
+**Werdykt:** wszystkie cztery propozycje odrzucone. Użytkownik: „Żaden mi się nie podoba”. Brak wskazania przyczyny lub preferowanego elementu tej rundy. Nie rozwijać żadnej z tych propozycji jako wybranego kierunku. Poproszono o referencje pól/przycisków lub opis tego, co najbardziej przeszkadza. Dalsza część dokumentu opisuje archiwalny próbnik.
+
 **Pytanie:** która konstrukcja działa jako kompletny zestaw — od wyszukiwarki po przycisk główny i mały przełącznik?
 
 Ostatnia poprawka przycisków Bocznego modułu została oceniona jako gorsza. Marcin poprosił o krok wstecz i zupełnie nowe prototypy wszystkich kontrolek. Nie wybrano zwycięzcy. To dalsza eksploracja form, bez ponownego wyboru fontów, palety i kompozycji strony.

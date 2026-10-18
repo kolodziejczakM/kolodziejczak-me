@@ -2,7 +2,7 @@
 
 Pierwszy etap: **prototypy wizualne do porównania**, przed wyborem stacku i implementacją strony.
 
-**Aktualna runda: cztery nowe, kompletne zestawy kontrolek.** Poprawka przycisków Bocznego modułu została oceniona jako gorsza; użytkownik poprosił o krok wstecz i nową eksplorację wszystkich kontrolek. Bazą jest **Blisko**, fonty **Bricolage + Hanken** i paleta **Leśna pracownia**. Układ i karty pozostają stałe.
+**Status: wszystkie cztery zestawy ostatniej rundy odrzucone.** Użytkownik: „Żaden mi się nie podoba”. Nie wskazano konkretnej przyczyny ani preferowanej części tej rundy. Poproszono o referencje kontrolek lub doprecyzowanie, co przeszkadza. Bazą pozostają **Blisko**, fonty **Bricolage + Hanken** i paleta **Leśna pracownia**. Poniżej archiwum porównania.
 
 | Nowe kontrolki | Zasada zestawu | Próbnik w Tailscale |
 | --- | --- | --- |
@@ -11,7 +11,7 @@ Pierwszy etap: **prototypy wizualne do porównania**, przed wyborem stacku i imp
 | Pionowy brzeg | Mocniejsza lewa krawędź i oszczędne, kanciaste ikony | [Otwórz](http://vps.tailfb5686.ts.net:4321/pl/?controls=spine#palette-lab) |
 | Osobna akcja | Czyszczenie obok pola, niezależne opcje i otwarty tor switcha | [Otwórz](http://vps.tailfb5686.ts.net:4321/pl/?controls=pair#palette-lab) |
 
-Dolny pasek i ← → przechodzą przez cztery nowe propozycje. Przyciski są pokazane na początku prawego panelu, obok pól. Próbnik zawiera też radio, suwak i przyciski ikonowe. Wartości zostają w pamięci podczas porównywania. [Opis rundy](docs/controls-fresh.md) · [zestawienie](docs/previews/controls-fresh.png). Żaden nowy wariant nie jest jeszcze wybrany.
+Dolny pasek i ← → przechodzą przez cztery propozycje. Przyciski są pokazane na początku prawego panelu, obok pól. Próbnik zawiera też radio, suwak i przyciski ikonowe. Wartości zostają w pamięci podczas porównywania. [Opis rundy](docs/controls-fresh.md) · [zestawienie](docs/previews/controls-fresh.png). Wszystkie propozycje tej rundy zostały odrzucone.
 
 **Archiwum — Boczny moduł:** pola wcześniej oceniono najlepiej, ale punktowa poprawka przycisków pogorszyła odbiór. Nie traktować jej jako zatwierdzonego kierunku. [Poprzednie przyciski](http://vps.tailfb5686.ts.net:4321/pl/?controls=module#ctrl-actions) · [podgląd](docs/previews/module-buttons.png).
 

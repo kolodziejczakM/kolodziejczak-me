@@ -1,6 +1,6 @@
 # Eksploracja UI — decyzja otwarta
 
-**Bieżąca runda:** poprawka przycisków Bocznego modułu została odrzucona. Użytkownik poprosił o krok wstecz i nowe prototypy całego systemu kontrolek. Cztery nowe propozycje na stałej bazie Blisko: `controls=facet|paper|spine|pair`. [Opis i linki](controls-fresh.md). Stare rundy są archiwum; żaden z nowych zestawów nie został zatwierdzony.
+**Bieżący werdykt:** wszystkie cztery nowe zestawy `controls=facet|paper|spine|pair` zostały odrzucone: „Żaden mi się nie podoba”. Nie wskazano przyczyny ani preferowanego detalu. Poproszono o referencje samych kontrolek lub doprecyzowanie. [Archiwum porównania](controls-fresh.md). Fonty, paleta i baza Blisko nie zostały zakwestionowane; kierunek kontrolek nadal nie jest wybrany.
 
 **Pytanie:** jaki kierunek wizualny najlepiej oddaje osobistą stronę Marcina, z wygodnym blogiem po polsku i angielsku?
 
