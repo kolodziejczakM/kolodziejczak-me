@@ -1,6 +1,6 @@
 # Eksploracja UI — decyzja otwarta
 
-**Bieżący werdykt:** wszystkie cztery nowe zestawy `controls=facet|paper|spine|pair` zostały odrzucone: „Żaden mi się nie podoba”. Nie wskazano przyczyny ani preferowanego detalu. Poproszono o referencje samych kontrolek lub doprecyzowanie. [Archiwum porównania](controls-fresh.md). Fonty, paleta i baza Blisko nie zostały zakwestionowane; kierunek kontrolek nadal nie jest wybrany.
+**Bieżący kierunek:** dopasowanie kontrolek do strony i fontów jest ważniejsze niż oryginalność. Użytkownik doprecyzował, że Faseta była najbliższa, ale wycięcie zaburzało rytm. Badamy bardziej zaokrąglone przyciski i pikselowy cień modern retro. Trzy wykończenia jednej rodziny: `controls=pixel|print|calm`. [Opis i porównanie](controls-retro.md). Fonty, paleta i baza Blisko pozostają stałe. Pikselowy cień jest hipotezą; wybór pozostaje otwarty.
 
 **Pytanie:** jaki kierunek wizualny najlepiej oddaje osobistą stronę Marcina, z wygodnym blogiem po polsku i angielsku?
 

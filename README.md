@@ -2,7 +2,17 @@
 
 Pierwszy etap: **prototypy wizualne do porównania**, przed wyborem stacku i implementacją strony.
 
-**Status: wszystkie cztery zestawy ostatniej rundy odrzucone.** Użytkownik: „Żaden mi się nie podoba”. Nie wskazano konkretnej przyczyny ani preferowanej części tej rundy. Poproszono o referencje kontrolek lub doprecyzowanie, co przeszkadza. Bazą pozostają **Blisko**, fonty **Bricolage + Hanken** i paleta **Leśna pracownia**. Poniżej archiwum porównania.
+**Aktualny kierunek: dopasowanie do strony, fontów i modern retro.** Użytkownik doprecyzował, że oryginalność nie jest celem samym w sobie. Z poprzedniej rundy najbliższa była Faseta, lecz wycięcie zaburzało rytm. Nowe kontrolki są zaokrąglone i mają pełne powierzchnie. Bazą pozostają **Blisko**, **Bricolage + Hanken** i **Leśna pracownia**.
+
+| Wykończenie | Co porównujemy | Podgląd w Tailscale |
+| --- | --- | --- |
+| Zaokrąglony piksel | Miękka powierzchnia i schodkowy cień pod akcjami | [Otwórz](http://vps.tailfb5686.ts.net:4321/pl/?controls=pixel#palette-lab) |
+| Ciepły druk | Te same kształty z niskim, twardym cieniem | [Otwórz](http://vps.tailfb5686.ts.net:4321/pl/?controls=print#palette-lab) |
+| Spokojny kontur | Ta sama rodzina bez cienia, jako punkt odniesienia | [Otwórz](http://vps.tailfb5686.ts.net:4321/pl/?controls=calm#palette-lab) |
+
+Dolne strzałki i ← → porównują trzy wykończenia. Cień jest detalem przycisków; pola mają spokojne pełne ramki, a fokus pojawia się po wejściu. Przytrzymaj przycisk, aby zobaczyć wciśnięcie; sprawdź też akcję przy haśle i modale artykułu. [Opis](docs/controls-retro.md) · [porównanie](docs/previews/controls-retro.png). Wybór pozostaje otwarty.
+
+**Archiwum poprzedniej rundy:** cztery propozycje początkowo odrzucone. W późniejszym doprecyzowaniu użytkownik wskazał Fasetę jako najbliższą; nie zaakceptował wycięcia. Poniżej wcześniejsze warianty.
 
 | Nowe kontrolki | Zasada zestawu | Próbnik w Tailscale |
 | --- | --- | --- |

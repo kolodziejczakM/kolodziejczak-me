@@ -57,6 +57,7 @@ function decorateFreshComponents(root){
     icon.setAttribute('stroke-linecap',['facet','spine'].includes(state.controls)?'square':'round');
     icon.setAttribute('stroke-linejoin',state.controls==='facet'?'miter':'round');
   });
+  if(controlVariants[state.controls]?.round===4)decorateRetroComponents(root);
 }
 document.addEventListener('input',e=>{
   if(e.target.id==='fresh-volume'){

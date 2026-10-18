@@ -1,5 +1,7 @@
 # Nowa runda wszystkich kontrolek
 
+**Późniejsze doprecyzowanie:** Faseta była najbliższa gustowi użytkownika, ale wycięcie zaburzało rytm. Kolejne prace mają stawiać dopasowanie do strony i fontów ponad oryginalnością, z bardziej zaokrąglonymi przyciskami i próbą pikselowego cienia. [Aktualne porównanie](controls-retro.md). To zastępuje wcześniejszy brak wskazania preferowanej części rundy; żaden z archiwalnych zestawów nie został zatwierdzony w całości.
+
 **Werdykt:** wszystkie cztery propozycje odrzucone. Użytkownik: „Żaden mi się nie podoba”. Brak wskazania przyczyny lub preferowanego elementu tej rundy. Nie rozwijać żadnej z tych propozycji jako wybranego kierunku. Poproszono o referencje pól/przycisków lub opis tego, co najbardziej przeszkadza. Dalsza część dokumentu opisuje archiwalny próbnik.
 
 **Pytanie:** która konstrukcja działa jako kompletny zestaw — od wyszukiwarki po przycisk główny i mały przełącznik?

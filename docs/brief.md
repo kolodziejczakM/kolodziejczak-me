@@ -92,3 +92,9 @@ Użytkownik ocenił poprawione przyciski jako gorsze i poprosił o krok wstecz o
 ## Ocena nowych kompletnych zestawów
 
 „Żaden mi się nie podoba” — odrzucone zostały Faseta, Jasny środek, Pionowy brzeg i Osobna akcja. Użytkownik nie podał dodatkowej przyczyny. Nie dopisywać mu preferencji ani traktować żadnego elementu tej rundy jako zaakceptowanego. Poproszono o 1–3 referencje kontrolek lub opis tego, co najbardziej przeszkadza. Fonty, paleta i zakres samych kontrolek nie zostały zakwestionowane.
+
+## Doprecyzowanie — dopasowanie ważniejsze niż oryginalność
+
+Użytkownik chce, aby kontrolki pasowały do charakteru strony i fontów; nie muszą być szczególnie oryginalne. Z ostatniej rundy najbardziej podobała mu się **Faseta**, ale wycięcie zaburzało rytm designu. To doprecyzowanie zastępuje wcześniejszy brak wskazania bliższego kierunku. Przyciski powinny być bardziej zaokrąglone. **Pikselowy cień modern retro jest propozycją do sprawdzenia**, nie zatwierdzoną decyzją.
+
+Nowe porównanie celowo trzyma jedną rodzinę form: pełne zaokrąglone powierzchnie, spokojne pola, proste ikony. Trzy wykończenia: Zaokrąglony piksel, Ciepły druk i Spokojny kontur. Różnicujemy głównie cień, by ocenić dopasowanie w kontekście fontów, hasła i leśnej palety. Bez zmiany kompozycji i kart. [Próbnik](controls-retro.md).

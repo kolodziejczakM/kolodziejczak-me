@@ -1,0 +1,71 @@
+/* A single family intentionally isolates depth, rather than inventing new forms. */
+.control-mode[data-control-round="4"]{--ctrl-radius:14px;--retro-shadow:color-mix(in srgb,var(--line) 70%,var(--bg));--retro-depth:3px}
+.control-mode[data-control-round="4"] .ctrl-shell{border-radius:12px;background:var(--bg)}
+.control-mode[data-control-round="4"] .ctrl-entry{min-height:48px;padding:5px 12px}
+.control-mode[data-control-round="4"] .ctrl-leading svg{stroke-linecap:round;stroke-linejoin:round}
+.control-mode[data-control-round="4"] .ctrl-clear{border-radius:8px}
+.control-mode[data-control-round="4"] .ctrl-status{border-radius:50%}
+.control-mode[data-control-round="4"] .ctrl-segments{padding:4px 4px 6px;border:1px solid var(--line);border-radius:14px;background:var(--bg);gap:4px}
+.control-mode[data-control-round="4"] .ctrl-segments>button{border:0;border-radius:9px;min-height:40px;padding:8px 16px}
+.control-mode[data-control-round="4"] .ctrl-segments>button[aria-pressed=true]{border:0;background:var(--primary);box-shadow:0 2px 0 var(--primary-active)}
+.control-mode[data-control-round="4"] .ctrl-check-box{border-radius:7px}
+.control-mode[data-control-round="4"] .ctrl-track{border-radius:99px;background:var(--bg)}
+.control-mode[data-control-round="4"] .ctrl-track>span{border-radius:50%}
+.control-mode[data-control-round="4"] .fresh-volume input::-webkit-slider-thumb{border-radius:50%;width:24px;height:24px;margin-top:-10px}
+.control-mode[data-control-round="4"] .fresh-volume input::-moz-range-thumb{border-radius:50%;width:20px;height:20px}
+.control-mode[data-control-round="4"] .ctrl-actions{gap:16px;padding-bottom:30px;margin-bottom:14px}
+.retro-finish-note{font-size:12px;line-height:1.75;color:var(--muted);margin:0 0 28px;max-width:470px}
+/* Real button contains an uncut rounded face; shadow is a separate layer beneath. */
+.control-mode[data-control-round="4"] .retro-button{display:inline-flex;position:relative;isolation:isolate;align-items:stretch;justify-content:center;border:0;border-radius:16px;padding:0;background:transparent;box-shadow:none;transform:none;min-height:48px;height:auto;gap:0;vertical-align:middle;color:var(--link);text-decoration:none;--retro-face:var(--control);--retro-border:var(--line)}
+.control-mode[data-control-round="4"] .retro-button:is(:hover,:active){background:transparent;border:0;box-shadow:none;transform:none;color:var(--link)}
+.control-mode[data-control-round="4"] .retro-face{position:relative;z-index:1;display:flex;align-items:center;justify-content:center;gap:14px;min-height:48px;width:100%;padding:12px 19px;border:1px solid var(--retro-border);border-radius:inherit;background:var(--retro-face);color:inherit;line-height:1.5;transition:transform .12s,background .12s,border-color .12s}
+.control-mode[data-control-round="4"] .retro-face>svg{width:20px;height:20px;flex:none;padding:0;border:0;border-radius:0;background:none;color:inherit}
+.control-mode[data-control-round="4"] .retro-primary{--retro-face:var(--primary);--retro-border:var(--primary-ink);color:var(--primary-ink);font-weight:650}
+.control-mode[data-control-round="4"] .retro-primary:is(:hover,:active){color:var(--primary-ink)}
+.control-mode[data-control-round="4"] .retro-button:hover{--retro-face:var(--control);--retro-border:var(--secondary)}
+.control-mode[data-control-round="4"] .retro-primary:hover{--retro-face:var(--primary-hover);--retro-border:var(--primary-ink)}
+.control-mode[data-control-round="4"] .retro-button:before{content:'';position:absolute;inset:var(--retro-depth) 0 calc(-1 * var(--retro-depth));background:var(--retro-shadow);border-radius:inherit;pointer-events:none}
+.control-mode[data-control-round="4"] .retro-button:active .retro-face{transform:translateY(var(--retro-depth))}
+.control-mode[data-control-round="4"] .retro-primary:active{--retro-face:var(--primary-active)}
+body.control-mode[data-control-round="4"] .retro-button:focus-visible{outline:3px solid var(--focus);outline-offset:8px}
+.control-mode[data-control-round="4"] .composition-cta{min-height:54px}
+.control-mode[data-control-round="4"] .composition-cta .retro-face{min-height:54px;padding-inline:23px}
+.control-mode[data-control-round="4"] .fresh-icon-button{min-width:46px;width:46px;min-height:46px;height:46px;border-radius:13px}
+.control-mode[data-control-round="4"] .fresh-icon-button .retro-face{min-height:46px;padding:11px}
+.control-mode[data-control-round="4"] .fresh-icon-button[aria-pressed=true],.control-mode[data-control-round="4"] .article-end .liked{--retro-face:var(--primary);--retro-border:var(--primary-ink);color:var(--primary-ink);background:transparent;border:0}
+.control-mode[data-control-round="4"] .disabled-button{--retro-face:var(--disabled-bg);--retro-border:transparent;color:var(--disabled-ink);opacity:.65}
+.control-mode[data-control-round="4"] .retro-button:disabled:before{display:none}
+.control-mode[data-control-round="4"] .audio-play{width:46px;min-width:46px;min-height:46px;border-radius:13px}
+.control-mode[data-control-round="4"] .audio-play .retro-face{min-height:46px;padding:11px}
+.control-mode[data-control-round="4"] .article-actions{gap:14px}
+.control-mode[data-control-round="4"] .article-actions .retro-face{font-size:12px;padding:10px 14px;min-height:44px}
+.control-mode[data-control-round="4"] .blog-filters button{border-radius:12px}
+.control-mode[data-control-round="4"] .audio-language button{border-radius:8px}
+.control-mode[data-control-round="4"] .modal-close{border-radius:12px}
+.control-mode[data-control-round="4"] #demo-chat .retro-button{border:0;border-radius:12px;background:transparent;min-width:48px}
+.control-mode[data-control-round="4"] #demo-chat .retro-face{padding:11px}
+/* Pixel: a staircase belongs only to the shadow. The honey face stays rounded. */
+.control-mode[data-controls=pixel]{--retro-depth:6px}
+.control-mode[data-controls=pixel] .retro-button:before{inset:4px -6px -6px 4px;border-radius:0;clip-path:polygon(0 0,calc(100% - 12px) 0,calc(100% - 12px) 3px,calc(100% - 6px) 3px,calc(100% - 6px) 6px,calc(100% - 3px) 6px,calc(100% - 3px) 12px,100% 12px,100% calc(100% - 12px),calc(100% - 3px) calc(100% - 12px),calc(100% - 3px) calc(100% - 6px),calc(100% - 6px) calc(100% - 6px),calc(100% - 6px) calc(100% - 3px),calc(100% - 12px) calc(100% - 3px),calc(100% - 12px) 100%,12px 100%,12px calc(100% - 3px),6px calc(100% - 3px),6px calc(100% - 6px),3px calc(100% - 6px),3px calc(100% - 12px),0 calc(100% - 12px))}
+.control-mode[data-controls=pixel] .retro-button:hover .retro-face{transform:translate(-1px,-1px)}
+.control-mode[data-controls=pixel] .retro-button:active .retro-face{transform:translate(4px,4px)}
+.control-mode[data-controls=pixel] .ctrl-segments>button[aria-pressed=true]{box-shadow:2px 2px 0 var(--primary-active)}
+/* Print: short extrusion retains the rounded silhouette. */
+.control-mode[data-controls=print]{--retro-depth:4px}
+.control-mode[data-controls=print] .retro-button:hover .retro-face{transform:translateY(-1px)}
+.control-mode[data-controls=print] .retro-button:active .retro-face{transform:translateY(4px)}
+/* Flat reference uses the same faces and proportions, without extrusion. */
+.control-mode[data-controls=calm]{--retro-depth:0px}
+.control-mode[data-controls=calm] .retro-button:before{display:none}
+.control-mode[data-controls=calm] .retro-button:active .retro-face{transform:translateY(1px)}
+.control-mode[data-controls=calm] .ctrl-segments>button[aria-pressed=true]{box-shadow:none}
+@media(max-width:760px){
+  .control-mode[data-control-round="4"] .retro-face{font-size:12px;padding-inline:16px;gap:11px}
+  .control-mode[data-control-round="4"] .ctrl-segments>button{padding-inline:13px}
+  .control-mode[data-control-round="4"] .article-actions .retro-face{font-size:11px;padding-inline:12px}
+}
+@media(max-width:370px){
+  .control-mode[data-control-round="4"] .ctrl-segments>button{padding-inline:9px}
+  .control-mode[data-control-round="4"] .composition-cta .retro-face{font-size:10px;padding-inline:13px;gap:10px}
+}
+@media(prefers-reduced-motion:reduce){.control-mode[data-control-round="4"] .retro-face{transition:none}}
