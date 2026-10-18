@@ -9,9 +9,9 @@ export const site = {
     en: "Hi, Marcin here. Connecting the dots between code, AI, and everyday life. This is where I share what I learn along the way.",
   },
   contacts: [
+    { name: "Facebook", url: null },
+    { name: "Telegram", url: null },
     { name: "LinkedIn", url: null },
     { name: "WhatsApp", url: null },
-    { name: "Telegram", url: null },
-    { name: "Facebook", url: null },
   ] as { name: string; url: string | null }[],
 };

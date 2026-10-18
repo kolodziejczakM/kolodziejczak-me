@@ -162,3 +162,8 @@ Użytkownik doprecyzował, że zdjęcie ma zastąpić kokardkę w rogu nagłówk
 ## Wybrany zestaw po prototypach
 
 Użytkownik wybrał domenowy logotyp `kolodziejczak.me` (D), karty z pionowymi miniaturami zdjęć (C) oraz animowany gradient z nieruchomą siatką (D). Zestaw zastępuje poprzednie elementy we właściwej implementacji, bez przełącznika wariantów. [Decyzja i wdrożenie](identity-card-background-study.md#wdrożony-zestaw-d--c--d).
+
+
+## Grupa TL;DR / spis treści oraz sociale
+
+Użytkownik poprosił o wizualne połączenie dwóch przełączników wspólnego panelu czytania i kilka prototypów grupy zakładek oraz przycisków społecznościowych. Kolejność kontaktów została ustalona: Facebook, Telegram, LinkedIn, a dalej pozostałe (obecnie WhatsApp). Nowa runda dotyczy wyłącznie tych kontrolek, z zachowaniem domenowego logotypu, kart z pionowymi zdjęciami, gradientu z siatką, fontów i kolorów.
