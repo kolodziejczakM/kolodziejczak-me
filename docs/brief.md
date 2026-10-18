@@ -174,7 +174,7 @@ Użytkownik wybrał „Wspólną kapsułę” dla grupy TL;DR / spisu treści or
 
 ## Zatwierdzone bio i styl języka
 
-Autor zatwierdził bio: „Cześć, z tej strony Marcin. Zawodowo realizuję swoją pasję do programowania, a po godzinach tworzę filmy i eksperymentuję z AI. Czasem łączę te światy i wychodzi z tego coś ciekawego - o tym piszę tutaj.” Wdrożono polski tekst dosłownie oraz angielskie tłumaczenie, usuwając oznaczenie przykładowego bio. Użytkownik woli zwykły myślnik i odrzucił sformułowanie „Marcin tutaj” jako nienaturalne po polsku. Wzmianka o filmie dotyczy tworzenia filmów. Nagłówek „Z mojej głowy do Twojej” pozostaje do wyboru po propozycjach alternatyw.
+Autor zatwierdził bio: „Cześć, z tej strony Marcin. Zawodowo realizuję swoją pasję do programowania, a po godzinach tworzę filmy i eksperymentuję z AI. Czasem łączę te światy i wychodzi z tego coś ciekawego - o tym piszę tutaj.” Wdrożono polski tekst dosłownie oraz angielskie tłumaczenie, usuwając oznaczenie przykładowego bio. Użytkownik woli zwykły myślnik i odrzucił sformułowanie „Marcin tutaj” jako nienaturalne po polsku. Wzmianka o filmie dotyczy tworzenia filmów. Autor wybrał nagłówek sekcji najnowszych artykułów: „O tym chciałem opowiedzieć.” Angielski odpowiednik: „What I wanted to share.”
 
 
 ## Cytaty i linki do fragmentów
