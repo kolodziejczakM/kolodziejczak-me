@@ -1,5 +1,7 @@
 # Eksploracja UI — decyzja otwarta
 
+**Bieżąca runda:** poprawka przycisków Bocznego modułu została odrzucona. Użytkownik poprosił o krok wstecz i nowe prototypy całego systemu kontrolek. Cztery nowe propozycje na stałej bazie Blisko: `controls=facet|paper|spine|pair`. [Opis i linki](controls-fresh.md). Stare rundy są archiwum; żaden z nowych zestawów nie został zatwierdzony.
+
 **Pytanie:** jaki kierunek wizualny najlepiej oddaje osobistą stronę Marcina, z wygodnym blogiem po polsku i angielsku?
 
 **Źródło pierwotne:** prototypy na gałęzi `codex/prototype-ui`, katalog `prototypes/`. Trzy projekty na tych samych ścieżkach, sterowane `?variant=A|B|C`. Uruchomienie: `npm run prototype`.

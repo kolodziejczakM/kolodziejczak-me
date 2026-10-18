@@ -84,3 +84,7 @@ Użytkownik wyjaśnił, że **nie oczekiwał redesignów**. Zatrzymaliśmy się 
 ## Ocena drugiej rundy kontrolek — dopracowanie przycisków
 
 **Boczny moduł** wypada najlepiej. Dalsza iteracja dotyczy jego przycisków: główny z ciemnym modułem przy samym brzegu wyglądał na urwany, a pomocniczy był zbyt pospolity. Zachowujemy pola. Główny przycisk powinien wyglądać jak jedna kompletna powierzchnia; pomocniczy potrzebuje własnego, spokojnego detalu. W poprawce oba mają małe pole ikony odsunięte od brzegu, a pomocniczy dodatkowo delikatne wypełnienie. Nowe przyciski nie zostały jeszcze zatwierdzone.
+
+## Odrzucenie poprawki — nowa runda całego zestawu
+
+Użytkownik ocenił poprawione przyciski jako gorsze i poprosił o krok wstecz oraz **zupełnie nowe prototypy wszystkich kontrolek**. Nie rozwijać dalej Bocznego modułu jako domyślnego zwycięzcy. Nowa runda obejmuje pola, przyciski główne i pomocnicze, selecty, checkboxy, switche, radio, segmenty, suwak i małe akcje, wraz ze stanami. Fonty, leśna paleta i układ Blisko pozostają bazą. Cztery propozycje: [Faseta, Jasny środek, Pionowy brzeg, Osobna akcja](controls-fresh.md). Wybór pozostaje otwarty.

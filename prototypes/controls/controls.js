@@ -7,7 +7,7 @@ const controlVariants={
   capsule:{name:'Kapsuła z akcją',en:'Action capsule',description:'Obły input z ikoną i okrągłym przyciskiem czyszczenia. Ten sam detal powtarza się w pozostałych kontrolkach.',descriptionEn:'A rounded input with an icon and circular clear button. The same detail repeats across the controls.'}
 };
 const controlUI={search:'',email:'marcin@',emailStatus:'invalid',message:'',topic:'engineering',mode:'read',remember:true,underline:true};
-function controlKeys(){return controlVariants[state.controls]?.round===2?['rim','arch','module']:['frame','inset','label','capsule'];}
+function controlKeys(){const round=controlVariants[state.controls]?.round;return round===3?['facet','paper','spine','pair']:round===2?['rim','arch','module']:['frame','inset','label','capsule'];}
 
 function controlIcon(name){
   const paths={search:'<circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/>',mail:'<rect x="3" y="5" width="18" height="14" rx="3"/><path d="m4 7 8 6 8-6"/>',message:'<path d="M4 4h16v13H9l-5 4Z"/><path d="M8 8h8M8 12h5"/>',link:'<path d="m10 7 3-3a5 5 0 0 1 7 7l-3 3M14 17l-3 3a5 5 0 0 1-7-7l3-3m1 6 8-8"/>',lock:'<rect x="5" y="10" width="14" height="11" rx="3"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/>',close:'<path d="m7 7 10 10M17 7 7 17"/>',down:'<path d="m6 9 6 6 6-6"/>',check:'<path d="m4 12 5 5L20 6"/>'};
@@ -19,7 +19,7 @@ function applyControlTheme(){
   else{delete document.body.dataset.controls;delete document.body.dataset.controlRound;delete document.body.dataset.fieldIcons;}
 }
 function controlField(key,label,icon,element,hint,extra=''){
-  const compact=controlVariants[state.controls]?.round===2&&key==='search';
+  const compact=controlVariants[state.controls]?.round>=2&&key==='search';
   const tag=`<label class="ctrl-label${compact?' ctrl-label-sr':''}" for="ctrl-${key}">${label}</label>`;
   return `<div class="ctrl-field ${extra}" data-ctrl-field="${key}">${state.controls==='label'?'':tag}<div class="ctrl-shell">${state.controls==='label'?tag:''}<div class="ctrl-entry"><span class="ctrl-leading">${controlIcon(icon)}</span>${element}</div></div><p id="ctrl-${key}-hint" class="ctrl-hint">${hint}</p></div>`;
 }
@@ -46,6 +46,7 @@ function decorateControlStudy(){
   const caption=document.querySelector('.composition-caption');if(caption)caption.textContent=t(controlVariants[state.controls].description,controlVariants[state.controls].descriptionEn);
   const jump=document.querySelector('.palette-context>a');if(jump)jump.innerHTML=t('Porównaj kontrolki','Compare controls')+icons.arrow;
   if(controlVariants[state.controls].round===2)decorateRefinedControls();
+  if(controlVariants[state.controls].round===3)decorateFreshControls();
   document.title=t(controlVariants[state.controls].name,controlVariants[state.controls].en)+' · '+t('Kontrolki','Controls')+' · kolodziejczak.me';
   restoreControlStudy();
   if(state.controls==='module')document.querySelectorAll('.outline-button').forEach(button=>{
@@ -79,7 +80,7 @@ function cycleControls(direction){
 }
 function controlPrototypeTools(){
   const v=controlVariants[state.controls],keys=controlKeys();
-  return `<div class="prototype-switcher color-switcher form-switcher" aria-label="${t('Porównaj kontrolki','Compare controls')}"><button data-cycle="-1" aria-label="${t('Poprzedni wariant kontrolek','Previous controls')}">${shapeOriginalIcons.arrow}</button><div class="prototype-label" aria-live="polite"><small>${v.round===2?t('KONTROLKI 2 · BLISKO','CONTROLS 2 · CLOSER'):t('KONTROLKI · BLISKO','CONTROLS · CLOSER')} · ${state.lang.toUpperCase()}</small><strong>${t(v.name,v.en)} <span>${keys.indexOf(state.controls)+1}/${keys.length}</span></strong></div><button data-cycle="1" aria-label="${t('Następny wariant kontrolek','Next controls')}">${shapeOriginalIcons.arrow}</button><button class="prototype-info" data-control-action="info" aria-label="${t('O kontrolkach','About controls')}">?</button></div>`;
+  return `<div class="prototype-switcher color-switcher form-switcher" aria-label="${t('Porównaj kontrolki','Compare controls')}"><button data-cycle="-1" aria-label="${t('Poprzedni wariant kontrolek','Previous controls')}">${shapeOriginalIcons.arrow}</button><div class="prototype-label" aria-live="polite"><small>${v.round?t('KONTROLKI '+v.round+' · BLISKO','CONTROLS '+v.round+' · CLOSER'):t('KONTROLKI · BLISKO','CONTROLS · CLOSER')} · ${state.lang.toUpperCase()}</small><strong>${t(v.name,v.en)} <span>${keys.indexOf(state.controls)+1}/${keys.length}</span></strong></div><button data-cycle="1" aria-label="${t('Następny wariant kontrolek','Next controls')}">${shapeOriginalIcons.arrow}</button><button class="prototype-info" data-control-action="info" aria-label="${t('O kontrolkach','About controls')}">?</button></div>`;
 }
 function decorateControlModal(){
   document.querySelectorAll('.modal input:not([type=checkbox]),.modal textarea').forEach(el=>{
@@ -93,6 +94,7 @@ function decorateControlModal(){
       label.textContent=el.getAttribute('aria-label')||t('Twoje pytanie','Your question');shell.prepend(label);
     }
   });
+  if(controlVariants[state.controls]?.round===3)decorateFreshComponents(document.querySelector('.modal'));
 }
 document.addEventListener('input',e=>{
   const key=e.target.dataset.controlValue;if(!key||e.target.type==='checkbox')return;

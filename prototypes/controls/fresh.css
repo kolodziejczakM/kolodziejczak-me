@@ -1,0 +1,176 @@
+/* THROWAWAY: four complete control systems. Page, cards, fonts and palette fixed. */
+.control-mode[data-control-round="3"]{--ctrl-radius:8px;--fresh-field:var(--bg);--fresh-ink:var(--text);--fresh-placeholder:var(--muted);--fresh-choice:var(--primary);--fresh-choice-ink:var(--primary-ink)}
+.control-mode[data-control-round="3"] .ctrl-shell{border:1px solid var(--ctrl-edge);border-radius:var(--ctrl-radius);background:var(--fresh-field);box-shadow:none;outline:none}
+.control-mode[data-control-round="3"] .ctrl-entry{min-height:48px;padding:5px 11px;gap:10px}
+.control-mode[data-control-round="3"] .ctrl-entry>input,.control-mode[data-control-round="3"] .ctrl-entry>textarea,.control-mode[data-control-round="3"] .ctrl-entry>select{color:var(--fresh-ink)}
+.control-mode[data-control-round="3"] .ctrl-entry>input::placeholder,.control-mode[data-control-round="3"] .ctrl-entry>textarea::placeholder{color:var(--fresh-placeholder);opacity:1}
+.control-mode[data-control-round="3"] .ctrl-entry>select option{background:var(--fresh-field);color:var(--fresh-ink)}
+.control-mode[data-control-round="3"] .ctrl-shell:hover{border-color:var(--secondary)}
+.control-mode[data-control-round="3"] .ctrl-shell:focus-within{border-color:var(--focus);outline:3px solid var(--focus);outline-offset:4px}
+.control-mode[data-control-round="3"] .ctrl-disabled .ctrl-shell:hover{border-color:var(--ctrl-edge)}
+.control-mode[data-control-round="3"][data-field-icons=off] .ctrl-leading{display:none}
+.control-mode[data-control-round="3"] .ctrl-leading{width:19px;color:var(--fresh-placeholder)}
+.control-mode[data-control-round="3"] .ctrl-leading svg{width:18px;height:18px}
+.control-mode[data-control-round="3"] .ctrl-clear{width:34px;height:34px;min-width:34px;border:0;border-radius:5px;background:transparent;color:var(--fresh-placeholder)}
+.control-mode[data-control-round="3"] .ctrl-clear:enabled:hover{background:var(--primary);color:var(--primary-ink)}
+.control-mode[data-control-round="3"] .ctrl-clear:disabled{opacity:.3}
+.control-mode[data-control-round="3"] .ctrl-select-arrow{color:var(--fresh-ink)}
+.control-mode[data-control-round="3"] .ctrl-status{border:0;border-radius:3px;width:26px;height:26px;background:color-mix(in srgb,currentColor 12%,transparent)}
+.control-mode[data-control-round="3"] .ctrl-multiline .ctrl-entry{padding:10px 12px;min-height:112px}
+.control-mode[data-control-round="3"] .ctrl-actions{border:0;padding:0 0 26px;margin:0 0 27px;border-bottom:1px solid var(--line);gap:12px}
+.control-mode[data-control-round="3"] .ctrl-actions>.field-label{display:none}
+.control-mode[data-control-round="3"] .solid-link,.control-mode[data-control-round="3"] .outline-button,.control-mode[data-control-round="3"] .disabled-button{min-height:48px;padding:12px 17px;border:1px solid var(--primary-ink);border-radius:var(--ctrl-radius);box-shadow:none;gap:16px;line-height:1.5;transform:none}
+.control-mode[data-control-round="3"] .solid-link{background:var(--primary);color:var(--primary-ink);font-weight:650}
+.control-mode[data-control-round="3"] .outline-button{background:var(--control);border-color:var(--line);color:var(--link)}
+.control-mode[data-control-round="3"] .disabled-button{background:var(--disabled-bg);border-color:transparent;color:var(--disabled-ink);opacity:.65}
+.control-mode[data-control-round="3"] .solid-link>svg,.control-mode[data-control-round="3"] .outline-button>svg{width:19px;height:19px;padding:0;border:0;border-radius:0;background:none;color:inherit}
+.control-mode[data-control-round="3"] .composition-cta{height:auto;min-height:52px}
+.control-mode[data-control-round="3"] .solid-link:hover{background:var(--primary-hover);color:var(--primary-ink)}
+.control-mode[data-control-round="3"] .outline-button:hover{background:var(--bg);border-color:var(--secondary);color:var(--link-hover)}
+.control-mode[data-control-round="3"] .solid-link:active{background:var(--primary-active);transform:translateY(1px)}
+.control-mode[data-control-round="3"] .outline-button:active{transform:translateY(1px)}
+.control-mode[data-control-round="3"] .ctrl-segments{border:0;border-radius:var(--ctrl-radius);padding:0;background:transparent;gap:0}
+.control-mode[data-control-round="3"] .ctrl-segments>button{border:1px solid var(--line);border-radius:0;min-height:46px;padding:10px 17px;gap:9px}
+.control-mode[data-control-round="3"] .ctrl-segments>button:where(:first-child){border-radius:var(--ctrl-radius) 0 0 var(--ctrl-radius)}
+.control-mode[data-control-round="3"] .ctrl-segments>button:where(:last-child){border-radius:0 var(--ctrl-radius) var(--ctrl-radius) 0;border-left:0}
+.control-mode[data-control-round="3"] .ctrl-segments>button[aria-pressed=true]{background:var(--fresh-choice);color:var(--fresh-choice-ink);border-color:var(--fresh-choice)}
+.control-mode[data-control-round="3"] .ctrl-check-box{border-radius:var(--ctrl-radius);box-shadow:none;width:25px;height:25px}
+.control-mode[data-control-round="3"] .ctrl-track{border-radius:var(--ctrl-radius);box-shadow:none;width:49px;height:29px}
+.control-mode[data-control-round="3"] .ctrl-track>span{border-radius:3px}
+.fresh-radios{border:0;padding:0;margin:26px 0 22px;min-width:0}
+.fresh-radios legend{font-size:12px;font-weight:650;margin-bottom:8px;padding:0;color:var(--text)}
+.fresh-radios label{display:flex;align-items:center;position:relative;gap:12px;cursor:pointer;min-height:44px;font-size:13px}
+.fresh-radios input{position:absolute;opacity:0;width:25px;height:25px;margin:0;cursor:pointer}
+.fresh-radio-mark{width:25px;height:25px;flex:none;border:1px solid var(--line);border-radius:50%;display:grid;place-items:center;background:var(--bg);pointer-events:none}
+.fresh-radio-mark:after{content:'';display:block;width:11px;height:11px;border-radius:inherit;background:var(--primary);opacity:0}
+.fresh-radios input:checked+.fresh-radio-mark{border-color:var(--primary)}
+.fresh-radios input:checked+.fresh-radio-mark:after{opacity:1}
+.fresh-radios input:focus-visible+.fresh-radio-mark{outline:3px solid var(--focus);outline-offset:4px}
+.fresh-volume{margin:22px 0 26px}
+.fresh-volume label{display:flex;justify-content:space-between;gap:15px;font-size:12px;font-weight:650;margin-bottom:6px}
+.fresh-volume output{font-weight:400;color:var(--muted);font-variant-numeric:tabular-nums}
+.fresh-volume input{appearance:none;width:100%;height:44px;margin:0;background:transparent;cursor:pointer;display:block;--volume:60%}
+.fresh-volume input::-webkit-slider-runnable-track{height:6px;border-radius:3px;background:linear-gradient(to right,var(--secondary) var(--volume),var(--bg) var(--volume));border:1px solid var(--line)}
+.fresh-volume input::-webkit-slider-thumb{appearance:none;width:22px;height:26px;border:2px solid var(--primary-ink);border-radius:4px;background:var(--primary);margin-top:-11px}
+.fresh-volume input::-moz-range-track{height:6px;border-radius:3px;background:var(--bg);border:1px solid var(--line)}
+.fresh-volume input::-moz-range-progress{height:6px;background:var(--secondary)}
+.fresh-volume input::-moz-range-thumb{width:18px;height:22px;border:2px solid var(--primary-ink);border-radius:4px;background:var(--primary)}
+.fresh-small-actions{margin-top:20px}
+.fresh-small-actions>div{display:flex;gap:10px;margin:12px 0 8px}
+.fresh-small-actions>p{font-size:11px;color:var(--muted)}
+.control-mode[data-control-round="3"] .fresh-icon-button{display:grid;place-items:center;position:relative;width:46px;height:46px;flex:none;border:1px solid var(--line);border-radius:var(--ctrl-radius);background:var(--bg);color:var(--link)}
+.control-mode[data-control-round="3"] .fresh-icon-button svg{width:20px;height:20px}
+.control-mode[data-control-round="3"] .fresh-icon-button:hover{background:var(--control);border-color:var(--secondary);color:var(--link-hover)}
+.control-mode[data-control-round="3"] .fresh-icon-button[aria-pressed=true]{background:var(--primary);color:var(--primary-ink);border-color:var(--primary)}
+.control-mode[data-control-round="3"] .fresh-icon-button[aria-pressed=true] svg{fill:currentColor}
+/* Carry the system through the real article, list and dialogs. */
+.control-mode[data-control-round="3"] .article-actions button,.control-mode[data-control-round="3"] .blog-filters button,.control-mode[data-control-round="3"] .article-end button,.control-mode[data-control-round="3"] .comments button{background:var(--control);border:1px solid var(--line);border-radius:var(--ctrl-radius);padding:10px 15px;min-height:44px;color:var(--link);text-decoration:none}
+.control-mode[data-control-round="3"] .blog-filters button[aria-pressed=true],.control-mode[data-control-round="3"] .article-end button.liked{background:var(--primary);color:var(--primary-ink);border-color:var(--primary)}
+.control-mode[data-control-round="3"] .article-actions button:hover,.control-mode[data-control-round="3"] .article-end button:hover,.control-mode[data-control-round="3"] .comments button:hover{border-color:var(--secondary);background:var(--bg)}
+.control-mode[data-control-round="3"] .audio-play,.control-mode[data-control-round="3"] #demo-chat button{border:1px solid var(--primary-ink);border-radius:var(--ctrl-radius);background:var(--primary);color:var(--primary-ink);min-height:44px;min-width:44px}
+.control-mode[data-control-round="3"] .audio-language button{border-radius:var(--ctrl-radius);border:1px solid var(--line);min-height:36px;padding:6px 9px}
+.control-mode[data-control-round="3"] .audio-language button[aria-pressed=true]{background:var(--control);border-color:var(--secondary);color:var(--secondary)}
+.control-mode[data-control-round="3"] .modal-close{border:1px solid var(--line);border-radius:var(--ctrl-radius);background:var(--control);color:var(--text);width:40px;height:40px}
+.control-mode[data-control-round="3"] :is(.solid-link,.outline-button,.ctrl-clear,.ctrl-segments>button,.fresh-icon-button,.audio-play,.audio-language button,.article-actions button,.article-end button,.comments button,.blog-filters button,.modal-close,#demo-chat button):focus-visible{outline:3px solid var(--focus);outline-offset:4px}
+/* A. Facet: a single clipped corner, drawn on surfaces so focus is never clipped. */
+.control-mode[data-controls=facet]{--ctrl-radius:0px;--fresh-cut:11px}
+.control-mode[data-controls=facet] :is(.ctrl-shell,.solid-link,.outline-button,.disabled-button,.ctrl-check-box,.ctrl-track,.fresh-icon-button,.article-actions button,.blog-filters button,.article-end button,.comments button,.audio-play,.audio-language button,.modal-close,:where(#demo-chat) button){position:relative;isolation:isolate;background:transparent;border-color:transparent}
+.control-mode[data-controls=facet] :is(.ctrl-shell,.solid-link,.outline-button,.disabled-button,.ctrl-check-box,.ctrl-track,.fresh-icon-button,.article-actions button,.blog-filters button,.article-end button,.comments button,.audio-play,.audio-language button,.modal-close,:where(#demo-chat) button):before,
+.control-mode[data-controls=facet] :is(.ctrl-shell,.solid-link,.outline-button,.disabled-button,.ctrl-check-box,.ctrl-track,.fresh-icon-button,.article-actions button,.blog-filters button,.article-end button,.comments button,.audio-play,.audio-language button,.modal-close,:where(#demo-chat) button):after{content:'';position:absolute;inset:-1px;z-index:-2;clip-path:polygon(0 0,100% 0,100% calc(100% - var(--fresh-cut)),calc(100% - var(--fresh-cut)) 100%,0 100%);background:var(--edge,var(--line));pointer-events:none}
+.control-mode[data-controls=facet] :is(.ctrl-shell,.solid-link,.outline-button,.disabled-button,.ctrl-check-box,.ctrl-track,.fresh-icon-button,.article-actions button,.blog-filters button,.article-end button,.comments button,.audio-play,.audio-language button,.modal-close,:where(#demo-chat) button):after{inset:0;z-index:-1;background:var(--face,var(--control))}
+.control-mode[data-controls=facet] .ctrl-shell{--face:var(--bg);--edge:var(--ctrl-edge)}
+.control-mode[data-controls=facet] .ctrl-shell:focus-within{border-color:transparent;--edge:var(--focus)}
+.control-mode[data-controls=facet] :is(.solid-link,.audio-play,#demo-chat button){--face:var(--primary);--edge:var(--primary)}
+.control-mode[data-controls=facet] .solid-link:hover{background:transparent;--face:var(--primary-hover);--edge:var(--primary-hover)}
+.control-mode[data-controls=facet] .solid-link:active{background:transparent;--face:var(--primary-active)}
+.control-mode[data-controls=facet] :is(.outline-button,.fresh-icon-button,.ctrl-shell):hover{border-color:transparent;--edge:var(--secondary)}
+.control-mode[data-controls=facet] .outline-button:hover{background:transparent;--face:var(--bg)}
+.control-mode[data-controls=facet] .fresh-icon-button:hover,.control-mode[data-controls=facet] :is(.article-actions,.article-end,.comments,.audio-language) button:hover{background:transparent;--edge:var(--secondary)}
+.control-mode[data-control-round="3"][data-controls=facet] .modal-close{position:absolute}
+.control-mode[data-controls=facet] .disabled-button{--face:var(--disabled-bg);--edge:var(--disabled-bg)}
+.control-mode[data-controls=facet] :is(.ctrl-check-box,.ctrl-track){--fresh-cut:6px;--face:var(--bg)}
+.control-mode[data-controls=facet] .ctrl-check>input:checked+.ctrl-check-box,.control-mode[data-controls=facet] .ctrl-toggle>input:checked+.ctrl-track,.control-mode[data-controls=facet] .fresh-icon-button[aria-pressed=true],.control-mode[data-controls=facet] .blog-filters button[aria-pressed=true],.control-mode[data-controls=facet] .article-end button.liked{--face:var(--primary);--edge:var(--primary);background:transparent;border-color:transparent}
+.control-mode[data-controls=facet] .ctrl-segments{gap:7px}
+.control-mode[data-controls=facet] .ctrl-segments>button{border:1px solid var(--line);border-radius:0}
+.control-mode[data-controls=facet] .ctrl-segments>button[aria-pressed=true]{background:var(--primary);border-color:var(--primary)}
+.control-mode[data-controls=facet] .ctrl-track>span{border-radius:0}
+.control-mode[data-controls=facet] .fresh-radio-mark{border-radius:3px;transform:rotate(45deg);width:20px;height:20px;margin:2.5px}
+.control-mode[data-controls=facet] .fresh-radio-mark:after{width:8px;height:8px;border-radius:0}
+.control-mode[data-controls=facet] .fresh-volume input::-webkit-slider-thumb{border-radius:0;clip-path:polygon(0 0,100% 0,100% 75%,65% 100%,0 100%)}
+/* B. Light centre: a light, solid writing surface within the forest palette. */
+.control-mode[data-controls=paper]{--ctrl-radius:15px;--fresh-field:var(--text);--fresh-ink:var(--bg);--fresh-placeholder:color-mix(in srgb,var(--bg) 80%,var(--text));--fresh-choice:var(--secondary)}
+.control-mode[data-controls=paper] .ctrl-shell{border-color:var(--fresh-field);border-radius:15px / 10px}
+.control-mode[data-controls=paper] .ctrl-shell:focus-within{border-color:var(--bg);outline-color:var(--focus)}
+.control-mode[data-controls=paper] .ctrl-field[data-status=invalid] .ctrl-shell{border:2px solid var(--error)}
+.control-mode[data-controls=paper] .ctrl-field[data-status=invalid] .ctrl-status{color:color-mix(in srgb,var(--error) 40%,var(--bg));background:transparent}
+.control-mode[data-controls=paper] .ctrl-field[data-status=valid] .ctrl-status{color:var(--bg);background:var(--secondary)}
+.control-mode[data-controls=paper] .ctrl-clear{background:color-mix(in srgb,var(--bg) 8%,transparent);border-radius:50%}
+.control-mode[data-controls=paper] .solid-link,.control-mode[data-controls=paper] .outline-button{border-color:transparent;border-radius:15px / 10px}
+.control-mode[data-controls=paper] .outline-button{background:var(--secondary);color:var(--primary-ink)}
+.control-mode[data-controls=paper] .outline-button:hover{background:var(--text);color:var(--primary-ink)}
+.control-mode[data-controls=paper] .ctrl-segments{padding:4px;background:var(--text);border-radius:15px}
+.control-mode[data-controls=paper] .ctrl-segments>button{color:var(--bg);border:0;border-radius:11px;min-height:40px}
+.control-mode[data-controls=paper] .ctrl-segments>button[aria-pressed=false]:hover{background:var(--art-paper);color:var(--primary-ink)}
+.control-mode[data-controls=paper] .ctrl-check-box,.control-mode[data-controls=paper] .fresh-radio-mark{background:var(--text);border-color:var(--text);color:var(--bg)}
+.control-mode[data-controls=paper] .ctrl-check-box{border-radius:8px}
+.control-mode[data-controls=paper] .fresh-radio-mark:after{background:var(--bg)}
+.control-mode[data-controls=paper] .ctrl-track{border-radius:9px;background:var(--text);border-color:var(--text)}
+.control-mode[data-controls=paper] .ctrl-track>span{background:var(--bg);border-radius:5px}
+.control-mode[data-controls=paper] .fresh-icon-button{background:var(--text);border-color:transparent;color:var(--bg);border-radius:13px}
+.control-mode[data-controls=paper] .fresh-icon-button:hover{background:var(--secondary);color:var(--bg)}
+.control-mode[data-controls=paper] .fresh-volume input::-webkit-slider-thumb{border-radius:50%;width:24px;height:24px;margin-top:-10px}
+.control-mode[data-controls=paper] .article-actions button,.control-mode[data-controls=paper] .article-end button,.control-mode[data-controls=paper] .comments button{background:var(--secondary);color:var(--bg);border-color:transparent}
+.control-mode[data-controls=paper] .article-actions button:hover,.control-mode[data-controls=paper] .article-end button:hover,.control-mode[data-controls=paper] .comments button:hover{background:var(--text);color:var(--bg)}
+/* C. Vertical edge: edge weight belongs to the border, never a floating ornament. */
+.control-mode[data-controls=spine]{--ctrl-radius:4px}
+.control-mode[data-controls=spine] .ctrl-shell{border-left-width:4px;background:var(--control)}
+.control-mode[data-controls=spine] .ctrl-entry{padding-left:12px}
+.control-mode[data-controls=spine] .solid-link{border:1px solid var(--primary);border-left:4px solid var(--primary-ink)}
+.control-mode[data-controls=spine] .outline-button{border-left:4px solid var(--secondary);background:transparent}
+.control-mode[data-controls=spine] .ctrl-segments{display:flex;gap:9px}
+.control-mode[data-controls=spine] .ctrl-segments>button{border:1px solid var(--line);border-left-width:4px;border-radius:4px}
+.control-mode[data-controls=spine] .ctrl-segments>button[aria-pressed=true]{background:var(--control);border-color:var(--line);border-left-color:var(--primary);color:var(--primary)}
+.control-mode[data-controls=spine] .ctrl-check-box{border-left-width:4px;border-radius:3px}
+.control-mode[data-controls=spine] .ctrl-track{border-radius:4px;background:var(--control)}
+.control-mode[data-controls=spine] .ctrl-track>span{border-radius:1px;width:7px;margin-left:5px}
+.control-mode[data-controls=spine] .ctrl-toggle>input:checked+.ctrl-track{background:var(--control);border-color:var(--line)}
+.control-mode[data-controls=spine] .ctrl-toggle>input:checked+.ctrl-track>span{background:var(--primary)}
+.control-mode[data-controls=spine] .fresh-icon-button{border-left:4px solid var(--line)}
+.control-mode[data-controls=spine] .fresh-radio-mark{border-radius:3px;border-left-width:4px}
+.control-mode[data-controls=spine] .fresh-radio-mark:after{border-radius:0;width:6px;height:13px}
+.control-mode[data-controls=spine] .fresh-volume input::-webkit-slider-thumb{width:12px;border-radius:2px}
+.control-mode[data-controls=spine] .article-actions button,.control-mode[data-controls=spine] .blog-filters button,.control-mode[data-controls=spine] .article-end button,.control-mode[data-controls=spine] .comments button{border-left-width:4px}
+.control-mode[data-controls=spine] .blog-filters button[aria-pressed=true]{background:var(--control);color:var(--primary);border-color:var(--line);border-left-color:var(--primary)}
+/* D. Separate action: complete independent surfaces with a small breathing gap. */
+.control-mode[data-controls=pair]{--ctrl-radius:12px}
+.control-mode[data-controls=pair] .fresh-field-pair{display:flex;align-items:stretch;gap:8px;min-width:0}
+.control-mode[data-controls=pair] .fresh-field-pair>.ctrl-shell{flex:1;min-width:0}
+.control-mode[data-controls=pair] .fresh-field-pair>.ctrl-clear{border:1px solid var(--line);border-radius:12px;background:var(--control);width:50px;min-width:50px;height:auto}
+.control-mode[data-controls=pair] .ctrl-shell{background:transparent;border-radius:12px}
+.control-mode[data-controls=pair] .solid-link{border-color:var(--primary);border-radius:12px;gap:11px}
+.control-mode[data-controls=pair] .outline-button{border-color:var(--secondary);color:var(--secondary);background:transparent;gap:11px}
+.control-mode[data-controls=pair] .solid-link>svg,.control-mode[data-controls=pair] .outline-button>svg{width:20px;height:20px}
+.control-mode[data-controls=pair] .ctrl-segments{gap:9px}
+.control-mode[data-controls=pair] .ctrl-segments>button{border:1px solid var(--line);border-radius:12px}
+.control-mode[data-controls=pair] .ctrl-segments>button[aria-pressed=true]{border-color:var(--secondary);color:var(--secondary);background:var(--control)}
+.control-mode[data-controls=pair] .ctrl-segments>button[aria-pressed=true]:before{content:'';width:6px;height:6px;border-radius:50%;background:currentColor;flex:none}
+.control-mode[data-controls=pair] .ctrl-check-box{border-radius:7px;background:transparent}
+.control-mode[data-controls=pair] .ctrl-track{position:relative;border:0;background:transparent!important;border-radius:0;isolation:isolate;padding:5px 4px}
+.control-mode[data-controls=pair] .ctrl-track:before{content:'';position:absolute;left:4px;right:4px;top:13px;height:3px;background:var(--line);z-index:-1}
+.control-mode[data-controls=pair] .ctrl-track>span{border-radius:50%;background:var(--panel);border:2px solid var(--muted)}
+.control-mode[data-controls=pair] .ctrl-toggle>input:checked+.ctrl-track>span{background:var(--primary);border-color:var(--primary)}
+.control-mode[data-controls=pair] .fresh-radio-mark{background:transparent;border-color:var(--line);border-width:2px}
+.control-mode[data-controls=pair] .fresh-icon-button{border-radius:50%;background:var(--control)}
+.control-mode[data-controls=pair] .fresh-volume input::-webkit-slider-thumb{border-radius:50%;background:var(--panel);border:3px solid var(--primary);width:24px;height:24px;margin-top:-10px}
+@media(max-width:760px){
+  .control-mode[data-control-round="3"] .ctrl-segments>button{padding-inline:12px;font-size:12px;gap:7px}
+  .control-mode[data-control-round="3"] .solid-link,.control-mode[data-control-round="3"] .outline-button,.control-mode[data-control-round="3"] .disabled-button{font-size:12px;padding-inline:14px;gap:11px}
+  .fresh-radios label{font-size:12px}
+  .control-mode[data-controls=pair] .fresh-field-pair{gap:6px}
+  .control-mode[data-controls=pair] .fresh-field-pair>.ctrl-clear{width:44px;min-width:44px}
+}
+@media(max-width:370px){
+  .control-mode[data-control-round="3"] .ctrl-segments{width:100%}
+  .control-mode[data-control-round="3"] .ctrl-segments>button{flex:1;padding-inline:8px;font-size:11px;gap:5px}
+  .control-mode[data-controls=pair] .ctrl-segments>button[aria-pressed=true]:before{display:none}
+}
