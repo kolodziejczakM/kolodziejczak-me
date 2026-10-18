@@ -52,3 +52,45 @@ test("heading links preserve generated slugs and clean table-of-contents labels"
     3,
   );
 });
+
+test("heading permalinks stay with the final word and preserve inline formatting", async () => {
+  const result = await render(
+    [
+      "## Najpierw dobre pytanie",
+      "## Projekt *na próbę*",
+      "## Jak działa `AbortController`?",
+      "## A [linked heading](https://example.com)",
+      "## Pro**gramowanie**!",
+      "## Jednowyrazowy",
+    ].join("\n\n"),
+  );
+  assert.match(result.code, /<span class="heading-tail">pytanie<a /);
+  assert.match(
+    result.code,
+    /<em>na <\/em><span class="heading-tail"><em>próbę<\/em><a /,
+  );
+  assert.match(
+    result.code,
+    /<span class="heading-tail"><code>AbortController<\/code>\?<a /,
+  );
+  assert.match(
+    result.code,
+    /<span class="heading-tail"><a href="https:\/\/example.com">heading<\/a><a /,
+  );
+  assert.match(
+    result.code,
+    /<span class="heading-tail">Pro<strong>gramowanie<\/strong>!<a /,
+  );
+  assert.match(result.code, /<span class="heading-tail">Jednowyrazowy<a /);
+  assert.deepEqual(
+    result.metadata.headings.map((heading) => heading.text),
+    [
+      "Najpierw dobre pytanie",
+      "Projekt na próbę",
+      "Jak działa AbortController?",
+      "A linked heading",
+      "Programowanie!",
+      "Jednowyrazowy",
+    ],
+  );
+});

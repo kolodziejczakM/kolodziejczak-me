@@ -1966,30 +1966,32 @@ html:not(.js) .js-only {
   scroll-margin-top: 0;
 }
 .prose [data-article-heading] {
-  position: relative;
-  width: fit-content;
-  max-width: 100%;
-  padding-inline-end: 30px;
   cursor: pointer;
 }
+.prose .heading-tail {
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+}
 .prose .heading-permalink {
-  position: absolute;
-  inset-inline-end: 0;
-  inset-block-start: 0;
-  display: flex;
+  display: inline-flex;
+  flex: none;
   align-items: center;
   justify-content: center;
-  width: 28px;
-  height: 1.2em;
-  height: 1lh;
-  color: var(--muted);
+  width: 26px;
+  height: 1.15em;
+  margin-inline-start: 4px;
+  color: #98a28b;
   text-decoration: none;
   font-family: var(--font);
   font-weight: 500;
+  letter-spacing: 0;
 }
 .heading-permalink::after {
   content: "#";
   font-size: 0.6em;
+  line-height: 1;
 }
 .prose .heading-permalink:hover {
   color: var(--accent);

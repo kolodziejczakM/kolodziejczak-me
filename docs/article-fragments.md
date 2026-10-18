@@ -12,9 +12,12 @@ Weryfikacja: TypeScript, build 12 stron, 15 testów Node. Dwa nowe testy dotycz�
 
 Po porównaniu prototypów użytkownik wybrał formę B: wyśrodkowany cytat bez ramki, z dużym miodowym cudzysłowem nad tekstem. [Decyzja i weryfikacja wdrożenia](quote-design-study.md#wdrożony-wariant-b).
 
-
 ## Pozycja znaku linku
 
-Znak `#` nie uczestniczy już w zawijaniu tekstu. Nagłówek rezerwuje dla niego miejsce z prawej strony, przy pierwszym wierszu. Szerokość dopasowuje się do krótkiego tekstu i jest ograniczona szerokością kolumny. Przy dłuższym nagłówku tekst może się zawijać, ale znak nie trafia do samotnego wiersza. Zachowano natywny link, etykietę dla czytnika ekranu i fokus klawiatury.
+Po porównaniu czterech prototypów użytkownik wybrał **A: hash przy ostatnim słowie**, z korektą wyśrodkowania w pionie i spokojniejszym kolorem. [Źródło pierwotne eksperymentu i decyzja](heading-links-study.md).
 
-Weryfikacja tej poprawki: build oraz Chromium, 12 widoków PL/EN przy 320/375/390/428/768/1440 px. Dla wszystkich 72 nagłówków zmierzono zgodność położenia linku z pierwszym wierszem, brak poziomego przepełnienia i poprawne przejście do fragmentu (również ze znakami diakrytycznymi). [Nagłówki na telefonie](previews/heading-permalink-mobile.png).
+Generator statycznego HTML grupuje ostatnie słowo i natywny link w `span.heading-tail`. Grupa zawija się jako całość; znak nie wisi przy końcu pierwszego wiersza i nie zostaje sam w nowej linii. Układ inline-flex centruje znak względem tekstu, a kolor `#98a28b` jest przygaszony względem zwykłego tekstu. Hover i fokus pozostają widoczne.
+
+Podział treści nagłówka zachowuje wyróżnienia, kod, interpunkcję i istniejące odnośniki. Link do sekcji pozostaje rodzeństwem autorskich linków, bez zagnieżdżania jednego w drugim. Identyfikatory i nazwy w spisie treści nie zmieniają się. Grupowanie jest zapisane w HTML i działa bez JavaScript.
+
+Weryfikacja: TypeScript, build 12 stron, 16 testów Node, w tym zachowanie formatowania ostatniego słowa i nazw spisu treści. Chromium i WebKit: PL/EN przy 320/375/390/428/844/1440 px; centrowanie linku względem grupy, przygaszony kolor, brak przewijania poziomego, wejście z fragmentem i natywne linkowanie bez JS. [Nagłówki na telefonie](previews/heading-permalink-mobile.png).

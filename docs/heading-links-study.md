@@ -1,6 +1,6 @@
 # Porównanie odnośników przy nagłówkach
 
-Użytkownik poprosił o prototypy, ponieważ hash przypięty do końca pierwszego wiersza wygląda na oderwany od tekstu. Rozważamy symbol związany z ostatnim słowem oraz ikonę linku przed nagłówkiem. Wybór pozostaje otwarty; zwykła implementacja nie została zmieniona.
+Użytkownik poprosił o prototypy, ponieważ hash przypięty do końca pierwszego wiersza wygląda na oderwany od tekstu. Rozważamy symbol związany z ostatnim słowem oraz ikonę linku przed nagłówkiem. Użytkownik wybrał **A: Hash przy ostatnim słowie**, z wycentrowaniem symbolu w pionie i lekko przygaszonym kolorem. Wybór wdrożono w zwykłym podglądzie na porcie 4322.
 
 Źródło pierwotne eksperymentu: gałąź **`codex/heading-links-study`**, commit **`4f65f6d`**. Zawiera komponent, CSS, skrypt, pełny opis i cztery zrzuty w `docs/previews/heading-study/`. Właściwa gałąź ma tylko ten wskaźnik, bez kodu próbnika.
 
@@ -16,3 +16,7 @@ Dolny pasek i strzałki klawiatury zmieniają wariant. URL zachowuje wybór i fr
 Worktree `/tmp/kolodziejczak-heading-study`, jednostka `kolodziejczak-heading-preview.service`, wyłącznie Tailscale `100.113.202.72:4326`. Odtworzenie z gałęzi: `npm ci`, `npm run prototype:headings`; build statyczny z `PROTOTYPE_HEADINGS=1 npm run build`. Bez flagi próbnik nie jest renderowany. Wybrane rozwiązanie należy później przepisać do generatora HTML i CSS; obecne warianty zmieniają nagłówki w przeglądarce.
 
 Weryfikacja eksperymentu: build 12 stron, TypeScript, Chromium PL/EN × cztery warianty × 320/390/844/1440 px, bez przewijania poziomego i błędów JS. Sprawdzono grupowanie słowa z symbolem, linki do sekcji, przeładowanie z fragmentem, przyciski i klawiaturę. Zwykły build bez flagi nie zawiera próbnika w HTML. To kontrola działania prototypu, nie ostateczna implementacja wybranego wariantu.
+
+## Wdrożony wariant A
+
+Rozwiązanie przepisano do generatora statycznego HTML i CSS, bez kodu próbnika. Hash jest w jednej niełamanej grupie z ostatnim słowem, wycentrowany przez inline-flex i przygaszony do `#98a28b`. Zachowano dotychczasowe fragmenty, dostępne etykiety, klawiaturę i formatowanie. Wdrożenie działa też bez JavaScript. [Szczegóły i weryfikacja](article-fragments.md#pozycja-znaku-linku).
