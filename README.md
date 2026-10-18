@@ -51,3 +51,5 @@ Przed publiczną premierą potrzebne są prawdziwe materiały autora, konfigurac
 - [Archiwum prototypów i wcześniejszych porównań](docs/prototype-archive.md)
 
 Archiwalny podgląd nadal działa na porcie **4321** (`npm run prototype`); właściwa implementacja ma osobny podgląd na **4322**. Szczegóły prywatnego serwera i jego restartu są w [opisie implementacji](docs/astro-foundation.md#podgląd-w-tailscale).
+
+Prototypy nowego logotypu, mniejszych kart i subtelnego tła (osobna gałąź i podgląd na porcie 4323): [warianty i obsługa](docs/identity-card-background-study.md).
