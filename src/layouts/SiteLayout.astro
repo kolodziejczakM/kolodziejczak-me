@@ -2,6 +2,7 @@
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import Icon from "../components/Icon.astro";
+import BackgroundSurface from "../components/BackgroundSurface.astro";
 import { site } from "../config/site";
 import { text, otherLocale, type Locale } from "../lib/i18n";
 import "../styles/site.css";
@@ -59,6 +60,7 @@ const t = (pl: string, en: string) => text(locale, pl, en);
     )}
   </head>
   <body data-page={page}>
+    <BackgroundSurface />
     <a class="skip-link" href="#main">
       {t("Przejdź do treści", "Skip to content")}
     </a>

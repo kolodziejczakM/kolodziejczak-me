@@ -45,6 +45,9 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 28px;
+  /* Keep the responsive type scale stable when iOS changes orientation. */
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 body {
   margin: 0;
@@ -56,14 +59,21 @@ body {
   -webkit-font-smoothing: antialiased;
   isolation: isolate;
 }
-body::before,
-body::after {
-  content: "";
+.background-surface {
   position: fixed;
+  inset: 0;
+  /* Only decoration is clipped; content, focus rings and dialogs stay intact. */
+  overflow: hidden;
+  contain: strict;
   pointer-events: none;
   z-index: -1;
 }
-body::before {
+.background-surface::before,
+.background-surface::after {
+  content: "";
+  position: absolute;
+}
+.background-surface::before {
   inset: -15%;
   opacity: 0.34;
   background:
@@ -71,7 +81,7 @@ body::before {
     radial-gradient(ellipse at 82% 74%, #31634d66, transparent 56%);
   animation: green-drift 32s ease-in-out infinite alternate paused;
 }
-body::after {
+.background-surface::after {
   inset: 0;
   opacity: 0.02;
   background-image:
@@ -79,7 +89,7 @@ body::after {
     linear-gradient(90deg, #d7e7c2 1px, transparent 1px);
   background-size: 32px 32px;
 }
-html[data-background-motion="running"] body::before {
+html[data-background-motion="running"] .background-surface::before {
   animation-play-state: running;
 }
 @keyframes green-drift {
@@ -803,6 +813,12 @@ svg {
 .topic-art > .icon {
   width: 70px;
   height: 70px;
+}
+.narration,
+.audio-preview {
+  width: 100%;
+  max-width: 560px;
+  min-width: 0;
 }
 .narration {
   margin-bottom: 20px;
