@@ -80,3 +80,7 @@ Użytkownik wyjaśnił, że **nie oczekiwał redesignów**. Zatrzymaliśmy się 
 - **Etykieta w ramce** jest ciekawa, ale etykieta bywa zbędna i zwiększa zużycie miejsca. Nie wymuszać widocznego nagłówka wewnątrz każdego pola. Zachować dostępną nazwę również przy wizualnym pominięciu etykiety.
 - **Kapsuła z akcją** wygląda generycznie. Nie rozwijać kolejnych wariacji kapsułki jako głównego wyróżnika.
 - Celem jest **oryginalność bez przesady**, nadal wyłącznie w kontrolkach, na niezmienionej bazie Blisko. Trzy kolejne propozycje: Niski rant, Łuk i kant, Boczny moduł. [Druga runda kontrolek](control-refinements.md).
+
+## Ocena drugiej rundy kontrolek — dopracowanie przycisków
+
+**Boczny moduł** wypada najlepiej. Dalsza iteracja dotyczy jego przycisków: główny z ciemnym modułem przy samym brzegu wyglądał na urwany, a pomocniczy był zbyt pospolity. Zachowujemy pola. Główny przycisk powinien wyglądać jak jedna kompletna powierzchnia; pomocniczy potrzebuje własnego, spokojnego detalu. W poprawce oba mają małe pole ikony odsunięte od brzegu, a pomocniczy dodatkowo delikatne wypełnienie. Nowe przyciski nie zostały jeszcze zatwierdzone.

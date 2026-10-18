@@ -40,6 +40,8 @@
 
 **Runda 8 — pojedynczy obrys, kompaktowe pole:** `controls=rim|arch|module`, osobny cykl trzech propozycji. Na tej samej bazie Blisko porównujemy dolny rant, profil z zaokrągloną górą i krótszymi dolnymi narożnikami oraz funkcjonalny moduł po prawej stronie. Wyszukiwanie ma dostępną nazwę bez widocznego wiersza etykiety; ikony pomocnicze są opcjonalne. Stan spoczynku nie ma zewnętrznego obrysu. Źródło pierwotne: `codex/prototype-ui`, `prototypes/controls/refinements.js` i `refinements.css`. [Opis](control-refinements.md). Wybór pozostaje otwarty.
 
+**Feedback po rundzie 8:** Boczny moduł jest najlepszym kierunkiem pól. Główny przycisk wyglądał na urwany przez ciemny segment dochodzący do brzegu, a pomocniczy zbyt pospolicie. Punktowa poprawka zachowuje pola i pozostałą bazę: oba przyciski otrzymują ikony osadzone wewnątrz pełnej powierzchni, główny ma ciągłe miodowe tło, pomocniczy delikatne wypełnienie. Poprawka jest pod tym samym `controls=module`. [Podgląd przycisków](previews/module-buttons.png). Nowe przyciski pozostają do oceny.
+
 Przy decyzji zapisać: wybrany kierunek, elementy zapożyczone z pozostałych, argumenty i rzeczy do zmiany. Potem przepisać zwycięski projekt do kodu produkcyjnego, zachowując te prototypy na gałęzi źródłowej. Nie przenosić przełącznika ani symulacji usług do produkcji.
 
 Nie utworzono issue wdrożeniowego; ten dokument jest lokalnym odnośnikiem do prototypów. Po utworzeniu issue należy wkleić do niego ten odnośnik i werdykt.

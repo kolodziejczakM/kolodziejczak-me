@@ -183,7 +183,8 @@ function render() {
   document.body.classList.remove('modal-open');
   languageSuggestion();
   progress();
-  if(state.controls&&location.hash==='#palette-lab')document.fonts.ready.then(()=>requestAnimationFrame(()=>document.querySelector('#palette-lab')?.scrollIntoView({behavior:'instant'})));
+  const controlAnchor=location.hash;
+  if(state.controls&&['#palette-lab','#ctrl-actions'].includes(controlAnchor))document.fonts.ready.then(()=>requestAnimationFrame(()=>document.querySelector(controlAnchor)?.scrollIntoView({behavior:'instant'})));
 }
 
 function navigate(url) {

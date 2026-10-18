@@ -4,6 +4,8 @@ Pierwszy etap: **prototypy wizualne do porównania**, przed wyborem stacku i imp
 
 **Aktualna runda: wyłącznie kontrolki, przede wszystkim inputy.** Bazą jest **Blisko**. Kompozycja, karty, fonty **Bricolage + Hanken** i paleta **Leśna pracownia** pozostają stałe. Rozszerzenie poprzedniej rundy na redesign było nietrafione względem prośby użytkownika.
 
+**Aktualizacja przycisków Bocznego modułu:** ten kierunek pól został oceniony najlepiej. Główny przycisk ma teraz ciągłe miodowe tło, z ikoną odsuniętą od brzegu. Pomocniczy ma delikatne wypełnienie i wpuszczoną ikonę. [Otwórz przyciski](http://vps.tailfb5686.ts.net:4321/pl/?controls=module#ctrl-actions) · [podgląd](docs/previews/module-buttons.png). Pola pozostają bez zmian; nowe przyciski czekają na ocenę.
+
 **Najnowsze porównanie: trzy spokojniejsze konstrukcje.** Pojedyncza ramka w spoczynku, dodatkowy obrys wyłącznie przy fokusie. Wyszukiwanie nie zajmuje osobnego wiersza etykietą; ikony pomocnicze można opcjonalnie włączyć. Pola jednowierszowe mają 48 px wysokości.
 
 | Kontrolki | Detal | Próbnik w Tailscale |

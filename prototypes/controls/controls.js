@@ -48,6 +48,9 @@ function decorateControlStudy(){
   if(controlVariants[state.controls].round===2)decorateRefinedControls();
   document.title=t(controlVariants[state.controls].name,controlVariants[state.controls].en)+' · '+t('Kontrolki','Controls')+' · kolodziejczak.me';
   restoreControlStudy();
+  if(state.controls==='module')document.querySelectorAll('.outline-button').forEach(button=>{
+    if(!button.querySelector('svg'))button.insertAdjacentHTML('beforeend',refinedShapeIcon('copy','press'));
+  });
 }
 function restoreControlStudy(){
   for(const [key,value]of Object.entries(controlUI)){
