@@ -7,6 +7,23 @@ const origin = "https://share-preview.test";
 (async () => {
   const browser = await chromium.launch({ args: ["--no-sandbox"] });
   try {
+    // First-click HTTP fallback must keep its tooltip through queued auto-scroll.
+    const httpPage = await browser.newPage({
+      locale: "pl-PL",
+      viewport: { width: 390, height: 900 },
+      reducedMotion: "reduce",
+    });
+    await httpPage.goto(upstream + "/pl/blog/mniej-ale-lepiej/");
+    await httpPage.evaluate(() => document.fonts.ready);
+    await httpPage.locator("[data-share-action]").click();
+    await httpPage.waitForTimeout(150);
+    assert.equal(
+      await httpPage.locator('[role="tooltip"]').isVisible(),
+      true,
+      "HTTP copy tooltip disappeared after click auto-scroll",
+    );
+    await httpPage.close();
+    console.log("http-tooltip: passed");
     for (const mode of ["shared", "cancelled", "failed", "unsupported"]) {
       const context = await browser.newContext({
         locale: "en-GB",

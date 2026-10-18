@@ -18,6 +18,32 @@ export function hideFeedback() {
   anchor = undefined;
 }
 
+function positionFeedback() {
+  if (!tooltip || !anchor) return;
+  const box = anchor.getBoundingClientRect();
+  if (box.bottom < 0 || box.top > innerHeight) {
+    hideFeedback();
+    return;
+  }
+  const size = tooltip.getBoundingClientRect();
+  const left = Math.max(
+    12,
+    Math.min(
+      innerWidth - size.width - 12,
+      box.left + box.width / 2 - size.width / 2,
+    ),
+  );
+  const above = box.top >= size.height + 20;
+  const top = above ? box.top - size.height - 10 : box.bottom + 10;
+  tooltip.style.left = `${left}px`;
+  tooltip.style.top = `${Math.max(8, Math.min(innerHeight - size.height - 8, top))}px`;
+  tooltip.dataset.placement = above ? "above" : "below";
+  tooltip.style.setProperty(
+    "--tooltip-arrow",
+    `${Math.max(10, Math.min(size.width - 10, box.left + box.width / 2 - left))}px`,
+  );
+}
+
 export function showFeedback(button: HTMLElement, message: string) {
   hideFeedback();
   anchor = button;
@@ -39,24 +65,7 @@ export function showFeedback(button: HTMLElement, message: string) {
     "aria-describedby",
     [previousDescription, tooltip.id].filter(Boolean).join(" "),
   );
-  const box = button.getBoundingClientRect();
-  const size = tooltip.getBoundingClientRect();
-  const left = Math.max(
-    12,
-    Math.min(
-      innerWidth - size.width - 12,
-      box.left + box.width / 2 - size.width / 2,
-    ),
-  );
-  const above = box.top >= size.height + 20;
-  const top = above ? box.top - size.height - 10 : box.bottom + 10;
-  tooltip.style.left = `${left}px`;
-  tooltip.style.top = `${Math.max(8, Math.min(innerHeight - size.height - 8, top))}px`;
-  tooltip.dataset.placement = above ? "above" : "below";
-  tooltip.style.setProperty(
-    "--tooltip-arrow",
-    `${Math.max(10, Math.min(size.width - 10, box.left + box.width / 2 - left))}px`,
-  );
+  positionFeedback();
   liveStatus =
     host === document.body
       ? document.querySelector<HTMLElement>("#status")
@@ -69,7 +78,8 @@ export function showFeedback(button: HTMLElement, message: string) {
   timer = setTimeout(hideFeedback, 3000);
 }
 
-addEventListener("scroll", hideFeedback, { capture: true, passive: true });
+// A queued scroll from focusing/clicking must not dismiss fresh confirmation.
+addEventListener("scroll", positionFeedback, { capture: true, passive: true });
 addEventListener("resize", hideFeedback);
 addEventListener("keydown", (event) => {
   if (event.key === "Escape") hideFeedback();

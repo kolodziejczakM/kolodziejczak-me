@@ -4,7 +4,7 @@
 
 ## Zachowanie
 
-- Kopiowanie promptu i linku pokazuje tooltip przy użytym przycisku, przez około 3 sekundy. Nie powiększa dialogu ani nie przesuwa treści. Tooltip znika po Escape, przewinięciu, zmianie rozmiaru lub zamknięciu dialogu. Powtórne kliknięcie zastępuje poprzedni komunikat.
+- Kopiowanie promptu i linku pokazuje tooltip przy użytym przycisku, przez około 3 sekundy. Nie powiększa dialogu ani nie przesuwa treści. Podczas przewijania podąża za przyciskiem; znika, gdy przycisk opuszcza ekran, po Escape, zmianie rozmiaru lub zamknięciu dialogu. Powtórne kliknięcie zastępuje poprzedni komunikat.
 - Tooltip używa warstwy Popover API, jeśli jest dostępna, dzięki czemu nie jest przycinany przez przewijany dialog. Bez Popover pozostaje pozycjonowanym elementem przy przycisku. Zachowano dyskretne, wizualnie ukryte regiony `aria-live` i powiązanie `aria-describedby`.
 - „Udostępnij artykuł” wywołuje `navigator.share({title, url})` bez otwierania własnego dialogu, bezpośrednio z kliknięcia. Jeżeli `navigator.canShare` jest dostępne, sprawdzana jest obsługa danych.
 - Anulowanie (`AbortError`) nie uruchamia kopiowania i nie pokazuje błędu. Błąd uruchomienia udostępniania powoduje próbę skopiowania linku z tooltipem. Przy braku obsługi API przycisk od razu nazywa się „Kopiuj link” i ma ikonę kopiowania.
@@ -20,7 +20,7 @@ Chromium, osiem widoków PL/EN przy 320/390/768/1440 px: tooltip mieści się w 
 
 `scripts/check-clipboard.cjs` nadal odczytuje rzeczywisty schowek po obu akcjach: HTTP, bezpieczny kontekst, odmowa głównego API oraz odmowa obu mechanizmów. Zmieniono selektory dla linku kopiowanego bez dialogu i potwierdzenia w tooltipie.
 
-`scripts/check-sharing.cjs` sprawdza wywołanie Web Share API z tytułem i adresem oraz aktywacją użytkownika, brak dialogu strony, anulowanie bez efektu ubocznego, błąd i brak obsługi danych. Testy używają przechwyconego originu HTTPS i stubu systemowego panelu, ponieważ headless Chromium nie automatyzuje interfejsu systemu operacyjnego. Nie jest to test panelu na fizycznym iPhonie.
+`scripts/check-sharing.cjs` sprawdza tooltip po pierwszym kliknięciu na HTTP (także po zakolejkowanym przewinięciu do przycisku), wywołanie Web Share API z tytułem i adresem oraz aktywacją użytkownika, brak dialogu strony, anulowanie bez efektu ubocznego, błąd i brak obsługi danych. Testy API używają przechwyconego originu HTTPS i stubu systemowego panelu, ponieważ headless Chromium nie automatyzuje interfejsu systemu operacyjnego. Nie jest to test panelu na fizycznym iPhonie.
 
 Do testów przeglądarkowych potrzebny jest oddzielny pakiet Playwright/Chromium. W istniejącym środowisku narzędziowym serwera:
 
