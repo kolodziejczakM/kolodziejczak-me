@@ -33,3 +33,9 @@ Jedna główna kategoria na artykuł utrzymuje prostą nawigację. „Na styku�
 Chromium: 40 widoków PL/EN przy 320/390/768/1440 px, brak poziomego przepełnienia, błędów JS i żądań zewnętrznych. Dodatkowo: rozwijanie TL;DR i spisu bez JS, dialog i kopiowanie promptu z przyciskiem wyrównanym do prawej, pusty filtr, otwieranie placeholdera oraz pojawianie się i działanie strzałki powrotu.
 
 Podglądy: [artykuł mobile](previews/astro-article-mobile.png), [prompt](previews/astro-prompt-mobile.png), [placeholder rozmowy](previews/astro-agent-mobile.png).
+
+## Prompt po lekturze
+
+Po uwadze użytkownika o nadmiarze ramek nad tekstem przeniesiono prompt pod treść artykułu, po prawej stronie, przed podziękowaniem i udostępnianiem. Zachowano dotychczasowy przycisk oraz dialog z główną akcją po prawej. Osobny komponent `ArticlePrompt.astro` nie należy już do narzędzi nad tekstem. Bez JS treść promptu nadal otwiera się w natywnym `details`.
+
+Weryfikacja: `npm run validate` (13 testów); osiem widoków PL/EN przy 320/390/768/1440 px, położenie po treści i przy prawej krawędzi, otwarcie/zamknięcie dialogu, przywracanie fokusu oraz rozwinięcie bez JS. [Podgląd na telefonie](previews/astro-prompt-after-article-mobile.png).

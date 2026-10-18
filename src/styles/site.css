@@ -820,8 +820,14 @@ svg {
 .reading-accordion nav span {
   font-size: 13px;
 }
-.article-toolbox > .article-actions {
-  margin-top: 22px;
+.article-prompt {
+  justify-content: flex-end;
+  margin-top: 28px;
+}
+.article-prompt > details > summary {
+  display: flex;
+  width: fit-content;
+  margin-left: auto;
 }
 .dialog-actions {
   display: flex;

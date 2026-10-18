@@ -136,3 +136,7 @@ Użytkownik zamówił animacje przejścia między listą i artykułem oraz zdję
 ## Nagłówek, kod i mock audio
 
 Użytkownik wskazał zbędny podpis autora między opisem a zdjęciem oraz potrzebę zawijania kodu bez poziomego przewijania, z ograniczeniem wysokości i małym przyciskiem rozwijania. Zamówił także widoczny placeholder odtwarzacza audio, analogicznie do mocka rozmowy ElevenLabs. [Wdrożenie i podglądy](code-and-audio-preview.md).
+
+## Odciążenie przestrzeni przed artykułem
+
+Użytkownik zauważył nadmiar obramowanych elementów nad treścią i zaproponował tekstową akcję promptu albo przeniesienie przycisku pod artykuł, po prawej. Wdrożono drugą propozycję, zachowując zaakceptowany wygląd przycisku. [Podgląd i weryfikacja](reading-refinements.md#prompt-po-lekturze).
