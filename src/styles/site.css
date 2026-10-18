@@ -1992,6 +1992,7 @@ html:not(.js) .js-only {
   content: "#";
   font-size: 0.6em;
   line-height: 1;
+  transform: translateY(1px);
 }
 .prose .heading-permalink:hover {
   color: var(--accent);
