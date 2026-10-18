@@ -1,6 +1,6 @@
 # Eksploracja UI — decyzja otwarta
 
-**Bieżący kierunek:** dopasowanie kontrolek do strony i fontów jest ważniejsze niż oryginalność. Użytkownik doprecyzował, że Faseta była najbliższa, ale wycięcie zaburzało rytm. Badamy bardziej zaokrąglone przyciski i pikselowy cień modern retro. Trzy wykończenia jednej rodziny: `controls=pixel|print|calm`. [Opis i porównanie](controls-retro.md). Fonty, paleta i baza Blisko pozostają stałe. Pikselowy cień jest hipotezą; wybór pozostaje otwarty.
+**Bieżący kierunek:** Spokojny kontur (`controls=calm`, wariant 3) byłby odpowiedni po usunięciu podwójnych ramek wskazanych na screenach mobilnego artykułu. Poprawiono nakładanie styli zewnętrznego przycisku i wewnętrznej powierzchni; zachowano pojedynczą ramkę, proporcje i fokus klawiatury. To preferowany kierunek do oceny po poprawce. [Opis i podglądy](controls-retro.md). Dopasowanie do strony i fontów pozostaje ważniejsze od oryginalności; baza Blisko, fonty i paleta są stałe.
 
 **Pytanie:** jaki kierunek wizualny najlepiej oddaje osobistą stronę Marcina, z wygodnym blogiem po polsku i angielsku?
 

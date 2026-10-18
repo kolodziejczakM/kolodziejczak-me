@@ -4,6 +4,8 @@ Pierwszy etap: **prototypy wizualne do porównania**, przed wyborem stacku i imp
 
 **Aktualny kierunek: dopasowanie do strony, fontów i modern retro.** Użytkownik doprecyzował, że oryginalność nie jest celem samym w sobie. Z poprzedniej rundy najbliższa była Faseta, lecz wycięcie zaburzało rytm. Nowe kontrolki są zaokrąglone i mają pełne powierzchnie. Bazą pozostają **Blisko**, **Bricolage + Hanken** i **Leśna pracownia**.
 
+**Najnowszy feedback:** Spokojny kontur (wariant 3) byłby odpowiedni po usunięciu podwójnych ramek przycisków widocznych w artykule. Poprawiono kaskadę CSS: ramkę i odstęp rysuje wyłącznie wewnętrzna powierzchnia akcji. Przycisk rozmowy ma jeden zewnętrzny obrys. [Poprawiony artykuł](http://vps.tailfb5686.ts.net:4321/pl/blog/mniej-ale-lepiej/?controls=calm) · [akcje](docs/previews/calm-article-actions.png) · [stopka artykułu](docs/previews/calm-article-footer.png). To preferowany kierunek do oceny po poprawce.
+
 | Wykończenie | Co porównujemy | Podgląd w Tailscale |
 | --- | --- | --- |
 | Zaokrąglony piksel | Miękka powierzchnia i schodkowy cień pod akcjami | [Otwórz](http://vps.tailfb5686.ts.net:4321/pl/?controls=pixel#palette-lab) |

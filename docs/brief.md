@@ -98,3 +98,7 @@ Użytkownik ocenił poprawione przyciski jako gorsze i poprosił o krok wstecz o
 Użytkownik chce, aby kontrolki pasowały do charakteru strony i fontów; nie muszą być szczególnie oryginalne. Z ostatniej rundy najbardziej podobała mu się **Faseta**, ale wycięcie zaburzało rytm designu. To doprecyzowanie zastępuje wcześniejszy brak wskazania bliższego kierunku. Przyciski powinny być bardziej zaokrąglone. **Pikselowy cień modern retro jest propozycją do sprawdzenia**, nie zatwierdzoną decyzją.
 
 Nowe porównanie celowo trzyma jedną rodzinę form: pełne zaokrąglone powierzchnie, spokojne pola, proste ikony. Trzy wykończenia: Zaokrąglony piksel, Ciepły druk i Spokojny kontur. Różnicujemy głównie cień, by ocenić dopasowanie w kontekście fontów, hasła i leśnej palety. Bez zmiany kompozycji i kart. [Próbnik](controls-retro.md).
+
+## Spokojny kontur — poprawka podwójnych ramek
+
+Użytkownik wskazał, że **wariant 3, Spokojny kontur, byłby odpowiedni bez dziwnych podwójnych obramowań przycisków**. Screeny pokazują TL;DR, prompt, polubienie, udostępnianie i komentarze w mobilnym artykule. To warunkowa akceptacja kierunku, nie prośba o nową rundę. Usunięto odziedziczoną ramkę, tło i padding z zewnętrznej warstwy akcji, zachowując jedną powierzchnię oraz fokus klawiatury. Przycisk rozmowy także ma pojedynczy obrys. Poprawka wspólnej konstrukcji obejmuje trzy wykończenia; nie dodano nowego wariantu.
