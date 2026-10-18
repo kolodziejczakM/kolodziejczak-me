@@ -1,6 +1,6 @@
 <!doctype html>
-<!-- THROWAWAY PROTOTYPE: Three structurally different directions, ?variant=A|B|C.
-     Question: which visual language suits Marcin's bilingual personal website?
+<!-- THROWAWAY PROTOTYPE: bare PL/EN routes show the consolidated selected design.
+     Explicit variant/palette/shape/controls parameters retain earlier studies.
      This JS-rendered preview does not represent the production rendering architecture. -->
 <html lang="pl">
 <head>
@@ -9,11 +9,6 @@
   <meta name="robots" content="noindex,nofollow">
   <meta name="theme-color" content="#201e1b">
   <title>Marcin Kołodziejczak · Prototypy UI</title>
-  <link rel="preload" href="/assets/dm-sans.ttf" as="font" type="font/ttf" crossorigin>
-  <link rel="preload" href="/assets/dm-sans-bold.ttf" as="font" type="font/ttf" crossorigin>
-  <link rel="preload" href="/assets/fraunces.ttf" as="font" type="font/ttf" crossorigin>
-  <link rel="preload" href="/assets/silkscreen.ttf" as="font" type="font/ttf" crossorigin>
-  <link rel="preload" href="/assets/ibm-plex-mono.ttf" as="font" type="font/ttf" crossorigin>
   <link rel="stylesheet" href="/styles.css">
   <link rel="stylesheet" href="/palettes/palettes.css">
   <link rel="stylesheet" href="/shapes/shapes.css">
@@ -23,8 +18,9 @@
   <link rel="stylesheet" href="/controls/refinements.css">
   <link rel="stylesheet" href="/controls/fresh.css">
   <link rel="stylesheet" href="/controls/retro.css">
+  <link rel="stylesheet" href="/selected/selected.css">
   <script>
-    if(['palette','shape','controls'].some(key=>new URLSearchParams(location.search).has(key))){
+    if(!['variant','palette','shape','controls'].some(key=>new URLSearchParams(location.search).has(key))||['palette','shape','controls'].some(key=>new URLSearchParams(location.search).has(key))){
       for(const path of ['bricolagegrotesque/BricolageGrotesque%5Bopsz%2Cwdth%2Cwght%5D.ttf','hankengrotesk/HankenGrotesk%5Bwght%5D.ttf','hankengrotesk/HankenGrotesk-Italic%5Bwght%5D.ttf']){
         const link=document.createElement('link');link.rel='preload';link.as='font';link.type='font/ttf';link.crossOrigin='anonymous';link.href='/typography/fonts/'+path;document.head.append(link);
       }
@@ -39,6 +35,7 @@
   <script src="/controls/refinements.js" defer></script>
   <script src="/controls/fresh.js" defer></script>
   <script src="/controls/retro.js" defer></script>
+  <script src="/selected/selected.js" defer></script>
   <script src="/app.js" defer></script>
 </head>
 <body>

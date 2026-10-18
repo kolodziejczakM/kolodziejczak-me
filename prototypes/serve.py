@@ -30,5 +30,5 @@ class Preview(SimpleHTTPRequestHandler):
             self.path = "/index.html"
         super().do_GET()
 
-print(f"Prototypy UI: http://{args.host}:{args.port}/pl/?variant=A", flush=True)
+print(f"Podgląd projektu: http://{args.host}:{args.port}/pl/ (archiwum: ?variant=A)", flush=True)
 ThreadingHTTPServer((args.host, args.port), Preview).serve_forever()

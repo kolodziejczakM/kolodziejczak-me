@@ -1,6 +1,6 @@
 /* THROWAWAY: appearance and interaction study; no accounts, tracking or remote widgets. */
 const variants = { A: ['Margines', 'Redakcyjny spokój / editorial'], B: ['Sygnał', 'Cyfrowy warsztat / digital workshop'], C: ['Po godzinach', 'Ciekawość i zabawa / curiosity & play'] };
-const state = { variant: 'A', palette: null, shape: null, controls: null, lang: 'pl', page: 'home', liked: false, filter: 'all', dismissed: false, audioLang: 'pl' };
+const state = { variant: 'A', palette: null, shape: null, controls: null, lang: 'pl', page: 'home', liked: false, filter: 'all', dismissed: false, audioLang: 'pl', audioChosen: false };
 const $ = (s) => document.querySelector(s);
 const t = (pl, en) => state.lang === 'pl' ? pl : en;
 const icons = {
@@ -52,7 +52,7 @@ const posts = [
   }
 ];
 const textOf = (arr) => arr[state.lang === 'pl' ? 0 : 1];
-const href = (page = 'home', post = posts[0], lang = state.lang) => `/${lang}/${page === 'home' ? '' : page === 'blog' ? 'blog/' : `blog/${post.slug[lang === 'pl' ? 0 : 1]}/`}?variant=${state.variant}${state.palette?'&palette='+state.palette:''}${state.shape?'&shape='+state.shape:''}${state.controls?'&controls='+state.controls:''}`;
+const href = (page = 'home', post = posts[0], lang = state.lang) => `/${lang}/${page === 'home' ? '' : page === 'blog' ? 'blog/' : `blog/${post.slug[lang === 'pl' ? 0 : 1]}/`}${state.selected?'':`?variant=${state.variant}${state.palette?'&palette='+state.palette:''}${state.shape?'&shape='+state.shape:''}${state.controls?'&controls='+state.controls:''}`}`;
 const currentPost = () => posts.find(p => p.slug.some(slug => location.pathname.includes(slug))) || posts[0];
 const link = (page, label, cls = '', post = posts[0]) => `<a class="${cls}" data-route href="${href(page, post)}">${label}</a>`;
 const button = (action, label, cls = '') => `<button class="${cls}" data-action="${action}">${label}</button>`;
@@ -150,6 +150,9 @@ function readLocation() {
   state.shape=Object.hasOwn(shapeVariants,shape)?shape:null;
   const controls=new URLSearchParams(location.search).get('controls');
   state.controls=Object.hasOwn(controlVariants,controls)?controls:null;
+  state.selected=!['variant','palette','shape','controls'].some(key=>new URLSearchParams(location.search).has(key));
+  if(state.selected)state.controls='calm';
+  if(state.selected&&!state.audioChosen)state.audioLang=state.lang;
   if(state.controls)state.shape='close';
   if(state.shape)state.palette='meadow';
   if(state.palette) state.variant='C';
@@ -159,6 +162,7 @@ function render() {
   readLocation();
   document.body.dataset.variant = state.variant;
   document.body.dataset.page = state.page;
+  document.body.classList.toggle('selected-preview',state.selected);
   applyColorPalette();
   applyShapeTheme();
   applyControlTheme();
@@ -174,17 +178,20 @@ function render() {
     decorateShapePage();
     document.title=`${t(shapeVariants[state.shape].name,shapeVariants[state.shape].en)} · ${t('Forma','Form')} · kolodziejczak.me`;
   }
-  if(state.controls)decorateControlStudy();
+  if(state.controls&&!state.selected)decorateControlStudy();
+  if(state.selected)decorateSelectedPage();
   $('#prototype-tools').innerHTML = `<div class="prototype-switcher" aria-label="${t('Porównaj projekty','Compare designs')}"><button data-cycle="-1" aria-label="${t('Poprzedni projekt','Previous design')}">←</button><div class="prototype-label" aria-live="polite"><small>${t('PROTOTYP','PROTOTYPE')} · ${state.lang.toUpperCase()} · ${state.page === 'home' ? t('Start','Home') : state.page === 'blog' ? t('Notatki','Notes') : t('Artykuł','Article')}</small><strong>${state.variant} — ${variants[state.variant][0]} <span>${Object.keys(variants).indexOf(state.variant)+1}/3</span></strong></div><button data-cycle="1" aria-label="${t('Następny projekt','Next design')}">→</button><button class="prototype-info" data-action="info" aria-label="${t('O prototypie','About this prototype')}">?</button></div>`;
   $('#overlay').innerHTML = '';
   if(state.palette) $('#prototype-tools').innerHTML=colorPrototypeTools();
   if(state.shape) $('#prototype-tools').innerHTML=shapePrototypeTools();
   if(state.controls)$('#prototype-tools').innerHTML=controlPrototypeTools();
+  $('#prototype-tools').hidden=state.selected;
+  if(state.selected)$('#prototype-tools').replaceChildren();
   document.body.classList.remove('modal-open');
   languageSuggestion();
   progress();
   const controlAnchor=location.hash;
-  if(state.controls&&['#palette-lab','#ctrl-actions'].includes(controlAnchor))document.fonts.ready.then(()=>requestAnimationFrame(()=>document.querySelector(controlAnchor)?.scrollIntoView({behavior:'instant'})));
+  if(!state.selected&&state.controls&&['#palette-lab','#ctrl-actions'].includes(controlAnchor))document.fonts.ready.then(()=>requestAnimationFrame(()=>document.querySelector(controlAnchor)?.scrollIntoView({behavior:'instant'})));
 }
 
 function navigate(url) {
@@ -195,9 +202,12 @@ function navigate(url) {
   state.filter = 'all';
   render();
   window.scrollTo(0,0);
+  const fragment=new URL(url,location.href).hash.slice(1);
+  if(state.selected&&fragment)document.fonts.ready.then(()=>requestAnimationFrame(()=>document.getElementById(fragment)?.scrollIntoView({behavior:'instant'})));
 }
 
 function cycle(direction) {
+  if(state.selected)return;
   if(state.controls){cycleControls(direction);return;}
   if(state.shape){
     const keys=shapeKeys(),next=keys[(keys.indexOf(state.shape)+direction+keys.length)%keys.length];
@@ -230,6 +240,7 @@ function modal(title, body) {
   $('#overlay').innerHTML=`<div class="modal-backdrop"><section role="dialog" aria-modal="true" aria-labelledby="modal-title" class="modal"><button class="modal-close" data-action="close" aria-label="${t('Zamknij','Close')}">×</button><span class="eyebrow">${t('NA MARGINESIE TEKSTU','IN THE MARGINS')}</span><h2 id="modal-title">${title}</h2>${body}</section></div>`;
   if(shapeVariants[state.shape]?.round>=2)decorateRefinedModal();
   if(state.controls)decorateControlModal();
+  if(state.selected)decorateSelectedModal();
   document.body.classList.add('modal-open'); $('.modal-close').focus();
 }
 function closeModal(){ $('#overlay').innerHTML='';document.body.classList.remove('modal-open');previousFocus?.focus(); }
@@ -239,7 +250,7 @@ document.addEventListener('click', async e => {
   if(route && !e.ctrlKey && !e.metaKey && !e.shiftKey && !e.altKey && e.button===0){ e.preventDefault();navigate(route.href);return; }
   const cycleButton=e.target.closest('[data-cycle]');if(cycleButton){cycle(Number(cycleButton.dataset.cycle));return;}
   const filter=e.target.closest('[data-filter]');if(filter){state.filter=filter.dataset.filter;render();return;}
-  const audio=e.target.closest('[data-audio]');if(audio){state.audioLang=audio.dataset.audio;document.querySelectorAll('[data-audio]').forEach(b=>b.setAttribute('aria-pressed',b===audio));toast(t('Wybrany lektor: ','Selected narration: ')+(state.audioLang==='pl'?'PL':'EN'));return;}
+  const audio=e.target.closest('[data-audio]');if(audio){state.audioLang=audio.dataset.audio;state.audioChosen=true;document.querySelectorAll('[data-audio]').forEach(b=>b.setAttribute('aria-pressed',b===audio));toast(t('Wybrany lektor: ','Selected narration: ')+(state.audioLang==='pl'?'PL':'EN'));return;}
   const contact=e.target.closest('[data-contact]');if(contact){toast(t('Dodamy Twój prawdziwy link do ','We’ll add your real link for ')+contact.dataset.contact+t(' po wybraniu projektu.',' once a design is chosen.'));return;}
   const action=e.target.closest('[data-action]')?.dataset.action;
   const post=currentPost();
@@ -252,17 +263,18 @@ document.addEventListener('click', async e => {
   if(action==='copy-prompt'){try{await navigator.clipboard.writeText($('#prompt-text').value);toast(t('Prompt skopiowany.','Prompt copied.'));}catch{$('#prompt-text').select();toast(t('Zaznaczono tekst — skopiuj go ręcznie.','Text selected — copy it manually.'));}}
   if(action==='chat')modal(t('Rozłóżmy to na części.','Let’s unpack this.'),`<div class="chat-demo-label">${t('Podgląd rozmowy · bez połączenia z AI','Conversation preview · no AI connected')}</div><div class="chat-bubble">${t('Cześć! Od którego fragmentu chcesz zacząć? Docelowo porozmawiasz tu z asystentem o treści artykułu.','Hi! Which part would you like to start with? An assistant will eventually help you explore this article here.')}</div><form id="demo-chat"><label for="chat-question">${t('Twoje pytanie','Your question')}</label><div><input id="chat-question" required autocomplete="off" placeholder="${t('Co autor ma na myśli…?','What does the author mean…?')}"><button type="submit" aria-label="${t('Wyślij pytanie','Send question')}">↑</button></div></form><small>${t('W docelowej wersji widget ElevenLabs załaduje się dopiero po Twoim kliknięciu.','In the final version, the ElevenLabs widget will load only when you click.')}</small>`);
   if(action==='like'){state.liked=!state.liked;const b=e.target.closest('button');b.classList.toggle('liked',state.liked);b.setAttribute('aria-pressed',state.liked);const face=b.querySelector(':scope > .retro-face')||b;face.innerHTML=icons.heart+t('Dobra myśl','Good thought');toast(t('Polubienie tylko w tym podglądzie.','Like saved only in this preview.'));}
-  if(action==='share'){try{await navigator.clipboard.writeText(location.href);toast(t('Link skopiowany.','Link copied.'));}catch{modal(t('Udostępnij notatkę','Share this note'),`<input class="share-url" aria-label="URL" readonly value="${location.href}">`);}}
+  if(action==='share'){try{await navigator.clipboard.writeText(location.href);toast(t('Link skopiowany.','Link copied.'));}catch{modal(state.selected?t('Udostępnij artykuł','Share this article'):t('Udostępnij notatkę','Share this note'),`<input class="share-url" aria-label="URL" readonly value="${location.href}">`);}}
   if(action==='comments')modal(t('Miejsce na dobrą rozmowę.','Room for a good conversation.'),`<p>${t('Propozycja: darmowy giscus oparty na GitHub Discussions. Czytelnik potrzebowałby konta GitHub. Widget ładowałby się na żądanie. W tym prototypie nic nie jest wysyłane ani publikowane.','Proposal: free giscus powered by GitHub Discussions. Readers would need a GitHub account. The widget would load on demand. Nothing is sent or published in this prototype.')}</p>`);
   if(action==='top')window.scrollTo({top:0,behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'});
   if(action==='info')modal(t('Trzy pomysły. Jeszcze bez zobowiązań.','Three ideas. No commitments yet.'),`<p>${t('Porównaj kompozycję, typografię i klimat. Przejdź do notatek, otwórz artykuł, sprawdź wersję angielską. Strzałkami ← → zmieniasz projekt.','Compare layouts, typography, and atmosphere. Explore the notes, open an article, and try the English version. Use ← → to change designs.')}</p><ul>${Object.entries(variants).map(([key,[name,desc]])=>`<li><b>${key} — ${name}:</b> ${desc}</li>`).join('')}</ul><p>${t('Treści i daty są przykładowe, zdjęcie jest zastępcze, linki kontaktowe czekają na Twoje adresy. Audio, komentarze i agent pokazują planowane doświadczenie. Brak analityki i połączeń do usług zewnętrznych.','Content and dates are samples, the portrait is a placeholder, and contact links need your addresses. Audio, comments, and the agent preview the planned experience. No analytics or external service connections.')}</p><small>${t('Stan','State')}: ${JSON.stringify({variant:state.variant,lang:state.lang,page:state.page,filter:state.filter,audioLang:state.audioLang,liked:state.liked})}</small>`);
 });
 
-document.addEventListener('submit',e=>{if(e.target.id!=='demo-chat')return;e.preventDefault();const field=$('#chat-question');if(!field.value.trim())return;const bubble=document.createElement('div');bubble.className='chat-bubble chat-answer';bubble.textContent=t('Tak wyglądałaby odpowiedź. Do wyjaśnienia tego fragmentu potrzebne będzie połączenie agenta ElevenLabs z treścią artykułu.','This is where the answer would appear. Explaining this passage requires connecting the ElevenLabs agent to the article’s content.');$('#demo-chat').before(bubble);field.value='';});
+document.addEventListener('submit',e=>{if(e.target.id!=='demo-chat')return;e.preventDefault();const field=$('#chat-question');if(!field.value.trim())return;const bubble=document.createElement('div');bubble.className='chat-bubble chat-answer';bubble.textContent=state.selected?t('To przykładowe miejsce na odpowiedź. W gotowej wersji asystent pomoże Ci omówić wybrany fragment artykułu. Twoja wiadomość nie została wysłana.','This is a sample reply area. In the finished site, an assistant will help you explore the selected passage. Your message has not been sent.'):t('Tak wyglądałaby odpowiedź. Do wyjaśnienia tego fragmentu potrzebne będzie połączenie agenta ElevenLabs z treścią artykułu.','This is where the answer would appear. Explaining this passage requires connecting the ElevenLabs agent to the article’s content.');$('#demo-chat').before(bubble);field.value='';});
 document.addEventListener('keydown',e=>{
   if(e.key==='Escape'){closeModal();return;}
   if($('.modal')){if(e.key==='Tab'){const items=[...$('.modal').querySelectorAll('button,a[href],input,textarea')];const first=items[0],last=items.at(-1);if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus();}else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus();}}return;}
   if(e.target.closest('input,textarea,select,[contenteditable],audio,video,[role="slider"]')||e.ctrlKey||e.metaKey||e.altKey)return;
+  if(state.selected)return;
   if(e.key==='ArrowRight'||e.key==='ArrowLeft'){e.preventDefault();cycle(e.key==='ArrowRight'?1:-1);}
 });
 function progress(){const prose=$('.prose');if(!prose)return;const rect=prose.getBoundingClientRect();const ratio=Math.max(0,Math.min(1,-rect.top/Math.max(1,prose.offsetHeight-innerHeight)));$('.reading-progress span').style.transform=`scaleX(${ratio})`;$('.back-top')?.classList.toggle('visible',ratio>.5);}

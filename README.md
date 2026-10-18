@@ -2,6 +2,12 @@
 
 Pierwszy etap: **prototypy wizualne do porównania**, przed wyborem stacku i implementacją strony.
 
+**Jeden spójny podgląd wybranego projektu:** [PL](http://vps.tailfb5686.ts.net:4321/pl/) · [EN](http://vps.tailfb5686.ts.net:4321/en/) · [Artykuły](http://vps.tailfb5686.ts.net:4321/pl/blog/) · [Artykuł](http://vps.tailfb5686.ts.net:4321/pl/blog/mniej-ale-lepiej/).
+
+Zwykłe adresy pokazują Blisko + Leśną pracownię + Bricolage/Hanken + Spokojny kontur. Bez próbnika, przełącznika i opisów wariantów. Nagłówek, stopka i kontakt tworzą jedną całość; motyw spotkania jest użyty jako wspólny znak. PL/EN zachowuje parę artykułu. [Zakres i podglądy](docs/selected-preview.md). Zdjęcie, bio, adresy kontaktowe i autorskie publikacje pozostają do dostarczenia. Audio, rozmowa i komentarze są oznaczonymi demonstracjami.
+
+Wcześniejsze eksperymenty zachowują jawne parametry, np. `?controls=calm` albo `?variant=A`; są archiwum. Dalsze tabele opisują przebieg wyboru. Uruchomienie całości nadal jednym poleceniem: `npm run prototype`.
+
 **Aktualny kierunek: dopasowanie do strony, fontów i modern retro.** Użytkownik doprecyzował, że oryginalność nie jest celem samym w sobie. Z poprzedniej rundy najbliższa była Faseta, lecz wycięcie zaburzało rytm. Nowe kontrolki są zaokrąglone i mają pełne powierzchnie. Bazą pozostają **Blisko**, **Bricolage + Hanken** i **Leśna pracownia**.
 
 **Kontrolki zaakceptowane:** po poprawce podwójnych ramek użytkownik potwierdził „Jest ok”. Wybrany zestaw to **Spokojny kontur** (`controls=calm`): zaokrąglone powierzchnie, pojedynczy obrys i brak cienia. Nie potrzeba kolejnej rundy wyboru kontrolek. [Artykuł](http://vps.tailfb5686.ts.net:4321/pl/blog/mniej-ale-lepiej/?controls=calm) · [akcje](docs/previews/calm-article-actions.png) · [stopka artykułu](docs/previews/calm-article-footer.png). Pozostaje domknięcie całości na prawdziwych treściach i przegląd stron; logo/znak i materiały autora nie były osobno zatwierdzone. Integracje i implementacja produkcyjna są kolejnym etapem.
