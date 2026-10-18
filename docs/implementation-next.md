@@ -1,23 +1,48 @@
-# Następny etap po akceptacji podglądu
+# Kolejne kroki po akceptacji wyglądu
 
-Stan: użytkownik zatwierdził kontynuację po rekomendacji. Etap 1 wdrożono w Astro na gałęzi `codex/astro-foundation`; [zakres i weryfikacja](astro-foundation.md). Zależności mają najnowsze stabilne wersje z npm z 18 października 2026. Weryfikacja oficjalnych dokumentacji: 18 października 2026. Baza wizualna: [wybrany podgląd](selected-preview.md).
+Stan na 18 października 2026: autor zaakceptował wygląd strony i zlecił wysłanie aktualnego kodu do repozytorium. Etap projektowania wizualnego jest zamknięty. Implementacja jest na gałęzi `codex/astro-foundation`; gałęzie porównań i prototypów są lokalnym archiwum. Używamy Astro, TypeScript, Content Collections i MDX.
 
-## Rekomendacja technologiczna
+## Co już jest gotowe
 
-**Astro + TypeScript + Content Collections + MDX** najlepiej pasuje do obecnego zakresu: osobistej wizytówki i dłuższych artykułów w PL/EN. To ocena dopasowania do projektu na podstawie poniższych możliwości, a nie ograniczenie TanStack Start.
+- Strona główna, lista i artykuły w PL/EN, osobne adresy i parowanie tłumaczeń.
+- Zatwierdzone zdjęcie, bio, logo, typografia, kolory, karty i tło.
+- Pełny HTML, optymalizacja zdjęć i natywne przejścia między stronami.
+- TL;DR i spis treści, prompt, kopiowanie, udostępnianie, postęp czytania i powrót do góry.
+- Wyróżnione cytaty z kopiowaniem oraz linki do sekcji. Hash podróżuje z ostatnim słowem, ma przygaszony kolor i korektę optyczną o 1 px w dół.
+- Prywatny podgląd Tailscale. `npm run validate` sprawdza TypeScript, build 12 stron i 16 testów Node.
 
-- Astro domyślnie generuje statyczny HTML podczas budowania. Później można dodać adapter i obsługę serwerową tylko do wybranych stron lub endpointów, zachowując statyczne artykuły. [Renderowanie i adaptery](https://docs.astro.build/en/guides/on-demand-rendering/).
-- Content Collections porządkują lokalne treści i metadane, umożliwiają walidację schematu oraz renderowanie Markdown/MDX do HTML. Oficjalna integracja MDX pozwala używać komponentów w treści artykułu. [Kolekcje](https://docs.astro.build/en/guides/content-collections/), [MDX](https://docs.astro.build/en/guides/integrations-guide/mdx/).
-- Routing i18n obsługuje prefiks również dla języka domyślnego (`prefixDefaultLocale: true`), co odpowiada ścieżkom `/pl/` i `/en/`. [Routing językowy](https://docs.astro.build/en/guides/internationalization/).
-- TanStack Start również potrafi generować statyczne pliki HTML; pozostaje poprawną alternatywą. Konfiguracja prerenderingu obejmuje odkrywanie tras i przechodzenie po linkach. [Static Prerendering](https://tanstack.com/start/latest/docs/framework/react/guide/static-prerendering).
+## 1. Uporządkować proces pracy i publikowania
 
-## Proponowana kolejność
+To rekomendowany następny krok.
 
-1. **Wykonane — czysty projekt Astro** z zaakceptowanym wyglądem, bez przełączników wariantów i symulacji usług. Zbudować wspólne komponenty oraz stronę główną, listę i stronę artykułu w `/pl/` i `/en/`. Dodać kolekcję MDX z parowaniem tłumaczeń. Warunek odbioru: pełna treść artykułu i zwykła nawigacja dostępne w HTML także przy wyłączonym JavaScript; JS obsługuje interakcje.
-2. **Przygotować pierwsze publiczne wdrożenie**: metadane, canonical, hreflang, sitemap, RSS, podglądy udostępniania, kontrolę dostępności i wydajności oraz planowaną integrację Umami. Analityka ma działać od pierwszego publicznego uruchomienia; aktualną ofertę i konfigurację Umami trzeba sprawdzić przed tym etapem. Hosting i konfiguracja usług wymagają osobnego ustalenia przed publikacją.
-3. **Podłączyć audio i funkcje czytania**: nagrania dla obu języków, czas oparty na długości nagrania, TL;DR, prompt, postęp czytania i udostępnianie. Przewidzieć pola na pliki audio już w schemacie treści etapu 1.
-4. **Rozwijać pozostałe integracje**: komentarze i polubienia, zachowanie offline oraz agent wyjaśniający treść artykułu. Każdy element powinien otrzymać działającą implementację i jasne zachowanie przy braku sieci zamiast demonstracyjnego interfejsu.
+Dodać CI uruchamiające `npm ci` i `npm run validate` na zmianach w repozytorium. Przygotować szablon i krótką instrukcję dodawania artykułu: PL/EN, metadane, hero, kategoria, pięć zdań TL;DR, prompt oraz szkic. Schemat już obsługuje `draft` i parowanie języków.
 
-Zdjęcie, końcowe bio, linki kontaktowe i pierwszy autorski artykuł są potrzebne przed publiczną premierą. Ich brak nie blokuje przygotowania struktury, komponentów i przykładowej pary MDX. Materiały zastępcze trzeba wyraźnie oznaczyć i usunąć przed publikacją.
+Przejść cały proces na pierwszej prawdziwej publikacji: od szkicu przez podgląd do gotowej pary językowej. Efekt: kolejny artykuł można dodać bez ponownego poznawania kodu, a błędy są wykrywane przed wdrożeniem.
 
-W tej notatce nie wybrano hostingu, nie weryfikowano ofert analitycznych ani kwestii prawnych. Zaimplementowano etap 1 oraz TL;DR, prompt, udostępnianie i postęp czytania z etapu 3. Nagrania i integracje usług pozostają do wykonania.
+## 2. Uzupełnić treści do premiery
+
+Portret i bio są już gotowe. Potrzebne są prawdziwe adresy Facebooka, Telegrama, LinkedIna i ewentualnie WhatsAppa oraz przynajmniej jedna autorska publikacja w obu językach, z właściwym zdjęciem i podpisem.
+
+Trzy obecne pary artykułów są przykładami. Przed publiczną premierą należy je wycofać z publicznych list i adresów albo świadomie pozostawić jako materiały demonstracyjne.
+
+## 3. Przygotować publiczne uruchomienie
+
+- Wybrać hosting statyczny i skonfigurować domenę `kolodziejczak.me`, HTTPS oraz automatyczne wdrożenia z repozytorium.
+- Uzupełnić istniejące metadane i linki językowe o podglądy udostępniania, sitemap, robots.txt i RSS PL/EN.
+- Podłączyć Umami przed pierwszym publicznym uruchomieniem. Zweryfikować bieżącą konfigurację, zakres danych i potrzebną informację o prywatności na etapie tej integracji.
+- Wykonać końcowy przegląd dostępności, wydajności i rzeczywistych telefonów, w tym Safari na iPhonie w obu orientacjach.
+- Ustalić zachowanie demonstracyjnych elementów w wersji publicznej. Audio, agent i komentarze powinny być rzeczywiście dostępne albo odpowiednio ukryte; podgląd deweloperski może je nadal pokazywać.
+
+`readyToPublish` pozostaje `false` do premiery. Wysłanie kodu na GitHub nie publikuje strony pod domeną.
+
+## 4. Uruchomić audio na pierwszym artykule
+
+Przygotować nagrania PL/EN, podłączyć je do istniejącego odtwarzacza i określać czas czytania z rzeczywistej długości pliku. Model ma opcjonalne pliki i `durationSeconds`; brakuje samych nagrań i procesu ich przygotowywania. Po uzupełnieniu nagrań mock playera przestaje być potrzebny.
+
+Ten etap można wykonać przed premierą, jeśli audio ma być częścią pierwszej publikacji. Brak nagrania nie powinien blokować czytania.
+
+## 5. Dodawać pozostałe integracje osobno
+
+Po sprawdzeniu podstawowego procesu publikacji: komentarze i ewentualne polubienia, rozmowa o artykule przez ElevenLabs oraz czytanie offline. Każdy element wymaga własnej konfiguracji i zachowania przy błędzie lub braku sieci. Nie trzeba kończyć wszystkich tych funkcji, żeby opublikować wizytówkę i pierwsze artykuły.
+
+Następne zadania są rekomendacją. Nie wybrano hostingu ani nie podłączono analityki, komentarzy, agenta czy offline. Akceptacja wyglądu i polecenie wysłania kodu nie uruchamiają jeszcze publicznego wdrożenia ani płatnych usług.
