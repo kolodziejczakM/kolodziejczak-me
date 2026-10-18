@@ -1950,18 +1950,30 @@ html:not(.js) .js-only {
   scroll-margin-top: 0;
 }
 .prose [data-article-heading] {
+  position: relative;
+  width: fit-content;
+  max-width: 100%;
+  padding-inline-end: 30px;
   cursor: pointer;
 }
 .prose .heading-permalink {
-  display: inline-block;
-  padding: 4px 8px;
+  position: absolute;
+  inset-inline-end: 0;
+  inset-block-start: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 1.2em;
+  height: 1lh;
   color: var(--muted);
   text-decoration: none;
-  font: 500 0.6em/1.2 var(--font);
-  vertical-align: middle;
+  font-family: var(--font);
+  font-weight: 500;
 }
 .heading-permalink::after {
   content: "#";
+  font-size: 0.6em;
 }
 .prose .heading-permalink:hover {
   color: var(--accent);

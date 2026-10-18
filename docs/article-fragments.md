@@ -11,3 +11,10 @@ Cytaty Markdown dostają ID `quote-` plus skrót SHA-256 tekstu. Dopisanie akapi
 Weryfikacja: TypeScript, build 12 stron, 15 testów Node. Dwa nowe testy dotyczą stabilności adresów po zmianach niezwiązanych z cytatem, duplikatów oraz zachowania slugów i czystych nazw w spisie treści. Chromium: rzeczywisty odczyt schowka po kopiowaniu tekstu i linku w prywatnym HTTP, ponowne wejście z fragmentem, kliknięcie nagłówka, 8 widoków PL/EN przy 320/390/768/1440 px oraz nawigacja do cytatu i nagłówka bez JS.
 
 Po porównaniu prototypów użytkownik wybrał formę B: wyśrodkowany cytat bez ramki, z dużym miodowym cudzysłowem nad tekstem. [Decyzja i weryfikacja wdrożenia](quote-design-study.md#wdrożony-wariant-b).
+
+
+## Pozycja znaku linku
+
+Znak `#` nie uczestniczy już w zawijaniu tekstu. Nagłówek rezerwuje dla niego miejsce z prawej strony, przy pierwszym wierszu. Szerokość dopasowuje się do krótkiego tekstu i jest ograniczona szerokością kolumny. Przy dłuższym nagłówku tekst może się zawijać, ale znak nie trafia do samotnego wiersza. Zachowano natywny link, etykietę dla czytnika ekranu i fokus klawiatury.
+
+Weryfikacja tej poprawki: build oraz Chromium, 12 widoków PL/EN przy 320/375/390/428/768/1440 px. Dla wszystkich 72 nagłówków zmierzono zgodność położenia linku z pierwszym wierszem, brak poziomego przepełnienia i poprawne przejście do fragmentu (również ze znakami diakrytycznymi). [Nagłówki na telefonie](previews/heading-permalink-mobile.png).
