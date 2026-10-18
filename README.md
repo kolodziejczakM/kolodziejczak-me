@@ -54,4 +54,4 @@ Archiwalny podgląd nadal działa na porcie **4321** (`npm run prototype`); wła
 
 Wybrany zestaw logo D / karty C / tło D działa na porcie 4322. [Decyzja, wdrożenie i archiwum prototypów](docs/identity-card-background-study.md).
 
-Nowsze porównanie grupy TL;DR / spisu treści i przycisków sociali: [warianty na porcie 4324](docs/reading-social-controls-study.md).
+Grupa TL;DR / spisu treści używa wybranej wspólnej kapsuły, a sociale piktogramów z nazwami. [Wdrożenie A/A i archiwum porównania](docs/reading-social-controls-study.md).

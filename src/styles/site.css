@@ -536,22 +536,36 @@ svg {
 .pending-contact {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 15px;
-  border: 1px solid var(--line);
-  border-radius: 14px;
-  min-height: 48px;
-  padding: 10px 16px;
-  background: var(--control);
-  color: var(--link);
+  justify-content: flex-start;
+  gap: 10px;
+  border: 1px solid #536b51;
+  border-radius: 15px;
+  min-height: 56px;
+  padding: 12px 13px;
+  background: #193025;
+  color: var(--text);
   font-size: 13px;
 }
-.pending-contact {
-  opacity: 0.7;
+.social-symbol {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 28px;
+  height: 28px;
+  color: var(--secondary);
 }
-.contact-channels .icon {
-  width: 18px;
-  height: 18px;
+.social-symbol svg {
+  width: 22px;
+  height: 22px;
+}
+.social-name {
+  min-width: 0;
+}
+.contact-channels .social-external {
+  width: 16px;
+  height: 16px;
+  margin-left: auto;
+  color: var(--muted);
 }
 .site-footer {
   border-top: 1px solid var(--line);
@@ -1341,7 +1355,7 @@ html:not(.js) .js-only {
   .contact-channels a,
   .pending-contact {
     font-size: 12px;
-    padding-inline: 14px;
+    padding-inline: 13px;
   }
   .site-footer {
     padding: 27px 0 30px;
@@ -1780,10 +1794,16 @@ html:not(.js) .js-only {
 }
 
 .reading-switcher-controls {
-  display: flex;
+  display: inline-flex;
+  width: max-content;
+  max-width: 100%;
   flex-wrap: nowrap;
   align-items: center;
-  gap: 8px;
+  gap: 0;
+  padding: 4px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: var(--control);
 }
 .reading-switcher-trigger {
   display: inline-flex;
@@ -1792,18 +1812,21 @@ html:not(.js) .js-only {
   flex: 0 0 auto;
   gap: 8px;
   width: max-content;
-  min-height: 44px;
-  padding: 10px 12px;
-  border: 1px solid var(--line);
+  min-height: 40px;
+  padding: 9px 12px;
+  border: 0;
   border-radius: 12px;
-  background: var(--control);
+  background: transparent;
   color: var(--link);
   font-size: 12px;
   line-height: 1.5;
   white-space: nowrap;
 }
-.reading-switcher-trigger:hover {
-  border-color: var(--secondary);
+.reading-switcher-trigger[aria-expanded="false"]:hover {
+  background: color-mix(in srgb, var(--secondary) 8%, transparent);
+}
+.reading-switcher-trigger:focus-visible {
+  outline-offset: -4px;
 }
 .reading-switcher-trigger .icon {
   width: 14px;
@@ -1812,13 +1835,12 @@ html:not(.js) .js-only {
 .reading-switcher-trigger[aria-expanded="true"] {
   color: var(--ink);
   background: var(--secondary);
-  border-color: var(--secondary);
 }
 .reading-switcher-trigger[aria-expanded="true"] .icon {
   transform: rotate(180deg);
 }
 .reading-switcher-panel {
-  margin-top: 12px;
+  margin-top: 10px;
   padding: 16px 18px;
   border: 1px solid var(--line);
   border-radius: 16px;
@@ -1840,6 +1862,22 @@ html:not(.js) .js-only {
 }
 .reading-switcher-panel nav span {
   font-size: 13px;
+}
+
+@media (max-width: 370px) {
+  .reading-switcher-trigger {
+    gap: 5px;
+    padding-inline: 10px;
+    font-size: 11px;
+  }
+  .contact-channels a,
+  .pending-contact {
+    gap: 7px;
+    padding-inline: 10px;
+  }
+  .social-symbol {
+    width: 23px;
+  }
 }
 
 .article-sharing {

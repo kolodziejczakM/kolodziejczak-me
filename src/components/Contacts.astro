@@ -2,6 +2,7 @@
 import { site } from "../config/site";
 import { text, type Locale } from "../lib/i18n";
 import Icon from "./Icon.astro";
+import SocialIcon from "./SocialIcon.astro";
 interface Props {
   locale: Locale;
 }
@@ -36,16 +37,18 @@ const t = (pl: string, en: string) => text(locale, pl, en);
       {site.contacts.map((contact) =>
         contact.url ? (
           <a href={contact.url} target="_blank" rel="noreferrer">
-            {contact.name}
-            <Icon />
+            <SocialIcon name={contact.name} />
+            <span class="social-name">{contact.name}</span>
+            <Icon class="social-external" />
           </a>
         ) : (
           <span
             class="pending-contact"
             aria-label={`${contact.name} — ${t("adres do uzupełnienia", "link to be added")}`}
           >
-            {contact.name}
-            <Icon />
+            <SocialIcon name={contact.name} />
+            <span class="social-name">{contact.name}</span>
+            <Icon class="social-external" />
           </span>
         ),
       )}

@@ -167,3 +167,6 @@ Użytkownik wybrał domenowy logotyp `kolodziejczak.me` (D), karty z pionowymi m
 ## Grupa TL;DR / spis treści oraz sociale
 
 Użytkownik poprosił o wizualne połączenie dwóch przełączników wspólnego panelu czytania i kilka prototypów grupy zakładek oraz przycisków społecznościowych. Kolejność kontaktów została ustalona: Facebook, Telegram, LinkedIn, a dalej pozostałe (obecnie WhatsApp). Nowa runda dotyczy wyłącznie tych kontrolek, z zachowaniem domenowego logotypu, kart z pionowymi zdjęciami, gradientu z siatką, fontów i kolorów.
+
+
+Użytkownik wybrał „Wspólną kapsułę” dla grupy TL;DR / spisu treści oraz „Piktogram i nazwa” dla sociali (A/A). Wybrany zestaw wdrożono we właściwej stronie bez próbnika. Panele pozostają początkowo zwinięte; kolejność kontaktów pozostaje Facebook / Telegram / LinkedIn / WhatsApp.

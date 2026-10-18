@@ -8,6 +8,8 @@ export function setupReadingSwitcher() {
       ];
       const controls = document.createElement("div");
       controls.className = "reading-switcher-controls";
+      controls.setAttribute("role", "group");
+      controls.setAttribute("aria-label", root.dataset.readingLabel!);
       const panel = document.createElement("div");
       panel.id = `reading-tools-panel-${group}`;
       panel.className = "reading-switcher-panel";

@@ -47,7 +47,14 @@ const localAudio = narration?.[locale];
       </>
     )}
   </p>
-  <div class="reading-switcher" data-reading-switcher>
+  <div
+    class="reading-switcher"
+    data-reading-switcher
+    data-reading-label={t(
+      "Podsumowanie lub spis treści",
+      "Summary or contents",
+    )}
+  >
     <details
       name="reading-tools"
       class="reading-accordion"
