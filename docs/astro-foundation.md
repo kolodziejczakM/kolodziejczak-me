@@ -34,6 +34,11 @@ translationKey: "my-topic"
 urlSlug: "moj-temat"
 publishedAt: "2026-10-18"
 category: "programming"
+hero:
+  src: "../../../assets/articles/forest-path.jpg"
+  alt: "Leśna ścieżka znikająca we mgle między drzewami."
+  photographer: "T (@tanyabarrow)"
+  source: "https://unsplash.com/photos/misty-forest-path-with-green-foliage-and-tall-trees-WVUmdcmIuoc"
 draft: true
 sample: false
 summary:
@@ -64,7 +69,7 @@ Podaj rzeczywiste czasy plików; odtwarzacz natywny i etykiety czasu korzystają
 
 ## Weryfikacja
 
-`npm run validate`: TypeScript, build 12 stron i jedenaście testów Node. Testy sprawdzają parowanie różnych slugów, błędy indeksu publikacji, daty/czasy oraz wynikowe pliki HTML: pełną treść MDX, komponent, blok kodu, pary językowe, natywne narzędzia czytania i link do kolejnego artykułu.
+`npm run validate`: TypeScript, build 12 stron i trzynaście testów Node. Testy sprawdzają parowanie różnych slugów, błędy indeksu publikacji, daty/czasy oraz wynikowe pliki HTML: pełną treść MDX, komponent, blok kodu, pary językowe, natywne narzędzia czytania i link do kolejnego artykułu.
 
 Dodatkowo Chromium: 40 widoków (10 tras × 320/390/768/1440 px), bez poziomego przepełnienia, błędów JS i zewnętrznych żądań. Sprawdzono widok telefonu i desktopu, działanie artykułu i nawigacji bez JS, filtry, pięć zdań TL;DR, prompt, kopiowanie/fallback HTTP, zamykanie Escape i przywracanie fokusu, progres oraz sugestię języka. To kontrola bieżącego zakresu, nie pełny audyt dostępności i wszystkich przeglądarek.
 
@@ -98,3 +103,7 @@ Archiwalne eksperymenty nadal są w `prototypes/`, na gałęzi `codex/prototype-
 Przed publiczną premierą: zdjęcie, potwierdzone bio, prawdziwe linki kontaktowe i pierwszy autorski artykuł z tłumaczeniem; docelowy hosting, sitemap/RSS, podglądy udostępniania oraz Umami od pierwszego publicznego uruchomienia. Dopiero po przeglądzie gotowej strony należy zmienić flagę publikacji i usunąć próbki. Bieżący etap nie publikuje domeny.
 
 Audio wymaga plików. W artykule znajduje się oznaczony placeholder rozmowy ElevenLabs; otwiera informację o planowanej funkcji i nie łączy się z usługą. Agent, komentarze, polubienia i offline wymagają kolejnych działających integracji. Nie przeniesiono symulowanych rozmów, odtwarzania ani polubień z prototypu. Strona nie wykonuje obecnie żądań do zewnętrznych usług i nie ma service workera.
+
+## View Transitions i hero
+
+Każda publikacja wymaga metadanych `hero`. Zdjęcie znajduje się bezpośrednio przed czasem czytania. Miniatury listy i hero korzystają z lokalnych wariantów wygenerowanych przez Astro; nawigacja ma natywne przejścia między dokumentami. [Implementacja, pomiary i źródła](view-transitions-and-images.md).

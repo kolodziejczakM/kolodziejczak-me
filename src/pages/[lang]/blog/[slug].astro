@@ -3,6 +3,7 @@ import { render } from "astro:content";
 import SiteLayout from "../../../layouts/SiteLayout.astro";
 import Avatar from "../../../components/Avatar.astro";
 import Icon from "../../../components/Icon.astro";
+import ArticleImage from "../../../components/ArticleImage.astro";
 import ArticleWidgets from "../../../components/ArticleWidgets.astro";
 import ArticleTools from "../../../components/ArticleTools.astro";
 import { site } from "../../../config/site";
@@ -85,6 +86,7 @@ const canonical = new URL(articlePath(article), site.origin).href;
     </header>
     <div class="article-layout">
       <div class="article-column">
+        <ArticleImage article={article} variant="hero" />
         <ArticleTools article={article} locale={locale} headings={contents} />
         <article class="prose" data-reading-content>
           <Content />

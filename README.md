@@ -27,11 +27,12 @@ npm run preview   # lokalny podgląd po buildzie
 - `src/pages/`: wizytówka, lista i artykuły PL/EN, wybór języka oraz 404.
 - `src/components/`, `src/layouts/`, `src/styles/`: wspólne komponenty i wybrany wygląd.
 - `src/content/articles/{pl,en}/`: osobne publikacje MDX; wspólny `translationKey` paruje wersje, `urlSlug` wyznacza adres.
-- `src/content.config.ts`: schemat metadanych i opcjonalnego audio.
+- `src/content.config.ts`: schemat metadanych, obowiązkowego hero i opcjonalnego audio.
+- `src/assets/articles/`: lokalne zdjęcia z podpisami i źródłami, optymalizowane przez Astro.
 - `src/config/site.ts`: dane autora, kontakty i status publikacji.
 - `public/`: lokalne fonty z licencjami i favicon.
 
-Pełne artykuły, linki językowe, spis treści, TL;DR i prompt działają bez JavaScriptu. Początek artykułu zawiera czas z nagrania, zwinięty TL;DR i zwinięty spis treści. Mały skrypt dodaje filtrowanie, dialog promptu, kopiowanie, sugestię języka przeglądarki i postęp czytania. W rogu znajduje się oznaczony placeholder rozmowy, a po połowie tekstu także strzałka powrotu. Bez klientowego routera i zależności od kodu prototypów.
+Pełne artykuły, linki językowe, spis treści, TL;DR i prompt działają bez JavaScriptu. Początek artykułu zawiera zdjęcie hero, czas z nagrania, zwinięty TL;DR i zwinięty spis treści. Mały skrypt dodaje filtrowanie, dialog promptu, kopiowanie, sugestię języka przeglądarki i postęp czytania. W rogu znajduje się oznaczony placeholder rozmowy, a po połowie tekstu także strzałka powrotu. Natywne View Transitions animują przejście zdjęcia z listy do artykułu. Bez klientowego routera i zależności od kodu prototypów.
 
 ## Status
 
@@ -41,6 +42,7 @@ Przed publiczną premierą potrzebne są prawdziwe materiały autora, konfigurac
 
 - [Zakres implementacji, dodawanie artykułów i weryfikacja](docs/astro-foundation.md)
 - [Poprawki narzędzi czytania i proponowane kategorie](docs/reading-refinements.md)
+- [View Transitions, zdjęcia hero i pomiary wariantów mobilnych](docs/view-transitions-and-images.md)
 - [Kolejność dalszych prac](docs/implementation-next.md)
 - [Decyzje projektowe](docs/prototype-decision.md)
 - [Archiwum prototypów i wcześniejszych porównań](docs/prototype-archive.md)

@@ -128,3 +128,7 @@ Po rekomendacji Astro + TypeScript + MDX użytkownik napisał „Ok kontynuuj”
 ## Poprawki po pierwszym podglądzie Astro
 
 Użytkownik wykluczył wszelkie odnośniki do about.me: nowa strona ma je zastąpić. Przed artykułem ma być czas na podstawie nagrania, potem zwinięty akordeon TL;DR i zwinięty spis treści. Prompt pozostaje w dialogu z głównym przyciskiem po prawej. Użytkownik zamówił placeholder rozmowy ElevenLabs oraz potwierdzenie działania powrotu na górę. Poprosił też o propozycję kategorii obejmujących film, programowanie, AI, połączenia dziedzin i inne tematy, np. książki. [Wdrożone poprawki i propozycja kategorii](reading-refinements.md).
+
+## View Transitions i hero artykułu
+
+Użytkownik zamówił animacje przejścia między listą i artykułem oraz zdjęcie hero bezpośrednio przed informacją o czasie czytania, z responsywną optymalizacją Astro i przykładami z Unsplasha. Wdrożono natywne przejścia MPA i wymagane obrazy w schemacie MDX. [Zakres, źródła i weryfikacja](view-transitions-and-images.md).
