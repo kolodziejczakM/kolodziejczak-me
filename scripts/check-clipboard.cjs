@@ -44,6 +44,11 @@ const secureOrigin = "https://clipboard-preview.test";
         }
         await context.addInitScript((mode) => {
           if (location.hostname === "localhost") return;
+          // This regression checks copying rather than the OS share sheet.
+          Object.defineProperty(navigator, "share", {
+            value: undefined,
+            configurable: true,
+          });
           window.copyCommandCalls = 0;
           const original = document.execCommand.bind(document);
           document.execCommand = (command, ...args) => {
@@ -77,9 +82,15 @@ const secureOrigin = "https://clipboard-preview.test";
             navigator.clipboard.writeText("clipboard-before-click"),
           );
           await page.bringToFront();
-          await page.locator(`[data-dialog="${name}"] summary`).click();
-          const button = page.locator("dialog [data-copy]");
-          const fieldId = await button.getAttribute("data-copy");
+          if (name === "prompt")
+            await page.locator('[data-dialog="prompt"] summary').click();
+          const button = page.locator(
+            name === "prompt" ? "dialog [data-copy]" : "[data-share-action]",
+          );
+          const fieldId =
+            name === "prompt"
+              ? await button.getAttribute("data-copy")
+              : "article-url";
           const expected = await page.locator("#" + fieldId).inputValue();
           const message = await button.getAttribute(
             scenario === "all-denied" ? "data-copy-error" : "data-copied",
@@ -87,8 +98,7 @@ const secureOrigin = "https://clipboard-preview.test";
           await button.click();
           await page.waitForFunction(
             (text) =>
-              document.querySelector("[data-dialog-status]").textContent ===
-              text,
+              document.querySelector('[role="tooltip"]')?.textContent === text,
             message,
           );
           assert.equal(

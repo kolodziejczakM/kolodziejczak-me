@@ -96,19 +96,21 @@ const t = (pl: string, en: string) => text(locale, pl, en);
       <h2 id="dialog-title"></h2>
       <div data-dialog-body></div>
       <div
-        class="copy-status"
+        class="sr-only"
         data-dialog-status
+        data-action-status
         role="status"
         aria-live="polite"
-        hidden
+        aria-atomic="true"
       ></div>
     </dialog>
     <div
       id="status"
-      class="status-toast"
+      data-action-status
+      class="sr-only"
       role="status"
       aria-live="polite"
-      hidden
+      aria-atomic="true"
     ></div>
     <script>
       import "../scripts/site.ts";

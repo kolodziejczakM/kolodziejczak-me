@@ -1236,21 +1236,6 @@ dialog > h2 {
 dialog .disclosure-body {
   padding-top: 15px;
 }
-.status-toast {
-  position: fixed;
-  bottom: 25px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: var(--text);
-  color: var(--bg);
-  border-radius: 8px;
-  padding: 13px 18px;
-  font-size: 12px;
-  max-width: calc(100vw - 36px);
-  width: max-content;
-  z-index: 100;
-  pointer-events: none;
-}
 .language-home {
   max-width: 680px;
   width: calc(100% - 40px);
@@ -1281,11 +1266,6 @@ html:not(.js) .js-only {
 .prose pre,
 .prose code {
   font-family: "Plex Code", monospace;
-}
-.copy-status {
-  margin-top: 16px;
-  font-size: 12px;
-  color: var(--link);
 }
 @media (max-width: 1050px) {
   .wrap {
@@ -1938,4 +1918,59 @@ html:not(.js) .js-only {
 }
 .reading-switcher-panel nav span {
   font-size: 13px;
+}
+
+.article-sharing {
+  display: flex;
+  justify-content: center;
+  margin-top: 24px;
+}
+.article-sharing .share-disclosure {
+  margin-top: 0;
+}
+.action-tooltip {
+  position: fixed;
+  inset: auto;
+  margin: 0;
+  z-index: 150;
+  width: max-content;
+  max-width: min(270px, calc(100vw - 24px));
+  padding: 8px 12px;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  background: var(--text);
+  color: var(--ink);
+  font: 500 12px/1.5 var(--font);
+  text-align: center;
+  pointer-events: none;
+  overflow: visible;
+}
+.action-tooltip::after {
+  content: "";
+  position: absolute;
+  left: var(--tooltip-arrow);
+  width: 7px;
+  height: 7px;
+  background: inherit;
+  transform: translateX(-50%) rotate(45deg);
+}
+.action-tooltip[data-placement="above"]::after {
+  bottom: -5px;
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.action-tooltip[data-placement="below"]::after {
+  top: -5px;
+  border-left: 1px solid var(--line);
+  border-top: 1px solid var(--line);
+}
+
+[data-share-action] .share-copy-icon {
+  display: none;
+}
+[data-share-mode="copy"] .share-system-icon {
+  display: none;
+}
+[data-share-mode="copy"] .share-copy-icon {
+  display: block;
 }

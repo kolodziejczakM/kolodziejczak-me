@@ -4,6 +4,7 @@ import SiteLayout from "../../../layouts/SiteLayout.astro";
 import Icon from "../../../components/Icon.astro";
 import ArticleImage from "../../../components/ArticleImage.astro";
 import ArticleWidgets from "../../../components/ArticleWidgets.astro";
+import ArticleShare from "../../../components/ArticleShare.astro";
 import ArticlePrompt from "../../../components/ArticlePrompt.astro";
 import ArticleTools from "../../../components/ArticleTools.astro";
 import { site } from "../../../config/site";
@@ -86,51 +87,11 @@ const canonical = new URL(articlePath(article), site.origin).href;
           <p>
             {t("Dzięki, że dotarłeś aż tutaj.", "Thanks for reading this far.")}
           </p>
-          <details
-            class="article-disclosure share-disclosure"
-            data-dialog="share"
-          >
-            <summary class="button button-secondary">
-              {t("Udostępnij artykuł", "Share article")}
-              <Icon />
-            </summary>
-            <div class="disclosure-body">
-              <label for="article-url">
-                {t("Link do artykułu", "Article link")}
-              </label>
-              <input
-                id="article-url"
-                type="url"
-                readonly
-                value={canonical}
-                data-share-url
-              />
-              <div class="dialog-actions">
-                <button
-                  class="button button-secondary"
-                  type="button"
-                  data-native-share
-                  hidden
-                  data-title={article.data.title}
-                >
-                  {t("Więcej opcji udostępniania", "More sharing options")}
-                </button>
-                <button
-                  class="button button-primary js-only"
-                  type="button"
-                  data-copy="article-url"
-                  data-copied={t("Link skopiowany.", "Link copied.")}
-                  data-copy-error={t(
-                    "Nie udało się skopiować linku. Spróbuj ponownie.",
-                    "Could not copy the link. Please try again.",
-                  )}
-                >
-                  {t("Kopiuj link", "Copy link")}
-                  <Icon name="copy" />
-                </button>
-              </div>
-            </div>
-          </details>
+          <ArticleShare
+            locale={locale}
+            title={article.data.title}
+            url={canonical}
+          />
         </section>
         {next && (
           <aside class="read-next">

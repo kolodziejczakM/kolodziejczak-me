@@ -148,3 +148,7 @@ Użytkownik zgłosił, że oba przyciski kopiowania tylko zaznaczają tekst. Zas
 ## TL;DR i spis w jednej linii
 
 Użytkownik poprosił o małe kontrolki dopasowane szerokością do tekstu, obok siebie, rozwijające treść we wspólnym miejscu. Tylko jedna treść może być otwarta naraz. Wdrożono dwa przełączniki ze wspólnym panelem i możliwością ponownego zwinięcia. [Zachowanie i podglądy](reading-refinements.md#kompaktowe-przełączniki-tldr-i-spisu-treści).
+
+## Tooltip i systemowe udostępnianie
+
+Użytkownik poprosił o potwierdzenie kopiowania w tooltipie, zamiast widocznej notki w dialogu, oraz zasugerował systemowy panel przez Web Share API. Wdrożono tooltip bez zmiany układu oraz bezpośrednie wywołanie API. Na HTTP i przy braku obsługi przycisk kopiuje link bez własnego dialogu. Systemowy panel wymaga HTTPS; konfiguracja w Tailscale wymaga brakujących uprawnień administratora. [Szczegóły i weryfikacja](sharing-and-feedback.md).

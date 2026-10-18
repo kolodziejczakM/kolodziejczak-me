@@ -1,9 +1,12 @@
+import { hideFeedback, showFeedback } from "./feedback";
+import { setupSharing } from "./sharing";
 import { setupReadingSwitcher } from "./reading-switcher";
 import { copyField } from "./clipboard";
 import { enhanceCodeBlocks } from "./code-blocks";
 
 document.documentElement.classList.add("js");
 setupReadingSwitcher();
+setupSharing();
 
 // The complete document is already HTML. These are optional enhancements only.
 const filters = document.querySelector<HTMLElement>("[data-filters]");
@@ -87,26 +90,14 @@ if (dialog && typeof dialog.showModal === "function") {
     const body = dialog.querySelector<HTMLElement>(".disclosure-body");
     if (body && disclosure) disclosure.append(body);
     document.body.classList.remove("dialog-open");
+    hideFeedback();
     const status = dialog.querySelector<HTMLElement>("[data-dialog-status]");
-    if (status) status.hidden = true;
+    if (status) status.textContent = "";
     disclosure?.querySelector("summary")?.focus();
     disclosure = undefined;
   });
 }
 
-let statusTimer: ReturnType<typeof setTimeout>;
-function announce(message: string) {
-  const status = dialog?.open
-    ? dialog.querySelector<HTMLElement>("[data-dialog-status]")
-    : document.querySelector<HTMLElement>("#status");
-  if (!status) return;
-  clearTimeout(statusTimer);
-  status.textContent = message;
-  status.hidden = false;
-  statusTimer = setTimeout(() => {
-    status.hidden = true;
-  }, 4500);
-}
 document
   .querySelectorAll<HTMLButtonElement>("[data-copy]")
   .forEach((button) => {
@@ -115,33 +106,12 @@ document
         HTMLInputElement | HTMLTextAreaElement;
       try {
         await copyField(field);
-        announce(button.dataset.copied!);
+        showFeedback(button, button.dataset.copied!);
       } catch {
-        announce(button.dataset.copyError!);
+        showFeedback(button, button.dataset.copyError!);
       }
     });
   });
-document
-  .querySelector<HTMLInputElement>("[data-share-url]")
-  ?.setAttribute("value", location.href);
-const nativeShare = document.querySelector<HTMLButtonElement>(
-  "[data-native-share]",
-);
-if (nativeShare && navigator.share) {
-  nativeShare.hidden = false;
-  nativeShare.addEventListener("click", async () => {
-    try {
-      await navigator.share({
-        title: nativeShare.dataset.title,
-        url: location.href,
-      });
-    } catch (error) {
-      if (!(error instanceof DOMException && error.name === "AbortError"))
-        document.querySelector<HTMLInputElement>("[data-share-url]")?.select();
-    }
-  });
-}
-
 const content = document.querySelector<HTMLElement>("[data-reading-content]");
 const progress = document.querySelector<HTMLElement>("[data-reading-progress]");
 const topLink = document.querySelector<HTMLElement>("[data-back-top]");

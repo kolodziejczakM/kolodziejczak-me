@@ -1,0 +1,41 @@
+---
+import Icon from "./Icon.astro";
+import { text, type Locale } from "../lib/i18n";
+interface Props {
+  locale: Locale;
+  title: string;
+  url: string;
+}
+const { locale, title, url } = Astro.props;
+const t = (pl: string, en: string) => text(locale, pl, en);
+---
+
+<div class="article-sharing" data-sharing>
+  <button
+    class="button button-secondary"
+    type="button"
+    data-share-action
+    hidden
+    data-title={title}
+    data-copy-label={t("Kopiuj link", "Copy link")}
+    data-copied={t("Link skopiowany.", "Link copied.")}
+    data-copy-error={t(
+      "Nie udało się skopiować linku. Spróbuj ponownie.",
+      "Could not copy the link. Please try again.",
+    )}
+  >
+    <span data-share-label>{t("Udostępnij artykuł", "Share article")}</span>
+    <Icon name="share" class="share-system-icon" />
+    <Icon name="copy" class="share-copy-icon" />
+  </button>
+  <details class="article-disclosure share-disclosure" data-share-fallback>
+    <summary class="button button-secondary">
+      {t("Udostępnij artykuł", "Share article")}
+      <Icon name="share" />
+    </summary>
+    <div class="disclosure-body">
+      <label for="article-url">{t("Link do artykułu", "Article link")}</label>
+      <input id="article-url" type="url" readonly value={url} data-share-url />
+    </div>
+  </details>
+</div>

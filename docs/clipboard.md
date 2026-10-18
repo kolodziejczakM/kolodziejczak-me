@@ -6,7 +6,7 @@
 
 W rzeczywistym podglądzie `isSecureContext` było fałszywe, a `navigator.clipboard` niedostępne. Poprzedni `catch` wyłącznie wykonywał `focus()` i `select()`, bez polecenia kopiowania. Test odczytujący rzeczywisty schowek odtworzył błąd: po kliknięciu pozostawała poprzednia zawartość.
 
-Wspólny helper `src/scripts/clipboard.ts` najpierw używa `navigator.clipboard.writeText()`. Gdy API jest niedostępne albo odmawia zapisu, zaznacza pole i wywołuje `document.execCommand('copy')` w obsłudze kliknięcia. Następnie przywraca fokus i wcześniejszy zakres zaznaczenia. To działa też wewnątrz natywnego dialogu, bez tworzenia pomocniczego pola poza jego aktywną warstwą.
+Wspólny helper `src/scripts/clipboard.ts` najpierw używa `navigator.clipboard.writeText()`. Gdy API jest niedostępne albo odmawia zapisu, zaznacza pole i wywołuje `document.execCommand('copy')` w obsłudze kliknięcia. Następnie przywraca fokus i wcześniejszy zakres zaznaczenia. Dla promptu działa to wewnątrz natywnego dialogu, bez tworzenia pomocniczego pola poza jego aktywną warstwą. Link jest obecnie kopiowany bez dialogu. Potwierdzenie obu akcji pojawia się w tooltipie; [aktualny przepływ udostępniania](sharing-and-feedback.md).
 
 Komunikat sukcesu pojawia się po zakończonym zapisie lub pozytywnym wyniku `execCommand`. Jeżeli oba mechanizmy zawiodą, wyświetlany jest błąd i prośba o ponowienie. Usunięto traktowanie samego zaznaczenia jako wyniku przycisku „Kopiuj”.
 
