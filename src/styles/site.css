@@ -697,8 +697,12 @@ svg {
   font-size: 9px;
   color: var(--muted);
 }
+.article-header,
+.article-layout {
+  max-width: 800px;
+  margin-inline: auto;
+}
 .article-header {
-  max-width: 940px;
   padding: 36px 0 40px;
 }
 .article-header > .eyebrow {
@@ -720,8 +724,6 @@ svg {
 }
 .article-layout {
   display: block;
-  max-width: 800px;
-  margin-inline: auto;
   border-top: 1px solid var(--line);
   padding-top: 32px;
 }
