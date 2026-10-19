@@ -43,6 +43,7 @@
   box-sizing: border-box;
 }
 html {
+  scrollbar-gutter: stable;
   scroll-behavior: smooth;
   scroll-padding-top: 28px;
   /* Keep the responsive type scale stable when iOS changes orientation. */
