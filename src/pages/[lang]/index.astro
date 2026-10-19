@@ -1,5 +1,6 @@
 ---
 import SiteLayout from "../../layouts/SiteLayout.astro";
+import HeroObserver from "../../components/HeroObserver.astro";
 import Icon from "../../components/Icon.astro";
 import ArticleCard from "../../components/ArticleCard.astro";
 import Contacts from "../../components/Contacts.astro";
@@ -39,6 +40,7 @@ const t = (pl: string, en: string) => text(locale, pl, en);
 >
   <main id="main" class="wrap">
     <section class="hero" aria-labelledby="home-title">
+      <HeroObserver />
       <span class="eyebrow">
         {t(
           "INTERNET JEST FAJNIEJSZY Z LUDŹMI",

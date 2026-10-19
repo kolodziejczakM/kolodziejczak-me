@@ -340,7 +340,7 @@ svg {
 }
 .hero {
   position: relative;
-  margin-top: 52px;
+  margin-top: 88px;
   border: 1px solid var(--line);
   border-radius: 44px;
   text-align: center;
@@ -1290,7 +1290,7 @@ html:not(.js) .js-only {
     padding-inline: 10px;
   }
   .hero {
-    margin-top: 45px;
+    margin-top: 92px;
     padding: 40px 18px 29px;
     border-radius: 29px;
   }

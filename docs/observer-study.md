@@ -1,8 +1,10 @@
 # Prototypy obserwatora na górnej ramce wizytówki
 
-Autor poprosił o małego ludzika stojącego pośrodku górnego obramowania hero, patrzącego w górę na coś poza stroną. Głowa ma spokojnie się poruszać albo delikatnie reagować na położenie myszy. Nie wybrano jeszcze wyglądu postaci.
+Autor wybrał **B: Miękki kadr**. Wybrana postać jest wdrożona na stronie głównej PL i EN w `src/components/HeroObserver.astro`, a ruch w `src/scripts/hero-observer.ts`. Stoi pośrodku górnej ramki hero, patrzy w górę i subtelnie reaguje na mysz. Na telefonie spokojnie się rozgląda. Systemowe ograniczenie ruchu zatrzymuje animację; poza ekranem i w ukrytej karcie ruch jest wstrzymany. Bez JS pozostaje statyczna ilustracja. Wdrożenie nie zawiera przełącznika prototypów ani niewybranych postaci.
 
-Źródło pierwotne: lokalna gałąź **`codex/observer-study`**, commit **`47cb321`**. Zawiera cztery SVG, skrypt ruchu, CSS i przełącznik, pełny opis oraz zrzuty desktopowe, mobilne i porównanie postaci w `docs/previews/observer-study/`. Właściwa gałąź ma tylko ten wskaźnik. Po wyborze autora wybrany wariant należy przepisać do właściwej implementacji.
+Kontrola wdrożenia: TypeScript, build 12 stron i 16 testów. Chromium: PL i EN przy 320/390/844/1440/3840 px bez przepełnienia, stopy na środku ramki, reakcja na mysz, zatrzymanie poza ekranem i wznowienie po powrocie, systemowe ograniczenie ruchu, spokojny ruch na urządzeniu dotykowym i statyczna ilustracja bez JS. Lista artykułów nie zawiera postaci.
+
+Źródło pierwotne: lokalna gałąź **`codex/observer-study`**, commit **`47cb321`**. Zawiera cztery SVG, skrypt ruchu, CSS i przełącznik, pełny opis oraz zrzuty desktopowe, mobilne i porównanie postaci w `docs/previews/observer-study/`. Poniższe informacje opisują zarchiwizowany prototyp, z którego wybrano wariant B.
 
 Prywatne porównanie na istniejącej stronie głównej:
 
@@ -13,7 +15,7 @@ Prywatne porównanie na istniejącej stronie głównej:
 
 Stopy pozostają na środku ramki. Rusza się tylko głowa i spojrzenie. Na komputerze postać lekko reaguje na mysz, na telefonie spokojnie obserwuje niebo. Obsługiwane są pauza próbnika i systemowe ograniczenie ruchu. Ruch zatrzymuje się poza ekranem i w ukrytej karcie. Nie dodano widocznego obiektu na niebie ani nie zmieniono pozostałego wyglądu strony. Powiększono tylko odstęp nad hero potrzebny na postać. Bez JS widoczna jest statyczna A.
 
-Wariant zmieniają dolne strzałki i klawiatura. Wybór jest w URL, także po przełączeniu PL/EN; nie ma cookies ani zapisu do storage. Podgląd zwykłej strony na porcie 4322 zachowuje poprzedni wygląd.
+Wariant zmieniają dolne strzałki i klawiatura. Wybór jest w URL, także po przełączeniu PL/EN; nie ma cookies ani zapisu do storage. Podgląd właściwej strony na porcie 4322 zawiera wybrany wariant B bez narzędzi porównawczych.
 
 Worktree `/tmp/kolodziejczak-observer-study`, jednostka `kolodziejczak-observer-preview.service`, wyłącznie Tailscale `100.113.202.72:4327`. Odtworzenie z gałęzi: `npm ci`, `npm run prototype:observer`; build statyczny z `PROTOTYPE_OBSERVER=1 npm run build`. Zwykły build bez flagi nie zawiera postaci ani próbnika.
 
