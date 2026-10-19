@@ -260,7 +260,6 @@ svg {
   justify-content: space-between;
   gap: 28px;
   min-height: 108px;
-  border-bottom: 1px solid var(--line);
 }
 .brand {
   display: inline-flex;
