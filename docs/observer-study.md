@@ -4,6 +4,12 @@ Autor wybrał **B: Miękki kadr**. Wybrana postać jest wdrożona na stronie gł
 
 Kontrola wdrożenia: TypeScript, build 12 stron i 16 testów. Chromium: PL i EN przy 320/390/844/1440/3840 px bez przepełnienia, stopy na środku ramki, reakcja na mysz, zatrzymanie poza ekranem i wznowienie po powrocie, systemowe ograniczenie ruchu, spokojny ruch na urządzeniu dotykowym i statyczna ilustracja bez JS. Lista artykułów nie zawiera postaci.
 
+## Dalsza próba: włosy i lornetka
+
+Autor zwrócił uwagę na jasną obwódkę przy włosach i zasugerował lornetkę jako nawiązanie do ciekawości. Obwódka wynika z dodatkowego szałwiowego kształtu za ciemnymi włosami. Porównanie bez zmiany właściwej implementacji: [prototyp z lornetką](http://vps.tailfb5686.ts.net:4328/pl/?variant=B). A: czysty profil bez obwódki, B: lornetka z profilu, C: ujęcie od tyłu z lornetką. Propozycja B najlepiej zachowuje charakter postaci, ale nowego wariantu jeszcze nie wybrano. Pełne źródła, opis i zrzuty: lokalna gałąź `codex/observer-binocular-study`, commit `f7f3c6a`, plik `docs/observer-binocular-study.md`. Worktree `/tmp/kolodziejczak-observer-binocular-study`, serwer `kolodziejczak-binocular-preview.service`, tylko Tailscale `100.113.202.72:4328`. Odtworzenie: `npm run prototype:binoculars`, build z `PROTOTYPE_BINOCULARS=1 npm run build`. Sprawdzono TypeScript, build, układ trzech wariantów przy 320/390/844/1440/3840 px, ruch, pauzę, ograniczenie animacji, przełączanie i języki; obiektywy nie są obcinane przy skrajnych wychyleniach.
+
+## Archiwum pierwszego wyboru
+
 Źródło pierwotne: lokalna gałąź **`codex/observer-study`**, commit **`47cb321`**. Zawiera cztery SVG, skrypt ruchu, CSS i przełącznik, pełny opis oraz zrzuty desktopowe, mobilne i porównanie postaci w `docs/previews/observer-study/`. Poniższe informacje opisują zarchiwizowany prototyp, z którego wybrano wariant B.
 
 Prywatne porównanie na istniejącej stronie głównej:
