@@ -650,7 +650,6 @@ svg {
   font-size: 8px;
 }
 .blog-list {
-  border-top: 1px solid var(--line);
   margin-top: 24px;
   padding-top: 28px;
 }

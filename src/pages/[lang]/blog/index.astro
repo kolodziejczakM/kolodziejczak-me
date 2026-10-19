@@ -23,16 +23,17 @@ interface Props {
 const { locale } = Astro.props;
 const articles = await articlesFor(locale);
 const t = (pl: string, en: string) => text(locale, pl, en);
+const description = t(
+  "Miejsce na dłuższą myśl i nowe spojrzenie. Czasem analiza, czasem historia z własnego projektu, czasem zapis eksperymentu.",
+  "Room for a longer thought and a fresh perspective. Sometimes an analysis, sometimes a story from one of my projects, sometimes notes from an experiment.",
+);
 ---
 
 <SiteLayout
   locale={locale}
   page="blog"
   title={t("Artykuły", "Articles")}
-  description={t(
-    "Artykuły o budowaniu rzeczy, nowych narzędziach i tym, co pomiędzy.",
-    "Articles about building things, new tools and everything in between.",
-  )}
+  description={description}
   otherPath={blogPath(otherLocale(locale))}
 >
   <main id="main" class="wrap blog-page">
@@ -48,12 +49,7 @@ const t = (pl: string, en: string) => text(locale, pl, en);
         <br />
         <em>{t("Z ciekawości.", "Out of curiosity.")}</em>
       </h1>
-      <p>
-        {t(
-          "O budowaniu rzeczy, nowych narzędziach i tym, co pomiędzy. Miejsce na dłuższą myśl i nowe spojrzenie.",
-          "On building things, new tools, and everything in between. Room for a longer thought and a fresh perspective.",
-        )}
-      </p>
+      <p>{description}</p>
       <small>
         {t(
           "Przykładowe publikacje pokazujące docelowy układ strony.",
