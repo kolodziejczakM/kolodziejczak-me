@@ -79,7 +79,7 @@ body {
   background:
     radial-gradient(ellipse at 18% 22%, #647a3d52, transparent 53%),
     radial-gradient(ellipse at 82% 74%, #31634d66, transparent 56%);
-  animation: green-drift 32s ease-in-out infinite alternate paused;
+  animation: green-drift 32s ease-in-out infinite alternate;
 }
 .background-surface::after {
   inset: 0;
@@ -89,9 +89,6 @@ body {
     linear-gradient(90deg, #d7e7c2 1px, transparent 1px);
   background-size: 32px 32px;
 }
-html[data-background-motion="running"] .background-surface::before {
-  animation-play-state: running;
-}
 @keyframes green-drift {
   from {
     transform: translate3d(-2%, -1%, 0) scale(1);
@@ -100,21 +97,6 @@ html[data-background-motion="running"] .background-surface::before {
     transform: translate3d(3%, 2%, 0) scale(1.08);
   }
 }
-.background-motion {
-  padding: 8px 0;
-  min-height: 40px;
-  border: 0;
-  background: transparent;
-  color: var(--muted);
-  font-size: 11px;
-  text-decoration: underline;
-  text-underline-offset: 4px;
-}
-.language-home .background-motion {
-  display: block;
-  margin: 24px auto 0;
-}
-
 h1,
 h2,
 h3,
@@ -619,9 +601,6 @@ svg {
   border-top: 1px solid var(--line);
   font-size: 11px;
   color: var(--muted);
-}
-.footer-bottom small {
-  font-size: 11px;
 }
 .blog-page {
   padding-top: 56px;
@@ -1397,11 +1376,6 @@ html:not(.js) .js-only {
     gap: 10px;
     margin-top: 12px;
     padding-top: 19px;
-  }
-  .footer-bottom small {
-    order: 3;
-    width: 100%;
-    line-height: 1.8;
   }
   .blog-page {
     padding-top: 34px;
