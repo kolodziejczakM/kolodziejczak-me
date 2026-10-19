@@ -490,7 +490,6 @@ svg {
   height: 19px;
 }
 .contacts {
-  border-top: 1px solid var(--line);
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 45px;
