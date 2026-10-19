@@ -60,6 +60,19 @@ body {
   -webkit-font-smoothing: antialiased;
   isolation: isolate;
 }
+body[data-page] {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+body[data-page] > main {
+  flex: 1 0 auto;
+}
+body[data-page] > .site-header,
+body[data-page] > .site-footer {
+  flex-shrink: 0;
+}
 .background-surface {
   position: fixed;
   inset: 0;
