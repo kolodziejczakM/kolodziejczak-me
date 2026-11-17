@@ -1,0 +1,91 @@
+---
+import { getImage } from "astro:assets";
+import portrait from "../assets/profile/marcin-kolodziejczak.jpg";
+import { site } from "../config/site";
+import { absoluteUrl, jsonLd, pageGraph, type SeoPage } from "../lib/seo";
+import { locales, type Locale } from "../lib/i18n";
+interface Props extends SeoPage {
+  translations: Record<Locale, string>;
+}
+const { locale, title, description, path, translations, kind, article } =
+  Astro.props;
+const canonical = absoluteUrl(path);
+const image = await getImage({
+  src: article?.data.hero.src ?? portrait,
+  width: 1200,
+  height: article ? 630 : 1200,
+  fit: "cover",
+  format: "jpg",
+  quality: 85,
+});
+const imageUrl = absoluteUrl(image.src);
+const imageAlt = article?.data.hero.alt ?? site.name;
+const indexable = site.readyToPublish && !article?.data.sample;
+---
+
+<title>{title} · {site.domain}</title>
+<meta name="description" content={description} />
+<meta name="author" content={site.name} />
+<meta
+  name="robots"
+  content={
+    indexable ? "index,follow,max-image-preview:large" : "noindex,follow"
+  }
+/>
+<link rel="canonical" href={canonical} />
+{locales.map((language) => (
+  <link
+    rel="alternate"
+    hreflang={language}
+    href={absoluteUrl(translations[language])}
+  />
+))}
+<link
+  rel="alternate"
+  hreflang="x-default"
+  href={absoluteUrl(
+    kind === "home" || kind === "language" ? "/" : translations.pl,
+  )}
+/>
+<meta property="og:site_name" content={site.domain} />
+<meta property="og:type" content={article ? "article" : "website"} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:url" content={canonical} />
+<meta property="og:locale" content={locale === "pl" ? "pl_PL" : "en_GB"} />
+<meta
+  property="og:locale:alternate"
+  content={locale === "pl" ? "en_GB" : "pl_PL"}
+/>
+<meta property="og:image" content={imageUrl} />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content={article ? "630" : "1200"} />
+<meta property="og:image:type" content="image/jpeg" />
+<meta property="og:image:alt" content={imageAlt} />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={imageUrl} />
+<meta name="twitter:image:alt" content={imageAlt} />
+{article && (
+  <meta
+    property="article:published_time"
+    content={article.data.publishedAt.toISOString()}
+  />
+)}
+{article?.data.updatedAt && (
+  <meta
+    property="article:modified_time"
+    content={article.data.updatedAt.toISOString()}
+  />
+)}
+<link
+  rel="alternate"
+  type="application/rss+xml"
+  title={`${site.domain} · ${locale.toUpperCase()}`}
+  href={absoluteUrl(`/${locale}/rss.xml`)}
+/>
+<script
+  type="application/ld+json"
+  set:html={jsonLd(pageGraph(Astro.props, imageUrl))}
+/>

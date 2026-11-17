@@ -2,9 +2,10 @@ import { defineConfig } from "astro/config";
 import mdx from "@astrojs/mdx";
 import { satteri, satteriHeadingIdsPlugin } from "@astrojs/markdown-satteri";
 import { articleFragments } from "./src/lib/article-fragments.ts";
+import { site } from "./src/config/site.ts";
 
 export default defineConfig({
-  site: "https://kolodziejczak.me",
+  site: site.origin,
   output: "static",
   trailingSlash: "always",
   integrations: [mdx()],

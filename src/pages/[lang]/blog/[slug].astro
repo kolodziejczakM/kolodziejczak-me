@@ -50,6 +50,7 @@ const canonical = new URL(articlePath(article), site.origin).href;
 <SiteLayout
   locale={locale}
   page="article"
+  article={article}
   title={article.data.title}
   description={article.data.description}
   otherPath={articlePath(translated)}

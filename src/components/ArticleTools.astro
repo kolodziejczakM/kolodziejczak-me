@@ -1,4 +1,5 @@
 ---
+import { site } from "../config/site";
 import type { Article } from "../lib/articles";
 import {
   text,
@@ -23,30 +24,34 @@ const localAudio = narration?.[locale];
   class="article-toolbox"
   aria-label={t("Narzędzia czytania", "Reading tools")}
 >
-  <p class="reading-time" data-reading-time>
-    {localAudio ? (
-      <>
-        {t("Czas czytania", "Reading time")}:{" "}
-        <strong>{formatReadingTime(localAudio.durationSeconds, locale)}</strong>
-        <small>
-          {t(
-            "Na podstawie długości nagrania lektora.",
-            "Based on the narration duration.",
-          )}
-        </small>
-      </>
-    ) : (
-      <>
-        {t("Czas czytania: —", "Reading time: —")}
-        <small>
-          {t(
-            "Pojawi się po dodaniu nagrania lektora.",
-            "Available once narration is added.",
-          )}
-        </small>
-      </>
-    )}
-  </p>
+  {(localAudio || !site.readyToPublish) && (
+    <p class="reading-time" data-reading-time>
+      {localAudio ? (
+        <>
+          {t("Czas czytania", "Reading time")}:{" "}
+          <strong>
+            {formatReadingTime(localAudio.durationSeconds, locale)}
+          </strong>
+          <small>
+            {t(
+              "Na podstawie długości nagrania lektora.",
+              "Based on the narration duration.",
+            )}
+          </small>
+        </>
+      ) : (
+        <>
+          {t("Czas czytania: —", "Reading time: —")}
+          <small>
+            {t(
+              "Pojawi się po dodaniu nagrania lektora.",
+              "Available once narration is added.",
+            )}
+          </small>
+        </>
+      )}
+    </p>
+  )}
   <div
     class="reading-switcher"
     data-reading-switcher
@@ -122,6 +127,6 @@ const localAudio = narration?.[locale];
       })}
     </div>
   ) : (
-    <NarrationPlaceholder locale={locale} />
+    !site.readyToPublish && <NarrationPlaceholder locale={locale} />
   )}
 </section>

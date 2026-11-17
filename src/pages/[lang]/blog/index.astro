@@ -50,12 +50,14 @@ const description = t(
         <em>{t("Z ciekawości.", "Out of curiosity.")}</em>
       </h1>
       <p>{description}</p>
-      <small>
-        {t(
-          "Przykładowe publikacje pokazujące docelowy układ strony.",
-          "Sample articles showing the selected page design.",
-        )}
-      </small>
+      {articles.some(({ data }) => data.sample) && (
+        <small>
+          {t(
+            "Przykładowe publikacje pokazujące docelowy układ strony.",
+            "Sample articles showing the selected page design.",
+          )}
+        </small>
+      )}
     </header>
     <div
       class="blog-filters"

@@ -9,7 +9,12 @@ interface Props {
 const { article, variant } = Astro.props;
 const hero = variant === "hero";
 const card = variant === "card";
-const { src, alt, photographer, source } = article.data.hero;
+const { src, alt, photographer, source, sourceLabel } = article.data.hero;
+const credit =
+  sourceLabel ??
+  (new URL(source).hostname.replace(/^www\./, "") === "unsplash.com"
+    ? "Unsplash"
+    : new URL(source).hostname);
 const sizes = hero
   ? "(max-width: 370px) calc(100vw - 32px), (max-width: 760px) calc(100vw - 40px), (max-width: 872px) calc(100vw - 72px), 800px"
   : card
@@ -39,7 +44,7 @@ const sizes = hero
     <figcaption>
       {text(article.data.locale, "Fot.", "Photo:")}{" "}
       <a href={source} target="_blank" rel="noreferrer">
-        {photographer} / Unsplash ↗
+        {photographer} / {credit} ↗
       </a>
     </figcaption>
   )}

@@ -32,10 +32,7 @@ const t = (pl: string, en: string) => text(locale, pl, en);
   locale={locale}
   page="home"
   title={site.name}
-  description={t(
-    "Osobisty kawałek internetu Marcina Kołodziejczaka. O kodzie, AI i ciekawości.",
-    "Marcin Kołodziejczak’s personal corner of the internet. Code, AI and curiosity.",
-  )}
+  description={site.description[locale]}
   otherPath={homePath(otherLocale(locale))}
 >
   <main id="main" class="wrap">
