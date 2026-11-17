@@ -9,9 +9,9 @@ export const site = {
     en: "Hi, I'm Marcin. Programming is my passion and my day job. In my free time, I make films and experiment with AI. Sometimes I bring these worlds together and something interesting comes out of it - that's what I write about here.",
   },
   contacts: [
-    { name: "Facebook", url: null },
-    { name: "Telegram", url: null },
-    { name: "LinkedIn", url: null },
-    { name: "WhatsApp", url: null },
+    { name: "Facebook", url: "https://www.facebook.com/kolodziejczakMn" },
+    { name: "Telegram", url: "https://t.me/kolodziejczakM" },
+    { name: "LinkedIn", url: "https://www.linkedin.com/in/m-kolodziejczak/" },
+    { name: "WhatsApp", url: "https://wa.me/48576142399" },
   ] as { name: string; url: string | null }[],
 };
