@@ -32,7 +32,7 @@ Stan: 17 listopada 2026. Właściwa implementacja: `codex/astro-foundation`. Nie
 
 ## Weryfikacja tej zmiany
 
-- `npm run validate`: poprawny build i 20 testów. `npm audit --omit=dev`: 0 znanych podatności na dzień przeglądu.
+- `npm run validate`: poprawny build i 20 testów. Audyt z 17 listopada rano zgłaszał 0 znanych podatności. Późniejsza aktualizacja bazy objęła picomatch; od 18 listopada obowiązuje [jawny wyjątek do 25 listopada](dependency-audit.md), bez zmiany wersji Astro.
 - Chromium: `/design/`, home PL/EN, blog i artykuł przy 320/390/844/1440/3840 px. Brak poziomego przepełnienia i błędów JS; działające kopiowanie cytatu w notatniku, właściwe kolory i noindex.
 - Osobna kopia testowa, poza właściwą treścią: próbki jako szkice, prawdziwa para MDX, updatedAt i dwujęzyczne odwołanie do poprawnego dwusekundowego WAV. Pełne `npm run release:check` przechodzi. Sprawdzono JSON-LD, indeksowanie, parsowanie XML sitemapy i obu RSS, natywne odtwarzanie/przewijanie oraz dostępność kontrolek bez JS na `astro preview`.
 - Na właściwej kopii `readyToPublish: false` nadal zatrzymuje kontrolę premiery. Nie odblokowano indeksowania i nie wdrożono publicznie strony.

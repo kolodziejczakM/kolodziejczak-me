@@ -16,4 +16,4 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run validate
-      - run: npm audit --omit=dev --audit-level=moderate
+      - run: npm run audit:check

@@ -12,11 +12,14 @@ Node.js **≥22.22.0**, npm. Zależności są przypięte w `package.json` i `pac
 npm ci
 npm run dev
 npm run validate     # TypeScript, build i testy gotowego HTML
+npm run audit:check  # audyt z wąskim, czasowym wyjątkiem opisanym poniżej
 npm run preview      # lokalny podgląd dist/ po buildzie
 npm run release:check # dodatkowo sprawdza gotowość do publicznej premiery
 ```
 
 Push i pull request uruchamiają walidację oraz audyt zależności w GitHub Actions. Nie ma automatycznego wdrażania na docelowy serwer.
+
+Audyt ma jeden jawny wyjątek dla `GHSA-fc5q-39xc-vjpf` w `picomatch`, ważny do **25 listopada 2026 włącznie (UTC)**. Biblioteka pozostaje podatna; akceptacja dotyczy obecnego statycznego buildu. Pełny raport pozostaje w logach, a inne zgłoszenia od poziomu moderate nadal blokują CI. [Zakres, uzasadnienie i usunięcie wyjątku](docs/dependency-audit.md). `release:check` stosuje tę samą kontrolę.
 
 ## Publikowanie artykułu krok po kroku
 

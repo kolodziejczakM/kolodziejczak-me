@@ -12,8 +12,9 @@
     "check": "astro sync && tsc --noEmit",
     "test": "node --experimental-strip-types --test tests/*.test.ts",
     "validate": "npm run check && npm run build && npm test",
+    "audit:check": "node --experimental-strip-types scripts/check-audit.mjs",
     "prototype": "python3 prototypes/serve.py",
-    "release:check": "npm run validate && node --experimental-strip-types scripts/check-release.ts"
+    "release:check": "npm run validate && npm run audit:check && node --experimental-strip-types scripts/check-release.ts"
   },
   "dependencies": {
     "@astrojs/markdown-satteri": "0.4.4",
