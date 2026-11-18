@@ -1,0 +1,78 @@
+{
+  "source": "https://fonts.google.com/metadata/fonts",
+  "retrieved": "2026-10-17",
+  "catalogueFamilies": 1950,
+  "scope": "Public Google Fonts catalogue popularity field; not global website share or self-hosted use; lower values sort ahead. Internal metadata schema may change.",
+  "families": [
+    {
+      "family": "Roboto",
+      "popularity": 2,
+      "lastModified": "2026-02-19"
+    },
+    {
+      "family": "Open Sans",
+      "popularity": 3,
+      "lastModified": "2025-09-16"
+    },
+    {
+      "family": "Inter",
+      "popularity": 5,
+      "lastModified": "2025-09-10"
+    },
+    {
+      "family": "Montserrat",
+      "popularity": 7,
+      "lastModified": "2025-09-04"
+    },
+    {
+      "family": "Lato",
+      "popularity": 9,
+      "lastModified": "2025-09-16"
+    },
+    {
+      "family": "Bricolage Grotesque",
+      "popularity": 62,
+      "lastModified": "2025-09-11"
+    },
+    {
+      "family": "Schibsted Grotesk",
+      "popularity": 101,
+      "lastModified": "2025-09-04"
+    },
+    {
+      "family": "Newsreader",
+      "popularity": 121,
+      "lastModified": "2025-09-08"
+    },
+    {
+      "family": "Hanken Grotesk",
+      "popularity": 140,
+      "lastModified": "2025-09-02"
+    },
+    {
+      "family": "Literata",
+      "popularity": 241,
+      "lastModified": "2025-09-11"
+    },
+    {
+      "family": "Alegreya",
+      "popularity": 251,
+      "lastModified": "2026-06-30"
+    },
+    {
+      "family": "Commissioner",
+      "popularity": 328,
+      "lastModified": "2025-09-10"
+    },
+    {
+      "family": "Gabarito",
+      "popularity": 342,
+      "lastModified": "2025-09-04"
+    },
+    {
+      "family": "Ysabeau",
+      "popularity": 1336,
+      "lastModified": "2025-09-11"
+    }
+  ]
+}

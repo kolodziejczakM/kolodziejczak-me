@@ -1,0 +1,51 @@
+---
+import type { Article } from "../lib/articles";
+import { text, type Locale } from "../lib/i18n";
+import Icon from "./Icon.astro";
+interface Props {
+  article: Article;
+  locale: Locale;
+}
+const { article, locale } = Astro.props;
+const t = (pl: string, en: string) => text(locale, pl, en);
+---
+
+<div class="article-actions article-prompt">
+  <details class="article-disclosure" data-dialog="prompt">
+    <summary class="button button-secondary">
+      <Icon name="spark" />
+      {t("Prompt: pogłęb temat", "Prompt: explore further")}
+    </summary>
+    <div class="disclosure-body">
+      <p>
+        {t(
+          "Skopiuj ten prompt do wybranego asystenta AI.",
+          "Copy this prompt into your preferred AI assistant.",
+        )}
+      </p>
+      <label class="sr-only" for="article-prompt">
+        Prompt
+      </label>
+      <textarea
+        id="article-prompt"
+        rows="7"
+        readonly
+      >{article.data.prompt}</textarea>
+      <div class="dialog-actions">
+        <button
+          class="button button-primary js-only"
+          type="button"
+          data-copy="article-prompt"
+          data-copied={t("Prompt skopiowany.", "Prompt copied.")}
+          data-copy-error={t(
+            "Nie udało się skopiować tekstu. Spróbuj ponownie.",
+            "Could not copy the text. Please try again.",
+          )}
+        >
+          {t("Kopiuj prompt", "Copy prompt")}
+          <Icon name="copy" />
+        </button>
+      </div>
+    </div>
+  </details>
+</div>

@@ -1,0 +1,17 @@
+---
+import Avatar from "./Avatar.astro";
+import { site } from "../config/site";
+import { homePath, type Locale } from "../lib/i18n";
+interface Props {
+  locale: Locale;
+}
+---
+
+<a class="brand" href={homePath(Astro.props.locale)}>
+  <Avatar locale={Astro.props.locale} />
+  <span class="brand-wordmark">
+    {site.domain.replace(/\.me$/, "")}
+    <span class="brand-domain">.me</span>
+    <small>{site.name}</small>
+  </span>
+</a>

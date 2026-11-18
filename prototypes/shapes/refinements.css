@@ -1,0 +1,152 @@
+/* Four softer directions. Colour roles and typography remain approved meadow.
+   Ornaments belong to a component: icon badge, illustration, or button silhouette. */
+.shape-mode[data-shape-round="2"]{
+  --shape-button-radius:14px;--shape-panel-radius:22px;--shape-field-radius:12px;
+  --shape-tag-radius:10px;--shape-border:1px;--refined-card-radius:24px;
+}
+.shape-mode[data-shape-round="2"] .refinement-caption{font-size:12px;line-height:1.7;color:var(--muted);margin:12px 0 0;max-width:690px}
+.shape-mode[data-shape-round="2"] .play-hero{padding-top:29px}
+.shape-mode[data-shape-round="2"] .note-card{border-radius:var(--refined-card-radius);transform:none;box-shadow:none;border:1px solid color-mix(in srgb,var(--card-ink) 50%,transparent);padding:26px;transition:transform .16s,box-shadow .16s}
+.shape-mode[data-shape-round="2"] .note-card:hover{transform:translateY(-4px)}
+.shape-mode[data-shape-round="2"] .note-card:active{transform:translateY(1px)}
+.shape-mode[data-shape-round="2"] .refined-card-icon{display:grid;place-items:center;flex:none;width:39px;height:39px;border:1px solid currentColor;border-radius:12px}
+.shape-mode[data-shape-round="2"] .refined-card-icon .shape-icon{width:22px;height:22px}
+.shape-mode[data-shape-round="2"] .note-card h3{margin-top:20px}
+.shape-mode[data-shape-round="2"] .solid-link{min-height:49px;border-radius:var(--shape-button-radius);gap:16px}
+.shape-mode[data-shape-round="2"] .solid-link>.shape-icon{flex:none;width:20px;height:20px}
+.shape-mode[data-shape-round="2"] .control-buttons .solid-link{font-size:12px;gap:10px;padding:11px 15px}
+.shape-mode[data-shape-round="2"] .color-input,
+.shape-mode[data-shape-round="2"] .shape-select-wrap select,
+.shape-mode[data-shape-round="2"] .modal input,
+.shape-mode[data-shape-round="2"] .modal textarea{
+  border:1px solid var(--line);border-radius:var(--shape-field-radius);box-shadow:none;background:var(--bg);min-height:49px;
+}
+.shape-mode[data-shape-round="2"] .color-input:hover,
+.shape-mode[data-shape-round="2"] .shape-select-wrap select:hover{border-color:var(--secondary)}
+.shape-mode[data-shape-round="2"] .color-input:focus-visible,
+.shape-mode[data-shape-round="2"] .shape-select-wrap select:focus-visible,
+.shape-mode[data-shape-round="2"] .modal input:focus-visible,
+.shape-mode[data-shape-round="2"] .modal textarea:focus-visible{border-color:var(--focus);outline:3px solid var(--focus);outline-offset:3px}
+.shape-mode[data-shape-round="2"] .switch-label{min-height:44px}
+.shape-mode[data-shape-round="2"] .switch-track{width:46px;height:26px;border-radius:var(--shape-field-radius)}
+.shape-mode[data-shape-round="2"] .switch-track:before{width:18px;height:18px;top:3px;left:3px;border-radius:7px}
+.shape-mode[data-shape-round="2"] .switch-label>input:checked+.switch-track:before{transform:translateX(20px)}
+.shape-mode[data-shape-round="2"] .shape-check-mark{width:24px;height:24px;border-radius:7px}
+.shape-mode[data-shape-round="2"] .control-tabs{border-bottom:0;padding:5px;border:1px solid var(--line);border-radius:var(--shape-button-radius);width:max-content;max-width:100%;background:var(--bg)}
+.shape-mode[data-shape-round="2"] .control-tabs button{min-height:40px;padding:8px 19px;border-radius:calc(var(--shape-button-radius) - 5px)}
+.shape-mode[data-shape-round="2"] .control-tab-copy{min-height:52px}
+.shape-mode[data-shape-round="2"] .audio-play,
+.shape-mode[data-shape-round="2"] .chat-orb{border-radius:var(--shape-button-radius);min-width:37px;min-height:37px}
+.shape-mode[data-shape-round="2"] .audio-language button{border-radius:8px;min-height:30px}
+.shape-mode[data-shape-round="2"] .chat-launcher{border-radius:var(--shape-panel-radius);border:1px solid var(--line)}
+.shape-mode[data-shape-round="2"] .article-actions button{border:1px solid var(--line);border-radius:var(--shape-button-radius);padding:8px 12px;text-decoration:none}
+.shape-mode[data-shape-round="2"] .article-actions button:hover{background:var(--control);border-color:var(--secondary)}
+.shape-mode[data-shape-round="2"] .blog-entry-art{border-radius:var(--refined-card-radius);border:1px solid var(--line)}
+.shape-mode[data-shape-round="2"] .brand-symbol{border-radius:16px;transform:none}
+.shape-mode[data-shape-round="2"] .round-sticker{box-shadow:none;border:1px solid var(--sticker-ink);width:101px;height:83px;border-radius:21px;transform:rotate(5deg);font-size:9px}
+.shape-mode[data-shape-round="2"] .round-sticker>span{display:flex;justify-content:center;margin-top:7px}
+.shape-mode[data-shape-round="2"] .shape-hero{max-width:325px;margin-top:29px}
+.shape-mode[data-shape-round="2"] .shape-icon-item>span{border-radius:var(--shape-field-radius);border:1px solid var(--line)}
+.shape-mode[data-shape-round="2"] .prose blockquote{background:var(--panel);border-radius:0 var(--shape-panel-radius) var(--shape-panel-radius) 0;padding:22px;border-left:3px solid var(--secondary)}
+.shape-mode[data-shape-round="2"] .text-sheet blockquote{border-left:3px solid var(--secondary);border-radius:0 14px 14px 0}
+.shape-mode[data-shape-round="2"] .semantic-messages p>span{border-radius:6px}
+.shape-mode[data-shape-round="2"] .modal-close>.shape-icon{width:17px;height:17px}
+.shape-mode[data-shape-round="2"] #demo-chat button{display:grid;place-items:center;border-radius:var(--shape-field-radius)}
+.shape-mode[data-shape-round="2"] #demo-chat button>.shape-icon{width:20px;height:20px}
+.shape-mode[data-shape-round="2"] .play-hero h1 em:after{border-top:3px solid var(--accent);height:10px;border-radius:50%;transform:rotate(-1deg)}
+/* 01. Soft print: a tactile CTA, quiet rounded paper, stamp-like filled marks. */
+.shape-mode[data-shape=press]{--shape-button-radius:12px;--shape-panel-radius:20px;--shape-field-radius:10px;--shape-tag-radius:8px}
+.shape-mode[data-shape=press] .solid-link{border:2px solid var(--primary-ink);box-shadow:4px 4px 0 var(--primary-ink)}
+.shape-mode[data-shape=press] .solid-link:hover{transform:translate(-1px,-1px);box-shadow:5px 5px 0 var(--primary-ink)}
+.shape-mode[data-shape=press] .solid-link:active{transform:translate(3px,3px);box-shadow:1px 1px 0 var(--primary-ink)}
+.shape-mode[data-shape=press] .note-card{border:2px solid var(--card-ink);box-shadow:3px 4px 0 var(--card-ink)}
+.shape-mode[data-shape=press] .note-card:hover{box-shadow:4px 8px 0 var(--card-ink)}
+.shape-mode[data-shape=press] .note-card-top>.refined-card-icon{border:0;background:var(--card-ink);color:var(--card-0);border-radius:11px}
+.shape-mode[data-shape=press] .card-1 .note-card-top>.refined-card-icon{color:var(--card-1)}
+.shape-mode[data-shape=press] .card-2 .note-card-top>.refined-card-icon{color:var(--card-2)}
+.shape-mode[data-shape=press] .outline-button{border:2px solid var(--line);box-shadow:2px 2px 0 var(--line)}
+.shape-mode[data-shape=press] .color-input,.shape-mode[data-shape=press] .shape-select-wrap select{border-width:2px}
+.shape-mode[data-shape=press] .control-tabs button[aria-pressed=true]{box-shadow:0 2px 0 var(--primary-active)}
+.shape-mode[data-shape=press] .round-sticker{border-radius:18px;box-shadow:3px 3px 0 var(--sticker-ink)}
+.shape-mode[data-shape=press] .shape-icon-item>span{border-width:2px;box-shadow:2px 3px 0 var(--line)}
+.shape-mode[data-shape=press] .modal{box-shadow:5px 5px 0 var(--line)}
+/* 02. Bookmark: one repeated, generous curve; details follow the book metaphor. */
+.shape-mode[data-shape=bookmark]{--shape-button-radius:25px 9px 25px 9px;--shape-panel-radius:12px 38px 12px 12px;--shape-field-radius:10px 22px 10px 10px;--shape-tag-radius:6px 14px 6px 6px;--refined-card-radius:12px 45px 12px 12px}
+.shape-mode[data-shape=bookmark] .solid-link{border:2px solid var(--primary-ink);box-shadow:0 4px 0 var(--primary-ink)}
+.shape-mode[data-shape=bookmark] .solid-link:active{transform:translateY(3px);box-shadow:0 1px 0 var(--primary-ink)}
+.shape-mode[data-shape=bookmark] .solid-link>.shape-icon{border-left:1px solid currentColor;padding-left:12px;width:32px;height:22px;box-sizing:content-box}
+.shape-mode[data-shape=bookmark] .refined-card-icon{border-radius:7px 20px 7px 7px;width:43px;height:43px}
+.shape-mode[data-shape=bookmark] .note-card-top{padding-right:3px}
+.shape-mode[data-shape=bookmark] .note-card-bottom{border-top:1px solid color-mix(in srgb,var(--card-ink) 35%,transparent);padding-top:13px;margin-top:21px}
+.shape-mode[data-shape=bookmark] .control-tabs{border-radius:12px 23px 12px 12px}
+.shape-mode[data-shape=bookmark] .control-tabs button{border-radius:7px 18px 7px 7px}
+.shape-mode[data-shape=bookmark] .shape-check-mark{border-radius:4px 10px 4px 4px}
+.shape-mode[data-shape=bookmark] .switch-track{border-radius:8px 14px 8px 8px}
+.shape-mode[data-shape=bookmark] .switch-track:before{border-radius:4px 9px 4px 4px}
+.shape-mode[data-shape=bookmark] .brand-symbol{border-radius:7px 22px 7px 7px}
+.shape-mode[data-shape=bookmark] .round-sticker{border-radius:10px 30px 10px 10px;transform:none}
+.shape-mode[data-shape=bookmark] .chat-launcher{border-radius:10px 26px 10px 10px}
+.shape-mode[data-shape=bookmark] .play-hero h1 em:after{border-radius:0 0 0 12px;height:6px;border-top-width:3px}
+/* 03. Outline & dot: circular affordances repeated consistently at action points. */
+.shape-mode[data-shape=orbit]{--shape-button-radius:999px;--shape-panel-radius:29px;--shape-field-radius:20px;--shape-tag-radius:999px;--refined-card-radius:36px}
+.shape-mode[data-shape=orbit] .solid-link{border:2px solid var(--primary-ink);box-shadow:0 0 0 2px var(--primary);padding:7px 9px 7px 22px;min-height:53px;gap:17px}
+.shape-mode[data-shape=orbit] .solid-link>.shape-icon{color:var(--primary);background:var(--primary-ink);border-radius:50%;width:33px;height:33px;padding:8px;box-sizing:border-box}
+.shape-mode[data-shape=orbit] .solid-link:hover>.shape-icon{transform:rotate(-25deg)}
+.shape-mode[data-shape=orbit] .control-buttons .solid-link{padding:6px 7px 6px 16px;gap:10px}
+.shape-mode[data-shape=orbit] .control-buttons .solid-link>.shape-icon{width:28px;height:28px;padding:6px}
+.shape-mode[data-shape=orbit] .note-card{border-width:2px}
+.shape-mode[data-shape=orbit] .refined-card-icon{border-radius:50%;width:40px;height:40px}
+.shape-mode[data-shape=orbit] .note-card-top>span:first-child{border:1px solid currentColor;border-radius:99px;padding:5px 10px}
+.shape-mode[data-shape=orbit] .note-card-bottom>span:last-child{border:1px solid currentColor;border-radius:50%;width:33px;height:33px;display:grid;place-items:center}
+.shape-mode[data-shape=orbit] .note-card-bottom>span:last-child .shape-icon{width:19px;height:19px}
+.shape-mode[data-shape=orbit] .color-input,.shape-mode[data-shape=orbit] .shape-select-wrap select{border-width:2px}
+.shape-mode[data-shape=orbit] .control-tabs button{border-radius:999px}
+.shape-mode[data-shape=orbit] .switch-track{border-radius:99px}
+.shape-mode[data-shape=orbit] .switch-track:before{border-radius:50%;background:none;border:4px solid var(--muted);box-sizing:border-box}
+.shape-mode[data-shape=orbit] .switch-label>input:checked+.switch-track:before{background:none;border-color:var(--primary-ink)}
+.shape-mode[data-shape=orbit] .shape-check-mark,.shape-mode[data-shape=orbit] .semantic-messages p>span{border-radius:50%}
+.shape-mode[data-shape=orbit] .shape-icon-item>span{border-radius:50%;border-width:2px}
+.shape-mode[data-shape=orbit] .round-sticker{border-radius:50%;width:96px;height:96px;transform:none;border:3px double var(--sticker-ink)}
+.shape-mode[data-shape=orbit] .audio-play,.shape-mode[data-shape=orbit] .chat-orb,.shape-mode[data-shape=orbit] .brand-symbol{border-radius:50%}
+/* 04. A ticket to talk: small, symmetrical notches only on complete silhouettes.
+   Pseudo-element masks preserve the real button's focus outline. */
+.shape-mode[data-shape=ticket]{--shape-button-radius:12px;--shape-panel-radius:20px;--shape-field-radius:12px;--shape-tag-radius:7px;--refined-card-radius:21px}
+.shape-mode[data-shape=ticket] .solid-link{background:transparent;border-color:transparent;border-radius:12px;box-shadow:none;padding-inline:27px}
+.shape-mode[data-shape=ticket] .solid-link:before{content:'';position:absolute;inset:-1px;z-index:-1;border-radius:12px;background:var(--primary);mask:radial-gradient(circle 6px at 0 50%,transparent 5.5px,#000 6px) left,radial-gradient(circle 6px at 100% 50%,transparent 5.5px,#000 6px) right;mask-size:51% 100%;mask-repeat:no-repeat}
+.shape-mode[data-shape=ticket] .solid-link:hover:before{background:var(--primary-hover)}
+.shape-mode[data-shape=ticket] .solid-link:active:before{background:var(--primary-active)}
+.shape-mode[data-shape=ticket] .solid-link>.shape-icon{border-left:1px solid currentColor;padding-left:11px;width:31px;box-sizing:content-box}
+.shape-mode[data-shape=ticket] .control-buttons .solid-link{padding-inline:21px}
+.shape-mode[data-shape=ticket] .note-card{padding-bottom:0;overflow:hidden}
+.shape-mode[data-shape=ticket] .note-card-bottom{margin:23px -26px 0;padding:13px 26px;background:color-mix(in srgb,var(--card-ink) 8%,transparent);border-top:1px solid color-mix(in srgb,var(--card-ink) 30%,transparent);min-height:58px}
+.shape-mode[data-shape=ticket] .refined-card-icon{border-radius:9px;background:color-mix(in srgb,var(--card-ink) 10%,transparent);border:0}
+.shape-mode[data-shape=ticket] .outline-button{border-radius:12px}
+.shape-mode[data-shape=ticket] .shape-icon-item>span{border-radius:12px;box-shadow:inset 0 -4px 0 color-mix(in srgb,var(--line) 20%,transparent)}
+.shape-mode[data-shape=ticket] .switch-track{border-radius:7px}
+.shape-mode[data-shape=ticket] .switch-track:before{border-radius:4px}
+.shape-mode[data-shape=ticket] .round-sticker{border-radius:12px;transform:rotate(4deg);border-bottom:4px solid var(--sticker-ink)}
+.shape-mode[data-shape=ticket] .audio-play{border-radius:10px;border:1px solid var(--accent)}
+.shape-mode[data-shape=ticket] .article-toolbox{box-shadow:0 5px 0 color-mix(in srgb,var(--line) 45%,transparent)}
+@media(max-width:760px){
+  .shape-mode[data-shape-round="2"] .refinement-caption{font-size:11px;line-height:1.7;margin-top:9px}
+  .shape-mode[data-shape-round="2"] .play-hero{padding-top:24px}
+  .shape-mode[data-shape-round="2"] .shape-hero{max-width:63%;width:215px;margin-top:25px}
+  .shape-mode[data-shape-round="2"] .round-sticker{width:79px;height:74px;font-size:7px;left:2px;bottom:83px}
+  .shape-mode[data-shape=orbit] .round-sticker{width:79px;height:79px}
+  .shape-mode[data-shape-round="2"] .note-card{padding:23px;min-height:295px}
+  .shape-mode[data-shape-round="2"] .note-card h3{font-size:29px}
+  .shape-mode[data-shape=ticket] .note-card{padding-bottom:0}
+  .shape-mode[data-shape=ticket] .note-card-bottom{margin-inline:-23px;padding-inline:23px}
+  .shape-mode[data-shape-round="2"] .solid-link{gap:12px;padding:12px 18px}
+  .shape-mode[data-shape=orbit] .solid-link{padding:7px 8px 7px 18px}
+  .shape-mode[data-shape=ticket] .solid-link{padding-inline:24px}
+  .shape-mode[data-shape-round="2"] .color-input,.shape-mode[data-shape-round="2"] .shape-select-wrap select{font-size:16px}
+  .shape-mode[data-shape-round="2"] .article-actions{justify-content:flex-start;gap:10px}
+  .shape-mode[data-shape-round="2"] .article-actions button{font-size:10px;padding:8px 10px}
+  .shape-mode[data-shape-round="2"] .refined-card-icon{width:36px;height:36px}
+  .shape-mode[data-shape-round="2"] .form-switcher .prototype-label strong{font-size:11px}
+}
+@media(max-width:370px){
+  .shape-mode[data-shape-round="2"] .form-switcher .prototype-label strong{font-size:10px}
+  .shape-mode[data-shape-round="2"] .control-tabs button{padding-inline:15px}
+}

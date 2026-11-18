@@ -1,0 +1,698 @@
+---
+import "../styles/site.css";
+import stylesheet from "../styles/site.css?raw";
+import BackgroundSurface from "../components/BackgroundSurface.astro";
+import Brand from "../components/Brand.astro";
+import Icon from "../components/Icon.astro";
+import SocialIcon from "../components/SocialIcon.astro";
+import ArticleQuote from "../components/ArticleQuote.astro";
+import Callout from "../components/Callout.astro";
+import { site } from "../config/site";
+
+// Read values from the actual stylesheet instead of maintaining a second palette.
+const tokens = new Map(
+  [...stylesheet.matchAll(/(--[\w-]+):\s*(#[a-fA-F0-9]+);/g)].map((match) => [
+    match[1],
+    match[2],
+  ]),
+);
+const palette = [
+  ["--bg", "Tło strony", "Leśna zieleń. Podstawa wszystkich widoków."],
+  ["--panel", "Powierzchnia", "Hero, wyróżnienia i spokojne panele."],
+  ["--control", "Kontrolki", "Przyciski drugorzędne i kapsuła zakładek."],
+  ["--text", "Tekst główny", "Nagłówki i treść. Kremowy zamiast bieli."],
+  ["--muted", "Tekst pomocniczy", "Bio, opisy, daty i podpisy."],
+  ["--accent", "Akcent", "Główne CTA, wyróżnienia i cudzysłów."],
+  ["--link", "Linki", "Działania drugorzędne i odsyłacze w tekście."],
+  ["--secondary", "Szałwia", "Piktogramy i detale ilustracji."],
+  [
+    "--line",
+    "Obramowania",
+    "Cienkie ramki komponentów. Ograniczamy separatory.",
+  ],
+  ["--ink", "Ciemny tekst", "Napisy na miodowych i jasnych powierzchniach."],
+  ["--focus", "Fokus", "Widoczny obrys przy obsłudze klawiaturą."],
+];
+const typeScale = [
+  [
+    "Hero",
+    ".hero h1",
+    "64–89 px / 39–60 px¹",
+    "700",
+    "1.08",
+    "Największa myśl na stronie głównej.",
+  ],
+  [
+    "Tytuł artykułu",
+    ".article-header h1",
+    "48–76 px / 42–62 px",
+    "700",
+    "1.05 / 1.08",
+    "Jeden H1 na stronę.",
+  ],
+  [
+    "Tytuł listy",
+    ".blog-intro h1",
+    "49–76 px",
+    "700",
+    "1.08",
+    "Dwuwierszowy, z miodowym akcentem.",
+  ],
+  [
+    "Nagłówek w artykule",
+    ".prose h2",
+    "32 / 28 px",
+    "650",
+    "1.2",
+    "Sekcje i automatyczny spis treści.",
+  ],
+  [
+    "Podsekcja",
+    ".prose h3",
+    "25 px",
+    "650",
+    "1.15",
+    "Hierarchia wewnątrz sekcji.",
+  ],
+  [
+    "Cytat",
+    ".quote-text",
+    "29–38 px",
+    "650",
+    "1.28",
+    "Myśl na pierwszym planie, na środku.",
+  ],
+  [
+    "Treść artykułu",
+    ".prose",
+    "18 / 17 px",
+    "400",
+    "1.9",
+    "Hanken Grotesk, spokojny rytm czytania.",
+  ],
+  [
+    "Lead",
+    ".article-lead",
+    "20 / 17 px",
+    "400",
+    "1.7 / 1.8",
+    "Opis pod tytułem, kolor --muted.",
+  ],
+  [
+    "Tytuł karty",
+    ".card-title",
+    "28 / 21 px",
+    "650",
+    "1.14",
+    "Bricolage Grotesque.",
+  ],
+  [
+    "Etykiety",
+    ".eyebrow",
+    "10 px, lokalnie 7–12 px",
+    "400",
+    "1.6",
+    "Wersaliki, tracking 0.1em. Bez długich treści.",
+  ],
+  [
+    "Kod",
+    ".prose pre",
+    "13 px",
+    "400",
+    "1.8",
+    "IBM Plex Mono, zawijanie długich linii.",
+  ],
+];
+---
+
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Design system · {site.domain}</title>
+    <meta
+      name="description"
+      content="Wewnętrzny przegląd palety, typografii, komponentów i zasad projektu kolodziejczak.me."
+    />
+    <meta name="robots" content="noindex,nofollow" />
+    <meta name="theme-color" content="#0e241d" />
+    <link rel="canonical" href={new URL("/design/", site.origin)} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  </head>
+  <body data-page="design">
+    <BackgroundSurface />
+    <a class="skip-link" href="#main">
+      Przejdź do treści
+    </a>
+    <header class="design-top wrap">
+      <Brand locale="pl" />
+      <span class="eyebrow">Notatnik projektu · 01</span>
+    </header>
+    <main id="main" class="wrap design-page">
+      <header class="design-intro">
+        <span class="eyebrow">Leśna pracownia</span>
+        <h1>
+          Spójność tkwi
+          <br />w <em>szczegółach.</em>
+        </h1>
+        <p>
+          Paleta, litery i drobne zasady, które składają się na {site.domain}.
+          Żywy przegląd korzystający z tych samych stylów i komponentów co
+          strona.
+        </p>
+        <small>
+          Wewnętrzna strona pod znanym adresem. Bez linków z publicznej
+          nawigacji, bez indeksowania i bez wpisu w sitemapie.
+        </small>
+      </header>
+      <nav class="design-nav" aria-label="Sekcje design systemu">
+        <a href="#palette">01 Paleta</a>
+        <a href="#type">02 Typografia</a>
+        <a href="#components">03 Komponenty</a>
+        <a href="#layout">04 Układ i ruch</a>
+        <a href="#maintenance">05 Utrzymanie</a>
+      </nav>
+
+      <section
+        id="palette"
+        class="design-section"
+        aria-labelledby="palette-title"
+      >
+        <span class="eyebrow">01 / Kolor</span>
+        <h2 id="palette-title">Las, papier i odrobina miodu.</h2>
+        <p>
+          Kolory poniżej są odczytywane przy budowaniu z{" "}
+          <code>src/styles/site.css</code>. Używaj tokenów, zamiast wprowadzać
+          kolejne odcienie.
+        </p>
+        <div class="swatches">
+          {palette.map(([token, name, use]) => (
+            <article class="swatch">
+              <div
+                class="swatch-color"
+                style={`background:var(${token})`}
+                aria-hidden="true"
+              ></div>
+              <div class="swatch-info">
+                <h3>{name}</h3>
+                <code>{token}</code>
+                <strong>{tokens.get(token)?.toUpperCase()}</strong>
+                <p>{use}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+        <p class="design-note">
+          Akcent miodowy łączymy z tekstem --ink. Na ciemnym tle używamy kremu i
+          szałwii. Kolor nie zastępuje etykiety ani stanu zaznaczenia. Drobne
+          wyjątki w obecnym CSS: karta #132a20, ramka karty #3c5543, hash
+          #98a28b.
+        </p>
+      </section>
+
+      <section id="type" class="design-section" aria-labelledby="type-title">
+        <span class="eyebrow">02 / Typografia</span>
+        <h2 id="type-title">Trzy kroje. Każdy ma zadanie.</h2>
+        <div class="font-specimens">
+          <article>
+            <span class="eyebrow">Nagłówki / --heading</span>
+            <h3 class="font-display">
+              Bricolage
+              <br />
+              Grotesque
+            </h3>
+            <p>
+              H1–H3, logotyp i cytaty. Wagi 650–700, tracking od -0.04em do
+              -0.06em. Charakter wyrazisty, bez pogrubiania całych akapitów.
+            </p>
+            <small>Lokalny font zmienny 200–800 · OFL</small>
+          </article>
+          <article>
+            <span class="eyebrow">Czytanie / --font</span>
+            <h3 class="font-body">Hanken Grotesk</h3>
+            <p>
+              Treść, bio, opisy, nawigacja i przyciski. Zwykle 400; 600–650 dla
+              krótkich wyróżnień. Osobny plik kursywy. Łączy kropki między
+              programowaniem, filmem i AI.
+            </p>
+            <small>Lokalny font zmienny 100–900 · OFL</small>
+          </article>
+          <article>
+            <span class="eyebrow">Kod / Plex Code</span>
+            <h3 class="font-code">IBM Plex Mono</h3>
+            <pre><code>const curiosity = true;
+// Zażółć gęślą jaźń.
+console.log("Cześć!");</code></pre>
+            <p>
+              Bloki kodu i kod wewnątrz tekstu. Waga 400. Font kodu ładujemy na
+              artykułach i w tym notatniku.
+            </p>
+            <small>Lokalny font statyczny · OFL</small>
+          </article>
+        </div>
+        <div
+          class="design-table"
+          tabindex="0"
+          role="region"
+          aria-label="Tabela rozmiarów typografii"
+        >
+          <table>
+            <thead>
+              <tr>
+                <th>Rola</th>
+                <th>Desktop / telefon</th>
+                <th>Waga</th>
+                <th>Interlinia</th>
+                <th>Zastosowanie</th>
+              </tr>
+            </thead>
+            <tbody>
+              {typeScale.map(([role, selector, size, weight, leading, use]) => (
+                <tr>
+                  <th scope="row">
+                    {role}
+                    <code>{selector}</code>
+                  </th>
+                  <td>{size}</td>
+                  <td>{weight}</td>
+                  <td>{leading}</td>
+                  <td>{use}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <p class="design-note">
+          ¹ Do 370 px hero ma 36 px. Główny breakpoint: 760 px. Zakresy
+          oznaczają skalowanie przez clamp(). Dokładne reguły i wyjątki
+          pozostają w site.css. Licencje fontów: public/fonts/*-OFL.txt.
+        </p>
+      </section>
+
+      <section
+        id="components"
+        class="design-section"
+        aria-labelledby="components-title"
+      >
+        <span class="eyebrow">03 / Komponenty</span>
+        <h2 id="components-title">Znajome gesty.</h2>
+        <p>
+          Poniżej rzeczywiste komponenty i klasy strony. Fokus można sprawdzić
+          klawiszem Tab; przyciski kopiowania cytatu działają jak w artykule.
+        </p>
+        <div class="component-demo">
+          <span class="eyebrow">Działania</span>
+          <div class="demo-actions">
+            <a class="button button-primary" href="#type">
+              Główne działanie <Icon />
+            </a>
+            <a class="button button-secondary" href="#palette">
+              Drugorzędne <Icon name="link" />
+            </a>
+            <button class="button button-secondary" disabled>
+              Wyłączone
+            </button>
+          </div>
+          <p class="design-note">
+            Przyciski: promień 16 px, wysokość min. 48 px; filtry min. 44 px.
+            Fokus: obrys 3 px w --focus, odstęp 5 px.
+          </p>
+        </div>
+        <div class="component-demo">
+          <span class="eyebrow">Sociale / piktogram i nazwa</span>
+          <div class="contact-channels">
+            <div>
+              {site.contacts.map((contact) => (
+                <a href={contact.url!} target="_blank" rel="noreferrer">
+                  <SocialIcon name={contact.name} />
+                  <span class="social-name">{contact.name}</span>
+                  <Icon class="social-external" />
+                </a>
+              ))}
+            </div>
+          </div>
+          <p class="design-note">
+            Kolejność: Facebook, Telegram, LinkedIn, WhatsApp. Nazwa zawsze obok
+            piktogramu.
+          </p>
+        </div>
+        <div class="prose demo-reading" data-reading-content>
+          <h3>Nagłówki i cytaty</h3>
+          <p>
+            Treść jest wyrównana do lewej, najważniejsze myśli mogą dostać
+            osobną, wycentrowaną przestrzeń. Hash pozostaje z ostatnim wyrazem
+            nagłówka.
+          </p>
+          <ArticleQuote id="design-quote">
+            <p>Ciekawość to dobry początek.</p>
+          </ArticleQuote>
+          <Callout title="Mały eksperyment">
+            <p>
+              Jedno wyróżnienie, jedna myśl. Bez dokładania kolejnej ramki,
+              jeśli wystarczy odstęp.
+            </p>
+          </Callout>
+        </div>
+      </section>
+
+      <section
+        id="layout"
+        class="design-section"
+        aria-labelledby="layout-title"
+      >
+        <span class="eyebrow">04 / Przestrzeń i ruch</span>
+        <h2 id="layout-title">Najpierw oddech.</h2>
+        <div class="rules-grid">
+          <article>
+            <h3>Szerokości</h3>
+            <p>
+              Strona: max. 1160 px. Tytuł, zdjęcie i treść artykułu: max. 800
+              px, wspólna oś. Odtwarzacz: max. 560 px. Stopka przy dolnej
+              krawędzi także na krótkich stronach.
+            </p>
+          </article>
+          <article>
+            <h3>Rytm i ramki</h3>
+            <p>
+              Najczęściej 8, 12, 16, 24, 32, 40 px. Hero: promień 44 / 29 px.
+              Karta: 22 / 18 px. Callout: 26 px. Linie są oszczędne, nagłówek i
+              kontakt bez separatorów.
+            </p>
+          </article>
+          <article>
+            <h3>Tło i ilustracja</h3>
+            <p>
+              Siatka 32 × 32 px przy kryciu 0.02. Gradient płynie przez 32 s.
+              Obserwator: czysty profil A, 80 × 100 / 64 × 80 px, stopy na
+              górnej ramce hero.
+            </p>
+          </article>
+          <article>
+            <h3>Dostępność</h3>
+            <p>
+              Ruch respektuje prefers-reduced-motion. Głowa zatrzymuje się poza
+              ekranem i w ukrytej karcie. Stan wybrany jest opisany także
+              semantycznie. Treści działają bez JavaScriptu.
+            </p>
+          </article>
+        </div>
+      </section>
+      <section
+        id="maintenance"
+        class="design-section"
+        aria-labelledby="maintenance-title"
+      >
+        <span class="eyebrow">05 / Źródła</span>
+        <h2 id="maintenance-title">Jeden punkt odniesienia.</h2>
+        <ul class="maintenance-list">
+          <li>
+            <code>src/styles/site.css</code>: tokeny, typografia, układ, stany i
+            breakpointy.
+          </li>
+          <li>
+            <code>src/components/</code>: wspólne komponenty, w tym
+            HeroObserver, ArticleQuote i SocialIcon.
+          </li>
+          <li>
+            <code>src/config/site.ts</code>: bio, kontakty, domena i status
+            publikacji.
+          </li>
+          <li>
+            <code>docs/*study.md</code>: wybrane warianty i odnośniki do
+            archiwów prototypów.
+          </li>
+        </ul>
+        <p>
+          Przy zmianie skali lub zasad zaktualizuj też opis na tej stronie.
+          Sprawdź 320, 390, 844, 1440 i 3840 px, klawiaturę oraz ograniczenie
+          animacji. Warianty robocze pozostają poza kodem właściwej strony.
+        </p>
+      </section>
+    </main>
+    <footer class="design-footer wrap">
+      {site.domain} · Notatnik projektu, poza publiczną nawigacją.
+    </footer>
+    <script>
+      import "../scripts/site";
+    </script>
+  </body>
+</html>
+
+<style>
+  .design-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    padding-block: 28px;
+  }
+  .design-top > .eyebrow {
+    color: var(--muted);
+    text-align: right;
+  }
+  .design-page {
+    padding-block: 64px 80px;
+  }
+  .design-intro {
+    max-width: 800px;
+  }
+  .design-intro > .eyebrow,
+  .design-section > .eyebrow {
+    color: var(--accent);
+  }
+  .design-intro h1 {
+    font-size: clamp(44px, 6vw, 82px);
+    line-height: 1.06;
+    margin-block: 24px;
+  }
+  .design-intro p {
+    font-size: 19px;
+    color: var(--muted);
+    max-width: 650px;
+  }
+  .design-intro small {
+    display: block;
+    color: var(--muted);
+    margin-top: 20px;
+  }
+  .design-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 24px;
+    margin-block: 40px 20px;
+    color: var(--link);
+    font-size: 14px;
+  }
+  .design-nav a {
+    padding-block: 8px;
+    text-decoration: underline;
+  }
+  .design-section {
+    padding-top: 64px;
+    scroll-margin-top: 28px;
+  }
+  .design-section > h2 {
+    font-size: clamp(28px, 3vw, 40px);
+    margin-block: 12px 20px;
+  }
+  .design-section > p {
+    max-width: 800px;
+    color: var(--muted);
+    margin-bottom: 24px;
+  }
+  .swatches {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 16px;
+  }
+  .swatch {
+    overflow: hidden;
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    background: var(--panel);
+  }
+  .swatch-color {
+    height: 100px;
+    border-bottom: 1px solid var(--line);
+  }
+  .swatch-info {
+    padding: 18px;
+  }
+  .swatch h3 {
+    font-size: 21px;
+    margin-bottom: 10px;
+  }
+  .swatch code,
+  .swatch strong {
+    display: block;
+    font-size: 13px;
+  }
+  .swatch strong {
+    font-weight: 400;
+    color: var(--muted);
+  }
+  .swatch p {
+    font-size: 13px;
+    color: var(--muted);
+    margin-top: 12px;
+  }
+  .design-note {
+    font-size: 13px;
+    color: var(--muted);
+    margin-block: 18px 0;
+  }
+  .font-specimens {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+    margin-bottom: 32px;
+  }
+  .font-specimens article,
+  .component-demo,
+  .rules-grid article {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 24px;
+    padding: 24px;
+  }
+  .font-specimens h3 {
+    font-size: 34px;
+    margin-block: 22px;
+  }
+  .font-specimens p {
+    font-size: 15px;
+    color: var(--muted);
+  }
+  .font-specimens small {
+    display: block;
+    color: var(--secondary);
+    margin-top: 20px;
+  }
+  .font-body {
+    font-family: var(--font);
+    letter-spacing: -0.02em;
+  }
+  .font-code,
+  code,
+  pre {
+    font-family: "Plex Code", monospace;
+  }
+  .font-specimens .font-code {
+    font-size: 25px;
+  }
+  pre {
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+    font-size: 13px;
+    margin: 0 0 20px;
+  }
+  code {
+    overflow-wrap: anywhere;
+    font-size: 0.85em;
+  }
+  .design-table {
+    overflow: auto;
+    border: 1px solid var(--line);
+    border-radius: 20px;
+  }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    min-width: 700px;
+    font-size: 14px;
+  }
+  th,
+  td {
+    text-align: left;
+    vertical-align: top;
+    padding: 16px;
+    border-bottom: 1px solid var(--line);
+  }
+  thead {
+    background: var(--control);
+  }
+  tbody th {
+    font-weight: 500;
+  }
+  th code {
+    display: block;
+    color: var(--muted);
+    font-weight: 400;
+  }
+  .component-demo {
+    margin-top: 20px;
+  }
+  .demo-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 20px;
+  }
+  .component-demo .contact-channels {
+    margin-top: 20px;
+  }
+  .demo-reading {
+    max-width: 800px;
+    margin: 40px auto 0;
+  }
+  .rules-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+  }
+  .rules-grid h3 {
+    font-size: 24px;
+    margin-bottom: 14px;
+  }
+  .rules-grid p {
+    color: var(--muted);
+  }
+  .maintenance-list {
+    padding-left: 20px;
+    color: var(--muted);
+  }
+  .maintenance-list li {
+    margin-bottom: 12px;
+  }
+  .design-footer {
+    padding-bottom: 30px;
+    color: var(--muted);
+    font-size: 12px;
+  }
+  @media (max-width: 1000px) {
+    .swatches {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+    .font-specimens {
+      grid-template-columns: 1fr;
+    }
+  }
+  @media (max-width: 760px) {
+    .design-top {
+      flex-wrap: wrap;
+    }
+    .design-page {
+      padding-top: 36px;
+    }
+    .design-intro p {
+      font-size: 17px;
+    }
+    .swatches,
+    .rules-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .swatch-info {
+      padding: 12px;
+    }
+    .swatch h3 {
+      font-size: 18px;
+    }
+    .rules-grid {
+      grid-template-columns: 1fr;
+    }
+    .design-section {
+      padding-top: 44px;
+    }
+  }
+</style>

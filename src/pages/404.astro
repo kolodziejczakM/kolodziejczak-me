@@ -1,0 +1,30 @@
+---
+import "../styles/site.css";
+import BackgroundSurface from "../components/BackgroundSurface.astro";
+---
+
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>404 · kolodziejczak.me</title>
+    <meta name="robots" content="noindex" />
+  </head>
+  <body>
+    <BackgroundSurface />
+    <main class="language-home">
+      <span class="eyebrow">404</span>
+      <h1>Ta ścieżka prowadzi donikąd.</h1>
+      <p lang="en">This path leads nowhere.</p>
+      <div>
+        <a class="button button-primary" href="/pl/">
+          Strona główna
+        </a>
+        <a class="button button-secondary" href="/en/" lang="en">
+          Home
+        </a>
+      </div>
+    </main>
+  </body>
+</html>

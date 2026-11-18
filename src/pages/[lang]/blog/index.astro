@@ -1,0 +1,107 @@
+---
+import SiteLayout from "../../../layouts/SiteLayout.astro";
+import ArticleCard from "../../../components/ArticleCard.astro";
+import { articlesFor } from "../../../lib/articles";
+import {
+  locales,
+  otherLocale,
+  blogPath,
+  categories,
+  categoryLabel,
+  text,
+  type Locale,
+} from "../../../lib/i18n";
+export function getStaticPaths() {
+  return locales.map((locale) => ({
+    params: { lang: locale },
+    props: { locale },
+  }));
+}
+interface Props {
+  locale: Locale;
+}
+const { locale } = Astro.props;
+const articles = await articlesFor(locale);
+const t = (pl: string, en: string) => text(locale, pl, en);
+const description = t(
+  "Miejsce na dłuższą myśl i nowe spojrzenie. Czasem analiza, czasem historia z własnego projektu, czasem zapis eksperymentu.",
+  "Room for a longer thought and a fresh perspective. Sometimes an analysis, sometimes a story from one of my projects, sometimes notes from an experiment.",
+);
+---
+
+<SiteLayout
+  locale={locale}
+  page="blog"
+  title={t("Artykuły", "Articles")}
+  description={description}
+  otherPath={blogPath(otherLocale(locale))}
+>
+  <main id="main" class="wrap blog-page">
+    <header class="blog-intro">
+      <span class="eyebrow">
+        {t(
+          "PROGRAMOWANIE, FILM, AI I TO, CO POMIĘDZY",
+          "PROGRAMMING, FILMMAKING, AI AND EVERYTHING IN BETWEEN",
+        )}
+      </span>
+      <h1>
+        {t("Artykuły.", "Articles.")}
+        <br />
+        <em>{t("Z ciekawości.", "Out of curiosity.")}</em>
+      </h1>
+      <p>{description}</p>
+      {articles.some(({ data }) => data.sample) && (
+        <small>
+          {t(
+            "Przykładowe publikacje pokazujące docelowy układ strony.",
+            "Sample articles showing the selected page design.",
+          )}
+        </small>
+      )}
+    </header>
+    <div
+      class="blog-filters"
+      data-filters
+      hidden
+      role="group"
+      aria-label={t("Tematy artykułów", "Article topics")}
+    >
+      <button
+        class="button button-secondary"
+        type="button"
+        data-filter="all"
+        aria-pressed="true"
+      >
+        {t("Wszystko", "All")}{" "}
+        <small>{String(articles.length).padStart(2, "0")}</small>
+      </button>
+      {categories.map((category) => (
+        <button
+          class="button button-secondary"
+          type="button"
+          data-filter={category}
+          aria-pressed="false"
+        >
+          {categoryLabel(category, locale)}
+        </button>
+      ))}
+    </div>
+    <p
+      class="sr-only"
+      data-filter-status
+      aria-live="polite"
+      data-format={t("Liczba artykułów:", "Articles shown:")}
+    ></p>
+    <p class="filter-empty" data-filter-empty role="status" hidden>
+      {t(
+        "Jeszcze nie ma tu artykułów. Zajrzyj do pozostałych tematów.",
+        "No articles here yet. Explore the other topics.",
+      )}
+    </p>
+    <div class="article-cards blog-list">
+      {articles.map((article) => (
+        <ArticleCard article={article} locale={locale} headingLevel="h2" />
+      ))}
+    </div>
+  </main>
+</SiteLayout>

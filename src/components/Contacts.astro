@@ -1,0 +1,54 @@
+---
+import { site } from "../config/site";
+import { text, type Locale } from "../lib/i18n";
+import Icon from "./Icon.astro";
+import SocialIcon from "./SocialIcon.astro";
+interface Props {
+  locale: Locale;
+}
+const { locale } = Astro.props;
+const t = (pl: string, en: string) => text(locale, pl, en);
+---
+
+<section class="contacts" id="contact" aria-labelledby="contact-title">
+  <div>
+    <span class="eyebrow">
+      {t(
+        "INTERNET JEST FAJNIEJSZY Z LUDŹMI",
+        "THE INTERNET IS BETTER WITH PEOPLE",
+      )}
+    </span>
+    <h2 id="contact-title">{t("Złapmy kontakt.", "Let’s connect.")}</h2>
+    <p>
+      {t(
+        "Dobra rozmowa zaczyna się od zwykłego „cześć”.",
+        "A good conversation starts with a simple hello.",
+      )}
+    </p>
+  </div>
+  <div class="contact-channels">
+    <span class="sample-label">
+      {t("Kanały kontaktu", "Contact channels")}
+    </span>
+    <div>
+      {site.contacts.map((contact) =>
+        contact.url ? (
+          <a href={contact.url} target="_blank" rel="noreferrer">
+            <SocialIcon name={contact.name} />
+            <span class="social-name">{contact.name}</span>
+            <Icon class="social-external" />
+          </a>
+        ) : (
+          <span
+            class="pending-contact"
+            aria-label={`${contact.name} — ${t("adres do uzupełnienia", "link to be added")}`}
+          >
+            <SocialIcon name={contact.name} />
+            <span class="social-name">{contact.name}</span>
+            <Icon class="social-external" />
+          </span>
+        ),
+      )}
+    </div>
+  </div>
+</section>

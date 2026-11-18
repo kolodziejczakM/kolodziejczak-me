@@ -1,0 +1,49 @@
+---
+import Brand from "./Brand.astro";
+import {
+  text,
+  homePath,
+  blogPath,
+  otherLocale,
+  type Locale,
+} from "../lib/i18n";
+interface Props {
+  locale: Locale;
+  page: "home" | "blog" | "article";
+  otherPath: string;
+}
+const { locale, page, otherPath } = Astro.props;
+const t = (pl: string, en: string) => text(locale, pl, en);
+---
+
+<header class="site-header wrap">
+  <Brand locale={locale} />
+  <nav aria-label={t("Nawigacja główna", "Main navigation")}>
+    <a
+      href={homePath(locale)}
+      class:list={{ active: page === "home" }}
+      aria-current={page === "home" ? "page" : undefined}
+    >
+      {t("O mnie", "About")}
+    </a>
+    <a
+      href={blogPath(locale)}
+      class:list={{ active: page !== "home" }}
+      aria-current={
+        page === "blog" ? "page" : page === "article" ? "location" : undefined
+      }
+    >
+      {t("Artykuły", "Articles")}
+    </a>
+    <a href={`${homePath(locale)}#contact`}>{t("Kontakt", "Contact")}</a>
+    <a
+      class="locale-link"
+      href={otherPath}
+      lang={otherLocale(locale)}
+      aria-label={t("Switch to English", "Przełącz na polski")}
+    >
+      {otherLocale(locale).toUpperCase()}
+      <span aria-hidden="true"> ↗</span>
+    </a>
+  </nav>
+</header>

@@ -1,0 +1,28 @@
+---
+import { Picture } from "astro:assets";
+import portrait from "../assets/profile/marcin-kolodziejczak.jpg";
+import { text, type Locale } from "../lib/i18n";
+interface Props {
+  locale: Locale;
+}
+---
+
+<Picture
+  src={portrait}
+  class="avatar"
+  alt={text(
+    Astro.props.locale,
+    "Portret Marcina Kołodziejczaka",
+    "Portrait of Marcin Kołodziejczak",
+  )}
+  formats={["avif", "webp"]}
+  fallbackFormat="jpg"
+  width={56}
+  height={56}
+  widths={[48, 56, 96, 112, 168]}
+  sizes="(max-width: 760px) 48px, 56px"
+  quality={82}
+  fit="cover"
+  loading="eager"
+  decoding="async"
+/>

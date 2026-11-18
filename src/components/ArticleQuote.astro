@@ -1,0 +1,51 @@
+---
+import Icon from "./Icon.astro";
+import { text, type Locale } from "../lib/i18n";
+interface Props {
+  id: string;
+  cite?: string;
+}
+const { id, cite } = Astro.props;
+const locale: Locale = Astro.url.pathname.startsWith("/en/") ? "en" : "pl";
+const t = (pl: string, en: string) => text(locale, pl, en);
+---
+
+<blockquote id={id} cite={cite} class="article-quote" data-article-quote>
+  <span class="quote-mark" aria-hidden="true">
+    "
+  </span>
+  <div class="quote-text">
+    <slot />
+  </div>
+  <div class="quote-actions">
+    <a
+      class="quote-action"
+      href={`#${id}`}
+      data-fragment-link
+      data-copied={t("Link do cytatu skopiowany.", "Quote link copied.")}
+      data-copy-error={t(
+        "Nie udało się skopiować linku.",
+        "Could not copy the link.",
+      )}
+      aria-label={t("Kopiuj link do cytatu", "Copy quote link")}
+      title={t("Kopiuj link do cytatu", "Copy quote link")}
+    >
+      <Icon name="link" />
+      <span>{t("Link", "Link")}</span>
+    </a>
+    <button
+      class="quote-action"
+      type="button"
+      data-copy-quote
+      hidden
+      data-copied={t("Cytat skopiowany.", "Quote copied.")}
+      data-copy-error={t(
+        "Nie udało się skopiować cytatu.",
+        "Could not copy the quote.",
+      )}
+    >
+      <Icon name="copy" />
+      <span>{t("Kopiuj cytat", "Copy quote")}</span>
+    </button>
+  </div>
+</blockquote>

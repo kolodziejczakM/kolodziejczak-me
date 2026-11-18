@@ -1,0 +1,44 @@
+---
+import Seo from "../components/Seo.astro";
+import { site } from "../config/site";
+import Avatar from "../components/Avatar.astro";
+import BackgroundSurface from "../components/BackgroundSurface.astro";
+import "../styles/site.css";
+---
+
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <Seo
+      locale="pl"
+      path="/"
+      kind="language"
+      title={site.name}
+      description={site.description.pl}
+      translations={{ pl: "/pl/", en: "/en/" }}
+    />
+    <meta name="theme-color" content="#0e241d" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  </head>
+  <body>
+    <BackgroundSurface />
+    <main class="language-home">
+      <Avatar locale="pl" />
+      <h1>
+        kolodziejczak<span class="brand-domain">.me</span>
+      </h1>
+      <p>Marcin Kołodziejczak</p>
+      <p>Wybierz język / Choose a language</p>
+      <div>
+        <a class="button button-primary" href="/pl/" lang="pl">
+          Polski
+        </a>
+        <a class="button button-secondary" href="/en/" lang="en">
+          English
+        </a>
+      </div>
+    </main>
+  </body>
+</html>

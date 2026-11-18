@@ -1,0 +1,36 @@
+---
+import type { Article } from "../lib/articles";
+import { articlePath } from "../lib/article-index";
+import { categoryLabel, formatDate, type Locale } from "../lib/i18n";
+import Icon from "./Icon.astro";
+import ArticleImage from "./ArticleImage.astro";
+interface Props {
+  article: Article;
+  locale: Locale;
+  headingLevel?: "h2" | "h3";
+}
+const { article, locale, headingLevel: Heading = "h3" } = Astro.props;
+---
+
+<a
+  class="article-card"
+  href={articlePath(article)}
+  data-article-category={article.data.category}
+>
+  <div class="card-media">
+    <ArticleImage article={article} variant="card" />
+  </div>
+  <span class="card-category">
+    {categoryLabel(article.data.category, locale)}
+  </span>
+  <Heading class="card-title">{article.data.title}</Heading>
+  <p class="card-description">{article.data.description}</p>
+  <div class="card-bottom">
+    <time datetime={article.data.publishedAt.toISOString()}>
+      {formatDate(article.data.publishedAt, locale)}
+    </time>
+    <span class="card-arrow">
+      <Icon />
+    </span>
+  </div>
+</a>

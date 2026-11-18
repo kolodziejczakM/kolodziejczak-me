@@ -1,0 +1,75 @@
+---
+import Icon from "./Icon.astro";
+import { text, type Locale } from "../lib/i18n";
+interface Props {
+  locale: Locale;
+}
+const { locale } = Astro.props;
+const t = (pl: string, en: string) => text(locale, pl, en);
+---
+
+<section
+  class="audio-preview"
+  aria-labelledby="audio-preview-title"
+  data-audio-preview
+>
+  <div class="audio-preview-heading">
+    <h2 id="audio-preview-title">
+      {t("Posłuchaj artykułu", "Listen to this article")}
+    </h2>
+    <span class="eyebrow">{t("PODGLĄD", "PREVIEW")}</span>
+  </div>
+  <fieldset class="audio-language">
+    <legend class="sr-only">
+      {t("Język lektora — podgląd", "Narration language — preview")}
+    </legend>
+    {(["pl", "en"] as const).map((language) => (
+      <label>
+        <input
+          class="sr-only"
+          type="radio"
+          name="narration-language"
+          value={language}
+          checked={language === locale}
+        />
+        <span lang={language}>{language === "pl" ? "Polski" : "English"}</span>
+      </label>
+    ))}
+  </fieldset>
+  <div class="audio-preview-controls">
+    <button
+      class="audio-preview-play"
+      type="button"
+      disabled
+      aria-label={t(
+        "Odtwarzanie będzie dostępne po dodaniu nagrania",
+        "Playback will be available when narration is added",
+      )}
+    >
+      <Icon name="play" />
+    </button>
+    <div class="audio-preview-timeline">
+      <input
+        type="range"
+        min="0"
+        max="100"
+        value="0"
+        disabled
+        aria-label={t(
+          "Pozycja nagrania — podgląd",
+          "Playback position — preview",
+        )}
+      />
+      <div class="audio-preview-time" aria-hidden="true">
+        <span>0:00</span>
+        <span>—:—</span>
+      </div>
+    </div>
+  </div>
+  <p>
+    {t(
+      "Nagranie w przygotowaniu. Odtwarzacz pokazuje docelowy układ.",
+      "Narration is in preparation. This player previews the intended layout.",
+    )}
+  </p>
+</section>

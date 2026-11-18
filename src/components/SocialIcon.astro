@@ -1,0 +1,21 @@
+---
+import Icon from "./Icon.astro";
+interface Props {
+  name: string;
+}
+const paths: Record<string, string> = {
+  Facebook:
+    '<path d="M14 21v-8h3l.5-4H14V7c0-1 .5-1.5 1.7-1.5H18V2.2L15.1 2C12 2 10 3.9 10 7v2H7v4h3v8Z" fill="currentColor"/>',
+  Telegram:
+    '<path d="m3 10 18-7-4 18-6-6-4 3 1-6Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="m8 12 9-5-6 8" fill="none" stroke="currentColor" stroke-width="1.6"/>',
+  LinkedIn:
+    '<rect x="3" y="3" width="18" height="18" rx="3" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="7.5" cy="7.5" r="1.2" fill="currentColor"/><path d="M7.5 10.5v7m4-7v7m0-4.5c0-3 5-3 5 0v4.5" fill="none" stroke="currentColor" stroke-width="1.8"/>',
+  WhatsApp:
+    '<path d="M4 17.5 2.5 22 7 20.5a9 9 0 1 0-3-3Z" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="m8 7 2 3-1 1c1 2 2 3 4 3l1-1 3 2c-1 4-6 2-8 0S4 8 8 7Z" fill="currentColor"/>',
+};
+const path = paths[Astro.props.name];
+---
+
+<span class="social-symbol" aria-hidden="true">
+  {path ? <svg viewBox="0 0 24 24" set:html={path} /> : <Icon name="chat" />}
+</span>

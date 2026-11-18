@@ -1,0 +1,87 @@
+<div class="hero-observer" aria-hidden="true">
+  <svg
+    viewBox="0 0 120 150"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    aria-hidden="true"
+  >
+    <path
+      d="M47 101q-4 18-3 38l15 2 7-28 2 27 15-1-4-38Z"
+      fill="var(--secondary)"
+    />
+    <path
+      d="m44 136-6 8q-3 6 4 6h18l1-12Zm24 1-1 13h24q5-5-9-11Z"
+      fill="var(--text)"
+    />
+    <path
+      d="M45 62q15-9 29 0l12 17-8 27q-14 7-36-1l-7-25Z"
+      fill="var(--accent)"
+    />
+    <path
+      d="M44 65Q29 76 31 93q1 10 15 7l9-9-7-8-6 5 6-14M74 65q18 10 18 26 1 10-15 10l-9-10 7-8 7 5-9-15"
+      fill="var(--accent)"
+    />
+    <path
+      d="m45 95 6-5m22 0 6 5M60 68v35"
+      stroke="var(--ink)"
+      stroke-opacity=".45"
+      stroke-width="1.8"
+      stroke-linecap="round"
+    />
+    <path d="M53 50v13q9 6 16-1l-3-12Z" fill="var(--text)" />
+    <g data-observer-head>
+      <g transform="rotate(-19 61 48)">
+        <path
+          d="M46 25q0-13 15-13 15-1 17 13l8 8-9 3q-2 15-18 15-16-2-15-16Z"
+          fill="var(--text)"
+        />
+        <path
+          d="M44 29q-2-19 18-19l13 5-11 3-9 9-1 13-7-3Z"
+          fill="var(--ink)"
+        />
+        <ellipse cx="52" cy="34" rx="5" ry="6" fill="var(--text)" />
+        <path
+          d="m67 22 7-2m-6 22q3 2 7-1"
+          stroke="var(--ink)"
+          stroke-width="1.7"
+          stroke-linecap="round"
+        />
+        <g data-observer-eyes fill="var(--ink)">
+          <ellipse cx="73" cy="27" rx="1.9" ry="2.2" />
+        </g>
+        <circle cx="69" cy="35" r="3" fill="var(--accent)" fill-opacity=".5" />
+      </g>
+    </g>
+  </svg>
+</div>
+
+<style>
+  .hero-observer {
+    position: absolute;
+    left: 50%;
+    bottom: 100%;
+    width: 80px;
+    height: 100px;
+    transform: translateX(-50%);
+    z-index: 2;
+    pointer-events: none;
+  }
+  svg {
+    width: 100%;
+    height: 100%;
+  }
+  [data-observer-head] {
+    transform-box: view-box;
+    transform-origin: 60px 57px;
+  }
+  @media (max-width: 760px) {
+    .hero-observer {
+      width: 64px;
+      height: 80px;
+    }
+  }
+</style>
+
+<script>
+  import "../scripts/hero-observer.ts";
+</script>

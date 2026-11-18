@@ -1,0 +1,206 @@
+/* Round 3: composition and identity, beyond another corner-radius comparison. */
+.shape-mode[data-shape-round="3"]{--shape-button-radius:999px;--shape-panel-radius:24px;--shape-field-radius:13px;--shape-tag-radius:999px;--shape-border:1px}
+.shape-mode[data-shape-round="3"] .composition-caption{color:var(--muted);font-size:12px;line-height:1.7;margin-top:12px;max-width:780px}
+.shape-mode[data-shape-round="3"] .composition-hero{padding:45px 0 54px;border-bottom:1px solid var(--line);position:relative}
+.shape-mode[data-shape-round="3"] .composition-hero h1{font-family:var(--heading);font-size:clamp(60px,6.2vw,86px);font-weight:700;line-height:1.04;letter-spacing:-.06em;margin:25px 0 30px;font-variation-settings:'wdth' 100}
+.shape-mode[data-shape-round="3"] .composition-hero h1 em{color:var(--accent)}
+.shape-mode[data-shape-round="3"] .composition-kicker{color:var(--muted);font-size:10px;display:block}
+.shape-mode[data-shape-round="3"] .composition-art>svg{width:100%;height:auto}
+.shape-mode[data-shape-round="3"] .composition-bio{display:flex;align-items:center;gap:17px;max-width:540px}
+.shape-mode[data-shape-round="3"] .composition-bio p{color:var(--muted);font-size:14px;line-height:1.85}
+.shape-mode[data-shape-round="3"] .composition-bio .portrait{width:48px;flex:none}
+.shape-mode[data-shape-round="3"] .solid-link{border:2px solid var(--primary-ink);border-radius:var(--shape-button-radius);gap:17px;min-height:50px;padding:12px 21px;font-size:13px;position:relative}
+.shape-mode[data-shape-round="3"] .solid-link>.shape-icon{width:21px;height:21px;flex:none}
+.shape-mode[data-shape-round="3"] .composition-cta{white-space:nowrap}
+.shape-mode[data-shape-round="3"] .composition-all{display:flex;align-items:center;gap:12px;font-size:12px;white-space:nowrap;min-height:44px}
+.shape-mode[data-shape-round="3"] .composition-all .shape-icon{width:20px;height:20px}
+.shape-mode[data-shape-round="3"] .play-notes{padding-top:36px}
+.shape-mode[data-shape-round="3"] .play-notes .section-heading .eyebrow{color:var(--muted);font-size:9px;display:block;margin-bottom:7px}
+.shape-mode[data-shape-round="3"] .note-cards{gap:20px;padding:8px 0 0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}
+.shape-mode[data-shape-round="3"] .note-card{position:relative;min-height:300px;border-radius:24px;box-shadow:none;transform:none;padding:26px;border:1px solid color-mix(in srgb,var(--card-ink) 45%,transparent);transition:transform .15s}
+.shape-mode[data-shape-round="3"] .note-card:hover{transform:translateY(-3px)}
+.shape-mode[data-shape-round="3"] .note-card:active{transform:translateY(1px)}
+.shape-mode[data-shape-round="3"] .composition-index{display:none}
+.shape-mode[data-shape-round="3"] .composition-card-icon{width:35px;height:35px;display:grid;place-items:center;border-radius:50%;border:1px solid currentColor;flex:none}
+.shape-mode[data-shape-round="3"] .composition-card-icon .shape-icon{width:20px;height:20px}
+.shape-mode[data-shape-round="3"] .note-card h3{margin-top:21px}
+.shape-mode[data-shape-round="3"] .note-card-bottom>span:last-child{display:grid;place-items:center;width:32px;height:32px;border-radius:50%;border:1px solid currentColor}
+.shape-mode[data-shape-round="3"] .note-card-bottom>span:last-child .shape-icon{width:19px;height:19px}
+.shape-mode[data-shape-round="3"] .color-input,.shape-mode[data-shape-round="3"] .shape-select-wrap select,.shape-mode[data-shape-round="3"] .modal input,.shape-mode[data-shape-round="3"] .modal textarea{border:1px solid var(--line);border-radius:var(--shape-field-radius);min-height:49px;background:var(--bg)}
+.shape-mode[data-shape-round="3"] .color-input:hover,.shape-mode[data-shape-round="3"] .shape-select-wrap select:hover{border-color:var(--secondary)}
+.shape-mode[data-shape-round="3"] .color-input:focus-visible,.shape-mode[data-shape-round="3"] .shape-select-wrap select:focus-visible,.shape-mode[data-shape-round="3"] .modal input:focus-visible,.shape-mode[data-shape-round="3"] .modal textarea:focus-visible{border-color:var(--focus);outline:3px solid var(--focus);outline-offset:3px}
+.shape-mode[data-shape-round="3"] .switch-label{min-height:44px}
+.shape-mode[data-shape-round="3"] .switch-track{width:46px;height:26px;border-radius:99px}
+.shape-mode[data-shape-round="3"] .switch-track:before{width:18px;height:18px;top:3px;left:3px;border-radius:50%}
+.shape-mode[data-shape-round="3"] .switch-label>input:checked+.switch-track:before{transform:translateX(20px)}
+.shape-mode[data-shape-round="3"] .shape-check-mark{border-radius:8px;width:24px;height:24px}
+.shape-mode[data-shape-round="3"] .control-tabs{border:1px solid var(--line);border-radius:99px;padding:5px;width:max-content;max-width:100%;background:var(--bg)}
+.shape-mode[data-shape-round="3"] .control-tabs button{border-radius:99px;min-height:40px;padding:8px 17px}
+.shape-mode[data-shape-round="3"] .article-actions button{border:1px solid var(--line);padding:8px 12px;border-radius:var(--shape-button-radius);text-decoration:none}
+.shape-mode[data-shape-round="3"] .article-actions button:hover{background:var(--control);border-color:var(--secondary)}
+.shape-mode[data-shape-round="3"] .audio-play,.shape-mode[data-shape-round="3"] .chat-orb{border-radius:50%;min-width:36px;min-height:36px}
+.shape-mode[data-shape-round="3"] .audio-language button{border-radius:8px;min-height:30px}
+.shape-mode[data-shape-round="3"] .chat-launcher{border-radius:24px}
+.shape-mode[data-shape-round="3"] .blog-entry-art{border-radius:24px;border:1px solid var(--line)}
+.shape-mode[data-shape-round="3"] .shape-icon-item>span{border-radius:var(--shape-field-radius)}
+.shape-mode[data-shape-round="3"] .semantic-messages p>span{border-radius:6px}
+.shape-mode[data-shape-round="3"] .modal-close>.shape-icon{width:17px;height:17px}
+.shape-mode[data-shape-round="3"] #demo-chat button{display:grid;place-items:center;border-radius:var(--shape-field-radius)}
+.shape-mode[data-shape-round="3"] #demo-chat button>.shape-icon{width:20px;height:20px}
+.shape-mode[data-shape-round="3"] .brand-symbol{border-radius:14px;transform:none}
+.shape-mode[data-shape-round="3"] .prose blockquote{background:var(--panel);border-radius:0 24px 24px 0;padding:22px;border-left:3px solid var(--secondary)}
+/* 1. A bold gesture: typography owns the hero, one large article leads the list. */
+.shape-mode[data-shape=gesture]{--shape-button-radius:15px;--shape-panel-radius:24px;--shape-field-radius:12px}
+.shape-mode[data-shape=gesture] .gesture-title{position:relative}
+.shape-mode[data-shape=gesture] .composition-hero h1{font-size:clamp(78px,7.4vw,108px);margin:24px 0 35px;line-height:.99;max-width:100%}
+.shape-mode[data-shape=gesture] .composition-hero h1>span{display:block;font-size:.84em;white-space:nowrap}
+.shape-mode[data-shape=gesture] .composition-hero h1>em{display:block;font-size:1.44em;letter-spacing:-.065em}
+.shape-mode[data-shape=gesture] .gesture-title .composition-art{position:absolute;right:5%;bottom:7px;width:150px;height:150px;color:var(--secondary)}
+.shape-mode[data-shape=gesture] .gesture-intro{display:flex;align-items:center;justify-content:space-between;gap:40px;margin-top:38px}
+.shape-mode[data-shape=gesture] .solid-link{box-shadow:4px 4px 0 var(--primary-ink)}
+.shape-mode[data-shape=gesture] .solid-link:active{transform:translate(3px,3px);box-shadow:1px 1px 0 var(--primary-ink)}
+.shape-mode[data-shape=gesture] .note-cards{grid-template-columns:1.25fr 1fr;grid-template-rows:auto auto}
+.shape-mode[data-shape=gesture] .card-0{grid-row:1/3;min-height:460px;justify-content:space-between;padding:34px}
+.shape-mode[data-shape=gesture] .card-0 h3{font-size:48px;max-width:420px;margin-top:40px}
+.shape-mode[data-shape=gesture] .card-0 p{max-width:420px;font-size:15px;margin-top:15px}
+.shape-mode[data-shape=gesture] .card-1,.shape-mode[data-shape=gesture] .card-2{min-height:220px;padding:22px 25px}
+.shape-mode[data-shape=gesture] .card-1 h3,.shape-mode[data-shape=gesture] .card-2 h3{font-size:27px;margin:10px 0}
+.shape-mode[data-shape=gesture] .card-1 p,.shape-mode[data-shape=gesture] .card-2 p{font-size:12px}
+.shape-mode[data-shape=gesture] .note-card{border:2px solid var(--card-ink)}
+.shape-mode[data-shape=gesture] .shape-icon-item>span{border-width:2px;box-shadow:2px 3px 0 var(--line)}
+.shape-mode[data-shape=gesture] .color-input,.shape-mode[data-shape=gesture] .shape-select-wrap select{border-width:2px}
+/* 2. My own rhythm: a separate person panel and a continuous editorial list. */
+.shape-mode[data-shape=rhythm] .rhythm-hero{display:grid;grid-template-columns:1.8fr 1fr;gap:42px;align-items:center}
+.shape-mode[data-shape=rhythm] .rhythm-hero h1{font-size:clamp(62px,5.5vw,79px);line-height:1.08;margin:25px 0 35px}
+.shape-mode[data-shape=rhythm] .rhythm-person{border:1px solid var(--line);border-radius:29px;padding:27px;background:var(--panel)}
+.shape-mode[data-shape=rhythm] .person-heading{display:flex;align-items:center;justify-content:space-between;gap:15px;color:var(--secondary)}
+.shape-mode[data-shape=rhythm] .person-heading .eyebrow{font-size:8px;max-width:160px}
+.shape-mode[data-shape=rhythm] .person-heading .shape-icon{width:27px;height:27px}
+.shape-mode[data-shape=rhythm] .person-name{font-family:var(--heading);display:block;font-weight:650;font-size:36px;letter-spacing:-.04em;line-height:1.12;margin:26px 0 20px;overflow-wrap:anywhere}
+.shape-mode[data-shape=rhythm] .person-name>span{color:var(--accent)}
+.shape-mode[data-shape=rhythm] .rhythm-person .composition-bio{display:block}
+.shape-mode[data-shape=rhythm] .rhythm-person .portrait{display:none}
+.shape-mode[data-shape=rhythm] .composition-contact{font-size:12px;display:flex;gap:16px;align-items:center;margin-top:22px;color:var(--link);min-height:40px}
+.shape-mode[data-shape=rhythm] .solid-link{padding:7px 9px 7px 21px;border:1px solid var(--primary)}
+.shape-mode[data-shape=rhythm] .solid-link>.shape-icon{background:var(--primary-ink);color:var(--primary);border-radius:50%;width:34px;height:34px;padding:8px}
+.shape-mode[data-shape=rhythm] .note-cards{display:block;border:1px solid var(--line);border-radius:28px;overflow:hidden;padding:0}
+.shape-mode[data-shape=rhythm] .note-card{display:grid;grid-template-columns:55px 1.1fr 1fr 45px;gap:7px 24px;align-items:center;border:0;border-bottom:1px solid var(--line);border-radius:0;min-height:165px;background:var(--panel);color:var(--text);padding:26px 30px;transform:none;--card-ink:var(--text);--card-muted:var(--muted)}
+.shape-mode[data-shape=rhythm] .note-card:last-child{border-bottom:0}
+.shape-mode[data-shape=rhythm] .note-card:hover{background:var(--control);transform:none}
+.shape-mode[data-shape=rhythm] .composition-index{display:block;grid-column:1;grid-row:1/4;font-family:var(--heading);font-size:32px;color:var(--accent);letter-spacing:-.05em}
+.shape-mode[data-shape=rhythm] .note-card-top{grid-column:2;grid-row:1;font-size:10px}
+.shape-mode[data-shape=rhythm] .composition-card-icon{display:none}
+.shape-mode[data-shape=rhythm] .note-card h3{grid-column:2;grid-row:2;margin:0;font-size:29px}
+.shape-mode[data-shape=rhythm] .note-card>p{grid-column:3;grid-row:1/4;font-size:13px;margin:0}
+.shape-mode[data-shape=rhythm] .note-card-bottom{grid-column:4;grid-row:1/4;margin:0}
+.shape-mode[data-shape=rhythm] .note-card-bottom>span:first-child{display:none}
+.shape-mode[data-shape=rhythm] .note-card-bottom>span:last-child{width:41px;height:41px;color:var(--accent)}
+.shape-mode[data-shape=rhythm] .shape-icon-item>span{border-radius:50%}
+.shape-mode[data-shape=rhythm] .switch-track:before{border:4px solid var(--muted);background:none;box-sizing:border-box}
+.shape-mode[data-shape=rhythm] .switch-label>input:checked+.switch-track:before{border-color:var(--primary-ink);background:none}
+/* 3. Closer: centred framing, an abstract meeting mark, one calm visual axis. */
+.shape-mode[data-shape=close]{--shape-panel-radius:30px;--shape-field-radius:17px}
+.shape-mode[data-shape=close] .close-hero{margin-top:46px;border:1px solid var(--line);border-radius:44px;text-align:center;padding:58px 30px 43px;background:var(--panel)}
+.shape-mode[data-shape=close] .close-hero .composition-art{position:absolute;left:50%;top:-35px;transform:translateX(-50%);width:116px;background:var(--bg);border-radius:99px;padding:0 9px;color:var(--accent)}
+.shape-mode[data-shape=close] .composition-hero h1{font-size:clamp(64px,6.2vw,89px);max-width:930px;margin:20px auto 27px;line-height:1.08}
+.shape-mode[data-shape=close] .composition-bio{max-width:620px;margin:0 auto 25px;text-align:left}
+.shape-mode[data-shape=close] .solid-link{border:1px solid var(--primary);box-shadow:0 0 0 4px var(--panel),0 0 0 5px var(--line)}
+.shape-mode[data-shape=close] .solid-link>.shape-icon{border:1px solid var(--primary-ink);padding:6px;border-radius:50%;width:31px;height:31px}
+.shape-mode[data-shape=close] .play-notes{padding-top:44px}
+.shape-mode[data-shape=close] .note-card{border-radius:31px;padding:28px 24px}
+.shape-mode[data-shape=close] .composition-card-icon{border:0;border-radius:12px;background:color-mix(in srgb,var(--card-ink) 10%,transparent)}
+.shape-mode[data-shape=close] .shape-icon-item>span{border-radius:50%;box-shadow:0 0 0 4px var(--bg),0 0 0 5px var(--line)}
+.shape-mode[data-shape=close] .shape-check-mark,.shape-mode[data-shape=close] .semantic-messages p>span{border-radius:50%}
+/* 4. Signature: one personal mark carries the identity; quiet, balanced surfaces. */
+.shape-mode[data-shape=signature]{--shape-button-radius:14px;--shape-panel-radius:22px;--shape-field-radius:12px}
+.shape-mode[data-shape=signature] .signature-hero{display:grid;grid-template-columns:1.1fr 1fr;align-items:center;gap:80px}
+.shape-mode[data-shape=signature] .signature-hero h1{font-size:clamp(68px,6.8vw,97px);line-height:1.02;margin:26px 0 0}
+.shape-mode[data-shape=signature] .signature-person{padding-top:9px}
+.shape-mode[data-shape=signature] .signature-person .composition-art{color:var(--accent);width:100%;max-width:370px;margin:0 auto 38px;transform:rotate(-5deg)}
+.shape-mode[data-shape=signature] .signature-person .hand-note{display:block;font-size:13px;text-align:center;margin-top:8px}
+.shape-mode[data-shape=signature] .composition-bio .portrait{display:none}
+.shape-mode[data-shape=signature] .composition-cta{margin-top:28px}
+.shape-mode[data-shape=signature] .solid-link{box-shadow:0 4px 0 var(--primary-ink);border-radius:14px}
+.shape-mode[data-shape=signature] .solid-link:active{transform:translateY(3px);box-shadow:0 1px 0 var(--primary-ink)}
+.shape-mode[data-shape=signature] .brand-symbol{background:none;width:55px;padding:0;border-radius:0;color:var(--accent)}
+.shape-mode[data-shape=signature] .brand-symbol .signature-mark{width:55px;height:38px}
+.shape-mode[data-shape=signature] .note-cards{grid-template-columns:repeat(2,minmax(0,1fr))}
+.shape-mode[data-shape=signature] .note-card{border-radius:18px;min-height:300px;padding:29px}
+.shape-mode[data-shape=signature] .note-card h3{font-size:36px;max-width:410px}
+.shape-mode[data-shape=signature] .card-2{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;column-gap:50px;min-height:200px}
+.shape-mode[data-shape=signature] .card-2 .note-card-top{grid-column:1/-1}
+.shape-mode[data-shape=signature] .card-2 h3{grid-column:1;margin-top:15px}
+.shape-mode[data-shape=signature] .card-2>p{grid-column:2;grid-row:2;align-self:center}
+.shape-mode[data-shape=signature] .card-2 .note-card-bottom{grid-column:1/-1}
+.shape-mode[data-shape=signature] .composition-card-icon{border:0}
+.shape-mode[data-shape=signature] .note-card-bottom>span:last-child{border:0}
+@media(max-width:1050px){
+  .shape-mode[data-shape=gesture] .gesture-title .composition-art{width:110px;height:110px;right:2%}
+  .shape-mode[data-shape=rhythm] .rhythm-hero{gap:25px;grid-template-columns:1.6fr 1fr}
+  .shape-mode[data-shape=rhythm] .rhythm-hero h1{font-size:63px}
+  .shape-mode[data-shape=rhythm] .person-name{font-size:29px}
+  .shape-mode[data-shape=signature] .signature-hero{gap:35px}
+}
+@media(max-width:760px){
+  .shape-mode[data-shape-round="3"] .composition-caption{font-size:11px;margin-top:9px}
+  .shape-mode[data-shape-round="3"] .composition-hero{padding:32px 0}
+  .shape-mode[data-shape-round="3"] .composition-kicker{font-size:8px;letter-spacing:.09em}
+  .shape-mode[data-shape-round="3"] .composition-hero h1{font-size:clamp(43px,10.6vw,73px);line-height:1.09;margin:23px 0}
+  .shape-mode[data-shape-round="3"] .composition-bio{gap:12px}
+  .shape-mode[data-shape-round="3"] .composition-bio p{font-size:12px;line-height:1.8}
+  .shape-mode[data-shape-round="3"] .composition-bio .portrait{width:39px}
+  .shape-mode[data-shape-round="3"] .composition-cta{font-size:11px;padding:12px 16px;gap:12px;white-space:normal;max-width:100%}
+  .shape-mode[data-shape-round="3"] .play-notes{padding-top:28px}
+  .shape-mode[data-shape-round="3"] .play-notes .section-heading{display:block;margin-bottom:18px}
+  .shape-mode[data-shape-round="3"] .play-notes .section-heading h2{font-size:27px}
+  .shape-mode[data-shape-round="3"] .composition-all{font-size:11px;margin-top:8px}
+  .shape-mode[data-shape-round="3"] .note-cards{display:grid;grid-template-columns:1fr;gap:18px;padding-top:0}
+  .shape-mode[data-shape-round="3"] .note-card{padding:23px;min-height:280px;grid-column:auto;grid-row:auto}
+  .shape-mode[data-shape-round="3"] .note-card h3{font-size:31px}
+  .shape-mode[data-shape-round="3"] .color-input,.shape-mode[data-shape-round="3"] .shape-select-wrap select{font-size:16px}
+  .shape-mode[data-shape-round="3"] .article-actions{gap:10px;justify-content:flex-start}
+  .shape-mode[data-shape-round="3"] .article-actions button{font-size:10px;padding:8px 10px}
+  .shape-mode[data-shape-round="3"] .form-switcher .prototype-label strong{font-size:11px}
+  .shape-mode[data-shape=gesture] .composition-hero h1{font-size:clamp(56px,12vw,88px);line-height:1.02}
+  .shape-mode[data-shape=gesture] .composition-hero h1>span{font-size:.67em;white-space:normal;max-width:95%}
+  .shape-mode[data-shape=gesture] .composition-hero h1>em{font-size:1em;letter-spacing:-.065em}
+  .shape-mode[data-shape=gesture] .gesture-title .composition-art{width:46px;height:46px;right:0;top:0;bottom:auto}
+  .shape-mode[data-shape=gesture] .gesture-intro{display:block;margin-top:27px}
+  .shape-mode[data-shape=gesture] .composition-cta{margin-top:25px}
+  .shape-mode[data-shape=gesture] .card-0{min-height:350px;padding:28px}
+  .shape-mode[data-shape=gesture] .card-0 h3{font-size:39px;margin-top:35px}
+  .shape-mode[data-shape=gesture] .card-0 p{font-size:13px}
+  .shape-mode[data-shape=gesture] .card-1,.shape-mode[data-shape=gesture] .card-2{min-height:250px;padding:23px}
+  .shape-mode[data-shape=rhythm] .rhythm-hero{display:block}
+  .shape-mode[data-shape=rhythm] .rhythm-person{margin-top:30px;padding:23px;border-radius:23px}
+  .shape-mode[data-shape=rhythm] .person-name{font-size:32px;margin:20px 0 15px}
+  .shape-mode[data-shape=rhythm] .person-name br{display:none}
+  .shape-mode[data-shape=rhythm] .person-name br:after{content:' '}
+  .shape-mode[data-shape=rhythm] .composition-cta{padding:7px 8px 7px 16px}
+  .shape-mode[data-shape=rhythm] .note-cards{display:block}
+  .shape-mode[data-shape=rhythm] .note-card{grid-template-columns:32px 1fr 29px;padding:23px 18px;gap:8px 13px;min-height:210px;border-radius:0}
+  .shape-mode[data-shape=rhythm] .composition-index{font-size:24px;grid-row:1/4;align-self:start}
+  .shape-mode[data-shape=rhythm] .note-card-top{grid-column:2;grid-row:1;font-size:9px}
+  .shape-mode[data-shape=rhythm] .note-card h3{grid-column:2;grid-row:2;font-size:27px}
+  .shape-mode[data-shape=rhythm] .note-card>p{grid-column:2;grid-row:3;font-size:11px;margin-top:4px}
+  .shape-mode[data-shape=rhythm] .note-card-bottom{grid-column:3;grid-row:1/4}
+  .shape-mode[data-shape=rhythm] .note-card-bottom>span:last-child{width:29px;height:29px}
+  .shape-mode[data-shape=close] .close-hero{padding:40px 18px 29px;margin-top:43px;border-radius:29px}
+  .shape-mode[data-shape=close] .close-hero h1{font-size:clamp(39px,9.9vw,60px);margin:20px auto 23px}
+  .shape-mode[data-shape=close] .close-hero .composition-kicker{font-size:7px}
+  .shape-mode[data-shape=close] .composition-bio{display:block;text-align:center;margin-bottom:25px}
+  .shape-mode[data-shape=close] .composition-bio .portrait{margin:0 auto 15px}
+  .shape-mode[data-shape=close] .composition-cta{font-size:10px;padding:11px 13px;gap:10px}
+  .shape-mode[data-shape=close] .composition-cta>.shape-icon{width:27px;height:27px;padding:5px}
+  .shape-mode[data-shape=signature] .signature-hero{display:block;padding-top:30px}
+  .shape-mode[data-shape=signature] .signature-hero h1{font-size:clamp(60px,15vw,90px);line-height:1.02}
+  .shape-mode[data-shape=signature] .signature-person .composition-art{width:220px;max-width:85%;margin:5px auto 26px}
+  .shape-mode[data-shape=signature] .signature-person .hand-note{font-size:11px}
+  .shape-mode[data-shape=signature] .card-2{display:flex;min-height:280px}
+}
+@media(max-width:370px){
+  .shape-mode[data-shape-round="3"] .form-switcher .prototype-label strong{font-size:10px}
+  .shape-mode[data-shape=close] .close-hero{padding-inline:14px}
+  .shape-mode[data-shape=close] .close-hero h1{font-size:36px}
+  .shape-mode[data-shape=close] .close-hero .composition-cta{font-size:9px;gap:8px;padding-inline:10px}
+}

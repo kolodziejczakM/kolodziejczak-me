@@ -1,0 +1,28 @@
+---
+import Brand from "./Brand.astro";
+import { site } from "../config/site";
+import { text, homePath, blogPath, type Locale } from "../lib/i18n";
+interface Props {
+  locale: Locale;
+}
+const { locale } = Astro.props;
+const t = (pl: string, en: string) => text(locale, pl, en);
+---
+
+<footer class="site-footer wrap">
+  <div class="footer-top">
+    <Brand locale={locale} />
+    <span>
+      {t("Z ciekawości. Po swojemu.", "Stay curious. Make it your own.")}
+    </span>
+    <nav aria-label={t("Nawigacja w stopce", "Footer navigation")}>
+      <a href={blogPath(locale)}>{t("Artykuły", "Articles")}</a>
+      <a href={`${homePath(locale)}#contact`}>{t("Kontakt", "Contact")}</a>
+    </nav>
+  </div>
+  <div class="footer-bottom">
+    <span>
+      © {new Date().getUTCFullYear()} {site.name}
+    </span>
+  </div>
+</footer>

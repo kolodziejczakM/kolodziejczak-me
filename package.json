@@ -1,0 +1,28 @@
+{
+  "name": "kolodziejczak-me",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22.22.0"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "check": "astro sync && tsc --noEmit",
+    "test": "node --experimental-strip-types --test tests/*.test.ts",
+    "validate": "npm run check && npm run build && npm test",
+    "audit:check": "node --experimental-strip-types scripts/check-audit.mjs",
+    "prototype": "python3 prototypes/serve.py",
+    "release:check": "npm run validate && npm run audit:check && node --experimental-strip-types scripts/check-release.ts"
+  },
+  "dependencies": {
+    "@astrojs/markdown-satteri": "0.4.4",
+    "@astrojs/mdx": "8.1.0",
+    "astro": "7.4.12"
+  },
+  "devDependencies": {
+    "@types/node": "24.19.2",
+    "typescript": "7.0.2"
+  }
+}

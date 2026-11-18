@@ -1,0 +1,113 @@
+---
+import { render } from "astro:content";
+import SiteLayout from "../../../layouts/SiteLayout.astro";
+import Icon from "../../../components/Icon.astro";
+import ArticleImage from "../../../components/ArticleImage.astro";
+import ArticleWidgets from "../../../components/ArticleWidgets.astro";
+import ArticleShare from "../../../components/ArticleShare.astro";
+import ArticlePrompt from "../../../components/ArticlePrompt.astro";
+import ArticleTools from "../../../components/ArticleTools.astro";
+import ArticleQuote from "../../../components/ArticleQuote.astro";
+import { site } from "../../../config/site";
+import {
+  publishedArticles,
+  translationOf,
+  articlePath,
+  type Article,
+} from "../../../lib/articles";
+import {
+  otherLocale,
+  blogPath,
+  text,
+  categoryLabel,
+  formatDate,
+} from "../../../lib/i18n";
+export async function getStaticPaths() {
+  return (await publishedArticles()).map((article) => ({
+    params: { lang: article.data.locale, slug: article.data.urlSlug },
+    props: { article },
+  }));
+}
+interface Props {
+  article: Article;
+}
+const { article } = Astro.props;
+const locale = article.data.locale;
+const t = (pl: string, en: string) => text(locale, pl, en);
+const articles = await publishedArticles();
+const translated = translationOf(articles, article, otherLocale(locale));
+const siblings = articles.filter((item) => item.data.locale === locale);
+const currentIndex = siblings.findIndex((item) => item.id === article.id);
+const next =
+  siblings.length > 1
+    ? siblings[(currentIndex + 1) % siblings.length]
+    : undefined;
+const { Content, headings } = await render(article);
+const contents = headings.filter((heading) => heading.depth === 2);
+const canonical = new URL(articlePath(article), site.origin).href;
+---
+
+<SiteLayout
+  locale={locale}
+  page="article"
+  article={article}
+  title={article.data.title}
+  description={article.data.description}
+  otherPath={articlePath(translated)}
+>
+  <div class="reading-progress" aria-hidden="true">
+    <span data-reading-progress></span>
+  </div>
+  <main id="main" class="wrap article-page">
+    <div class="article-topline">
+      <a href={blogPath(locale)}>← {t("Wszystkie artykuły", "All articles")}</a>
+      <span class="eyebrow">
+        {categoryLabel(article.data.category, locale)} ·{" "}
+        <time datetime={article.data.publishedAt.toISOString()}>
+          {formatDate(article.data.publishedAt, locale)}
+        </time>
+      </span>
+    </div>
+    <header class="article-header" id="article-top">
+      <span class="eyebrow">{t("ARTYKUŁ", "ARTICLE")}</span>
+      <h1>{article.data.title}</h1>
+      <p class="article-lead">{article.data.description}</p>
+    </header>
+    <div class="article-layout">
+      <div class="article-column">
+        <ArticleImage article={article} variant="hero" />
+        <ArticleTools article={article} locale={locale} headings={contents} />
+        <article class="prose" data-reading-content>
+          <Content components={{ blockquote: ArticleQuote }} />
+        </article>
+        <ArticlePrompt article={article} locale={locale} />
+        <section
+          class="article-end"
+          aria-label={t("Udostępnij artykuł", "Share article")}
+        >
+          <Icon name="spark" />
+          <p>
+            {t("Dzięki, że dotarłeś aż tutaj.", "Thanks for reading this far.")}
+          </p>
+          <ArticleShare
+            locale={locale}
+            title={article.data.title}
+            url={canonical}
+          />
+        </section>
+        {next && (
+          <aside class="read-next">
+            <span class="eyebrow">
+              {t("JESZCZE JEDNA MYŚL", "ONE MORE THOUGHT")}
+            </span>
+            <a href={articlePath(next)}>
+              <span>{next.data.title}</span>
+              <Icon />
+            </a>
+          </aside>
+        )}
+      </div>
+    </div>
+  </main>
+  <ArticleWidgets locale={locale} />
+</SiteLayout>

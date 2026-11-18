@@ -1,0 +1,16 @@
+@font-face{font-family:'Bricolage Grotesque';src:url('/typography/fonts/bricolagegrotesque/BricolageGrotesque%5Bopsz%2Cwdth%2Cwght%5D.ttf') format('truetype');font-style:normal;font-weight:200 800;font-display:swap}
+@font-face{font-family:'Hanken Grotesk';src:url('/typography/fonts/hankengrotesk/HankenGrotesk%5Bwght%5D.ttf') format('truetype');font-style:normal;font-weight:100 900;font-display:swap}
+@font-face{font-family:'Hanken Grotesk';src:url('/typography/fonts/hankengrotesk/HankenGrotesk-Italic%5Bwght%5D.ttf') format('truetype');font-style:italic;font-weight:100 900;font-display:swap}
+@font-face{font-family:'Gabarito';src:url('/typography/fonts/gabarito/Gabarito%5Bwght%5D.ttf') format('truetype');font-style:normal;font-weight:400 900;font-display:swap}
+@font-face{font-family:'Literata';src:url('/typography/fonts/literata/Literata%5Bopsz%2Cwght%5D.ttf') format('truetype');font-style:normal;font-weight:200 900;font-display:swap}
+@font-face{font-family:'Literata';src:url('/typography/fonts/literata/Literata-Italic%5Bopsz%2Cwght%5D.ttf') format('truetype');font-style:italic;font-weight:200 900;font-display:swap}
+@font-face{font-family:'Commissioner';src:url('/typography/fonts/commissioner/Commissioner%5BFLAR%2CVOLM%2Cslnt%2Cwght%5D.ttf') format('truetype');font-style:normal;font-weight:100 900;font-display:swap}
+@font-face{font-family:'Commissioner';src:url('/typography/fonts/commissioner/Commissioner%5BFLAR%2CVOLM%2Cslnt%2Cwght%5D.ttf') format('truetype');font-style:oblique 0deg 12deg;font-weight:100 900;font-display:swap}
+@font-face{font-family:'Schibsted Grotesk';src:url('/typography/fonts/schibstedgrotesk/SchibstedGrotesk%5Bwght%5D.ttf') format('truetype');font-style:normal;font-weight:400 900;font-display:swap}
+@font-face{font-family:'Schibsted Grotesk';src:url('/typography/fonts/schibstedgrotesk/SchibstedGrotesk-Italic%5Bwght%5D.ttf') format('truetype');font-style:italic;font-weight:400 900;font-display:swap}
+@font-face{font-family:'Newsreader';src:url('/typography/fonts/newsreader/Newsreader%5Bopsz%2Cwght%5D.ttf') format('truetype');font-style:normal;font-weight:200 800;font-display:swap}
+@font-face{font-family:'Newsreader';src:url('/typography/fonts/newsreader/Newsreader-Italic%5Bopsz%2Cwght%5D.ttf') format('truetype');font-style:italic;font-weight:200 800;font-display:swap}
+@font-face{font-family:'Alegreya';src:url('/typography/fonts/alegreya/Alegreya%5Bwght%5D.ttf') format('truetype');font-style:normal;font-weight:400 900;font-display:swap}
+@font-face{font-family:'Alegreya';src:url('/typography/fonts/alegreya/Alegreya-Italic%5Bwght%5D.ttf') format('truetype');font-style:italic;font-weight:400 900;font-display:swap}
+@font-face{font-family:'Ysabeau';src:url('/typography/fonts/ysabeau/Ysabeau%5Bwght%5D.ttf') format('truetype');font-style:normal;font-weight:1 1000;font-display:swap}
+@font-face{font-family:'Ysabeau';src:url('/typography/fonts/ysabeau/Ysabeau-Italic%5Bwght%5D.ttf') format('truetype');font-style:italic;font-weight:1 1000;font-display:swap}

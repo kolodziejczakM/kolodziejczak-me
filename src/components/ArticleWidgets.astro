@@ -1,0 +1,58 @@
+---
+import { site } from "../config/site";
+import Icon from "./Icon.astro";
+import { text, type Locale } from "../lib/i18n";
+interface Props {
+  locale: Locale;
+}
+const { locale } = Astro.props;
+const t = (pl: string, en: string) => text(locale, pl, en);
+---
+
+<aside
+  class="article-widgets"
+  aria-label={t("Pomoc w czytaniu", "Reading assistance")}
+>
+  <a
+    class="back-top js-only"
+    href="#article-top"
+    data-back-top
+    hidden
+    aria-label={t("Wróć na początek artykułu", "Back to the article top")}
+  >
+    <Icon name="up" />
+  </a>
+  {!site.readyToPublish && (
+    <details class="agent-placeholder">
+      <summary
+        aria-label={t(
+          "Chcesz to lepiej zrozumieć? Zacznij rozmowę",
+          "Want to understand this better? Start a conversation",
+        )}
+      >
+        <Icon name="chat" />
+        <span>{t("Porozmawiaj o artykule", "Talk about this article")}</span>
+      </summary>
+      <div class="agent-panel">
+        <span class="eyebrow">
+          {t("PODGLĄD · ELEVENLABS", "PREVIEW · ELEVENLABS")}
+        </span>
+        <h2>
+          {t("Chcesz to lepiej zrozumieć?", "Want to understand this better?")}
+        </h2>
+        <p>
+          {t(
+            "Tutaj porozmawiasz o treści artykułu i zadasz dodatkowe pytania.",
+            "This is where you’ll discuss the article and ask follow-up questions.",
+          )}
+        </p>
+        <small>
+          {t(
+            "Rozmowa nie jest jeszcze podłączona. To podgląd miejsca dla asystenta.",
+            "Conversation is not connected yet. This is a preview of the assistant’s space.",
+          )}
+        </small>
+      </div>
+    </details>
+  )}
+</aside>

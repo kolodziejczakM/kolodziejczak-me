@@ -1,0 +1,51 @@
+---
+import { Picture } from "astro:assets";
+import type { Article } from "../lib/articles";
+import { text } from "../lib/i18n";
+interface Props {
+  article: Article;
+  variant: "hero" | "thumbnail" | "card";
+}
+const { article, variant } = Astro.props;
+const hero = variant === "hero";
+const card = variant === "card";
+const { src, alt, photographer, source, sourceLabel } = article.data.hero;
+const credit =
+  sourceLabel ??
+  (new URL(source).hostname.replace(/^www\./, "") === "unsplash.com"
+    ? "Unsplash"
+    : new URL(source).hostname);
+const sizes = hero
+  ? "(max-width: 370px) calc(100vw - 32px), (max-width: 760px) calc(100vw - 40px), (max-width: 872px) calc(100vw - 72px), 800px"
+  : card
+    ? // Account for the height of a cover-cropped portrait thumbnail, too.
+      "(max-width: 760px) 280px, 400px"
+    : "(max-width: 370px) calc(100vw - 32px), (max-width: 760px) calc(100vw - 40px), (max-width: 1050px) calc((100vw - 124px) / 3), (max-width: 1272px) calc((100vw - 164px) / 3), 370px";
+---
+
+<figure class:list={["article-image", { "article-hero": hero }]}>
+  <Picture
+    src={src}
+    alt={hero ? alt : ""}
+    formats={["avif", "webp"]}
+    fallbackFormat="jpg"
+    width={card ? 800 : 1600}
+    height={card ? 450 : 900}
+    widths={card ? [240, 400, 640, 800] : [400, 640, 800, 1200, 1600]}
+    sizes={sizes}
+    quality={78}
+    fit="cover"
+    loading={hero ? "eager" : "lazy"}
+    decoding="async"
+    fetchpriority={hero ? "high" : "auto"}
+    style={`view-transition-name: article-image-${article.data.translationKey};`}
+  />
+  {hero && (
+    <figcaption>
+      {text(article.data.locale, "Fot.", "Photo:")}{" "}
+      <a href={source} target="_blank" rel="noreferrer">
+        {photographer} / {credit} ↗
+      </a>
+    </figcaption>
+  )}
+</figure>
