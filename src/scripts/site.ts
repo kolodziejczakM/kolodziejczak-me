@@ -4,6 +4,7 @@ import { setupReadingSwitcher } from "./reading-switcher";
 import { copyField } from "./clipboard";
 import { enhanceCodeBlocks } from "./code-blocks";
 import { setupArticleFragments } from "./article-fragments";
+import { preferredLocale } from "../lib/i18n";
 
 document.documentElement.classList.add("js");
 setupReadingSwitcher();
@@ -43,7 +44,7 @@ if (filters) {
 const nudge = document.querySelector<HTMLElement>("[data-language-nudge]");
 const internalArrival =
   document.referrer && new URL(document.referrer).origin === location.origin;
-const preference = (navigator.languages?.[0] ?? navigator.language).slice(0, 2);
+const preference = preferredLocale(navigator);
 if (nudge && !internalArrival && preference === nudge.dataset.otherLocale)
   nudge.hidden = false;
 document

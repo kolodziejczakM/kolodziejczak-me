@@ -6,6 +6,13 @@ export const text = (locale: Locale, pl: string, en: string): string =>
   locale === "pl" ? pl : en;
 export const homePath = (locale: Locale): string => `/${locale}/`;
 export const blogPath = (locale: Locale): string => `/${locale}/blog/`;
+export function preferredLocale(browser: {
+  languages?: readonly string[];
+  language?: string;
+}): Locale {
+  const language = browser.languages?.[0] || browser.language || "";
+  return language.toLowerCase().split("-")[0] === "pl" ? "pl" : "en";
+}
 export const categories = [
   "programming",
   "ai",
