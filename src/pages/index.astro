@@ -11,6 +11,13 @@ import "../styles/site.css";
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script>
+      import { homePath, preferredLocale } from "../lib/i18n";
+
+      window.location.replace(
+        homePath(preferredLocale(navigator)) + location.search + location.hash,
+      );
+    </script>
     <Seo
       locale="pl"
       path="/"

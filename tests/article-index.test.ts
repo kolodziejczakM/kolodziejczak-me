@@ -9,6 +9,7 @@ import {
   formatDate,
   formatDuration,
   formatReadingTime,
+  preferredLocale,
 } from "../src/lib/i18n.ts";
 
 const pl = {
@@ -25,6 +26,16 @@ const en = {
     urlSlug: "less-but-better",
   },
 };
+
+test("browser language uses its first preference, Polish variants or English fallback", () => {
+  assert.equal(preferredLocale({ languages: ["pl-PL", "en"] }), "pl");
+  assert.equal(preferredLocale({ languages: ["PL-pl"] }), "pl");
+  assert.equal(preferredLocale({ languages: ["en-GB", "pl"] }), "en");
+  assert.equal(preferredLocale({ languages: ["de-DE", "pl"] }), "en");
+  assert.equal(preferredLocale({ languages: [], language: "pl" }), "pl");
+  assert.equal(preferredLocale({ language: "fr-FR" }), "en");
+  assert.equal(preferredLocale({}), "en");
+});
 
 test("language links pair translations by key, with independent localized slugs", () => {
   validateArticleIndex([pl, en]);
