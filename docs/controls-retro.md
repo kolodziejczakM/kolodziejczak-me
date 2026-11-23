@@ -10,9 +10,9 @@ Użytkownik zmienił priorytet: dopasowanie do charakteru strony i fontów jest 
 
 | Wykończenie | Akcje | Podgląd |
 | --- | --- | --- |
-| Zaokrąglony piksel | Pełna miękka powierzchnia, schodkowy cień odsunięty w prawo i w dół; wciśnięcie zbliża powierzchnię do cienia | [Otwórz](http://vps.tailfb5686.ts.net:4321/pl/?controls=pixel#palette-lab) |
-| Ciepły druk | Te same powierzchnie z niskim, twardym cieniem od dołu | [Otwórz](http://vps.tailfb5686.ts.net:4321/pl/?controls=print#palette-lab) |
-| Spokojny kontur | Te same zaokrąglenia bez cienia, aby ocenić samą zgodność z typografią | [Otwórz](http://vps.tailfb5686.ts.net:4321/pl/?controls=calm#palette-lab) |
+| Zaokrąglony piksel | Pełna miękka powierzchnia, schodkowy cień odsunięty w prawo i w dół; wciśnięcie zbliża powierzchnię do cienia | [Otwórz](http://localhost:4321/pl/?controls=pixel#palette-lab) |
+| Ciepły druk | Te same powierzchnie z niskim, twardym cieniem od dołu | [Otwórz](http://localhost:4321/pl/?controls=print#palette-lab) |
+| Spokojny kontur | Te same zaokrąglenia bez cienia, aby ocenić samą zgodność z typografią | [Otwórz](http://localhost:4321/pl/?controls=calm#palette-lab) |
 
 Przyciski mają symetryczne zaokrąglenia 16 px; pola 12 px, małe akcje 13 px. Ikony są proste i zaokrąglone, bez osobnego ciemnego modułu. W pikselowym wariancie schodki są geometrią samego cienia — powierzchnia akcji nie ma wycięć. Cień ma kolor wyprowadzony z istniejących tokenów leśnej palety. W polach nie dodajemy cienia: pozostają spokojną powierzchnią do pisania. Dodatkowy obrys pojawia się wyłącznie przy rzeczywistym fokusie.
 
@@ -36,4 +36,4 @@ Reset zewnętrznej warstwy uwzględnia teraz ten sam selektor typu oraz hover, w
 
 Kontrola stanu polubionego ujawniła też usuwanie `.retro-face` przy aktualizacji treści przycisku. Obsługa polubienia aktualizuje teraz zawartość istniejącej powierzchni. Reproduktor w Chromium najpierw wykazał podwójną ramkę, a następnie brak powierzchni po kliknięciu. Po poprawkach sprawdzono sześć widoków artykułu (trzy wykończenia × 390/1440 px), brak zewnętrznej ramki, paddingu i wypełnienia w spoczynku, hover, po polubieniu oraz w modalach promptu i rozmowy, a także obecność pojedynczej powierzchni, brak poziomego przepełnienia, fokus klawiatury i pojedynczy obrys przycisku rozmowy. Przejrzano aktualne mobilne zrzuty wskazanych sekcji.
 
-[Poprawiony artykuł](http://vps.tailfb5686.ts.net:4321/pl/blog/mniej-ale-lepiej/?controls=calm) · [mobilne akcje](previews/calm-article-actions.png) · [mobilny koniec artykułu](previews/calm-article-footer.png).
+[Poprawiony artykuł](http://localhost:4321/pl/blog/mniej-ale-lepiej/?controls=calm) · [mobilne akcje](previews/calm-article-actions.png) · [mobilny koniec artykułu](previews/calm-article-footer.png).

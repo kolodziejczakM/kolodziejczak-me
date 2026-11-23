@@ -8,8 +8,9 @@ export type Article = CollectionEntry<"articles">;
 export { articlePath, translationOf } from "./article-index.ts";
 
 export async function publishedArticles(): Promise<Article[]> {
-  const articles = await getCollection("articles", ({ data }) =>
-    isPublished(data),
+  const articles = await getCollection(
+    "articles",
+    ({ data }) => isPublished(data) && (!site.readyToPublish || !data.sample),
   );
   validateArticleIndex(articles);
   await validatePublication(articles, site.readyToPublish);

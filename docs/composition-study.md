@@ -10,10 +10,10 @@ Miękki druk i Kontur i kropka są najmocniejszymi punktami odniesienia. Zakład
 
 | Wariant | Co się zmienia | Podgląd |
 | --- | --- | --- |
-| `gesture` — Duży gest | Duża, dwupoziomowa typografia; jeden abstrakcyjny znak; wyróżniony artykuł obok dwóch mniejszych | [Otwórz](http://vps.tailfb5686.ts.net:4321/pl/?shape=gesture) |
-| `rhythm` — Własny rytm | Hasło i osobny panel autora; artykuły jako ciągła lista numerowanych wierszy | [Otwórz](http://vps.tailfb5686.ts.net:4321/pl/?shape=rhythm) |
-| `close` — Blisko | Centralne hasło i bio we wspólnej ramie, abstrakcyjny znak spotkania, trzy spokojne karty | [Otwórz](http://vps.tailfb5686.ts.net:4321/pl/?shape=close) |
-| `signature` — Sygnatura | Autorski SVG monogramu mk.; hasło obok znaku i bio; dwa jasne artykuły nad szerokim ciemnym | [Otwórz](http://vps.tailfb5686.ts.net:4321/pl/?shape=signature) |
+| `gesture` — Duży gest | Duża, dwupoziomowa typografia; jeden abstrakcyjny znak; wyróżniony artykuł obok dwóch mniejszych | [Otwórz](http://localhost:4321/pl/?shape=gesture) |
+| `rhythm` — Własny rytm | Hasło i osobny panel autora; artykuły jako ciągła lista numerowanych wierszy | [Otwórz](http://localhost:4321/pl/?shape=rhythm) |
+| `close` — Blisko | Centralne hasło i bio we wspólnej ramie, abstrakcyjny znak spotkania, trzy spokojne karty | [Otwórz](http://localhost:4321/pl/?shape=close) |
+| `signature` — Sygnatura | Autorski SVG monogramu mk.; hasło obok znaku i bio; dwa jasne artykuły nad szerokim ciemnym | [Otwórz](http://localhost:4321/pl/?shape=signature) |
 
 Zatwierdzone kolory **Leśnej pracowni** i fonty **Bricolage Grotesque + Hanken Grotesk** pozostają wspólne. Zachowano oba lubiane hasła, miękkie, uporządkowane formy, pełne obramowania pól i native checkbox/select. Przedmiotem porównania są teraz także proporcje, rozmieszczenie treści i hierarchia. Nie ma metafory biletu ani motywu zakładki. Monogram i abstrakcyjne znaki to propozycje do oceny, nie zatwierdzone logo.
 

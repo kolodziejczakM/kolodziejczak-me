@@ -77,9 +77,9 @@ Zrzuty aktualnej implementacji: [główna desktop](previews/astro-home-desktop.p
 
 ## Podgląd w Tailscale
 
-[PL](http://vps.tailfb5686.ts.net:4322/pl/) · [EN](http://vps.tailfb5686.ts.net:4322/en/). Wymaga urządzenia w tej samej sieci Tailscale.
+[PL](http://localhost:4322/pl/) · [EN](http://localhost:4322/en/). Wymaga urządzenia w tej samej sieci Tailscale.
 
-Na obecnym serwerze statyczny katalog `dist/` udostępnia jednostka użytkownika `kolodziejczak-astro-preview.service`, związana tylko z adresem `100.113.202.72:4322`. Nie korzysta z dev servera i nie udostępnia kodu repo. Status:
+Na obecnym serwerze statyczny katalog `dist/` udostępnia jednostka użytkownika `kolodziejczak-astro-preview.service`, związana tylko z adresem `100.x.y.z:4322`. Nie korzysta z dev servera i nie udostępnia kodu repo. Status:
 
 ```sh
 systemctl --user status kolodziejczak-astro-preview
@@ -93,7 +93,7 @@ systemd-run --user \
   --unit=kolodziejczak-astro-preview --collect \
   --working-directory="$PWD" \
   /usr/bin/python3 -m http.server 4322 \
-  --bind 100.113.202.72 --directory "$PWD/dist"
+  --bind 100.x.y.z --directory "$PWD/dist"
 ```
 
 Archiwalne eksperymenty nadal są w `prototypes/`, na gałęzi `codex/prototype-ui` i porcie 4321. Źródła Astro nie importują ich kodu ani CSS. Przykładową treść oraz zaakceptowane fonty przeniesiono jednorazowo do właściwej struktury.

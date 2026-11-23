@@ -10,10 +10,10 @@ Marcin uznał Miękkie formy za najlepiej dopasowane do charakteru strony, lecz 
 
 | Forma | Co sprawdzamy | Podgląd |
 | --- | --- | --- |
-| `press` — Miękki druk | Miękkie karty i przyciski z twardym cieniem: połączenie preferencji z pierwszych dwóch wariantów | [Otwórz](http://vps.tailfb5686.ts.net:4321/pl/?shape=press) |
-| `bookmark` — Zakładka | Czy jedna powtarzana, asymetryczna krzywizna może być znakiem rozpoznawczym strony? | [Otwórz](http://vps.tailfb5686.ts.net:4321/pl/?shape=bookmark) |
-| `orbit` — Kontur i kropka | Obłe ramki, etykiety, ikony w kołach i pierścieniowy przełącznik jako spójny motyw | [Otwórz](http://vps.tailfb5686.ts.net:4321/pl/?shape=orbit) |
-| `ticket` — Bilet do rozmowy | Łagodne wcięcia sylwetki przycisku oraz zaproszeniowy charakter kart z wydzieloną stopką | [Otwórz](http://vps.tailfb5686.ts.net:4321/pl/?shape=ticket) |
+| `press` — Miękki druk | Miękkie karty i przyciski z twardym cieniem: połączenie preferencji z pierwszych dwóch wariantów | [Otwórz](http://localhost:4321/pl/?shape=press) |
+| `bookmark` — Zakładka | Czy jedna powtarzana, asymetryczna krzywizna może być znakiem rozpoznawczym strony? | [Otwórz](http://localhost:4321/pl/?shape=bookmark) |
+| `orbit` — Kontur i kropka | Obłe ramki, etykiety, ikony w kołach i pierścieniowy przełącznik jako spójny motyw | [Otwórz](http://localhost:4321/pl/?shape=orbit) |
+| `ticket` — Bilet do rozmowy | Łagodne wcięcia sylwetki przycisku oraz zaproszeniowy charakter kart z wydzieloną stopką | [Otwórz](http://localhost:4321/pl/?shape=ticket) |
 
 ## Wspólne zasady
 

@@ -63,32 +63,39 @@ const t = (pl: string, en: string) => text(locale, pl, en);
           <p>{site.bio[locale]}</p>
         </div>
       </div>
-      <a class="button button-primary" href={blogPath(locale)}>
-        {t("Zobacz, co mi chodzi po głowie", "See what’s on my mind")}
+      <a
+        class="button button-primary"
+        href={articles.length ? blogPath(locale) : "#contact"}
+      >
+        {articles.length
+          ? t("Zobacz, co mi chodzi po głowie", "See what’s on my mind")
+          : t("Złapmy kontakt", "Let’s connect")}
         <Icon />
       </a>
     </section>
-    <section class="latest" aria-labelledby="latest-title">
-      <div class="section-heading">
-        <div>
-          <span class="eyebrow">
-            {t("NAJNOWSZE ARTYKUŁY", "LATEST ARTICLES")}
-          </span>
-          <h2 id="latest-title">
-            {t("O tym chciałem opowiedzieć.", "What I wanted to share.")}
-          </h2>
+    {articles.length > 0 && (
+      <section class="latest" aria-labelledby="latest-title">
+        <div class="section-heading">
+          <div>
+            <span class="eyebrow">
+              {t("NAJNOWSZE ARTYKUŁY", "LATEST ARTICLES")}
+            </span>
+            <h2 id="latest-title">
+              {t("O tym chciałem opowiedzieć.", "What I wanted to share.")}
+            </h2>
+          </div>
+          <a class="all-articles" href={blogPath(locale)}>
+            {t("Wszystkie artykuły", "All articles")}
+            <Icon />
+          </a>
         </div>
-        <a class="all-articles" href={blogPath(locale)}>
-          {t("Wszystkie artykuły", "All articles")}
-          <Icon />
-        </a>
-      </div>
-      <div class="article-cards">
-        {articles.slice(0, 3).map((article) => (
-          <ArticleCard article={article} locale={locale} />
-        ))}
-      </div>
-    </section>
+        <div class="article-cards">
+          {articles.slice(0, 3).map((article) => (
+            <ArticleCard article={article} locale={locale} />
+          ))}
+        </div>
+      </section>
+    )}
     <Contacts locale={locale} />
   </main>
 </SiteLayout>

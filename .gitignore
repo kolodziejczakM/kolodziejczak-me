@@ -1,7 +1,16 @@
 node_modules/
 dist/
+dist-production/
 .astro/
 .env
 .env.*
 !.env.example
 *.log
+.ssh/
+.aws/
+.codex/
+.agents/
+*.pem
+*.key
+*.p12
+*.pfx

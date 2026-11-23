@@ -1,3 +1,5 @@
+> Aktualny proces publikacji od 23 listopada 2026: [GitHub Pages](github-pages.md). Poniższy przegląd opisuje stan z 17 listopada, przed wyborem hostingu. Produkcja teraz pomija próbki, dopuszcza pusty blog i używa osobnego `dist-production/`; podgląd pozostaje w `dist/`. Nie edytujemy ręcznie flagi readyToPublish. Audyt nie wymaga już wyjątku po wycofaniu zgłoszenia picomatch.
+
 # Przegląd przed premierą
 
 Stan: 17 listopada 2026. Właściwa implementacja: `codex/astro-foundation`. Nie wdrożono strony na publiczny serwer i nie przełączono `readyToPublish`.

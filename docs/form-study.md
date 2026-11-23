@@ -8,9 +8,9 @@
 
 | Wariant | Główne różnice | Podgląd |
 | --- | --- | --- |
-| `soft` — Miękkie formy | Kapsułki, duże promienie narożników, delikatny cień, organiczna naklejka, obłe ikony | [Otwórz](http://vps.tailfb5686.ts.net:4321/pl/?variant=C&palette=meadow&shape=soft) |
-| `stamp` — Papier i pieczęć | Proste narożniki, podwójne i przerywane ramki, twardy cień, małe obroty, rysowane ikony | [Otwórz](http://vps.tailfb5686.ts.net:4321/pl/?variant=C&palette=meadow&shape=stamp) |
-| `cut` — Nacięte narożniki | Ścięte przyciski, proste linie i ramki, romby, ukośne detale, kanciaste ikony | [Otwórz](http://vps.tailfb5686.ts.net:4321/pl/?variant=C&palette=meadow&shape=cut) |
+| `soft` — Miękkie formy | Kapsułki, duże promienie narożników, delikatny cień, organiczna naklejka, obłe ikony | [Otwórz](http://localhost:4321/pl/?variant=C&palette=meadow&shape=soft) |
+| `stamp` — Papier i pieczęć | Proste narożniki, podwójne i przerywane ramki, twardy cień, małe obroty, rysowane ikony | [Otwórz](http://localhost:4321/pl/?variant=C&palette=meadow&shape=stamp) |
+| `cut` — Nacięte narożniki | Ścięte przyciski, proste linie i ramki, romby, ukośne detale, kanciaste ikony | [Otwórz](http://localhost:4321/pl/?variant=C&palette=meadow&shape=cut) |
 
 ## Jak porównać
 

@@ -6,9 +6,9 @@ Archiwum eksperymentu na gałęzi `codex/identity-card-background-study`, źród
 
 Prywatny podgląd na dotychczasowej sieci Tailscale:
 
-- [Logotypy](http://vps.tailfb5686.ts.net:4323/pl/?study=logo&variant=A): A — Nazwisko i kropka, B — Dwa wiersze, C — Po imieniu, D — Własny adres.
-- [Karty](http://vps.tailfb5686.ts.net:4323/pl/?study=cards&variant=A#latest-title): A — Ciche panele, B — Redakcyjna lista, C — Obraz i zajawka.
-- [Tło](http://vps.tailfb5686.ts.net:4323/pl/?study=background&variant=D): A — Sama zieleń, B — Oddech zieleni, C — Cicha siatka, D — Gradient + siatka.
+- [Logotypy](http://localhost:4323/pl/?study=logo&variant=A): A — Nazwisko i kropka, B — Dwa wiersze, C — Po imieniu, D — Własny adres.
+- [Karty](http://localhost:4323/pl/?study=cards&variant=A#latest-title): A — Ciche panele, B — Redakcyjna lista, C — Obraz i zajawka.
+- [Tło](http://localhost:4323/pl/?study=background&variant=D): A — Sama zieleń, B — Oddech zieleni, C — Cicha siatka, D — Gradient + siatka.
 
 Każdy obszar ma osobny wybór. Dolny pasek i klawisze strzałek zmieniają bieżący obszar; URL przechowuje całą kombinację. Wybranie zakładki przenosi do odpowiedniego miejsca na stronie. Karty porównujemy na stronie głównej. Przejścia do artykułów zachowują logotyp i tło, żeby można było ocenić także komfort czytania. Panel `?` wyjaśnia różnice. Bez cookies i localStorage.
 
@@ -26,7 +26,7 @@ Tło nie zmienia bazowej zieleni. B dodaje dwa łagodne zielone gradienty przesu
 
 Na gałęzi eksperymentu: `npm ci`, potem `npm run prototype:identity` (buduje eksperyment i serwuje localhost:4323). Przełącznik jest renderowany tylko z `PROTOTYPE_EXPLORATION=1`; zwykły build nie włącza badania. Domyślna gałąź implementacji nie zawiera kodu eksperymentu.
 
-Podgląd serwera udostępnia jednostka użytkownika `kolodziejczak-identity-preview.service`, wyłącznie na `100.113.202.72:4323`, z katalogu `dist` w `/tmp/kolodziejczak-identity-study`. Jednostka przeżywa sesję czatu, katalog roboczy jest tymczasowy; po restarcie trzeba odtworzyć worktree z gałęzi i zbudować podgląd. Nie zmieniano portów 4321/4322 ani domeny publicznej.
+Podgląd serwera udostępnia jednostka użytkownika `kolodziejczak-identity-preview.service`, wyłącznie na `100.x.y.z:4323`, z katalogu `dist` w `/tmp/kolodziejczak-identity-study`. Jednostka przeżywa sesję czatu, katalog roboczy jest tymczasowy; po restarcie trzeba odtworzyć worktree z gałęzi i zbudować podgląd. Nie zmieniano portów 4321/4322 ani domeny publicznej.
 
 Build 12 statycznych stron i TypeScript przechodzą. Kontrola w Chromium: 18 widoków kart (PL/EN × 320/390/1440 px × 3 układy), cztery logotypy przy 320 px, brak poziomego przepełnienia i błędów JS, niezależność przełączników, link zachowujący wybór po przeładowaniu i zmianie języka, animacja/pauza i ograniczenie ruchu przez system. Nie tworzono zestawu testów dla kodu jednorazowych prototypów.
 

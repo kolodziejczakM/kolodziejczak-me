@@ -2,7 +2,7 @@
 
 **Runda archiwalna:** użytkownik ocenił poprawkę przycisków Bocznego modułu jako gorszą i poprosił o zupełnie nowe prototypy wszystkich kontrolek. Dalszy kierunek: [cztery kompletne zestawy](controls-fresh.md). Poniżej zachowano przebieg poprzedniego porównania.
 
-**Aktualny feedback:** Boczny moduł wypada najlepiej, ale jego przyciski wymagają dopracowania. Główny wyglądał na urwany, pomocniczy był zbyt pospolity. Punktowa poprawka pod tym samym adresem zachowuje pola: miodowe tło głównego przycisku jest ciągłe, mała ikona ma odstęp od brzegu, a pomocniczy otrzymał delikatne wypełnienie i własne pole ikony. [Otwórz przyciski](http://vps.tailfb5686.ts.net:4321/pl/?controls=module#ctrl-actions) · [podgląd](previews/module-buttons.png). Przyciski czekają na ocenę; najmocniejszy kierunek pól nie oznacza zatwierdzenia całego systemu.
+**Aktualny feedback:** Boczny moduł wypada najlepiej, ale jego przyciski wymagają dopracowania. Główny wyglądał na urwany, pomocniczy był zbyt pospolity. Punktowa poprawka pod tym samym adresem zachowuje pola: miodowe tło głównego przycisku jest ciągłe, mała ikona ma odstęp od brzegu, a pomocniczy otrzymał delikatne wypełnienie i własne pole ikony. [Otwórz przyciski](http://localhost:4321/pl/?controls=module#ctrl-actions) · [podgląd](previews/module-buttons.png). Przyciski czekają na ocenę; najmocniejszy kierunek pól nie oznacza zatwierdzenia całego systemu.
 
 **Pytanie:** który pojedynczy, powtarzalny detal nada polom charakter bez sugerowania fokusu ani dodawania zbędnej etykiety?
 
@@ -12,9 +12,9 @@ W poprzedniej rundzie nie wybrano żadnego wariantu. Podwójna oprawa była myl�
 
 | Wariant | Jeden główny detal | Próbnik |
 | --- | --- | --- |
-| `rim` — Niski rant | Pojedynczy pełny obrys z niskim dolnym rantem | [Otwórz](http://vps.tailfb5686.ts.net:4321/pl/?controls=rim#palette-lab) |
-| `arch` — Łuk i kant | Symetryczna, zaokrąglona góra i niemal prosta podstawa | [Otwórz](http://vps.tailfb5686.ts.net:4321/pl/?controls=arch#palette-lab) |
-| `module` — Boczny moduł | Akcja lub status w wydzielonym prawym brzegu pola | [Otwórz](http://vps.tailfb5686.ts.net:4321/pl/?controls=module#palette-lab) |
+| `rim` — Niski rant | Pojedynczy pełny obrys z niskim dolnym rantem | [Otwórz](http://localhost:4321/pl/?controls=rim#palette-lab) |
+| `arch` — Łuk i kant | Symetryczna, zaokrąglona góra i niemal prosta podstawa | [Otwórz](http://localhost:4321/pl/?controls=arch#palette-lab) |
+| `module` — Boczny moduł | Akcja lub status w wydzielonym prawym brzegu pola | [Otwórz](http://localhost:4321/pl/?controls=module#palette-lab) |
 
 ## Warunki porównania
 

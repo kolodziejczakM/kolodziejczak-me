@@ -1,3 +1,5 @@
+> Archiwalny plan z października. Aktualna instrukcja publikowania jest w [README](../README.md), a wybrany hosting i automatyczny deployment opisano w [GitHub Pages](github-pages.md).
+
 # Kolejne kroki po akceptacji wyglądu
 
 Stan na 18 października 2026: autor zaakceptował wygląd strony i zlecił wysłanie aktualnego kodu do repozytorium. Etap projektowania wizualnego jest zamknięty. Implementacja jest na gałęzi `codex/astro-foundation`; gałęzie porównań i prototypów są lokalnym archiwum. Używamy Astro, TypeScript, Content Collections i MDX.

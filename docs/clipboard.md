@@ -28,7 +28,7 @@ Test HTTPS wykorzystuje przechwycenie żądań przez Playwright, a nie publiczni
 Test przeglądarkowy wymaga oddzielnie dostępnego pakietu Playwright i Chromium. Nie dodaje ich do zależności strony. Uruchomienie w zwykłym środowisku z Playwright:
 
 ```sh
-CLIPBOARD_TEST_URL=http://100.113.202.72:4322 node scripts/check-clipboard.cjs
+CLIPBOARD_TEST_URL=http://100.x.y.z:4322 node scripts/check-clipboard.cjs
 ```
 
 Jeśli Playwright jest zainstalowany poza repo, wskaż ścieżkę do jego pakietu przez `PLAYWRIGHT_MODULE`. Na obecnym serwerze wykorzystano istniejące narzędzia podglądu:

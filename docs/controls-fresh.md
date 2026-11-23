@@ -12,10 +12,10 @@ Ostatnia poprawka przycisków Bocznego modułu została oceniona jako gorsza. Ma
 
 | Zestaw | Konstrukcja | Próbnik |
 | --- | --- | --- |
-| Faseta | Pełna sylwetka ze ściętym narożnikiem; ten sam skos na akcjach i znacznikach | [Otwórz](http://vps.tailfb5686.ts.net:4321/pl/?controls=facet#palette-lab) |
-| Jasny środek | Kremowe powierzchnie z ciemnym tekstem, spłaszczone krzywizny i szałwiowe akcje pomocnicze | [Otwórz](http://vps.tailfb5686.ts.net:4321/pl/?controls=paper#palette-lab) |
-| Pionowy brzeg | Ramka z mocniejszym lewym brzegiem, pionowy znacznik wyboru i kanciaste ikony | [Otwórz](http://vps.tailfb5686.ts.net:4321/pl/?controls=spine#palette-lab) |
-| Osobna akcja | Oddzielny przycisk czyszczenia obok kompletnego pola, ikona przed tekstem, niezależne opcje i switch z otwartym torem | [Otwórz](http://vps.tailfb5686.ts.net:4321/pl/?controls=pair#palette-lab) |
+| Faseta | Pełna sylwetka ze ściętym narożnikiem; ten sam skos na akcjach i znacznikach | [Otwórz](http://localhost:4321/pl/?controls=facet#palette-lab) |
+| Jasny środek | Kremowe powierzchnie z ciemnym tekstem, spłaszczone krzywizny i szałwiowe akcje pomocnicze | [Otwórz](http://localhost:4321/pl/?controls=paper#palette-lab) |
+| Pionowy brzeg | Ramka z mocniejszym lewym brzegiem, pionowy znacznik wyboru i kanciaste ikony | [Otwórz](http://localhost:4321/pl/?controls=spine#palette-lab) |
+| Osobna akcja | Oddzielny przycisk czyszczenia obok kompletnego pola, ikona przed tekstem, niezależne opcje i switch z otwartym torem | [Otwórz](http://localhost:4321/pl/?controls=pair#palette-lab) |
 
 Każdy próbnik ma: pusty input, błąd i stan poprawny adresu, textarea, pole wyłączone, select, przycisk główny, pomocniczy i wyłączony, segmenty, checkbox, switch, radio, suwak i przyciski ikonowe. Przyciski są na początku prawego panelu, aby można było oceniać je razem z inputami. Na telefonie panele układają się pionowo. Zasady form powtarzają się na liście artykułów oraz w playerze, akcjach i modalach artykułu. Czas i głośność są demonstracją bez podłączonego nagrania.
 

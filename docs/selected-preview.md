@@ -8,9 +8,9 @@
 
 | Widok | PL | EN |
 | --- | --- | --- |
-| Wizytówka | [Otwórz](http://vps.tailfb5686.ts.net:4321/pl/) | [Open](http://vps.tailfb5686.ts.net:4321/en/) |
-| Artykuły | [Otwórz](http://vps.tailfb5686.ts.net:4321/pl/blog/) | [Open](http://vps.tailfb5686.ts.net:4321/en/blog/) |
-| Przykładowy artykuł | [Otwórz](http://vps.tailfb5686.ts.net:4321/pl/blog/mniej-ale-lepiej/) | [Open](http://vps.tailfb5686.ts.net:4321/en/blog/less-but-better/) |
+| Wizytówka | [Otwórz](http://localhost:4321/pl/) | [Open](http://localhost:4321/en/) |
+| Artykuły | [Otwórz](http://localhost:4321/pl/blog/) | [Open](http://localhost:4321/en/blog/) |
+| Przykładowy artykuł | [Otwórz](http://localhost:4321/pl/blog/mniej-ale-lepiej/) | [Open](http://localhost:4321/en/blog/less-but-better/) |
 
 ## Co domknięto w podglądzie
 

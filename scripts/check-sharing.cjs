@@ -2,7 +2,7 @@
 // cannot automate platform UI. Clipboard copying is checked separately.
 const { chromium } = require(process.env.PLAYWRIGHT_MODULE || "playwright");
 const assert = require("node:assert/strict");
-const upstream = process.env.CLIPBOARD_TEST_URL || "http://100.113.202.72:4322";
+const upstream = process.env.CLIPBOARD_TEST_URL || "http://127.0.0.1:4322";
 const origin = "https://share-preview.test";
 (async () => {
   const browser = await chromium.launch({ args: ["--no-sandbox"] });
