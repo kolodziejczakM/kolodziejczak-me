@@ -3,7 +3,7 @@ import { site } from "../src/config/site.ts";
 
 if (!site.readyToPublish) {
   throw new Error(
-    "Premiera zablokowana: readyToPublish jest false. Najpierw zastąp próbki prawdziwymi artykułami, potem włącz publikację i przebuduj stronę.",
+    "Run npm run release:check to create and verify an explicit production build.",
   );
 }
 for (const path of [
@@ -14,25 +14,25 @@ for (const path of [
   "en/blog/index.html",
 ]) {
   const html = await readFile(
-    new URL(`../dist/${path}`, import.meta.url),
+    new URL(`../dist-production/${path}`, import.meta.url),
     "utf8",
   );
   if (/name="robots" content="[^"]*noindex/.test(html))
     throw new Error(
-      `Release still has noindex: ${path}. Rebuild after changing readyToPublish.`,
+      `Release still has noindex: ${path}. Rebuild with SITE_ENV=production.`,
     );
 }
 const design = await readFile(
-  new URL("../dist/design/index.html", import.meta.url),
+  new URL("../dist-production/design/index.html", import.meta.url),
   "utf8",
 );
 if (!design.includes('content="noindex,nofollow"'))
   throw new Error("Design reference must remain noindex.");
 const sitemap = await readFile(
-  new URL("../dist/sitemap.xml", import.meta.url),
+  new URL("../dist-production/sitemap.xml", import.meta.url),
   "utf8",
 );
 if (!sitemap.includes("<url>")) throw new Error("Release sitemap is empty.");
 console.log(
-  "Build gotowy do publikacji. DNS, TLS, przekierowania, 404 i odtwarzanie z serwera trzeba jeszcze sprawdzić na docelowym hoście.",
+  "Production build verified in dist-production/. Only this directory can be deployed to GitHub Pages.",
 );

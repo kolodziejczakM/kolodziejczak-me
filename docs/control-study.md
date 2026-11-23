@@ -10,10 +10,10 @@ Użytkownik skorygował poprzednią iterację: oczekiwał dopracowania kontrolek
 
 | Wariant | Co porównujemy | Próbnik |
 | --- | --- | --- |
-| `frame` — Podwójna oprawa | Pełny zewnętrzny i wewnętrzny obrys z przerwą pomiędzy | [Inputy](http://vps.tailfb5686.ts.net:4321/pl/?controls=frame#palette-lab) |
-| `inset` — Miękkie wgłębienie | Głębia pola, wewnętrzny cień i osadzenie ikony | [Inputy](http://vps.tailfb5686.ts.net:4321/pl/?controls=inset#palette-lab) |
-| `label` — Etykieta w ramce | Stała etykieta wewnątrz pola, nad wpisywanym tekstem | [Inputy](http://vps.tailfb5686.ts.net:4321/pl/?controls=label#palette-lab) |
-| `capsule` — Kapsuła z akcją | Obłe pole, koło z ikoną i okrągły przycisk czyszczenia | [Inputy](http://vps.tailfb5686.ts.net:4321/pl/?controls=capsule#palette-lab) |
+| `frame` — Podwójna oprawa | Pełny zewnętrzny i wewnętrzny obrys z przerwą pomiędzy | [Inputy](http://localhost:4321/pl/?controls=frame#palette-lab) |
+| `inset` — Miękkie wgłębienie | Głębia pola, wewnętrzny cień i osadzenie ikony | [Inputy](http://localhost:4321/pl/?controls=inset#palette-lab) |
+| `label` — Etykieta w ramce | Stała etykieta wewnątrz pola, nad wpisywanym tekstem | [Inputy](http://localhost:4321/pl/?controls=label#palette-lab) |
+| `capsule` — Kapsuła z akcją | Obłe pole, koło z ikoną i okrągły przycisk czyszczenia | [Inputy](http://localhost:4321/pl/?controls=capsule#palette-lab) |
 
 ## Jak ocenić
 

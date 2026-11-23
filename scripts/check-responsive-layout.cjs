@@ -3,7 +3,7 @@
 const playwright = require(process.env.PLAYWRIGHT_MODULE || "playwright");
 const assert = require("node:assert/strict");
 const engine = process.env.BROWSER_ENGINE || "chromium";
-const base = process.env.RESPONSIVE_TEST_URL || "http://100.113.202.72:4322";
+const base = process.env.RESPONSIVE_TEST_URL || "http://127.0.0.1:4322";
 
 async function checkLayout(page, label) {
   const state = await page.evaluate(() => {

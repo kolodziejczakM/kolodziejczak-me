@@ -1,7 +1,7 @@
 // Run against a built preview. Requires a separately installed Playwright/Chromium.
 const { chromium } = require(process.env.PLAYWRIGHT_MODULE || "playwright");
 const assert = require("node:assert/strict");
-const upstream = process.env.CLIPBOARD_TEST_URL || "http://100.113.202.72:4322";
+const upstream = process.env.CLIPBOARD_TEST_URL || "http://127.0.0.1:4322";
 const probeOrigin = "http://localhost:4399";
 const secureOrigin = "https://clipboard-preview.test";
 

@@ -59,44 +59,56 @@ const description = t(
         </small>
       )}
     </header>
-    <div
-      class="blog-filters"
-      data-filters
-      hidden
-      role="group"
-      aria-label={t("Tematy artykułów", "Article topics")}
-    >
-      <button
-        class="button button-secondary"
-        type="button"
-        data-filter="all"
-        aria-pressed="true"
+    {articles.length > 0 && (
+      <div
+        class="blog-filters"
+        data-filters
+        hidden
+        role="group"
+        aria-label={t("Tematy artykułów", "Article topics")}
       >
-        {t("Wszystko", "All")}{" "}
-        <small>{String(articles.length).padStart(2, "0")}</small>
-      </button>
-      {categories.map((category) => (
         <button
           class="button button-secondary"
           type="button"
-          data-filter={category}
-          aria-pressed="false"
+          data-filter="all"
+          aria-pressed="true"
         >
-          {categoryLabel(category, locale)}
+          {t("Wszystko", "All")}{" "}
+          <small>{String(articles.length).padStart(2, "0")}</small>
         </button>
-      ))}
-    </div>
+        {categories.map((category) => (
+          <button
+            class="button button-secondary"
+            type="button"
+            data-filter={category}
+            aria-pressed="false"
+          >
+            {categoryLabel(category, locale)}
+          </button>
+        ))}
+      </div>
+    )}
     <p
       class="sr-only"
       data-filter-status
       aria-live="polite"
       data-format={t("Liczba artykułów:", "Articles shown:")}
     ></p>
-    <p class="filter-empty" data-filter-empty role="status" hidden>
-      {t(
-        "Jeszcze nie ma tu artykułów. Zajrzyj do pozostałych tematów.",
-        "No articles here yet. Explore the other topics.",
-      )}
+    <p
+      class="filter-empty"
+      data-filter-empty
+      role="status"
+      hidden={articles.length > 0}
+    >
+      {articles.length
+        ? t(
+            "Jeszcze nie ma tu artykułów. Zajrzyj do pozostałych tematów.",
+            "No articles here yet. Explore the other topics.",
+          )
+        : t(
+            "Tutaj pojawią się moje artykuły. Zajrzyj ponownie.",
+            "My articles will appear here. Check back soon.",
+          )}
     </p>
     <div class="article-cards blog-list">
       {articles.map((article) => (

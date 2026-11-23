@@ -1,4 +1,6 @@
-# Czasowy wyjątek w audycie zależności
+# Audyt zależności i archiwalny wyjątek
+
+**Aktualizacja 23 listopada 2026:** zgłoszenie zostało wycofane z bazy 18 listopada o 15:38 UTC, a surowy audyt ponownie przechodzi bez wyjątków. Usunięto kod akceptacji oraz powiązane testy; `npm run audit:check` uruchamia teraz bezpośrednio standardowy audyt. Wersje Astro i picomatch nie zostały zmienione. Poniższy opis dokumentuje historyczną decyzję.
 
 Decyzja autora z 18 listopada 2026: zachować Astro 7.4.12 i dopuścić czasowo wyłącznie [GHSA-fc5q-39xc-vjpf / CVE-2026-112366](https://github.com/advisories/GHSA-fc5q-39xc-vjpf). Jest to akceptacja ograniczonego ryzyka, nie usunięcie podatności.
 

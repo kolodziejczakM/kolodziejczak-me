@@ -7,7 +7,12 @@ import { site } from "../src/config/site.ts";
 import { jsonLd, pageGraph } from "../src/lib/seo.ts";
 import { rss, sitemap } from "../src/lib/discovery.ts";
 import { isPublished, validatePublication } from "../src/lib/publication.ts";
-import { articlePages, htmlPages, output } from "./helpers/output.ts";
+import {
+  articlePages,
+  htmlPages,
+  output,
+  outputFile,
+} from "./helpers/output.ts";
 import type { Article } from "../src/lib/articles.ts";
 
 const article: Article = {
@@ -92,9 +97,9 @@ test("publication skips drafts and future dates and blocks release of sample con
       [{ ...article, data: { ...article.data, sample: true } }],
       true,
     ),
-    /real articles only/,
+    /cannot contain sample articles/,
   );
-  await assert.rejects(validatePublication([], true), /real articles only/);
+  await validatePublication([], true);
 });
 
 test("missing and empty narration fail the build; a nonempty local file passes", async () => {
@@ -141,13 +146,7 @@ test("public pages expose absolute social previews, canonical URLs, feeds and pa
     assert.match(html, /type="application\/rss\+xml"/);
     const image = html.match(/property="og:image" content="([^"]+)"/)?.[1];
     assert.ok(image);
-    assert.ok(
-      (
-        await stat(
-          new URL(`../dist${new URL(image).pathname}`, import.meta.url),
-        )
-      ).size > 0,
-    );
+    assert.ok((await stat(outputFile(new URL(image).pathname))).size > 0);
     const script = html.match(
       /<script type="application\/ld\+json">([\s\S]*?)<\/script>/,
     )?.[1];

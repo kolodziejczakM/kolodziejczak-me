@@ -8,13 +8,15 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
+    "build:production": "node scripts/run-production.mjs build",
     "preview": "astro preview",
     "check": "astro sync && tsc --noEmit",
     "test": "node --experimental-strip-types --test tests/*.test.ts",
     "validate": "npm run check && npm run build && npm test",
-    "audit:check": "node --experimental-strip-types scripts/check-audit.mjs",
+    "audit:check": "npm audit --omit=dev --audit-level=moderate",
+    "secrets:check": "bash scripts/scan-secrets.sh",
     "prototype": "python3 prototypes/serve.py",
-    "release:check": "npm run validate && npm run audit:check && node --experimental-strip-types scripts/check-release.ts"
+    "release:check": "node scripts/run-production.mjs release"
   },
   "dependencies": {
     "@astrojs/markdown-satteri": "0.4.4",

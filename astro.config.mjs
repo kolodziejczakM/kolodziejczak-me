@@ -7,6 +7,7 @@ import { site } from "./src/config/site.ts";
 export default defineConfig({
   site: site.origin,
   output: "static",
+  outDir: site.readyToPublish ? "./dist-production" : "./dist",
   trailingSlash: "always",
   integrations: [mdx()],
   markdown: {

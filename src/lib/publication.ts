@@ -27,12 +27,9 @@ export async function validatePublication(
   // directory rather than a URL relative to that generated bundle.
   publicDirectory = pathToFileURL(`${resolve("public")}${sep}`),
 ): Promise<void> {
-  if (
-    release &&
-    (!articles.length || articles.some(({ data }) => data.sample))
-  ) {
+  if (release && articles.some(({ data }) => data.sample)) {
     throw new Error(
-      "Public release requires real articles only. Replace samples or set draft: true in both languages before enabling readyToPublish.",
+      "Public release cannot contain sample articles. Samples must be excluded before validation.",
     );
   }
   for (const article of articles) {

@@ -1,5 +1,7 @@
 name: Validate
-on: [push, pull_request]
+on:
+  pull_request:
+  workflow_dispatch:
 permissions:
   contents: read
 jobs:
@@ -9,11 +11,14 @@ jobs:
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
         with:
+          fetch-depth: 0
           persist-credentials: false
+      - name: Check for committed secrets
+        run: bash scripts/scan-secrets.sh
       - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7
         with:
           node-version: 24
           cache: npm
       - run: npm ci
       - run: npm run validate
-      - run: npm run audit:check
+      - run: npm run release:check

@@ -1,7 +1,7 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import { stat, readdir } from "node:fs/promises";
-import { output, articlePages } from "./helpers/output.ts";
+import { output, articlePages, outputFile } from "./helpers/output.ts";
 
 test("every article has a localized, responsive, local hero image", async () => {
   for (const { path, html } of await articlePages()) {
@@ -22,9 +22,7 @@ test("every article has a localized, responsive, local hero image", async () => 
     for (const asset of new Set(
       hero.match(/\/_astro\/[a-zA-Z0-9_.-]+\.(?:avif|webp|jpg)/g),
     )) {
-      assert.ok(
-        (await stat(new URL(`../dist${asset}`, import.meta.url))).size > 0,
-      );
+      assert.ok((await stat(outputFile(asset))).size > 0);
     }
   }
 });
@@ -47,7 +45,7 @@ test("list thumbnails and articles share unique transition names and reduced-mot
       );
     if (localPages.length) assert.match(list, /loading="lazy"/);
   }
-  const files = await readdir(new URL("../dist/_astro/", import.meta.url));
+  const files = await readdir(outputFile("_astro/"));
   const css = (
     await Promise.all(
       files

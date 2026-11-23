@@ -2,8 +2,8 @@ export const site = {
   name: "Marcin Kołodziejczak",
   domain: "kolodziejczak.me",
   origin: "https://kolodziejczak.me",
-  // Keep indexing off while the author materials and public launch are pending.
-  readyToPublish: false,
+  // Explicit production builds are separate from the private development preview.
+  readyToPublish: process.env.SITE_ENV === "production",
   description: {
     pl: "Osobista strona Marcina Kołodziejczaka. Programowanie, tworzenie filmów i eksperymenty z AI. Artykuły z ciekawości i własnego doświadczenia.",
     en: "Marcin Kołodziejczak’s personal website. Programming, filmmaking and experiments with AI. Articles inspired by curiosity and personal experience.",
