@@ -3,7 +3,10 @@ import Seo from "../components/Seo.astro";
 import { site } from "../config/site";
 import Avatar from "../components/Avatar.astro";
 import BackgroundSurface from "../components/BackgroundSurface.astro";
+import { homePath } from "../lib/i18n";
 import "../styles/site.css";
+
+const destinations = { pl: homePath("pl"), en: homePath("en") };
 ---
 
 <!doctype html>
@@ -11,11 +14,22 @@ import "../styles/site.css";
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <script>
-      import { homePath, preferredLocale } from "../lib/i18n";
-
+    <style is:inline>
+      html {
+        color-scheme: dark;
+        background: #0e241d;
+      }
+      body {
+        margin: 0;
+      }
+    </style>
+    <script is:inline define:vars={{ destinations }} data-language-redirect>
+      // Keep this synchronous; the policy matches preferredLocale in lib/i18n.
+      const language = navigator.languages?.[0] || navigator.language || "";
+      const locale =
+        language.toLowerCase().split("-")[0] === "pl" ? "pl" : "en";
       window.location.replace(
-        homePath(preferredLocale(navigator)) + location.search + location.hash,
+        destinations[locale] + window.location.search + window.location.hash,
       );
     </script>
     <Seo
@@ -31,21 +45,23 @@ import "../styles/site.css";
   </head>
   <body>
     <BackgroundSurface />
-    <main class="language-home">
-      <Avatar locale="pl" />
-      <h1>
-        kolodziejczak<span class="brand-domain">.me</span>
-      </h1>
-      <p>Marcin Kołodziejczak</p>
-      <p>Wybierz język / Choose a language</p>
-      <div>
-        <a class="button button-primary" href="/pl/" lang="pl">
-          Polski
-        </a>
-        <a class="button button-secondary" href="/en/" lang="en">
-          English
-        </a>
-      </div>
-    </main>
+    <noscript>
+      <main class="language-home">
+        <Avatar locale="pl" />
+        <h1>
+          kolodziejczak<span class="brand-domain">.me</span>
+        </h1>
+        <p>Marcin Kołodziejczak</p>
+        <p>Wybierz język / Choose a language</p>
+        <div>
+          <a class="button button-primary" href="/pl/" lang="pl">
+            Polski
+          </a>
+          <a class="button button-secondary" href="/en/" lang="en">
+            English
+          </a>
+        </div>
+      </main>
+    </noscript>
   </body>
 </html>
