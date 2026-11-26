@@ -5,6 +5,7 @@ import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import Icon from "../components/Icon.astro";
 import BackgroundSurface from "../components/BackgroundSurface.astro";
+import { site } from "../config/site";
 import { text, otherLocale, type Locale } from "../lib/i18n";
 import "../styles/site.css";
 interface Props {
@@ -21,6 +22,8 @@ const translations = {
   [otherLocale(locale)]: otherPath,
 } as Record<Locale, string>;
 const t = (pl: string, en: string) => text(locale, pl, en);
+// Cloudflare Web Analytics publishes this site identifier in the page HTML.
+const analyticsToken = "3c7893c3060241b7b62e8e72e7b5bd3f"; // gitleaks:allow
 ---
 
 <!doctype html>
@@ -121,5 +124,13 @@ const t = (pl: string, en: string) => text(locale, pl, en);
     <script>
       import "../scripts/site.ts";
     </script>
+    {import.meta.env.PROD && site.readyToPublish && (
+      <script
+        is:inline
+        type="module"
+        src="https://static.cloudflareinsights.com/beacon.min.js"
+        data-cf-beacon={JSON.stringify({ token: analyticsToken })}
+      ></script>
+    )}
   </body>
 </html>
